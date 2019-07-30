@@ -1,0 +1,26 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "A social media platform for people who love traveling",
+  "main": "server.js",
+  "dependencies": {
+    "sequelize": "^5.12.1",
+    "sequelize-cli": "^5.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dchicchon/project-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dchicchon/project-3/issues"
+  },
+  "homepage": "https://github.com/dchicchon/project-3#readme"
+}
