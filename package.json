@@ -4,6 +4,11 @@
   "description": "A social media platform for people who love traveling",
   "main": "server.js",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express-flash-messages": "^0.1.1",
+    "express-session": "^1.16.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^5.12.1",
     "sequelize-cli": "^5.5.0"
   },
