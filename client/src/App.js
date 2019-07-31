@@ -83,6 +83,11 @@ class App extends Component {
               <Route path="/profile" component={UserRoutes} />
               <Route path="/profile/*" component={UserRoutes} />
               <Route path="*" component={GuestRoutes} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/feed" component={Feed} />
+              <Route exact path="/discover" component={Discover} />
+              <Route exact path="/profile" component={Profile} />
+              <Route component={NoMatch} />
             </Switch>
           </div>
         </div>
@@ -104,22 +109,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// function App() {
-//   return (
-//     <Router>
-//       <Navbar />
-//       <Switch>
-//         <Route exact path="/" component={Login} />
-//         <Route exact path="/register" component={Register} />
-//         <Route exact path="/feed" component={Feed} />
-//         <Route exact path="/discover" component={Discover} />
-//         <Route exact path="/profile" component={Profile} />
-//         <Route component={NoMatch} />
-//       </Switch>
-//     </Router>
-//   );
-// }
-
-// export default App;
