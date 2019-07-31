@@ -7,7 +7,12 @@ module.exports = function(sequelize, Datatypes) {
         password: {
             type: Datatypes.STRING,
             allowNull: false
-        }
+        },
+        profilePhoto: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            defaultValue: "https://imgur.com/xjhcWp3",
+          }
     })
 
     return User
