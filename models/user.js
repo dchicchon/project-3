@@ -8,7 +8,7 @@ module.exports = function(sequelize, Datatypes) {
             type: Datatypes.STRING,
             allowNull: false
         },
-        profilePhoto: {
+        profileImg: {
             type: DataTypes.STRING,
             allowNull: true,
             defaultValue: "https://imgur.com/xjhcWp3",
