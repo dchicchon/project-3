@@ -47,20 +47,20 @@ export default function OutlinedTextFields() {
 
             <TextField style={{width:300}}
                 id="outlined-dense"
-                label="Username"
+                label="First Name"
                 className={clsx(classes.textField, classes.dense)}
                 margin="normal"
                 variant="outlined"
+                // value={this.state.firstName}
             />
             <br></br> 
             <TextField style={{width:300}}
-                id="outlined-password-input"
-                label="Password"
-                className={classes.textField}
-                type="password"
-                autoComplete="current-password"
+                id="outlined-dense"
+                label="Last Name"
+                className={clsx(classes.textField, classes.dense)}
                 margin="normal"
                 variant="outlined"
+                // value={this.state.lastName}
             />
             <br></br>
             <TextField style={{width:300}}
@@ -72,7 +72,31 @@ export default function OutlinedTextFields() {
                 autoComplete="email"
                 margin="normal"
                 variant="outlined"
+                // value={this.state.email}
             />
+            <br></br>
+            <TextField style={{width:300}}
+                id="outlined-password-input"
+                label="Password"
+                className={classes.textField}
+                type="password"
+                autoComplete="current-password"
+                margin="normal"
+                variant="outlined"
+                // value={this.state.password}
+            />
+            <br></br>
+            <TextField style={{width:300}}
+                id="outlined-password-input"
+                label="Confirm Password"
+                className={classes.textField}
+                type="password"
+                autoComplete="current-password"
+                margin="normal"
+                variant="outlined"
+                // value={this.state.passwordConfirm}
+            />
+            <br></br>
 
         </form>
     );
