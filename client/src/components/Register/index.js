@@ -1,8 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
+// import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -37,15 +38,22 @@ export default function OutlinedTextFields() {
 
     return (
         <form className={classes.container} noValidate autoComplete="off">
-            <TextField
+            {/* <Grid
+  container
+  direction="row"
+  justify="center"
+  alignItems="center"
+></Grid> */}
+
+            <TextField style={{width:300}}
                 id="outlined-dense"
                 label="Username"
                 className={clsx(classes.textField, classes.dense)}
                 margin="normal"
                 variant="outlined"
             />
-            <br></br>
-            <TextField
+            <br></br> 
+            <TextField style={{width:300}}
                 id="outlined-password-input"
                 label="Password"
                 className={classes.textField}
@@ -55,7 +63,7 @@ export default function OutlinedTextFields() {
                 variant="outlined"
             />
             <br></br>
-            <TextField
+            <TextField style={{width:300}}
                 id="outlined-email-input"
                 label="Email"
                 className={classes.textField}

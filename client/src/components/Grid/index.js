@@ -8,40 +8,41 @@ import OutlinedTextFields from "../Register";
 import OutlinedButtons from "../RegisterBtn";
 
 
+
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(3),
-    margin: 'auto',
-    maxWidth: 375,
-  },
-  image: {
-    width: 128,
-    height: 128,
-  },
-  img: {
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
-  },
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing(3),
+        margin: 'auto',
+        maxWidth: 375,
+    },
+    image: {
+        width: 128,
+        height: 128,
+    },
+    img: {
+        margin: 'auto',
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+    },
 }));
 
 export default function ComplexGrid() {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  return (
-    <div className={classes.root}  style={{ padding: 100 }}>
-      <Paper className={classes.paper}>
-          <h1 style={{textAlign: "center"}}>Create an account!</h1>
-        <Grid container spacing={2}
-        style={{paddingLeft: 70}}>
-            <OutlinedTextFields/>
-            <div className="register-btn" style={{paddingLeft: 70}}><OutlinedButtons/> </div>
-        </Grid>
-      </Paper>
-    </div>
-  );
+    return (
+        <div className={classes.root} style={{ padding: 100 }}>
+            <Paper className={classes.paper}>
+                <h1 style={{ textAlign: "center" }}>Create an account!</h1>
+                <Grid container spacing={2}
+                    style={{ paddingLeft: 30 }}>
+                    <OutlinedTextFields />
+                    <div className="register-btn" style={{ paddingLeft: 100 }}><OutlinedButtons /> </div>
+                </Grid>
+            </Paper>
+        </div>
+    );
 }
