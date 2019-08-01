@@ -17,7 +17,7 @@ export default function OutlinedButtons(props) {
   return (
     <div>
       <Button onClick={props.onClick} variant="outlined" color="primary" className={classes.button}>
-        Sign Up
+{props.children}
       </Button>
     </div>
   );

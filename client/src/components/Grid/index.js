@@ -10,6 +10,7 @@ import OutlinedButtons from "../RegisterBtn";
 
 
 
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -31,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function ComplexGrid() {
+export default function ComplexGrid(props) {
     const classes = useStyles();
 
     return (
@@ -40,9 +41,10 @@ export default function ComplexGrid() {
                 <h1 style={{ textAlign: "center" }}>Create an account!</h1>
                 <Grid container spacing={2}
                     style={{ paddingLeft: 30 }}>
-                    <OutlinedTextFields />
-                    {/* <OutlinedTextFieldsLogin /> */}
-                    <div className="register-btn" style={{ paddingLeft: 100 }}><OutlinedButtons /> </div>
+                    {props.children}
+                    {/* <div className="register-btn" style={{ paddingLeft: 100 }}>
+                        <OutlinedButtons>Sign up! </OutlinedButtons> 
+                        </div> */}
                 </Grid>
             </Paper>
         </div>

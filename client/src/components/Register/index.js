@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import OutlinedButtons from "../../components/RegisterBtn";
+
 
 
 
@@ -38,12 +40,6 @@ export default function OutlinedTextFields() {
 
     return (
         <form className={classes.container} noValidate autoComplete="off">
-            {/* <Grid
-  container
-  direction="row"
-  justify="center"
-  alignItems="center"
-></Grid> */}
 
             <TextField style={{width:300}}
                 id="outlined-dense"
@@ -97,7 +93,11 @@ export default function OutlinedTextFields() {
                 // value={this.state.passwordConfirm}
             />
             <br></br>
-
+            <OutlinedButtons>
+                <div className="register-btn" style={{ paddingLeft: 100 }}>
+                    Sign up! 
+                </div>
+            </OutlinedButtons> 
         </form>
     );
 }
