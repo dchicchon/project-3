@@ -1,24 +1,14 @@
 import React from 'react';
-import Login from './pages/Login'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
-function App() {
-  return(
-  <div>
-    <Login />
-  </div>
-  );
-}
-
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-// // Pages
+//Pages
 // import Discover from './pages/Discover'
 // import Feed from './pages/Feed'
 // import Login from './pages/Login'
 // import NoMatch from './pages/NoMatch'
 // import Profile from './pages/Profile'
-// import Register from './pages/Register'
+import Register from './pages/Register'
 
 // // Components
 // import Navbar from './components/Navbar'
@@ -26,9 +16,27 @@ function App() {
 // import UserRoutes from './routes/UserRoutes'
 // import GuestRoutes from './routes/GuestRoutes'
 // import Actions from "./utils/API";
+ 
+// Stylesheet
+import './App.css';
 
-// // Stylesheet
-// import './App.css';
+
+
+//--------ADDED CODED---------------------
+function App() {
+  return(
+    <div>
+      <Router>
+      <h1>Hello</h1>
+      <Route exact path="/register" component={Register} />
+      </Router>
+    </div>
+  )
+};
+
+
+//-----------END ADD---------------------
+
 
 // class App extends Component {
 //   constructor(props){
@@ -54,7 +62,7 @@ function App() {
 //       .catch(err => console.log("err", err));
 //   }
 
-//   // routing for unauthorized users
+//   routing for unauthorized users
 //   guestRouting = () => {
 //     return(
 //       <Router>
