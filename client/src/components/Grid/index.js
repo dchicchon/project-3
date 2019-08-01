@@ -5,6 +5,9 @@ import Paper from '@material-ui/core/Paper';
 // import Typography from '@material-ui/core/Typography';
 // import ButtonBase from '@material-ui/core/ButtonBase';
 import OutlinedTextFields from "../Register";
+import OutlinedButtons from "../RegisterBtn";
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -32,9 +35,11 @@ export default function ComplexGrid() {
   return (
     <div className={classes.root}  style={{ padding: 100 }}>
       <Paper className={classes.paper}>
+          <h1 style={{textAlign: "center"}}>Create an account!</h1>
         <Grid container spacing={2}
         style={{paddingLeft: 70}}>
             <OutlinedTextFields/>
+            <div className="register-btn" style={{paddingLeft: 70}}><OutlinedButtons/> </div>
         </Grid>
       </Paper>
     </div>
