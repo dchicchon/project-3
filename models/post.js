@@ -1,3 +1,5 @@
+const Sequelize = require("sequelize");
+
 module.exports = function(sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
       info: {
@@ -18,7 +20,9 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
             len: [3-10],
           }
-      },      
+      },
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE      
     },
     {
   });

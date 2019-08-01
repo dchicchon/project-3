@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 // import Typography from '@material-ui/core/Typography';
 // import ButtonBase from '@material-ui/core/ButtonBase';
+import OutlinedTextFieldsLogin from "../Login";
 import OutlinedTextFields from "../Register";
 import OutlinedButtons from "../RegisterBtn";
 
@@ -40,6 +41,7 @@ export default function ComplexGrid() {
                 <Grid container spacing={2}
                     style={{ paddingLeft: 30 }}>
                     <OutlinedTextFields />
+                    {/* <OutlinedTextFieldsLogin /> */}
                     <div className="register-btn" style={{ paddingLeft: 100 }}><OutlinedButtons /> </div>
                 </Grid>
             </Paper>

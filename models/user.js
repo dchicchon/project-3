@@ -1,5 +1,8 @@
+const Sequelize = require("sequelize");
+const bcrypt  = require('bcryptjs');
+
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("User", {
+    let User = sequelize.define("User", {
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -16,7 +19,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
             defaultValue: "https://imgur.com/xjhcWp3",
-          }
+          },
+          createdAt: Sequelize.DATE,
+          updatedAt: Sequelize.DATE
     })
 
     User.associate = function(models) {
