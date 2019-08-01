@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import OutlinedButtons from "../RegisterBtn";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -67,17 +68,20 @@ export default function OutlinedTextFieldsLogin() {
       // value={this.state.password}
       />
 
+      <Link to="/feed">
         <OutlinedButtons>
           <div className="register-btn" style={{ paddingLeft: 20, paddingRight: 50 }}>
             Log in!
-                    </div>
-        </OutlinedButtons>
-        <OutlinedButtons>
-          <div className="register-btn" style={{ paddingLeft: 20, paddingRight: 40 }}>
-            Sign up!
           </div>
         </OutlinedButtons>
-
+      </Link>
+        <Link to="/register">
+          <OutlinedButtons>
+            <div className="register-btn" style={{ paddingLeft: 20, paddingRight: 40 }}>
+              Sign up!
+            </div>
+          </OutlinedButtons>
+        </Link>
 
     </form>
   );

@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import OutlinedButtons from "../../components/RegisterBtn";
-
+import {Link} from "react-router-dom";
 
 
 
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function OutlinedTextFields() {
+export default function OutlinedTextFields(props) {
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: 'Cat in the Hat',
@@ -42,12 +42,19 @@ export default function OutlinedTextFields() {
         <form className={classes.container} noValidate autoComplete="off">
 
             <TextField style={{width:300}}
-                id="outlined-dense"
+                // id="outlined-dense"
                 label="First Name"
                 className={clsx(classes.textField, classes.dense)}
                 margin="normal"
                 variant="outlined"
-                // value={this.state.firstName}
+                //things I've added for state
+                id={this.props.elementID}
+                name={this.props.name}
+                type={this.props.inputType}
+                required={this.props.required}
+                onChange={(e)=>this.props.handleChange(e)}
+                //have not added onChange, className, minLength, size
+                
             />
             <br></br> 
             <TextField style={{width:300}}
@@ -93,11 +100,15 @@ export default function OutlinedTextFields() {
                 // value={this.state.passwordConfirm}
             />
             <br></br>
+  
+            <Link to="/feed">
             <OutlinedButtons>
                 <div className="register-btn" style={{ paddingLeft: 100 }}>
                     Sign up! 
                 </div>
             </OutlinedButtons> 
+            </Link>
+            
         </form>
     );
 }
