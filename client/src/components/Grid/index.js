@@ -33,7 +33,7 @@ export default function ComplexGrid() {
     <div className={classes.root}  style={{ padding: 100 }}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}
-        alignItems={"center"}>
+        style={{paddingLeft: 70}}>
             <OutlinedTextFields/>
         </Grid>
       </Paper>
