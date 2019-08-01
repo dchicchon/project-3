@@ -3,6 +3,8 @@
 import React from "react";
 import TextFields from "../components/Login"
 import Grid from "../components/Grid"
+import OutlinedTextFieldsLogin from "../components/Login";
+import OutlinedButtons from "../components/RegisterBtn";
 // class Login extends Component {
 
 // }
@@ -10,7 +12,10 @@ import Grid from "../components/Grid"
 function Login() {
     return (
       <div>
-        <Grid />       
+        <Grid>
+            <OutlinedTextFieldsLogin>
+            </OutlinedTextFieldsLogin>
+        </Grid>
       </div>
     );
   }
