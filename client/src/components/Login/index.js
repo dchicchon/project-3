@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import OutlinedButtons from "../RegisterBtn";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -65,6 +66,17 @@ export default function OutlinedTextFieldsLogin() {
         variant="outlined"
       // value={this.state.password}
       />
+
+        <OutlinedButtons>
+          <div className="register-btn" style={{ paddingLeft: 20, paddingRight: 50 }}>
+            Log in!
+                    </div>
+        </OutlinedButtons>
+        <OutlinedButtons>
+          <div className="register-btn" style={{ paddingLeft: 20, paddingRight: 40 }}>
+            Sign up!
+          </div>
+        </OutlinedButtons>
 
 
     </form>
