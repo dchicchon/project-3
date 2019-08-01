@@ -1,12 +1,12 @@
 //sign up 
 
 import React, {Component} from "react";
-import OutlinedTextFields from "../components/Register";
+import OutlinedTextFields from "../components/Signup";
 import Grid from "../components/Grid";
 import { CardActions } from "@material-ui/core";
-// import OutlinedButtons from "../components/RegisterBtn";
+// import OutlinedButtons from "../components/SignupBtn";
 
-class Register extends Component {
+class Signup extends Component {
     constructor(props){
         super(props)
         this.state={
@@ -74,10 +74,11 @@ handleInputChange = (e) => {
         [name]:value
     }) 
 }
-render = () =>{
+render () {
 return (
     <div>
         <Grid>
+            <h1>Create an account!</h1>
             <OutlinedTextFields 
             elementID="firstName"
             inputType="firstName"
@@ -91,4 +92,4 @@ return (
 }
 }
 
-export default Register; 
+export default Signup; 

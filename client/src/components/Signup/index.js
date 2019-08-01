@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import OutlinedButtons from "../../components/RegisterBtn";
+import OutlinedButtons from "../../components/SignupBtn";
 import {Link} from "react-router-dom";
 
 
@@ -103,7 +103,7 @@ export default function OutlinedTextFields(props) {
   
             <Link to="/feed">
             <OutlinedButtons>
-                <div className="register-btn" style={{  width:100 }}>
+                <div className="signup-btn" style={{ width:100 }}>
                     Sign up! 
                 </div>
             </OutlinedButtons> 
