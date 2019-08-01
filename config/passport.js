@@ -63,17 +63,38 @@ module.exports = () => {
 
     passport.use("local-login", new LocalStrategy({
         // Might need to change this to email
-        usernameField: 'username',
+        userField: 'email',
         passwordField: "password",
         passReqToCallback: true
     },
-    (req, username, password, done) => {
+    (req, email, password, done) => {
         db.User.find({
             where: {
-                
+                email: email
             }
-        })
+        }, (err, user) => {
+            if(err) {
+                console.log(`Error: ${err}`)
+                return done(err)
+            }
 
+            if (!user) {
+                console.log(`No user found. ${user}`)
+                return done(null, false, {
+                    message: "No user found"
+                });
+            }
+
+            if(!bcrypt.compareSync(password, user.password)) {
+                console.log("Invalid password.");
+                return done(null, false, {
+                    message: "Invalid password"
+                });
+            }
+
+            console.log(`Success! ${user}`);
+            return done(null)
+        })
     }
     ))
 
