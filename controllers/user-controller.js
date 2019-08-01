@@ -14,7 +14,7 @@ uploadImg = (req) => {
         let params = {
 			Bucket: process.env.S3_BUCKET_NAME,
 			ACL: 'public-read',
-			Key: `${image}.jpg`,
+			Key: `${req.body.photo}.jpg`,
 			Body: imageFile
         };
         s3.upload(params, (err, data) => {
@@ -31,7 +31,7 @@ uploadImg = (req) => {
 
 
 module.exports = {
-	updatePhoto: function (req, res) {
+	updatePhoto: (req, res) => {
 
 		var name = req.body.name.toLowerCase();
 		name = name.replace(/\s/g, '');
@@ -51,26 +51,28 @@ module.exports = {
 					profileImg: location,
 				},
 				{
-					where: { id: req.body.UserId }
+					where: { userId: req.body.id }
 				})
 				.then(dbUser => res.json({ imageUrl: location }));
 		});
 	},
 
 
-	getUser: function (req, res) {
+	getUser: (req, res) => {
 		db.User.findOne({ where: { id: req.params.id } })
 			.then(dbUser => res.json(dbUser))
 			.catch(err => res.status(422).json(err));
 	},
 
-	addUser: function (req, res) {
-		db.User.create(req.body, { email: req.body.email })
-			.then(dbUser => res.json(dbUser))
-			.catch(err => res.status(422).json(err));
-	},
+	addUser: (req, res) => {
+		db.User.create({
+		 email: req.body.email,
+		 password: req.body.password,
+		 profileImg: req.body.profileImg,
+	   }).then(dbUser => res.json(dbUser));
+	  },
 
-	editUser: function (req, res) {
+	editUser: (req, res) => {
 		db.User.update({ email: req.body.email, password: req.body.password}, { where: { id: req.params.id }})
 			.then(dbUser => res.json(dbUser))
 			.catch(err => res.status(422).json(err));
