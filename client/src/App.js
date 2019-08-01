@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 //Pages
-// import Discover from './pages/Discover'
+import Discover from './pages/Discover'
 // import Feed from './pages/Feed'
 import Login from './pages/Login'
 // import NoMatch from './pages/NoMatch'
@@ -32,6 +32,7 @@ function App() {
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/discover" component={Discover} />
       </Router>
     </div>
   )
