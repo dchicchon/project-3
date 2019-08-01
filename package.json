@@ -4,6 +4,7 @@
   "description": "A social media platform for people who love traveling",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "concurrently": "^4.1.1",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
