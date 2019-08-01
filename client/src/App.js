@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 //Pages
 // import Discover from './pages/Discover'
 // import Feed from './pages/Feed'
-// import Login from './pages/Login'
+import Login from './pages/Login'
 // import NoMatch from './pages/NoMatch'
 // import Profile from './pages/Profile'
 import Register from './pages/Register'
@@ -28,6 +28,7 @@ function App() {
     <div>
       <Router>
       <h1>Hello</h1>
+      <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
       </Router>
     </div>
