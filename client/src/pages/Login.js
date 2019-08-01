@@ -2,6 +2,7 @@
 
 import React from "react";
 import TextFields from "../components/Login"
+import Grid from "../components/Grid"
 // class Login extends Component {
 
 // }
@@ -9,7 +10,8 @@ import TextFields from "../components/Login"
 function Login() {
     return (
       <div>
-         <TextFields />
+        <Grid />
+         
       </div>
     );
   }
