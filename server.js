@@ -11,10 +11,15 @@ const passport = require("passport")
 const app = express();
 const PORT = process.env.PORT || 4815
 
+// Here we bring in our models 
 const db = require("./models")
+
+// Here we bring in our routes at the index
 const routes = require("./routes")
 
 // Middleware
+
+// We pass the passport library as a parameter to the function in config/passport.js to start the local strategy
 require("./config/passport")(passport)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,10 +33,11 @@ if (process.env.NODE_ENV === "production") {
 // app.use(cookieParser());
 // app.use(flash());
 
+// We use this to keep the user logged in during a session
 app.use(session({
     // Use dotenv dependency to hide secret
     key: 'user_sid',
-    secret: process.env.SESSION_SECRET,
+    secret: "Surf Dogs",
     resave: true,
     saveUninitialized: false,
     cookie: {
@@ -59,6 +65,8 @@ app.use(passport.session())
 app.use(routes)
 
 // Add sequelize connection
+// Sync sequelize with our database models. We set force to true to reset database each time for development. 
+// REMOVE FORCE TRUE DURING PRODUCTION!
 db.sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => {
         console.log(`API server now listening on PORT ${PORT} `)
