@@ -40,7 +40,9 @@ export default function ComplexGrid() {
                 <Grid container spacing={2}
                     style={{ paddingLeft: 30 }}>
                     <OutlinedTextFields />
-                    <div className="register-btn" style={{ paddingLeft: 100 }}><OutlinedButtons /> </div>
+                    <div className="register-btn" style={{ paddingLeft: 100 }}>
+                        <OutlinedButtons>Sign up! </OutlinedButtons> 
+                        </div>
                 </Grid>
             </Paper>
         </div>
