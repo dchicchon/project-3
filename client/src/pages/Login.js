@@ -10,8 +10,7 @@ import Grid from "../components/Grid"
 function Login() {
     return (
       <div>
-        <Grid />
-         
+        <Grid />       
       </div>
     );
   }
