@@ -4,7 +4,7 @@ import React from "react";
 import TextFields from "../components/Login"
 import Grid from "../components/Grid"
 import OutlinedTextFieldsLogin from "../components/Login";
-import OutlinedButtons from "../components/RegisterBtn";
+import OutlinedButtons from "../components/Signup";
 // class Login extends Component {
 
 // }
@@ -12,7 +12,8 @@ import OutlinedButtons from "../components/RegisterBtn";
 function Login() {
     return (
       <div>
-        <Grid>
+        <Grid >
+          <h1 >Login!</h1>
             <OutlinedTextFieldsLogin>
             </OutlinedTextFieldsLogin>
         </Grid>

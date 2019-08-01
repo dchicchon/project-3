@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 //Pages
 import Discover from './pages/Discover'
-// import Feed from './pages/Feed'
+import Feed from './pages/Feed'
 import Login from './pages/Login'
 // import NoMatch from './pages/NoMatch'
 // import Profile from './pages/Profile'
-import Register from './pages/Register'
+import Signup from './pages/Signup'
 
 // // Components
 // import Navbar from './components/Navbar'
@@ -31,8 +31,9 @@ function App() {
       
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
+      <Route exact path="/signup" component={Signup} />
       <Route exact path="/discover" component={Discover} />
+      <Route exact path="/feed" component={Feed} />
       </Router>
     </div>
   )
