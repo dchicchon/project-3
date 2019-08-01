@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import Container from "../components/Container"
+import SimpleContainer from "../components/Container"
 import PrimarySearchAppBar from "../components/Navbar"
-import Navbar from "../components/Navbar"
+// import Navbar from "../components/Navbar"
 
 // class Login extends Component {
 
@@ -13,9 +13,10 @@ import Navbar from "../components/Navbar"
 function Discover() {
     return (
       <div>
-        <Container>
+        <SimpleContainer>
            <PrimarySearchAppBar />
-        </Container>
+          
+        </SimpleContainer>
       </div>
     );
   }

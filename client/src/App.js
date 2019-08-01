@@ -27,7 +27,7 @@ function App() {
   return(
     <div>
       <Router>
-      <h1>Hello</h1>
+      
       
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
