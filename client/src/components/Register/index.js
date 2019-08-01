@@ -39,7 +39,7 @@ export default function OutlinedTextFields(props) {
     };
 
     return (
-        <form className={classes.container} noValidate autoComplete="off">
+        <form className={classes.container} noValidate autoComplete="off" style={{justifyContent: "center"}}>
 
             <TextField style={{width:300}}
                 // id="outlined-dense"
@@ -48,11 +48,11 @@ export default function OutlinedTextFields(props) {
                 margin="normal"
                 variant="outlined"
                 //things I've added for state
-                id={this.props.elementID}
-                name={this.props.name}
-                type={this.props.inputType}
-                required={this.props.required}
-                onChange={(e)=>this.props.handleChange(e)}
+                // id={this.props.elementID}
+                // name={this.props.name}
+                // type={this.props.inputType}
+                // required={this.props.required}
+                // onChange={(e)=>this.props.handleChange(e)}
                 //have not added onChange, className, minLength, size
                 
             />
@@ -103,7 +103,7 @@ export default function OutlinedTextFields(props) {
   
             <Link to="/feed">
             <OutlinedButtons>
-                <div className="register-btn" style={{ paddingLeft: 100 }}>
+                <div className="register-btn" style={{  width:100 }}>
                     Sign up! 
                 </div>
             </OutlinedButtons> 
