@@ -93,7 +93,7 @@ module.exports = () => {
             }
 
             console.log(`Success! ${user}`);
-            return done(null)
+            return done(null, user)
         })
     }
     ))
