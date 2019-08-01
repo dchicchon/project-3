@@ -4,9 +4,14 @@
   "description": "A social media platform for people who love traveling",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^4.1.1",
     "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
     "express-flash-messages": "^0.1.1",
     "express-session": "^1.16.2",
+    "if-env": "^1.0.4",
+    "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.12.1",
@@ -14,8 +19,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
