@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 //Pages
-// import Discover from './pages/Discover'
+import Discover from './pages/Discover'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
 // import NoMatch from './pages/NoMatch'
@@ -27,11 +27,12 @@ function App() {
   return(
     <div>
       <Router>
-      <h1>Hello</h1>
+      
       
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
+      <Route exact path="/discover" component={Discover} />
       <Route exact path="/feed" component={Feed} />
       </Router>
     </div>
