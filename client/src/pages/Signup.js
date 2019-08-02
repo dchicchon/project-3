@@ -6,6 +6,12 @@ import Grid from "../components/Grid";
 import { CardActions } from "@material-ui/core";
 // import OutlinedButtons from "../components/SignupBtn";
 
+import BackgroundSlideshow from 'react-background-slideshow';
+
+import image1 from '../assets/bg1.jpg';
+import image2 from '../assets/bg2.jpg';
+import image3 from '../assets/bg3.jpg';
+
 class Signup extends Component {
     // constructor(props){
     // super(props)
@@ -87,6 +93,7 @@ class Signup extends Component {
                         handleChange={this.handleInputChange}
                     /> */}
                 </Grid>
+                <BackgroundSlideshow images={[ image1, image2, image3 ]} />
             </div>
         )
     }

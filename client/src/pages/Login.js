@@ -3,6 +3,11 @@ import React from "react";
 import Grid from "../components/Grid"
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from "@material-ui/core/styles"
+import BackgroundSlideshow from 'react-background-slideshow';
+
+import image1 from '../assets/bg1.jpg';
+import image2 from '../assets/bg2.jpg';
+import image3 from '../assets/bg3.jpg';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -67,6 +72,7 @@ export default function Login() {
           />
         </form>
       </Grid>
+      <BackgroundSlideshow images={[ image1, image2, image3 ]} />
     </div>
   )
 }
