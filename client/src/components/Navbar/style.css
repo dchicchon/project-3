@@ -1,0 +1,7 @@
+
+@media (min-width: 1280px)
+{
+#id .MuiContainer-maxWidthLg {
+    max-width:100%;
+}
+}
