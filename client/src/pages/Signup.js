@@ -5,26 +5,10 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import SignupBtn from "../components/SignupBtn";
 import { Link } from 'react-router-dom';
+import { Col, Row, Container } from "../components/Grid";
 
-const useStyles = makeStyles(theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap'
-    },
-    TextField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1)
-    },
-    dense: {
-        marginTop: theme.spacing(2)
-    },
-    menu: {
-        width: 200
-    }
-}));
 
 export default function Signup() {
-    const classes = useStyles();
     const [values, setValues] = React.useState({
         email: '',
         password: '',
@@ -75,7 +59,8 @@ export default function Signup() {
 
     return (
         <div>
-            <Grid>
+            <Container>
+                <div className="card-panel center">
                 <h1>Signup</h1>
                 <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
 
@@ -150,7 +135,8 @@ export default function Signup() {
                         </SignupBtn>
                     </Link>
                 </form>
-            </Grid>
+                </div>
+                </Container>
         </div >
     )
 }

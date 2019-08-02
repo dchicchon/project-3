@@ -1,47 +1,28 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-// import Typography from '@material-ui/core/Typography';
-// import ButtonBase from '@material-ui/core/ButtonBase';
-// import OutlinedTextFieldsLogin from "../../../../-Edited-Login";
-// import OutlinedTextFields from "../../../../-Edited-Signup";
-// import OutlinedButtons from "../SignupBtn";
+import React from "react";
 
+// Exporting the Container, Row, and Col components from this file
 
+// This Container component allows us to use a bootstrap container without worrying about class names
+export function Container({ fluid, children }) {
+  return <div className={`container${fluid ? "-fluid" : ""}`}>{children}</div>;
+}
 
+// This Row component lets us use a bootstrap row without having to think about class names
+export function Row({ fluid, children }) {
+  return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
+}
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing(3),
-        margin: 'auto',
-        maxWidth: 375,
-    },
-    image: {
-        width: 128,
-        height: 128,
-    },
-    img: {
-        margin: 'auto',
-        display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-    },
-}));
-
-export default function ComplexGrid(props) {
-    const classes = useStyles();
-
-    return (
-        <div className={classes.root} style={{  }}>
-            <Paper className={classes.paper}>
-                <Grid container spacing={2} style={{ paddingLeft: 30 }}>
-                    {props.children}
-                </Grid>
-            </Paper>
-        </div>
-    );
+// This Col component lets us size bootstrap columns with less syntax
+// e.g. <Col size="md-12"> instead of <div className="col-md-12">
+export function Col({ size, children }) {
+  return (
+    <div
+      className={size
+        .split(" ")
+        .map(size => "col-" + size)
+        .join(" ")}
+    >
+      {children}
+    </div>
+  );
 }

@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField'
 import { makeStyles } from "@material-ui/core/styles"
 import SignupBtn from '../components/SignupBtn';
 import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -61,7 +62,7 @@ export default function Login() {
 
   return (
     <div>
-      <Grid>
+      <Container>
         <h1>Login</h1>
         <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
 
@@ -104,7 +105,7 @@ export default function Login() {
             </SignupBtn>
           </Link>
         </form>
-      </Grid>
+        </Container>
     </div>
   )
 }
