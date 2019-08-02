@@ -56,21 +56,24 @@ export default function Post() {
 
   return (
       <div>
-    <Card className={classes.card} style={{  justifyContent:'center' }}>
+    <Card className={classes.card} style={{  justifyContent:'center', textAlign: "center" }}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+          <Avatar aria-label="" className={classes.avatar} >
             useR
           </Avatar>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
+        // little 3 line menu on the top right side
+        // action={
+        //   <IconButton aria-label="settings">
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
+        title="Tokyo, Japan"
         subheader="September 14, 2016"
+
       />
+      {/* //can also use Typography to put in another title, if needed...but cannot be inside of another component here. */}
       <CardMedia
         className={classes.media}
         image="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190208-delish-ramen-horizontal-093-1550096715.jpg?crop=1xw:0.9995002498750624xh;center,top&resize=480:*"
@@ -80,7 +83,7 @@ export default function Post() {
         <Typography variant="body2" color="textSecondary" component="p">
           {/* This impressive paella is a perfect party dish and a fun meal to cook together with your
           guests. Add 1 cup of frozen peas along with the mussels, if you like. */}
-                      Taken in Tokyo Japan at @Mensho Ramen!
+                      Late night ramen with the crew!
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
