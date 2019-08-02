@@ -3,25 +3,33 @@ import Grid from "../components/Grid"
 
 
 import SimpleContainer from "../components/Container"
-import NavBar from "../components/Navbar"
-import ImgMediaCard from '../components/Card'
-// import Navbar from "../components/Navbar"
 
+import ProfileCard from '../components/ProfileCard'
+import Container from '@material-ui/core/Container';
+
+
+import NavBar from "../components/Navbar"
+
+import Card from '@material-ui/core/Card';
 // class Login extends Component {
 
 // }
 
 function Profile() {
     return (
-      <div>
-        <SimpleContainer>
-           <NavBar />
-           <ImgMediaCard/>
-           
- 
-        </SimpleContainer>
-      </div>
+        <div>
+            <NavBar />
+            <Container className="center">
+                <div className="card-panel">
+                    <div className="row">
+                    <div className="col s10">
+                    <Card></Card>
+                    </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
     );
-  }
-  
-  export default Profile;
+}
+
+export default Profile;

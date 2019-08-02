@@ -14,7 +14,7 @@ function Discover() {
     return (
       <div>
         <SimpleContainer>
-           <PrimarySearchAppBar />
+           {/* <PrimarySearchAppBar /> */}
           
         </SimpleContainer>
       </div>
