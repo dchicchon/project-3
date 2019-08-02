@@ -9,6 +9,7 @@ import image3 from '../assets/bg3.jpg';
 import Button from '../components/Button'
 
 import { Col, Row, Container } from "../components/Grid";
+import CardPanel from '../components/CardPanel'
 
 
 
@@ -51,6 +52,8 @@ export default function Login() {
   return (
     <div>
       <Container>
+        <CardPanel>
+          <h1>Login</h1>
         <div className="row">
           <form className="col s12">
             <div className="row">
@@ -73,8 +76,8 @@ export default function Login() {
         <Button>
           Sign Up
         </Button>
+        </CardPanel>
       </Container>
-      <BackgroundSlideshow images={[ image1, image2, image3 ]} />
     </div >
   )
 }

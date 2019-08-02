@@ -11,8 +11,8 @@ function Discover() {
     <div>
 
         <NavBar />
-        <Container className="center">
-          <div className="card-panel">
+        <Container>
+          <div className="card-panel center">
             <div className="row">
               <ProfileCard />
               <ProfileCard />

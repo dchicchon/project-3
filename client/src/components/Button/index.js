@@ -6,7 +6,7 @@ export default function Button() {
     <div>
 
       <button class="btn waves-effect waves-light" type="submit" name="action">
-    <i class="material-icons right">send</i>
+        <i class="material-icons right">send</i>
       </button>
 
     </div>
