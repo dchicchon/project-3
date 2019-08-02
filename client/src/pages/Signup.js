@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
+import { Link } from 'react-router-dom'
 
 
 
@@ -60,48 +61,61 @@ export default function Signup() {
     return (
         <div>
             <Container>
-            <div className="card-panel center">
-                <h1>Sign - Up</h1>
-                <div className="row">
-                    <form className="col s12">
-                        <div className="row">
-                            <div className="input-field col s6">
-                                <input placeholder="Placeholder" id="first_name" type="text" className="validate"  onChange={handleChange('firstName')}/>
-                                <label for="first_name">First Name</label>
+                <div className="card-panel center">
+                    <h1>Sign - Up</h1>
+                    <div className="row">
+                        <form className="col s12">
+                            <div className="row">
+                                <div className="input-field col s6">
+                                    <input id="first_name" type="text" className="validate" />
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div className="input-field col s6">
+                                    <input id="last_name" type="text" className="validate" />
+                                    <label for="last_name">Last Name</label>
+                                </div>
                             </div>
-                            <div className="input-field col s6">
-                                <input id="last_name" type="text" className="validate" />
-                                <label for="last_name">Last Name</label>
+                            <div className="row">
+                                <div className="input-field col s12">
+                                    <input id="email" type="email" className="validate" />
+                                    <label for="email">Email</label>
+                                </div>
                             </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="email" type="email" className="validate" />
-                                <label for="email">Email</label>
+
+                            <div className="row">
+                                <div className="input-field col s12">
+                                    <input id="password" type="password" className="validate" />
+                                    <label for="password">Password</label>
+                                </div>
                             </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="password" type="password" className="validate" />
-                                <label for="password">Password</label>
+                            <div className="row">
+                                <div className="input-field col s12">
+                                    <input id="password" type="password" className="validate" />
+                                    <label for="password"> Confirm Password</label>
+                                </div>
                             </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="password" type="password" className="validate" />
-                                <label for="password"> Confirm Password</label>
+
+                            <div className="row">
+                                <div class="file-field input-field">
+                                    <div class="btn">
+                                        <span>Upload Photo</span>
+                                        <input type="file" />
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <div className="row">
-                <Button>
-                    Sign Up
+
+                        </form>
+                    </div>
+                    <Link to="/discover">
+                        <Button>
+                            Sign Up
                 </Button>
-                <Button>
-                    Login
-                </Button>
-                </div>
+                    </Link>
+
+
                 </div>
             </Container>
         </div >

@@ -18,7 +18,7 @@ export default function NavBar(props) {
           <ul class="right hide-on-med-and-down">
             <li><a href="sass.html">Profile</a></li>
             <li><a href="badges.html">Discover</a></li>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+            {/* <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> */}
           </ul>
         </div>
       </nav>

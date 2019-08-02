@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 import BackgroundSlideshow from 'react-background-slideshow';
+
 
 import image1 from '../assets/bg1.jpg';
 import image2 from '../assets/bg2.jpg';
@@ -52,9 +54,10 @@ export default function Login() {
   return (
     <div>
       <Container>
-        <CardPanel>
+        <Container>
+
+        <div className="card-panel center">
           <h1>Login</h1>
-        <div className="row">
           <form className="col s12">
             <div className="row">
               <div className="input-field col s12">
@@ -68,15 +71,23 @@ export default function Login() {
                 <label for="password">Password</label>
               </div>
             </div>
+            <div className="row">
+              <div className="input-field col s6">
+                <Button onClick={formSubmit}>
+                  Login In
+        </Button>
+              </div>
+              <div className="input-field col s6">
+                <Link to="/signup">
+                  <Button>
+                    Sign Up
+        </Button>
+                </Link>
+              </div>
+            </div>
           </form>
         </div>
-        <Button>
-          Login In
-        </Button>
-        <Button>
-          Sign Up
-        </Button>
-        </CardPanel>
+        </Container>
       </Container>
     </div >
   )
