@@ -17,18 +17,11 @@ import Card from '@material-ui/core/Card';
 
 function Profile() {
     return (
-        <div>
-            <NavBar />
-            <Container className="center">
-                <div className="card-panel">
-                    <div className="row">
-                    <div className="col s10">
-                    <Card></Card>
-                    </div>
-                    </div>
-                </div>
-            </Container>
-        </div>
+       <div>
+           <NavBar />
+           
+
+       </div>
     );
 }
 
