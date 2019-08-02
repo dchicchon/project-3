@@ -3,7 +3,7 @@ import React from "react";
 
 function CardPanel (props) {
   return (
-    <div className="card-panel center"></div>
+    <div className="card-panel center" {...props}></div>
   );
 }
 

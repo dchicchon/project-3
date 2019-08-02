@@ -16,7 +16,7 @@ import CardPanel from '../components/CardPanel'
 
 
 
-export default function Login() {
+export default function Login(props) {
   const [values, setValues] = React.useState({
     email: '',
     password: ''
@@ -55,40 +55,44 @@ export default function Login() {
     <div>
       <Container>
         <Container>
-
-        <div className="card-panel center">
-          <h1>Login</h1>
-          <form className="col s12">
-            <div className="row">
-              <div className="input-field col s12">
-                <input id="email" type="email" className="validate" />
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12">
-                <input id="password" type="password" className="validate" />
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s6">
-                <Button onClick={formSubmit}>
-                  Login In
-        </Button>
-              </div>
-              <div className="input-field col s6">
-                <Link to="/signup">
-                  <Button>
-                    Sign Up
-        </Button>
-                </Link>
-              </div>
-            </div>
-          </form>
-        </div>
+          <Container>
+            <CardPanel>
+              <h1>Login</h1>
+              <form className="col s12">
+                <Row>
+                  <div className="input-field col s12">
+                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
+                    <label for="email">Email</label>
+                  </div>
+                  </Row>
+                <Row>
+                  <div className="input-field col s12">
+                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
+                    <label for="password">Password</label>
+                  </div>
+                  </Row>
+                <Row>
+                  <div className="input-field col s6">
+                    <Link to="/profile">
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                      <i class="material-icons right">arrow_forward</i>
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="input-field col s6">
+                    <Link to="/signup">
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
+                      <i class="material-icons right">add_box</i>
+                      </button>
+                    </Link>
+                  </div>
+                  </Row>
+              </form>
+            </CardPanel>
+          </Container>
         </Container>
       </Container>
+      {/* <BackgroundSlideshow images={[ image1, image2, image3 ]} /> */}
     </div >
   )
 }

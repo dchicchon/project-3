@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function Signup() {
+export default function Signup(props) {
     const [values, setValues] = React.useState({
         email: '',
         password: '',
@@ -65,54 +65,54 @@ export default function Signup() {
                     <h1>Sign - Up</h1>
                     <div className="row">
                         <form className="col s12">
-                            <div className="row">
+                            <Row>
                                 <div className="input-field col s6">
-                                    <input id="first_name" type="text" className="validate" />
+                                    <input id="first_name" type="text" className="validate" onChange={handleChange('first_name')} {...props} />
                                     <label for="first_name">First Name</label>
                                 </div>
                                 <div className="input-field col s6">
-                                    <input id="last_name" type="text" className="validate" />
+                                    <input id="last_name" type="text" className="validate" onChange={handleChange('last_name')} {...props} />
                                     <label for="last_name">Last Name</label>
                                 </div>
-                            </div>
-                            <div className="row">
+                            </Row>
+                            <Row>
                                 <div className="input-field col s12">
-                                    <input id="email" type="email" className="validate" />
+                                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
                                     <label for="email">Email</label>
                                 </div>
-                            </div>
+                            </Row>
 
-                            <div className="row">
+                            <Row>
                                 <div className="input-field col s12">
-                                    <input id="password" type="password" className="validate" />
+                                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
                                     <label for="password">Password</label>
                                 </div>
-                            </div>
-                            <div className="row">
+                            </Row>
+                            <Row>
                                 <div className="input-field col s12">
-                                    <input id="password" type="password" className="validate" />
+                                    <input id="confirm_password" type="password" className="validate" onChange={handleChange('confirm_password')} {...props} />
                                     <label for="password"> Confirm Password</label>
                                 </div>
-                            </div>
+                            </Row>
 
-                            <div className="row">
+                            <Row>
                                 <div class="file-field input-field">
                                     <div class="btn">
                                         <span>Upload Photo</span>
-                                        <input type="file" />
+                                        <input type="file" onChange={handleChange('image')} {...props} />
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text" />
                                     </div>
                                 </div>
-                            </div>
+                            </Row>
 
                         </form>
                     </div>
                     <Link to="/discover">
-                        <Button>
-                            Sign Up
-                </Button>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" >Sign Up
+                      <i class="material-icons right">arrow_forward</i>
+                        </button>
                     </Link>
 
 
