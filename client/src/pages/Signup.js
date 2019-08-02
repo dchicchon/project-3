@@ -40,7 +40,7 @@ export default function Signup(props) {
                     .then(response => {
                         console.log(response)
                         console.log(response.body)
-                        // window.location.href = "/"
+                        window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 

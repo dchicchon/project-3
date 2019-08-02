@@ -1,15 +1,19 @@
-import React, { Component } from "react";
-import NavBar from '../components/NavBar'
+import React from "react";
+// import Grid from "../components/Grid";
+
+import CreatePost from "../components/CreatePost";
+import API from '../Utils/API'
+import { Col, Row, Container } from "../components/Grid";
 
 
-
-function Feed() {
+function Feed(props) {
     return (
         <div>
-        <NavBar />
+            <Container style={{ display: 'flex', justifyContent: 'center' }}>
 
-
-    </div>
+                <button onClick = {props.logout}>LOGOUTTUOOTOONF</button>
+            </Container>
+        </div>
     )
 }
 
