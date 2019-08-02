@@ -1,8 +1,13 @@
 //Box componant
 import React from 'react';
+import PrimarySearchAppBar from "../Navbar"
 
-<Box component="span" m={1}>
-  
-</Box>
+import Box from '@material-ui/core/Box';
 
-export default Box;
+export default function Width() {
+  return (
+    <Box width="100%" mx="auto" bgcolor="background.paper">
+      <PrimarySearchAppBar />
+    </Box>
+  );
+}

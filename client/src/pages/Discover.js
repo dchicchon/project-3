@@ -1,17 +1,10 @@
 // this is the Discover page
 
 import React from "react";
-
-import SimpleContainer from "../components/Container"
-import PrimarySearchAppBar from "../components/Navbar"
 import NavBar from "../components/Navbar"
 import ProfileCard from "../components/ProfileCard"
 import Container from '@material-ui/core/Container';
-// import Navbar from "../components/Navbar"
 
-// class Login extends Component {
-
-// }
 
 function Discover() {
   return (
