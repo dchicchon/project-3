@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function Post() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -49,11 +49,12 @@ export default function RecipeReviewCard() {
   }
 
   return (
+      <div>
     <Card className={classes.card} >
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            useR
           </Avatar>
         }
         action={
@@ -71,8 +72,9 @@ export default function RecipeReviewCard() {
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {/* This impressive paella is a perfect party dish and a fun meal to cook together with your
+          guests. Add 1 cup of frozen peas along with the mussels, if you like. */}
+                      Taken in Tokyo Japan at @Mensho Ramen!
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -121,5 +123,7 @@ export default function RecipeReviewCard() {
         </CardContent>
       </Collapse>
     </Card>
+<br/><br/>
+    </div>
   );
 }
