@@ -1,13 +1,16 @@
 import React, {Component} from "react";
-import Grid from "../components/Grid";
+// import Grid from "../components/Grid";
+import RecipeReviewCard from "../components/Card";
+import SimpleContainer from "../components/Container";
 
 
 function Feed()  {
 return (
     <div>
-        <Grid>
-        <h1>Hello Feed</h1>
-        </Grid>
+        <SimpleContainer>
+            <RecipeReviewCard/>
+            <RecipeReviewCard/>
+        </SimpleContainer>
     </div>
 )
 }
