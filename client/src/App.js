@@ -10,15 +10,6 @@ import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 
-
-
-// // Components
-// import Navbar from './components/Navbar'
-
-// import UserRoutes from './routes/UserRoutes'
-// import GuestRoutes from './routes/GuestRoutes'
-// import Actions from "./utils/API";
-
 // Stylesheet
 import './App.css';
 
@@ -29,22 +20,12 @@ function App() {
   return (
     <div>
       <Router>
-<<<<<<< HEAD
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/discover" component={Discover} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/feed" component={Feed} />
-=======
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/discover" component={Discover} />
-          <Route exact path="/feed" component={Feed} />
-        </Switch>
->>>>>>> 33e6f049e8ffdeb17c7f199888e7d907aa0dae92
       </Router>
     </div>
   )
