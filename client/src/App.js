@@ -20,7 +20,7 @@ import './App.css';
 class App extends Component {
   state = {
     isLoggedin: false,
-    email: ''
+    id: ''
   }
 
   async componentDidMount() {
@@ -29,13 +29,16 @@ class App extends Component {
         console.log(user);
         this.setState({
           isLoggedin: user.data.isLoggedin,
-          email: user.data.email
+          id: user.data.id
         })
       })
   }
 
   logout() {
     API.logout()
+      .then(res => {
+        window.location.reload();
+      })
   }
 
   render() {

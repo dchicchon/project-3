@@ -7,25 +7,25 @@ router.get('/user', (req, res) => {
     if (req.isAuthenticated()) {
         const currentUser = req.session.passport.user;
         console.log(`Current User: ${currentUser}`);
-        db.User.find({
+        db.User.findOne({
             where: {
 
                 // we may have to change this later because this might cause an error
-                email: currentUser
+                id: currentUser
             }
         }).then(dbUser => {
 
             // If they are authenticated, we will return an object of user which will contain the values of TRUE for loggedIn and their username
             const user = {
                 loggedIn: true,
-                username: dbUser.username
+                id: dbUser.id
             }
             res.json(user);
         })
     } else {
         // If they are not authenticated, we will return an object of noUser which will contain the values of FALSE for logged in and no username
         const noUser = {
-            loggedIn: false,
+            isLoggedin: false,
             username: ''
         }
         res.json(noUser)
@@ -112,17 +112,30 @@ router.post('/login', (req, res, next) => {
 // Route to handle logout
 router.get('/logout', function (req, res) {
     // Here we stop the session so that the user is not logged in each time for the pages
-    req.session.destroy(function (err) {
-        if (err) {
-            console.log(`Error: ${err}`)
-        }
+    console.log("LOGOUT CONTROL")
+    req.logout()
+    console.log(`Current User` + req.user)
+    if (!req.user) {
+        res.clearCookie('email')
+        res.clearCookie('firstName')
+        res.clearCookie('lastName')
+        res.clearCookie('id');
+        res.redirect("/")
+    } else {
+        res.status(200).json({
+            logout: false,
+            'message': 'failed logout'
+        });
+    }
+    // req.session.destroy(function (err) {
+    //     if (err) {
+    //         console.log(`Error: ${err}`)
+    //     }
 
-        // Here we clear the cookies from the browser
-        // res.clearCookie("user_id")
-        res.clearCookie(username);
-        res.clearCookie(connect.sid);
-        res.redirect('/');
-    });
+    //     // Here we clear the cookies from the browser
+    //     console.log("LOGOUT")
+
+    // });
 });
 
 module.exports = router;
