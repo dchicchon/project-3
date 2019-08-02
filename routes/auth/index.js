@@ -47,7 +47,6 @@ router.post("/signup", (req, res, next) => {
 
         if (!user) {
             console.log("Not a user");
-            console.log("WHATS HAPPENING")
             return res.send("Please re-enter your username and password");
         }
 
@@ -62,8 +61,19 @@ router.post("/signup", (req, res, next) => {
 
             // This might cause an error because we are not using usernames in our database
             // This is the user!
-            res.cookie("username", req.user.username);
-            // res.cookie("user_id", req.user.id);
+            console.log("User logged in!")
+            // console.log(req.user.DataValues.firstName)
+            console.log(req.user.firstName)
+            console.log(req.user.lastName)
+            console.log(req.user.email)
+            console.log(req.user.id)
+
+
+            // res.cookie("firstName", req.user.DataValues.firstName);
+            res.cookie("firstName", req.user.firstName);
+            res.cookie("lastName", req.user.lastName)
+            res.cookie("email", req.user.email)
+            res.cookie("id", req.user.id)
             return res.redirect('/')
         });
     })(req, res, next);

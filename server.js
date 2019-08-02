@@ -18,7 +18,6 @@ const db = require("./models")
 const routes = require("./routes")
 
 // Middleware
-
 // We pass the passport library as a parameter to the function in config/passport.js to start the local strategy
 require("./config/passport")(passport)
 app.use(express.urlencoded({ extended: true }));
