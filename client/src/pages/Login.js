@@ -6,6 +6,12 @@ import { makeStyles } from "@material-ui/core/styles"
 import SignupBtn from '../components/SignupBtn';
 import { Link } from "react-router-dom";
 
+import BackgroundSlideshow from 'react-background-slideshow';
+
+import image1 from '../assets/bg1.jpg';
+import image2 from '../assets/bg2.jpg';
+import image3 from '../assets/bg3.jpg';
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
@@ -105,6 +111,7 @@ export default function Login() {
           </Link>
         </form>
       </Grid>
+      <BackgroundSlideshow images={[ image1, image2, image3 ]} />
     </div>
   )
 }
