@@ -9,7 +9,7 @@ import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 
 
-function Profile() {
+function Profile(props) {
     return (
         <div>
             <NavBar />
@@ -18,21 +18,19 @@ function Profile() {
                     <Col size="s4">
                         <CardPanel>
                             <CardPanel>
-                                <img src="https://i.ibb.co/v3f2zKn/defaultprofilepic.png"/>
+                                <img src="https://i.ibb.co/v3f2zKn/defaultprofilepic.png" />
                             </CardPanel>
                         </CardPanel>
                     </Col>
 
                     <Col size="s8">
                         <CardPanel>
-                            <ProfileCard>
-
-                            </ProfileCard>
+                            <ProfileCard />
                         </CardPanel>
                     </Col>
                 </Row>
                 <CardPanel>
-                    <img src="https://i.ibb.co/xzGNCdJ/world-map.gif"/>
+                    <img src="https://i.ibb.co/xzGNCdJ/world-map.gif" />
                 </CardPanel>
             </Container>
         </div>

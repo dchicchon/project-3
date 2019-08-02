@@ -110,9 +110,7 @@ export default function Signup(props) {
                         </form>
                     </div>
                     <Link to="/discover">
-                        <button class="btn waves-effect waves-light" type="submit" name="action" >Sign Up
-                      <i class="material-icons right">arrow_forward</i>
-                        </button>
+                        <Button>Signup</Button>
                     </Link>
 
                 </div>

@@ -6,15 +6,10 @@ export default function NavBar(props) {
 
   return (
     <div>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
+
       <nav>
         <div class="nav-wrapper blue">
-          <a href="#!" class="brand-logo">TripIt</a>
+          <a href="/feed" class="brand-logo">TripIt</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="/profile">Profile</a></li>
             <li><a href="/discover">Discover</a></li>

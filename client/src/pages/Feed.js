@@ -1,7 +1,8 @@
 import React from "react";
-// import Grid from "../components/Grid";
+import NavBar from "../components/NavBar"
 
-import CreatePost from "../components/CreatePost";
+import CardPanel from "../components/CardPanel"
+import Post from "../components/Post"
 import API from '../Utils/API'
 import { Col, Row, Container } from "../components/Grid";
 
@@ -9,12 +10,21 @@ import { Col, Row, Container } from "../components/Grid";
 function Feed(props) {
     return (
         <div>
-            <Container style={{ display: 'flex', justifyContent: 'center' }}>
-
-                <button onClick = {props.logout}>LOGOUTTUOOTOONF</button>
-            </Container>
+            <NavBar />
+            <CardPanel>
+                <Post />
+            </CardPanel>
+            <CardPanel>
+                <Post />
+            </CardPanel>
         </div>
     )
 }
 
-export default Feed; 
+export default Feed;
+
+
+{/* <Container style={{ display: 'flex', justifyContent: 'center' }}>
+
+                <button onClick = {props.logout}>LOGOUTTUOOTOONF</button>
+            </Container> */}

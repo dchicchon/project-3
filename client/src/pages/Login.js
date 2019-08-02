@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import './style/login.css'
 
 import BackgroundSlideshow from 'react-background-slideshow';
 
@@ -56,6 +57,7 @@ export default function Login(props) {
       <Container>
         <Container>
           <Container>
+            <br></br><br></br><br></br>
             <CardPanel>
               <h1>Login</h1>
               <form className="col s12">
@@ -74,16 +76,12 @@ export default function Login(props) {
                 <Row>
                   <Col size="s6">
                     <Link to="/profile">
-                      <button class="btn waves-effect waves-light" type="submit" name="action">Login
-                      <i class="material-icons right">arrow_forward</i>
-                      </button>
+                      <Button>Login</Button>
                     </Link>
                   </Col>
                   <Col size="s6">
                     <Link to="/signup">
-                      <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
-                      <i class="material-icons right">add_box</i>
-                      </button>
+                      <Button>Signup</Button>
                     </Link>
                   </Col>
                 </Row>
