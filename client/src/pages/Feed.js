@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import Post from "../components/Post";
 import SimpleContainer from "../components/Container";
 import CreatePost from "../components/CreatePost";
+import API from '../Utils/API'
 
-function Feed() {
+function Feed(props) {
     return (
         <div>
             <SimpleContainer style={{ display: 'flex', justifyContent: 'center' }}>
@@ -13,6 +14,7 @@ function Feed() {
                 <br />
                 <Post />
                 <Post />
+                <button onClick = {props.logout}>LOGOUTTUOOTOONF</button>
             </SimpleContainer>
         </div>
     )

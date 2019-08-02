@@ -9,9 +9,13 @@ module.exports = () => {
     })
 
     passport.deserializeUser((id, cb) => {
-        db.User.findId(id, (err, user) => {
-            if (err) { return cb(err) };
-            cb(null, user);
+        db.User.findOne({
+            where: {
+                id: id
+            }
+        }).then( user => {
+            console.log("DESERIALIZE USER")
+            cb(null, user)
         });
     });
 
@@ -31,11 +35,11 @@ module.exports = () => {
                 where: {
                     email: email
                 }
-            }).then( user => {
+            }).then(user => {
                 if (user) {
                     console.log("User already exists")
                     return done(null, false, {
-                        message:"That email is already taken"
+                        message: "That email is already taken"
                     })
                 } else {
                     console.log("User does not exist")
@@ -46,7 +50,7 @@ module.exports = () => {
                         password: passwordHash
                     }
                     console.log(`WE HAVE DATA: ${data}`)
-                    db.User.create(data).then( newUser => {
+                    db.User.create(data).then(newUser => {
                         console.log(`Inside db.User.create`, newUser)
                         if (!newUser) {
                             console.log(`A new User was not created`)
@@ -54,38 +58,38 @@ module.exports = () => {
                         }
                         if (newUser) {
                             console.log(`New User create!`, newUser)
-                            return done(null ,newUser)
+                            return done(null, newUser)
                         }
                     });
                 }
             });
         }
-            // }, (err, user) => {
-            //     if (err) {
-            //         console.log(`Error ${err}`)
-            //     }
+        // }, (err, user) => {
+        //     if (err) {
+        //         console.log(`Error ${err}`)
+        //     }
 
-                // if (user !== null) {
-                //     console.log("Username is already taken.", user);
-                //     return done(null, false, { message: "Username is already taken." })
-                // }
+        // if (user !== null) {
+        //     console.log("Username is already taken.", user);
+        //     return done(null, false, { message: "Username is already taken." })
+        // }
 
-                // const hashedPassword = generateHash(req.body.password);
-                // const newUser = {
-                //     firstName: req.body.firstName,
-                //     lastName: req.body.lastName,
-                //     email: req.body.email,
-                //     password: hashedPassword,
-                // }
-                // db.User.create(newUser)
-                //     .then(dbUser => {
-                //         if (!dbUser) {
-                //             return done(null, false);
-                //         } else {
-                //             return done(null, dbUser)
-                //         }
-                //     })
-            // });
+        // const hashedPassword = generateHash(req.body.password);
+        // const newUser = {
+        //     firstName: req.body.firstName,
+        //     lastName: req.body.lastName,
+        //     email: req.body.email,
+        //     password: hashedPassword,
+        // }
+        // db.User.create(newUser)
+        //     .then(dbUser => {
+        //         if (!dbUser) {
+        //             return done(null, false);
+        //         } else {
+        //             return done(null, dbUser)
+        //         }
+        //     })
+        // });
         // }
     ));
 
@@ -98,35 +102,35 @@ module.exports = () => {
         passwordField: "password",
         passReqToCallback: true
     },
-    (req, email, password, done) => {
-        db.User.find({
-            where: {
-                email: email
-            }
-        }, (err, user) => {
-            if(err) {
-                console.log(`Error: ${err}`)
-                return done(err)
-            }
+        (req, email, password, done) => {
+            db.User.find({
+                where: {
+                    email: email
+                }
+            }, (err, user) => {
+                if (err) {
+                    console.log(`Error: ${err}`)
+                    return done(err)
+                }
 
-            if (!user) {
-                console.log(`No user found. ${user}`)
-                return done(null, false, {
-                    message: "No user found"
-                });
-            }
+                if (!user) {
+                    console.log(`No user found. ${user}`)
+                    return done(null, false, {
+                        message: "No user found"
+                    });
+                }
 
-            if(!bcrypt.compareSync(password, user.password)) {
-                console.log("Invalid password.");
-                return done(null, false, {
-                    message: "Invalid password"
-                });
-            }
+                if (!bcrypt.compareSync(password, user.password)) {
+                    console.log("Invalid password.");
+                    return done(null, false, {
+                        message: "Invalid password"
+                    });
+                }
 
-            console.log(`Success! ${user}`);
-            return done(null)
-        })
-    }
+                console.log(`Success! ${user}`);
+                return done(null)
+            })
+        }
     ));
 }
 
