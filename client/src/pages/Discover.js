@@ -12,11 +12,11 @@ function Discover() {
       <NavBar />
       <Container>
         <CardPanel>
-          <div className="row">
+          <Row>
             <ProfileCard />
             <ProfileCard />
 
-          </div>
+            </Row>
         </CardPanel>
       </Container>
 
