@@ -1,7 +1,7 @@
 //sign up 
 
 import React, { Component } from "react";
-import OutlinedTextFields from "../components/-Edited-Signup";
+// import OutlinedTextFields from "../../../-Edited-Signup";
 import Grid from "../components/Grid";
 import { CardActions } from "@material-ui/core";
 // import OutlinedButtons from "../components/SignupBtn";
@@ -79,13 +79,13 @@ class Signup extends Component {
             <div>
                 <Grid>
                     <h1>Create an account!</h1>
-                    <OutlinedTextFields
+                    {/* <OutlinedTextFields
                         elementID="firstName"
                         inputType="firstName"
                         required={true}
                         name="firstName"
                         handleChange={this.handleInputChange}
-                    />
+                    /> */}
                 </Grid>
             </div>
         )
