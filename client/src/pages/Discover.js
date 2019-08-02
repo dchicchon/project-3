@@ -15,11 +15,11 @@ function Discover() {
   return (
     <div>
       <PrimarySearchAppBar />
-      <Container>
-        <Container>
-        <IntegrationReactSelect />
-        </Container>
-      </Container>
+      <Width>
+        
+        <IntegrationReactSelect style = {{marginTop: 20}} />
+        
+      </Width>
     </div>
   );
 }
