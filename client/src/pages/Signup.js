@@ -23,6 +23,8 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+
+
 export default function Signup() {
     const classes = useStyles();
     const [values, setValues] = React.useState({
@@ -51,11 +53,15 @@ export default function Signup() {
                         email: values.email,
                         firstName: values.firstName,
                         lastName: values.lastName
+                    }),
+                    headers: new Headers({
+                        "Content-Type": "application/json"
                     })
                 })
                     .then(response => {
                         console.log(response)
-                        window.location.href = "/"
+                        console.log(response.body)
+                        // window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 
@@ -117,6 +123,7 @@ export default function Signup() {
                         label="Password"
                         className={classes.textField}
                         type="password"
+                        name="password"
                         autoComplete="current-password"
                         margin="normal"
                         variant="outlined"
