@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar"
-import ProfileCard from "../components/ProfileCard"
+import Post from "../components/Post"
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from "../components/CardPanel"
 
@@ -13,10 +13,9 @@ function Discover() {
       <Container>
         <CardPanel>
           <Row>
-            <ProfileCard />
-            <ProfileCard />
-
-            </Row>
+            <Post></Post>
+            <Post></Post>
+          </Row>
         </CardPanel>
       </Container>
 
