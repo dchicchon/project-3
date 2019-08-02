@@ -6,7 +6,7 @@ const db = require("../../models");
 router.get('/user', (req, res) => {
     if (req.isAuthenticated()) {
         const currentUser = req.session.passport.user;
-        console.log(`Current User: ${currentUser}`);
+        console.log(`Current User:`, currentUser);
         db.User.findOne({
             where: {
 
@@ -120,6 +120,7 @@ router.get('/logout', function (req, res) {
         res.clearCookie('firstName')
         res.clearCookie('lastName')
         res.clearCookie('id');
+        res.clearCookie("user_sid")
         res.redirect("/")
     } else {
         res.status(200).json({
@@ -127,15 +128,6 @@ router.get('/logout', function (req, res) {
             'message': 'failed logout'
         });
     }
-    // req.session.destroy(function (err) {
-    //     if (err) {
-    //         console.log(`Error: ${err}`)
-    //     }
-
-    //     // Here we clear the cookies from the browser
-    //     console.log("LOGOUT")
-
-    // });
 });
 
 module.exports = router;

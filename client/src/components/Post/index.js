@@ -5,15 +5,15 @@ import { Col, Row, Container } from "../Grid"
 function Post(props) {
   return (
     <Col size="s6">
-      <div class="card horizontal">
-        <div class="card-image">
+      <div className="card horizontal">
+        <div className="card-image">
           <img src="https://lorempixel.com/100/190/nature/6" />
         </div>
-        <div class="card-stacked">
-          <div class="card-content">
+        <div className="card-stacked">
+          <div className="card-content">
             <p>I am a very simple card. I am good at containing small bits of information.</p>
           </div>
-          <div class="card-action">
+          <div className="card-action">
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default Post;
 
 
 // export default function Post() {
-//   const classes = useStyles();
+//   const classNamees = useStyles();
 //   const [expanded, setExpanded] = React.useState(false);
 
 //   function handleExpandClick() {
@@ -50,10 +50,10 @@ export default Post;
 
 //   return (
 //       <div>
-//     <Card className={classes.card} style={{  justifyContent:'center', textAlign: "center" }}>
+//     <Card classNameName={classNamees.card} style={{  justifyContent:'center', textAlign: "center" }}>
 //       <CardHeader
 //         avatar={
-//           <Avatar aria-label="" className={classes.avatar} >
+//           <Avatar aria-label="" classNameName={classNamees.avatar} >
 //             useR
 //           </Avatar>
 //         }
@@ -64,7 +64,7 @@ export default Post;
 //       />
 //       {/* //can also use Typography to put in another title, if needed...but cannot be inside of another component here. */}
 //       <CardMedia
-//         className={classes.media}
+//         classNameName={classNamees.media}
 //         image="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190208-delish-ramen-horizontal-093-1550096715.jpg?crop=1xw:0.9995002498750624xh;center,top&resize=480:*"
 //         title="Ramen in Japan"
 //       />
@@ -83,8 +83,8 @@ export default Post;
 //           <ShareIcon />
 //         </IconButton>
 //         <IconButton
-//           className={clsx(classes.expand, {
-//             [classes.expandOpen]: expanded,
+//           classNameName={clsx(classNamees.expand, {
+//             [classNamees.expandOpen]: expanded,
 //           })}
 //           onClick={handleExpandClick}
 //           aria-expanded={expanded}

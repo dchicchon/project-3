@@ -1,11 +1,24 @@
-import React from "react";
+import React, {Component} from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+
+class Signup extends Component {
+    state ={
+        email: ""
+    }
+
+    render() {
+        return(
+            <div>Stuff</div>
+        )
+    }
+
+}
 
 
 
-export default function Signup(props) {
+export default function Signup() {
     const [values, setValues] = React.useState({
         email: '',
         password: '',
@@ -109,9 +122,7 @@ export default function Signup(props) {
 
                         </form>
                     </div>
-                    <Link to="/discover">
-                        <Button>Signup</Button>
-                    </Link>
+                        <Button onClick = {this.formSubmit}>Signup</Button>
 
                 </div>
             </Container>
