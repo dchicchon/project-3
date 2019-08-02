@@ -1,12 +1,6 @@
 import React from "react";
-import clsx from 'clsx';
-import Grid from "../components/Grid";
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
-import SignupBtn from "../components/SignupBtn";
-import { Link } from 'react-router-dom';
 import { Col, Row, Container } from "../components/Grid";
-
+import Button from '../components/Button'
 
 export default function Signup() {
     const [values, setValues] = React.useState({
@@ -60,7 +54,50 @@ export default function Signup() {
     return (
         <div>
             <Container>
-                <div className="card-panel center">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Placeholder" id="first_name" type="text" class="validate"  onChange={handleChange('firstName')}/>
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate" />
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate" />
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate" />
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate" />
+                                <label for="password"> Confirm Password</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <Button>
+                    Sign Up
+                </Button>
+                <Button>
+                    Login
+                </Button>
+            </Container>
+        </div >
+    )
+}
+
+{/* <div className="card-panel center">
                 <h1>Signup</h1>
                 <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
 
@@ -135,8 +172,4 @@ export default function Signup() {
                         </SignupBtn>
                     </Link>
                 </form>
-                </div>
-                </Container>
-        </div >
-    )
-}
+                </div> */}

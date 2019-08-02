@@ -1,31 +1,19 @@
 import React from "react";
-import clsx from 'clsx';
-import Grid from "../components/Grid"
-import TextField from '@material-ui/core/TextField'
-import { makeStyles } from "@material-ui/core/styles"
-import SignupBtn from '../components/SignupBtn';
-import { Link } from "react-router-dom";
+
+import BackgroundSlideshow from 'react-background-slideshow';
+
+import image1 from '../assets/bg1.jpg';
+import image2 from '../assets/bg2.jpg';
+import image3 from '../assets/bg3.jpg';
+
+import Button from '../components/Button'
+
 import { Col, Row, Container } from "../components/Grid";
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  dense: {
-    marginTop: theme.spacing(2),
-  },
-  menu: {
-    width: 200,
-  },
-}));
+
+
 
 export default function Login() {
-  const classes = useStyles();
   const [values, setValues] = React.useState({
     email: '',
     password: ''
@@ -62,6 +50,38 @@ export default function Login() {
 
   return (
     <div>
+      <Container>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" />
+                <label for="password">Password</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <Button>
+          Login In
+        </Button>
+        <Button>
+          Sign Up
+        </Button>
+      </Container>
+      <BackgroundSlideshow images={[ image1, image2, image3 ]} />
+    </div >
+  )
+}
+
+
+
+{/* <div>
       <Container>
         <h1>Login</h1>
         <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
@@ -105,7 +125,6 @@ export default function Login() {
             </SignupBtn>
           </Link>
         </form>
-        </Container>
-    </div>
-  )
-}
+      </Container>
+      <BackgroundSlideshow images={[ image1, image2, image3 ]} />
+    </div> */}
