@@ -18,12 +18,18 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 700,
-    alignContent: "center",
+    maxWidth: 1000,
+    //added marginLeft and height
+    marginLeft: "10%",
+    // height: 500,
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    //add custom height
+
+    // paddingTop: '56.25%', // 16:9
+    //add custom paddingTop
+    paddingTop: "30.25%",
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -50,7 +56,7 @@ export default function Post() {
 
   return (
       <div>
-    <Card className={classes.card} >
+    <Card className={classes.card} style={{  justifyContent:'center' }}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
