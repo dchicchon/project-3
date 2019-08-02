@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 
 export default function Width() {
   return (
-    <Box width="100%" bgcolor="background.paper">
+    <Box width="100%" mx="auto" bgcolor="background.paper">
       <PrimarySearchAppBar />
     </Box>
   );

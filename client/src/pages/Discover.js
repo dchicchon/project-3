@@ -16,9 +16,10 @@ function Discover() {
     <div>
       <PrimarySearchAppBar />
       <Container>
+        <Container>
         <IntegrationReactSelect />
+        </Container>
       </Container>
-
     </div>
   );
 }
