@@ -36,7 +36,10 @@ router.get('/user', (req, res) => {
 // ================================
 
 router.post("/signup", (req, res, next) => {
-    passport.authenticate("local-signup", (err, user) => {
+    console.log("\nIN THE SIGNUP ROUTE")
+    passport.authenticate("local-signup", (err, user, info) => {
+        console.log("\nmessage", info);
+        console.log(`\nuser`, user)
         if (err) {
             console.log(`Error: ${err}`);
             return next(err)
@@ -44,11 +47,13 @@ router.post("/signup", (req, res, next) => {
 
         if (!user) {
             console.log("Not a user");
+            console.log("WHATS HAPPENING")
             return res.send("Please re-enter your username and password");
         }
 
         // ASK JACOB ABOUT THIS
         // I think this is how we allow users to login after they register
+        console.log("We are about to login the user")
         req.login(user, err => {
             if (err) {
                 console.log("auth error");
@@ -56,6 +61,7 @@ router.post("/signup", (req, res, next) => {
             }
 
             // This might cause an error because we are not using usernames in our database
+            // This is the user!
             res.cookie("username", req.user.username);
             // res.cookie("user_id", req.user.id);
             return res.redirect('/')

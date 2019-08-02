@@ -2,6 +2,8 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
 
+
+
 export default function Signup() {
     const [values, setValues] = React.useState({
         email: '',
@@ -29,11 +31,15 @@ export default function Signup() {
                         email: values.email,
                         firstName: values.firstName,
                         lastName: values.lastName
+                    }),
+                    headers: new Headers({
+                        "Content-Type": "application/json"
                     })
                 })
                     .then(response => {
                         console.log(response)
-                        window.location.href = "/"
+                        console.log(response.body)
+                        // window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 
@@ -139,6 +145,7 @@ export default function Signup() {
                         label="Password"
                         className={classes.textField}
                         type="password"
+                        name="password"
                         autoComplete="current-password"
                         margin="normal"
                         variant="outlined"
