@@ -115,7 +115,6 @@ export default function Signup(props) {
                         </button>
                     </Link>
 
-
                 </div>
             </Container>
         </div >

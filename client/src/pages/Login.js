@@ -64,29 +64,29 @@ export default function Login(props) {
                     <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
                     <label for="email">Email</label>
                   </div>
-                  </Row>
+                </Row>
                 <Row>
                   <div className="input-field col s12">
                     <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
                     <label for="password">Password</label>
                   </div>
-                  </Row>
+                </Row>
                 <Row>
-                  <div className="input-field col s6">
+                  <Col size="s6">
                     <Link to="/profile">
                       <button class="btn waves-effect waves-light" type="submit" name="action">Login
                       <i class="material-icons right">arrow_forward</i>
                       </button>
                     </Link>
-                  </div>
-                  <div className="input-field col s6">
+                  </Col>
+                  <Col size="s6">
                     <Link to="/signup">
                       <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
                       <i class="material-icons right">add_box</i>
                       </button>
                     </Link>
-                  </div>
-                  </Row>
+                  </Col>
+                </Row>
               </form>
             </CardPanel>
           </Container>
