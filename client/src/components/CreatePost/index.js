@@ -9,7 +9,9 @@ import OutlinedButtons from "../SignupBtn";
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 1000,
+    minWidth: 275,
+    maxWidth: 1000,
+    marginLeft: "10%",
   },
   bullet: {
     display: 'inline-block',
@@ -51,9 +53,14 @@ export default function CreatePost() {
 
       </CardContent>
       <CardActions>
+
         <OutlinedButtons>
+          Upload Image
+        </OutlinedButtons>
+        <OutlinedButtons >
           Submit
         </OutlinedButtons>
+
       </CardActions>
     </Card>
   );
