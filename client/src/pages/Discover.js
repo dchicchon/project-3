@@ -15,7 +15,7 @@ function Discover() {
       <div>
         <Width>
            <PrimarySearchAppBar />
-          
+            
         </Width>
       </div>
     );

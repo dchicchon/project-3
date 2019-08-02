@@ -15,6 +15,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+import ContainedButtons from "../Button";
+
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -187,7 +189,9 @@ export default function PrimarySearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div> */}
+          
           <div className={classes.grow} />
+          <ContainedButtons />
           <div className={classes.sectionDesktop}>
             {/* <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -210,6 +214,7 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </div>
+          
           {/* <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"
@@ -222,6 +227,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
           </div> */}
         </Toolbar>
+       
       </AppBar>
       {/* {renderMobileMenu} */}
       {renderMenu}
