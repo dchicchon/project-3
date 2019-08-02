@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import OutlinedButtons from "../client/src/components/SignupBtn";
+import OutlinedButtons from "../SignupBtn";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function OutlinedTextFieldsLogin() {
+export default function Login() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: 'Cat in the Hat',

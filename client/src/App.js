@@ -7,15 +7,8 @@ import Discover from './pages/Discover'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
 // import NoMatch from './pages/NoMatch'
-// import Profile from './pages/Profile'
+import Profile from './pages/Profile'
 import Signup from './pages/Signup'
-
-// // Components
-// import Navbar from './components/Navbar'
-
-// import UserRoutes from './routes/UserRoutes'
-// import GuestRoutes from './routes/GuestRoutes'
-// import Actions from "./utils/API";
 
 // Stylesheet
 import './App.css';
@@ -27,13 +20,12 @@ function App() {
   return (
     <div>
       <Router>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/discover" component={Discover} />
-          <Route exact path="/feed" component={Feed} />
-        </Switch>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/discover" component={Discover} />
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/feed" component={Feed} />
       </Router>
     </div>
   )

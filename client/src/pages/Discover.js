@@ -1,25 +1,29 @@
 // this is the Discover page
 
 import React from "react";
-import Width from "../components/Box";
-import SimpleContainer from "../components/Container";
-import PrimarySearchAppBar from "../components/Navbar";
-// import IntegrationReactSelect from "../components/Searchbar";
+import NavBar from "../components/Navbar"
+import ProfileCard from "../components/ProfileCard"
 import Container from '@material-ui/core/Container';
 
-// class Login extends Component {
-
-// }
 
 function Discover() {
   return (
     <div>
-      <PrimarySearchAppBar />
-      <Container>
-        <Container>
-        {/* <IntegrationReactSelect /> */}
+
+        <NavBar />
+        <Container className="center">
+          <div className="card-panel">
+            <div className="row">
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+            </div>
+          </div>
         </Container>
-      </Container>
+
     </div>
   );
 }
