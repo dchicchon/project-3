@@ -1,28 +1,41 @@
 import React from "react"
-import Grid from "../components/Grid"
 
+import NavBar from "../components/NavBar"
 
-import SimpleContainer from "../components/Container"
-
+import CardPanel from "../components/CardPanel"
 import ProfileCard from '../components/ProfileCard'
-import Container from '@material-ui/core/Container';
+import Button from "../components/Button"
+
+import { Col, Row, Container } from "../components/Grid";
 
 
-import NavBar from "../components/Navbar"
-
-import Card from '@material-ui/core/Card';
-// class Login extends Component {
-
-// }
-
-function Profile() {
+function Profile(props) {
     return (
-       <div>
-           <NavBar />
-           
+        <div>
+            <NavBar />
+            <Container>
+                <Row>
+                    <Col size="s4">
+                        <CardPanel>
+                            <CardPanel>
+                                <img src="https://i.ibb.co/v3f2zKn/defaultprofilepic.png" />
+                            </CardPanel>
+                        </CardPanel>
+                    </Col>
 
-       </div>
+                    <Col size="s8">
+                        <CardPanel>
+                            <ProfileCard />
+                        </CardPanel>
+                    </Col>
+                </Row>
+                <CardPanel>
+                    <img src="https://i.ibb.co/xzGNCdJ/world-map.gif" />
+                </CardPanel>
+            </Container>
+        </div>
     );
 }
 
 export default Profile;
+

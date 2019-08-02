@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 //Pages
-// import Discover from './pages/Discover'
+import Discover from './pages/Discover'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
 import NoMatch from './pages/NoMatch'
-// import Profile from './pages/Profile'
+import Profile from './pages/Profile'
 import Signup from './pages/Signup'
+
 
 // Utils
 import API from "./Utils/API"
@@ -43,39 +44,44 @@ class App extends Component {
 
   render() {
 
-    if (this.state.isLoggedin === false) {
+    // if (this.state.isLoggedin === false) {
       return (
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            {/* <Route exact path="/discover" component={Discover} /> */}
-            {/* <Route exact path="/profile" component={Profile} /> */}
-            {/* <Route exact path="/feed" component={Feed} /> */}
-          </Switch>
-        </Router>
-      )
-    } else {
-      return (
-        <Router>
-          <Switch>
-            <Route exact path="/"
-              component={
-                () => <Feed
-                  logout={this.logout}
-                  email={this.state.email}
-                />
-              }
-            />
-          </Switch>
-        </Router>
-      )
-    }
+            <Route exact path="/discover" component={Discover} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/feed" component={Feed} />
 
-  }
+          </Switch>
+        </Router>
+      )
+  //   } else {
+  //     return (
+  //       <Router>
+  //         <Switch>
+  //           <Route exact path="/"
+  //             component={
+  //               () => <Feed
+  //                 logout={this.logout}
+  //                 email={this.state.email}
+  //               />
+
+  //             }
+
+  //           />
+  //         </Switch>
+  //       </Router>
+  //     )
+  //   }
+
+  // }
 
 };
+}
+
 
 //-----------END ADD---------------------
 

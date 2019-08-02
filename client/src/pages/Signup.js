@@ -1,32 +1,11 @@
 import React from "react";
-import clsx from 'clsx';
-import Grid from "../components/Grid";
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
-import SignupBtn from "../components/SignupBtn";
-import { Link } from 'react-router-dom';
-
-const useStyles = makeStyles(theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap'
-    },
-    TextField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1)
-    },
-    dense: {
-        marginTop: theme.spacing(2)
-    },
-    menu: {
-        width: 200
-    }
-}));
+import { Col, Row, Container } from "../components/Grid";
+import Button from '../components/Button'
+import { Link } from 'react-router-dom'
 
 
 
-export default function Signup() {
-    const classes = useStyles();
+export default function Signup(props) {
     const [values, setValues] = React.useState({
         email: '',
         password: '',
@@ -81,7 +60,66 @@ export default function Signup() {
 
     return (
         <div>
-            <Grid>
+            <Container>
+                <div className="card-panel center">
+                    <h1>Sign - Up</h1>
+                    <div className="row">
+                        <form className="col s12">
+                            <Row>
+                                <div className="input-field col s6">
+                                    <input id="first_name" type="text" className="validate" onChange={handleChange('first_name')} {...props} />
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div className="input-field col s6">
+                                    <input id="last_name" type="text" className="validate" onChange={handleChange('last_name')} {...props} />
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </Row>
+                            <Row>
+                                <div className="input-field col s12">
+                                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
+                                    <label for="email">Email</label>
+                                </div>
+                            </Row>
+
+                            <Row>
+                                <div className="input-field col s12">
+                                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
+                                    <label for="password">Password</label>
+                                </div>
+                            </Row>
+                            <Row>
+                                <div className="input-field col s12">
+                                    <input id="confirm_password" type="password" className="validate" onChange={handleChange('confirm_password')} {...props} />
+                                    <label for="password"> Confirm Password</label>
+                                </div>
+                            </Row>
+
+                            <Row>
+                                <div class="file-field input-field">
+                                    <div class="btn">
+                                        <span>Upload Photo</span>
+                                        <input type="file" onChange={handleChange('image')} {...props} />
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" />
+                                    </div>
+                                </div>
+                            </Row>
+
+                        </form>
+                    </div>
+                    <Link to="/discover">
+                        <Button>Signup</Button>
+                    </Link>
+
+                </div>
+            </Container>
+        </div >
+    )
+}
+
+{/* <div className="card-panel center">
                 <h1>Signup</h1>
                 <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
 
@@ -157,7 +195,4 @@ export default function Signup() {
                         </SignupBtn>
                     </Link>
                 </form>
-            </Grid>
-        </div >
-    )
-}
+                </div> */}

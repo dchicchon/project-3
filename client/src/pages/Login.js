@@ -1,36 +1,23 @@
 import React from "react";
-import clsx from 'clsx';
-import Grid from "../components/Grid"
-import TextField from '@material-ui/core/TextField'
-import { makeStyles } from "@material-ui/core/styles"
-import SignupBtn from '../components/SignupBtn';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import './style/login.css'
 
 import BackgroundSlideshow from 'react-background-slideshow';
+
 
 import image1 from '../assets/bg1.jpg';
 import image2 from '../assets/bg2.jpg';
 import image3 from '../assets/bg3.jpg';
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  dense: {
-    marginTop: theme.spacing(2),
-  },
-  menu: {
-    width: 200,
-  },
-}));
+import Button from '../components/Button'
 
-export default function Login() {
-  const classes = useStyles();
+import { Col, Row, Container } from "../components/Grid";
+import CardPanel from '../components/CardPanel'
+
+
+
+
+export default function Login(props) {
   const [values, setValues] = React.useState({
     email: '',
     password: ''
@@ -67,7 +54,51 @@ export default function Login() {
 
   return (
     <div>
-      <Grid>
+      <Container>
+        <Container>
+          <Container>
+            <br></br><br></br><br></br>
+            <CardPanel>
+              <h1>Login</h1>
+              <form className="col s12">
+                <Row>
+                  <div className="input-field col s12">
+                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
+                    <label for="email">Email</label>
+                  </div>
+                </Row>
+                <Row>
+                  <div className="input-field col s12">
+                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
+                    <label for="password">Password</label>
+                  </div>
+                </Row>
+                <Row>
+                  <Col size="s6">
+                    <Link to="/profile">
+                      <Button>Login</Button>
+                    </Link>
+                  </Col>
+                  <Col size="s6">
+                    <Link to="/signup">
+                      <Button>Signup</Button>
+                    </Link>
+                  </Col>
+                </Row>
+              </form>
+            </CardPanel>
+          </Container>
+        </Container>
+      </Container>
+      {/* <BackgroundSlideshow images={[ image1, image2, image3 ]} /> */}
+    </div >
+  )
+}
+
+
+
+{/* <div>
+      <Container>
         <h1>Login</h1>
         <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
 
@@ -110,8 +141,6 @@ export default function Login() {
             </SignupBtn>
           </Link>
         </form>
-      </Grid>
+      </Container>
       <BackgroundSlideshow images={[ image1, image2, image3 ]} />
-    </div>
-  )
-}
+    </div> */}

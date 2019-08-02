@@ -1,28 +1,23 @@
-// this is the Discover page
-
 import React from "react";
-import NavBar from "../components/Navbar"
-import ProfileCard from "../components/ProfileCard"
-import Container from '@material-ui/core/Container';
+import NavBar from "../components/NavBar"
+import Post from "../components/Post"
+import { Col, Row, Container } from "../components/Grid";
+import CardPanel from "../components/CardPanel"
 
 
-function Discover() {
+function Discover(props) {
   return (
     <div>
 
-        <NavBar />
-        <Container className="center">
-          <div className="card-panel">
-            <div className="row">
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-            </div>
-          </div>
-        </Container>
+      <NavBar />
+      <Container>
+        <CardPanel>
+          <Row>
+            <Post/>
+            <Post/>
+          </Row>
+        </CardPanel>
+      </Container>
 
     </div>
   );
