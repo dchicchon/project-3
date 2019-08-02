@@ -1,12 +1,6 @@
-
-import React, { Component } from "react";
-// import TextFields from "../components/Login"
-// import Grid from "../components/Grid"
-// import OutlinedTextFieldsLogin from "../components/Login";
-// import OutlinedButtons from "../../../-Edited-Signup";
-// class Login extends Component {
-// }
-
+import clsx from 'clsx';
+import React from "react";
+import Grid from "../components/Grid"
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from "@material-ui/core/styles"
 
@@ -40,31 +34,39 @@ export default function Login() {
 
   return (
     <div>
-      <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
-        <TextField style={{ width: 300 }}
-          id="outlined-email-input"
-          label="Email"
-          className={classes.textField}
-          type="email"
-          name="email"
-          autoComplete="email"
-          margin="normal"
-          variant="outlined"
-          value={values.email}
-        />
-        <br />
-        <TextField style={{ width: 300 }}
-          id="outlined-password-input"
-          label="Password"
-          className={classes.textField}
-          type="password"
-          name="password"
-          autoComplete="password"
-          margin="normal"
-          variant="outlined"
-          value={values.passport}
-        />
-      </form>
+      <Grid>
+        {/* <h1>Email: {values.email}</h1>
+        <h1>Password: {values.password}</h1> */}
+        <h1>Login</h1>
+        <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
+
+          <TextField style={{ width: 300 }}
+            // id="outlined-email-input"
+            label="Email"
+            className={clsx(classes.textField, classes.dense)}
+            type="email"
+            // name="email"
+            // autoComplete="email"
+            margin="normal"
+            variant="outlined"
+            value={values.email}
+            onChange={handleChange('email')}
+          />
+          <br />
+          <TextField style={{ width: 300 }}
+            id="outlined-password-input"
+            label="Password"
+            className={clsx(classes.textField, classes.dense)}
+            type="password"
+            name="password"
+            autoComplete="password"
+            margin="normal"
+            variant="outlined"
+            value={values.password}
+            onChange={handleChange('password')}
+          />
+        </form>
+      </Grid>
     </div>
   )
 }
