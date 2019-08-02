@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 // import ButtonBase from '@material-ui/core/ButtonBase';
 // import OutlinedTextFieldsLogin from "../../../../-Edited-Login";
 // import OutlinedTextFields from "../../../../-Edited-Signup";
-import OutlinedButtons from "../SignupBtn";
+// import OutlinedButtons from "../SignupBtn";
 
 
 

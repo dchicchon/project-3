@@ -1,8 +1,10 @@
-import clsx from 'clsx';
 import React from "react";
+import clsx from 'clsx';
 import Grid from "../components/Grid"
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from "@material-ui/core/styles"
+import SignupBtn from '../components/SignupBtn';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -32,11 +34,34 @@ export default function Login() {
     setValues({ ...values, [name]: event.target.value })
   };
 
+  const formSubmit = async event => {
+    event.preventDefault()
+    console.log("WE MADE IT TO THE FORM SUBMIT");
+    await fetch("/auth/login", {
+      method: "POST",
+      credentials: "include",
+      mode: "cors",
+      body: JSON.stringify({
+        email: values.email,
+        password: values.password
+      })
+    })
+      .then(response => {
+        console.log(response)
+        window.location.href = "/"
+      })
+      .catch(err => console.log(err))
+
+    setValues({
+      email: '',
+      password: ''
+    });
+
+  }
+
   return (
     <div>
       <Grid>
-        {/* <h1>Email: {values.email}</h1>
-        <h1>Password: {values.password}</h1> */}
         <h1>Login</h1>
         <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
 
@@ -65,74 +90,21 @@ export default function Login() {
             value={values.password}
             onChange={handleChange('password')}
           />
+          <br />
+          <SignupBtn>
+            <div className="login-btn" onClick={formSubmit} style={{ width: 100 }}>
+              Login
+            </div>
+          </SignupBtn>
+          <Link to="/signup">
+            <SignupBtn>
+              <div className="signup-btn" style={{ width: 100 }}>
+                Signup
+              </div>
+            </SignupBtn>
+          </Link>
         </form>
       </Grid>
     </div>
   )
 }
-
-//   handleInputChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({
-//       [name]: value
-//     })
-//   }
-
-//   handleFormSubmit = async event => {
-//     event.preventDefault();
-
-//     await fetch("/auth/login", {
-//       method: "POST",
-//       credentials: "include",
-//       mode: "cors",
-//       body: JSON.stringify({
-//         email: this.state.email,
-//         password: this.state.password
-//       }),
-//       // headers: new Headers({
-//       //   "Content-Type": "application/json"
-//       // })
-//     })
-//       .then(response => {
-//         console.log(response);
-//         window.location.href = "/";
-//       })
-//       .catch(err => {
-//         console.log(err);
-//       });
-
-//     this.setState({
-//       username: "",
-//       password: ""
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <h1>Hello?</h1>
-//         <form>
-//           <TextField
-//             id="outlined-email-input"
-//             label="Email"
-//             // className={classes.textField}
-//             type="email"
-//             name="email"
-//             autoComplete="email"
-//             margin="normal"
-//             variant="outlined"
-//           />
-//           <TextField
-
-//           />
-//         </form>
-//       </div>
-//     )
-
-//   }
-
-// }
-
-// export default Login;
-
-
