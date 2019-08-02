@@ -16,7 +16,7 @@ import Signup from './pages/Signup'
 // import UserRoutes from './routes/UserRoutes'
 // import GuestRoutes from './routes/GuestRoutes'
 // import Actions from "./utils/API";
- 
+
 // Stylesheet
 import './App.css';
 
@@ -24,14 +24,16 @@ import './App.css';
 
 //--------ADDED CODED---------------------
 function App() {
-  return(
+  return (
     <div>
       <Router>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/discover" component={Discover} />
-      <Route exact path="/feed" component={Feed} />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/discover" component={Discover} />
+          <Route exact path="/feed" component={Feed} />
+        </Switch>
       </Router>
     </div>
   )
