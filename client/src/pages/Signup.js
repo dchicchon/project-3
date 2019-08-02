@@ -60,44 +60,49 @@ export default function Signup() {
     return (
         <div>
             <Container>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input placeholder="Placeholder" id="first_name" type="text" class="validate"  onChange={handleChange('firstName')}/>
+            <div className="card-panel center">
+                <h1>Sign - Up</h1>
+                <div className="row">
+                    <form className="col s12">
+                        <div className="row">
+                            <div className="input-field col s6">
+                                <input placeholder="Placeholder" id="first_name" type="text" className="validate"  onChange={handleChange('firstName')}/>
                                 <label for="first_name">First Name</label>
                             </div>
-                            <div class="input-field col s6">
-                                <input id="last_name" type="text" class="validate" />
+                            <div className="input-field col s6">
+                                <input id="last_name" type="text" className="validate" />
                                 <label for="last_name">Last Name</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="email" type="email" class="validate" />
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="email" type="email" className="validate" />
                                 <label for="email">Email</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="password" type="password" class="validate" />
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="password" type="password" className="validate" />
                                 <label for="password">Password</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="password" type="password" class="validate" />
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="password" type="password" className="validate" />
                                 <label for="password"> Confirm Password</label>
                             </div>
                         </div>
                     </form>
                 </div>
+                <div className="row">
                 <Button>
                     Sign Up
                 </Button>
                 <Button>
                     Login
                 </Button>
+                </div>
+                </div>
             </Container>
         </div >
     )

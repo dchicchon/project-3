@@ -16,10 +16,7 @@ function Discover() {
             <div className="row">
               <ProfileCard />
               <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
+
             </div>
           </div>
         </Container>
