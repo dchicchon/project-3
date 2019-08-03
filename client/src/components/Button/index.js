@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 
-export default function Button({children}) {
+export default function Button({ children }) {
 
   return (
     <div>
