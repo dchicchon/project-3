@@ -69,13 +69,13 @@ class Login extends Component {
                 <form className="col s12">
                   <Row>
                     <div className="input-field col s12">
-                      <input id="email" className="validate" name='email' type="email" value={this.state.email} onChange={this.handleInputChange}  />
+                      <input id="email" className="validate" name='email' type="email" value={this.state.email} onChange={this.handleInputChange} />
                       <label htmlFor="email">Email</label>
                     </div>
                   </Row>
                   <Row>
                     <div className="input-field col s12">
-                      <input id="password" className="validate" name='password' type="password" value={this.state.password} onChange={this.handleInputChange}  />
+                      <input id="password" className="validate" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
                       <label htmlFor="password">Password</label>
                     </div>
                   </Row>

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-
+import Cookies from 'js-cookie'
 
 // Components
+import Button from '../Button'
+
+// Utils
+import API from '../../Utils/API'
 
 class CreatePost extends Component {
     state = {
         info: "",
         image: '',
-        tag: ''
+        tag: '',
+        user_id: Cookies.get('id')
     }
 
     handleInputChange = event => {
@@ -17,33 +22,33 @@ class CreatePost extends Component {
         })
     }
 
-    handleFormSubmit = async event => {
+    addPost = async event => {
         event.preventDefault();
-        console.log("WE MADE IT TO THE FORM SUBMIT");
-        await fetch("/api/post", {
-            method: "POST",
-            credentials: "include",
-            mode: "cors",
-            body: JSON.stringify({
-                info: this.state.password,
-                // image: this.state.email,
-                tag: this.state.tag
-            }),
-            headers: new Headers({
-                "Content-Type": "application/json"
-            })
-        })
-            .then(response => {
-                console.log(response)
-                // window.location.href = "/"
-            })
-            .catch(err => console.log(err))
+        API.
 
-        this.setstate({
-            info: '',
-            image: '',
-            tag: ''
-        });
+        // await fetch("/api/post", {
+        //     method: "POST",
+        //     credentials: "include",
+        //     mode: "cors",
+        //     body: JSON.stringify({
+        //         info: this.state.info,
+        //         tag: this.state.tag
+        //     }),
+        //     headers: new Headers({
+        //         "Content-Type": "application/json"
+        //     })
+        // })
+        //     .then(response => {
+        //         console.log(response)
+        //         // window.location.href = "/"
+        //     })
+        //     .catch(err => console.log(err))
+
+        // this.setState({
+        //     info: '',
+        //     image: '',
+        //     tag: ''
+        // });
 
     }
 
@@ -57,13 +62,13 @@ class CreatePost extends Component {
                 <div className="row">
                     <form className="col s12">
                         <div className="row">
+                            <h2 value={this.state.user_id}></h2>
                             <div className="input-field col s6">
-                                <input placeholder="Placeholder" id="description" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                                <input placeholder="Placeholder" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
                                 <label htmlFor="description">Description</label>
-                                <h2 value = {}></h2>
                             </div>
                             <div className="input-field col s6">
-                                <input id="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+                                <input id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
                                 <label htmlFor="tag">Tag</label>
                             </div>
                         </div>

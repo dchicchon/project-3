@@ -5,6 +5,7 @@ import React, { Component } from "react";
 
 import CardPanel from "../components/CardPanel"
 import Post from "../components/Post"
+import CreatePost from "../components/CreatePost";
 // import API from '../Utils/API'
 // import { Col, Row, Container } from "../components/Grid";
 
@@ -22,6 +23,7 @@ class Feed extends Component {
                 {/* <h1>{this.props.email}</h1> */}
                 {/* <NavBar/> */}
                 {/* <NavBar logout = {this.props.logout} /> */}
+                <CreatePost/>
                 <CardPanel>
                     <Post />
                 </CardPanel>
