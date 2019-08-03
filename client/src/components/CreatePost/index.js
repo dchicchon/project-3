@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 // Components
 
 class CreatePost extends Component {
@@ -52,26 +53,29 @@ class CreatePost extends Component {
 
         // CHANGE THIS LATER TO USE OUR ROW COMPONENT
         return (
-            <div className="row">
-                <form className="col s12">
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <input placeholder="Placeholder" id="description" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
-                            <label htmlFor="description">Description</label>
+            <div>
+                <div className="row">
+                    <form className="col s12">
+                        <div className="row">
+                            <div className="input-field col s6">
+                                <input placeholder="Placeholder" id="description" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                                <label htmlFor="description">Description</label>
+                                <h2 value = {}></h2>
+                            </div>
+                            <div className="input-field col s6">
+                                <input id="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+                                <label htmlFor="tag">Tag</label>
+                            </div>
                         </div>
-                        <div className="input-field col s6">
-                            <input id="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
-                            <label htmlFor="tag">Tag</label>
-                        </div>
-                    </div>
-                    {/* <div className="row">
+                        {/* <div className="row">
                         <div className="input-field col s6">
                             <input placeholder="Placeholder" id="image" type="text" className="validate" />
                             <label htmlFor="image">Image</label>
                         </div>
                     </div> */}
-                </form>
-
+                    </form>
+                </div>
+                <Button onClick={this.handleFormSubmit}>Create Post</Button>
             </div>
         )
     }
