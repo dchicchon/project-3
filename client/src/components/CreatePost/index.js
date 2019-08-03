@@ -4,18 +4,21 @@ import { Col, Row, Container } from "../Grid";
 import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
+
+import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
+
 
 export default function CreatePost(){
     return(
         <div>
             <Container>
                 <CardPanel>
-                    <Date/>
+                    {/* <Date/> */}
                 <TextInput>Title</TextInput>
                 <TextInput>Record Your Journey</TextInput>
+<Date/>
 
-<Button><Modal/></Button>
                 <Button>Submit</Button>
                 </CardPanel>
             </Container>

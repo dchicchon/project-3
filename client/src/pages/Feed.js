@@ -8,11 +8,18 @@ import { Col, Row, Container } from "../components/Grid";
 import CreatePost from './../components/CreatePost';
 import 'materialize-css/dist/css/materialize.min.css';
 
-function Feed(props) {
+import Modal from "../components/Modal";
+
+
+// Import Materialize
+import M from "materialize-css";
+class Feed extends React.Component {
+    render(){
     return (
         <div>
             <NavBar />
             <Container>
+
                 <CreatePost/>
                 <CardPanel>
                     <Post />
@@ -25,11 +32,5 @@ function Feed(props) {
         </div>
     )
 }
-
+}
 export default Feed;
-
-
-{/* <Container style={{ display: 'flex', justifyContent: 'center' }}>
-
-                <button onClick = {props.logout}>LOGOUTTUOOTOONF</button>
-            </Container> */}
