@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import './style/login.css'
 
@@ -14,133 +14,95 @@ import Button from '../components/Button'
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from '../components/CardPanel'
 
-
-
-
-export default function Login(props) {
-  const [values, setValues] = React.useState({
+class Login extends Component {
+  state = {
     email: '',
     password: ''
-  });
+  }
 
-  const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value })
-  };
+  // Here the state values are being handled
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    })
+  }
 
-  const formSubmit = async event => {
-    event.preventDefault()
+  // This handles the button submit to make a post to the route /auth/login
+  handleFormSubmit = async event => {
+    event.preventDefault();
     console.log("WE MADE IT TO THE FORM SUBMIT");
     await fetch("/auth/login", {
       method: "POST",
       credentials: "include",
       mode: "cors",
       body: JSON.stringify({
-        email: values.email,
-        password: values.password
+        email: this.state.email,
+        password: this.state.password,
+      }),
+      headers: new Headers({
+        "Content-Type": "application/json"
       })
     })
       .then(response => {
-        console.log(response)
         window.location.href = "/"
       })
       .catch(err => console.log(err))
 
-    setValues({
+    this.setstate({
       email: '',
-      password: ''
+      password: '',
     });
 
   }
 
-  return (
-    <div>
-      <Container>
+  // This is the JSX that we render
+  render() {
+    return (
+      <div>
         <Container>
           <Container>
-            <br></br><br></br><br></br>
-            <CardPanel>
-              <h1>Login</h1>
-              <form className="col s12">
-                <Row>
-                  <div className="input-field col s12">
-                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
-                    <label for="email">Email</label>
-                  </div>
-                </Row>
-                <Row>
-                  <div className="input-field col s12">
-                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
-                    <label for="password">Password</label>
-                  </div>
-                </Row>
-                <Row>
-                  <Col size="s6">
-                    <Link to="/profile">
-                      <Button>Login</Button>
-                    </Link>
-                  </Col>
-                  <Col size="s6">
-                    <Link to="/signup">
-                      <Button>Signup</Button>
-                    </Link>
-                  </Col>
-                </Row>
-              </form>
-            </CardPanel>
+            <Container>
+              <br></br><br></br><br></br>
+              <CardPanel>
+                <h1>Login</h1>
+                <form className="col s12">
+                  <Row>
+                    <div className="input-field col s12">
+                      <input id="email" value={this.state.email} onChange={this.handleInputChange} name='email' type="email" className="validate" />
+                      <label htmlFor="email">Email</label>
+                    </div>
+                  </Row>
+                  <Row>
+                    <div className="input-field col s12">
+                      <input id="password" value={this.state.email} onChange={this.handleInputChange} name='password' type="password" className="validate" />
+                      <label htmlFor="password">Password</label>
+                    </div>
+                  </Row>
+                  <Row>
+                    <Col size="s6">
+                      {/* <Link to="/profile"> */}
+                        <Button onClick={this.handleFormSubmit}>Login</Button>
+                      {/* </Link> */}
+                    </Col>
+                    <Col size="s6">
+                      <Link to="/signup">
+                        <Button>Signup</Button>
+                      </Link>
+                    </Col>
+                  </Row>
+                </form>
+              </CardPanel>
+            </Container>
           </Container>
         </Container>
-      </Container>
-      {/* <BackgroundSlideshow images={[ image1, image2, image3 ]} /> */}
-    </div >
-  )
+        {/* <BackgroundSlideshow images={[ image1, image2, image3 ]} /> */}
+      </div >
+
+    )
+  }
+
 }
 
 
-
-{/* <div>
-      <Container>
-        <h1>Login</h1>
-        <form className={classes.container} noValidate autoComplete="off" style={{ justifyContent: "center" }}>
-
-          <TextField style={{ width: 300 }}
-            // id="outlined-email-input"
-            label="Email"
-            className={clsx(classes.textField, classes.dense)}
-            type="email"
-            // name="email"
-            // autoComplete="email"
-            margin="normal"
-            variant="outlined"
-            value={values.email}
-            onChange={handleChange('email')}
-          />
-          <br />
-          <TextField style={{ width: 300 }}
-            id="outlined-password-input"
-            label="Password"
-            className={clsx(classes.textField, classes.dense)}
-            type="password"
-            name="password"
-            autoComplete="password"
-            margin="normal"
-            variant="outlined"
-            value={values.password}
-            onChange={handleChange('password')}
-          />
-          <br />
-          <SignupBtn>
-            <div className="login-btn" onClick={formSubmit} style={{ width: 100 }}>
-              Login
-            </div>
-          </SignupBtn>
-          <Link to="/signup">
-            <SignupBtn>
-              <div className="signup-btn" style={{ width: 100 }}>
-                Signup
-              </div>
-            </SignupBtn>
-          </Link>
-        </form>
-      </Container>
-      <BackgroundSlideshow images={[ image1, image2, image3 ]} />
-    </div> */}
+export default Login;
