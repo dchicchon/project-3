@@ -24,32 +24,18 @@ class CreatePost extends Component {
 
     addPost = async event => {
         event.preventDefault();
-        API.
-
-        // await fetch("/api/post", {
-        //     method: "POST",
-        //     credentials: "include",
-        //     mode: "cors",
-        //     body: JSON.stringify({
-        //         info: this.state.info,
-        //         tag: this.state.tag
-        //     }),
-        //     headers: new Headers({
-        //         "Content-Type": "application/json"
-        //     })
-        // })
-        //     .then(response => {
-        //         console.log(response)
-        //         // window.location.href = "/"
-        //     })
-        //     .catch(err => console.log(err))
-
-        // this.setState({
-        //     info: '',
-        //     image: '',
-        //     tag: ''
-        // });
-
+        console.log("Add post begins")
+        var postData = {
+            info: this.state.info,
+            image: this.state.image,
+            tag: this.state.tag,
+            user_id: this.state.user_id
+        }
+        console.log("POST DATA:", postData)
+        API.newPost(postData)
+            .then(response => {
+                console.log(response)
+            })
     }
 
 
@@ -64,7 +50,7 @@ class CreatePost extends Component {
                         <div className="row">
                             <h2 value={this.state.user_id}></h2>
                             <div className="input-field col s6">
-                                <input placeholder="Placeholder" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                                <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
                                 <label htmlFor="description">Description</label>
                             </div>
                             <div className="input-field col s6">
@@ -80,7 +66,7 @@ class CreatePost extends Component {
                     </div> */}
                     </form>
                 </div>
-                <Button onClick={this.handleFormSubmit}>Create Post</Button>
+                <Button onClick={this.addPost}>Create Post</Button>
             </div>
         )
     }

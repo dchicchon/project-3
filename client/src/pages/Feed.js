@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // import NavBar from "../components/NavBar"
-
+import { Container } from "../components/Grid"
 import CardPanel from "../components/CardPanel"
 import Post from "../components/Post"
 import CreatePost from "../components/CreatePost";
@@ -13,8 +13,8 @@ class Feed extends Component {
     state = {
         email: '',
         firstName: '',
-        lastName:'',
-        image:''
+        lastName: '',
+        image: ''
     }
 
     render() {
@@ -23,13 +23,17 @@ class Feed extends Component {
                 {/* <h1>{this.props.email}</h1> */}
                 {/* <NavBar/> */}
                 {/* <NavBar logout = {this.props.logout} /> */}
-                <CreatePost/>
-                <CardPanel>
-                    <Post />
-                </CardPanel>
-                <CardPanel>
-                    <Post />
-                </CardPanel>
+                <Container>
+                    <CreatePost />
+                    <CardPanel>
+                        <Post />
+                    </CardPanel>
+                    <CardPanel>
+                        <Post />
+                    </CardPanel>
+
+                </Container>
+
             </div>
         )
     }

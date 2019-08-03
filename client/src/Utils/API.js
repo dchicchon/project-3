@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
 
    // Post Create Methods
-   newPost: function () {
-      return axios.get("/api/post")
+   newPost: function (postData) {
+      return axios.post(`/api/post`, postData)
    },
 
    // Authentication methods
