@@ -58,7 +58,8 @@ class App extends Component {
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-
+            {/* added for testing */}
+            <Route exact path="/discover" component={Discover} /> 
           </Switch>
           {/* <BackgroundSlideshow images={[image1, image2, image3]} /> */}
         </Router>
