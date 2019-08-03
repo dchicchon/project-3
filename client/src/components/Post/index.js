@@ -8,9 +8,18 @@ function Post(props) {
     <Col size="s6">
     <div class="card">
     <div class="card-action">
-        <span></span>
-        <a href="#">Person's Profile</a>
+    {/* adding avatar */}
+    {/* <li class="collection-item avatar"> */}
+      <img src="https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder.jpg" width="25" height="25" alt="" class="circle"></img>
+      {/* </li> */}
+
+
+        <span><a href="#">Person's Profile</a></span>
       </div>
+
+
+
+
       <div class="card-image">
         <img src="https://images.unsplash.com/photo-1564694230688-f6afe64db816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" width="300" height="350" />
         <span class="card-title">Card Title</span>
@@ -18,6 +27,7 @@ function Post(props) {
       <div class="card-content">
         <p>I am a very simple card. I am good at containing small bits of information.
     I am convenient because I require little markup to use effectively.</p>
+    <p> lorem </p>
       </div>
       <div class="card-action">
         <span></span>
