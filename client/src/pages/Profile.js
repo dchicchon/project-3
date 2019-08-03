@@ -12,7 +12,6 @@ import { Col, Row, Container } from "../components/Grid";
 function Profile(props) {
     return (
         <div>
-            <NavBar />
             <Container>
                 <Row>
                     <Col size="s4">

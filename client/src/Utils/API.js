@@ -2,6 +2,11 @@ import axios from "axios";
 
 export default {
 
+   // Post Create Methods
+   newPost: function (postData) {
+      return axios.post(`/api/post`, postData)
+   },
+
    // Authentication methods
    // ===============================================
 
@@ -10,7 +15,7 @@ export default {
    },
 
    logout: function () {
-      return axios("/auth/logout")
+      return axios.get("/auth/logout")
    }
 
 };

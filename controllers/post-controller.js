@@ -10,15 +10,15 @@ const s3 = new AWS.S3({
 })
 
 uploadImg = (req) => {
-    let imageFile = req.files.file.data;
-    s3.createBucket(() => {
-        let params = {
+	let imageFile = req.files.file.data;
+	s3.createBucket(() => {
+		let params = {
 			Bucket: process.env.S3_BUCKET_NAME,
 			ACL: 'public-read',
 			Key: `${image}.jpg`,
 			Body: imageFile
-        };
-        s3.upload(params, (err, data) => {
+		};
+		s3.upload(params, (err, data) => {
 			if (err) {
 				console.log("error with upload");
 				console.log(err);
@@ -55,7 +55,7 @@ module.exports = {
 				{
 					where: { userId: req.body.id }
 				})
-				.then( dbUser => res.json({ imageUrl: location }));
+				.then(dbUser => res.json({ imageUrl: location }));
 		});
 	},
 
@@ -65,28 +65,30 @@ module.exports = {
 		console.log(req.body);
 
 		db.Post.create({
-		  info: req.body.info,
-		  image: req.body.image,
-			tag: req.body.tag}
-		  ).then(dbPost => res.json(dbPost));
-	  },
-	
-	  getPosts: (req, res) => {
+			info: req.body.info,
+			image: req.body.image,
+			tag: req.body.tag
+		}
+		).then(dbPost => res.json(dbPost));
+	},
+
+	getPosts: (req, res) => {
 		db.Post.findAll({
-		  order:[['time', 'desc']],
-		  limit:10}
-		  ).then(dbPost => res.json(dbPost));
-	  },
-	
-	  getPostsByUser: (req, res) => {
+			order: [['time', 'desc']],
+			limit: 10
+		}
+		).then(dbPost => res.json(dbPost));
+	},
+
+	getPostsByUser: (req, res) => {
 		db.Post.findAll(
-		  {
-			where: {userId: req.params.id}
-		  },
-		  {
-			order:[['time', 'desc']],
-			limit: 50
-		  }
-		  ).then(dbPost => res.json(dbPost));
-	  }
+			{
+				where: { userId: req.params.id }
+			},
+			{
+				order: [['time', 'desc']],
+				limit: 50
+			}
+		).then(dbPost => res.json(dbPost));
+	}
 }
