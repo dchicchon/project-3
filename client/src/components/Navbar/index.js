@@ -1,23 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+// import Profile from '../../pages/Profile';
+// import { userInfo } from 'os';
 
-
-
-export default function NavBar(props) {
-
+function NavBar(props) {
   return (
     <div>
-
       <nav>
-        <div class="nav-wrapper blue">
-          <a href="/feed" class="brand-logo">TripIt</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/discover">Discover</a></li>
-            {/* <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> */}
+        <div className="nav-wrapper blue">
+          {/* <li> */}
+            <Link className="brand-logo" to='/'>
+              TripIt
+          </Link>
+          {/* </li> */}
+          <ul className="right hide-on-med-and-down">
+            <li>
+              <Link to="/profile">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link to='/discover'>
+                Discover
+            </Link>
+            </li>
+
+            <li>
+              <a onClick={props.logout}>Logout</a>
+            </li>
           </ul>
         </div>
       </nav>
-
     </div >
-  );
+  )
 }
+
+export default NavBar

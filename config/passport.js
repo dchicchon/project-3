@@ -13,7 +13,7 @@ module.exports = () => {
             where: {
                 id: id
             }
-        }).then( user => {
+        }).then(user => {
             console.log("DESERIALIZE USER")
             cb(null, user)
         });
@@ -29,7 +29,7 @@ module.exports = () => {
         passReqToCallback: true
     },
         (req, email, password, done) => {
-            console.log("SOMETHING IN PASSPORT.JS IS HAPPENING")
+            console.log("\nLOCAL-SIGNUP STRATEGY HIT")
             var passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(8))
             db.User.findOne({
                 where: {
@@ -37,12 +37,12 @@ module.exports = () => {
                 }
             }).then(user => {
                 if (user) {
-                    console.log("User already exists")
+                    console.log("\nUser already exists")
                     return done(null, false, {
                         message: "That email is already taken"
                     })
                 } else {
-                    console.log("User does not exist")
+                    console.log("\nUser does not exist")
                     var data = {
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
@@ -64,33 +64,6 @@ module.exports = () => {
                 }
             });
         }
-        // }, (err, user) => {
-        //     if (err) {
-        //         console.log(`Error ${err}`)
-        //     }
-
-        // if (user !== null) {
-        //     console.log("Username is already taken.", user);
-        //     return done(null, false, { message: "Username is already taken." })
-        // }
-
-        // const hashedPassword = generateHash(req.body.password);
-        // const newUser = {
-        //     firstName: req.body.firstName,
-        //     lastName: req.body.lastName,
-        //     email: req.body.email,
-        //     password: hashedPassword,
-        // }
-        // db.User.create(newUser)
-        //     .then(dbUser => {
-        //         if (!dbUser) {
-        //             return done(null, false);
-        //         } else {
-        //             return done(null, dbUser)
-        //         }
-        //     })
-        // });
-        // }
     ));
 
     // Login Configuration
@@ -98,21 +71,23 @@ module.exports = () => {
 
     passport.use("local-login", new LocalStrategy({
         // Might need to change this to email
-        userField: 'email',
+        usernameField: 'email',
         passwordField: "password",
         passReqToCallback: true
     },
         (req, email, password, done) => {
-            db.User.find({
+            console.log("\nLOCAL-LOGIN STRATEGY HIT")
+            console.log("\nREQ BODY:", req.body)
+            const isValidPassword = (userpass, password) => {
+                return bcrypt.compareSync(password, userpass)
+            }
+
+            console.log("FINDONE IN DB")
+            db.User.findOne({
                 where: {
                     email: email
                 }
-            }, (err, user) => {
-                if (err) {
-                    console.log(`Error: ${err}`)
-                    return done(err)
-                }
-
+            }).then(user => {
                 if (!user) {
                     console.log(`No user found. ${user}`)
                     return done(null, false, {
@@ -120,21 +95,22 @@ module.exports = () => {
                     });
                 }
 
-                if (!bcrypt.compareSync(password, user.password)) {
-                    console.log("Invalid password.");
+                if (!isValidPassword(user.password, password)) {
+                    console.log("\nIncorrect password")
                     return done(null, false, {
-                        message: "Invalid password"
-                    });
+                        message: 'Incorrect Password'
+                    })
                 }
 
-                console.log(`Success! ${user}`);
-                return done(null)
+                var userInfo = user.get()
+                console.log(`\nSuccess with logging in user!`);
+                return done(null, userInfo)
+            }).catch((err) => {
+                console.log("Error:", err)
+                return done(null, false, {
+                    message: "Something went wrong with your signin"
+                })
             })
         }
     ));
 }
-
-// Generate hash for password
-function generateHash(password) {
-    return bcrypt.hashSync(password, bcrypt.genSalt(8), null);
-};
