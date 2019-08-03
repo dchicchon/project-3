@@ -74,6 +74,7 @@ router.post("/signup", (req, res, next) => {
             res.cookie("lastName", req.user.lastName)
             res.cookie("email", req.user.email)
             res.cookie("id", req.user.id)
+            res.cookie("profileImg", req.user.profileImg)
             return res.redirect('/')
         });
     })(req, res, next);

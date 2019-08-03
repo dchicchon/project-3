@@ -13,7 +13,7 @@ module.exports = () => {
             where: {
                 id: id
             }
-        }).then( user => {
+        }).then(user => {
             console.log("DESERIALIZE USER")
             cb(null, user)
         });
@@ -64,33 +64,6 @@ module.exports = () => {
                 }
             });
         }
-        // }, (err, user) => {
-        //     if (err) {
-        //         console.log(`Error ${err}`)
-        //     }
-
-        // if (user !== null) {
-        //     console.log("Username is already taken.", user);
-        //     return done(null, false, { message: "Username is already taken." })
-        // }
-
-        // const hashedPassword = generateHash(req.body.password);
-        // const newUser = {
-        //     firstName: req.body.firstName,
-        //     lastName: req.body.lastName,
-        //     email: req.body.email,
-        //     password: hashedPassword,
-        // }
-        // db.User.create(newUser)
-        //     .then(dbUser => {
-        //         if (!dbUser) {
-        //             return done(null, false);
-        //         } else {
-        //             return done(null, dbUser)
-        //         }
-        //     })
-        // });
-        // }
     ));
 
     // Login Configuration
@@ -135,6 +108,6 @@ module.exports = () => {
 }
 
 // Generate hash for password
-function generateHash(password) {
-    return bcrypt.hashSync(password, bcrypt.genSalt(8), null);
-};
+// function generateHash(password) {
+    // return bcrypt.hashSync(password, bcrypt.genSalt(8), null);
+// };

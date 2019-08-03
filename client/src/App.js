@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 //Pages
-import Discover from './pages/Discover'
+// import Discover from './pages/Discover'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
 import NoMatch from './pages/NoMatch'
-import Profile from './pages/Profile'
+// import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 
 // Components
@@ -16,8 +16,6 @@ import NavBar from "./components/NavBar"
 // import image1 from './assets/bg1.jpg';
 // import image2 from './assets/bg2.jpg';
 // import image3 from './assets/bg3.jpg';
-
-
 
 // Utils
 import API from "./Utils/API"
@@ -70,12 +68,11 @@ class App extends Component {
     } else {
       return (
         <Router>
-          <NavBar logout={this.logout}/>
+          <NavBar logout={this.logout} />
           <Switch>
             <Route exact path="/"
               component={
                 () => <Feed
-                  // logout={this.logout}
                   email={this.state.email}
                 />
 

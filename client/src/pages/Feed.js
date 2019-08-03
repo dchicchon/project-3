@@ -10,7 +10,10 @@ import Post from "../components/Post"
 
 class Feed extends Component {
     state = {
-        email: ''
+        email: '',
+        firstName: '',
+        lastName:'',
+        image:''
     }
 
     render() {
