@@ -7,8 +7,12 @@ function Post(props) {
 
     <Col size="s6">
     <div class="card">
+    <div class="card-action">
+        <span></span>
+        <a href="#">Person's Profile</a>
+      </div>
       <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1564694230688-f6afe64db816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" width="300" height="400" />
+        <img src="https://images.unsplash.com/photo-1564694230688-f6afe64db816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" width="300" height="350" />
         <span class="card-title">Card Title</span>
       </div>
       <div class="card-content">
@@ -16,7 +20,8 @@ function Post(props) {
     I am convenient because I require little markup to use effectively.</p>
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+        <span></span>
+        <a href="#"><i className="material-icons">favorite_border</i></a>
       </div>
     </div>
 </Col>
