@@ -9,6 +9,9 @@ import NoMatch from './pages/NoMatch'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 
+// Components
+import NavBar from "./components/NavBar"
+
 // import BackgroundSlideshow from 'react-background-slideshow';
 // import image1 from './assets/bg1.jpg';
 // import image2 from './assets/bg2.jpg';
@@ -67,6 +70,7 @@ class App extends Component {
     } else {
       return (
         <Router>
+          <NavBar/>
           <Switch>
             <Route exact path="/"
               component={

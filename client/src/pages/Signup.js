@@ -69,30 +69,30 @@ class Signup extends Component {
                             <form className="col s12">
                                 <Row>
                                     <div className="input-field col s6">
-                                        <input id="firstName" className="validate"  type="text" name="firstName" value={this.state.firstName} onChange={this.handleInputChange}  />
+                                        <input id="firstName" className="validate" type="text" name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
                                         <label htmlFor="firstName">First Name</label>
                                     </div>
                                     <div className="input-field col s6">
-                                        <input id="lastName" className="validate" type="text" name="lastName" value={this.state.lastName} onChange={this.handleInputChange}  />
+                                        <input id="lastName" className="validate" type="text" name="lastName" value={this.state.lastName} onChange={this.handleInputChange} />
                                         <label htmlFor="lastLame">Last Name</label>
                                     </div>
                                 </Row>
                                 <Row>
                                     <div className="input-field col s12">
-                                        <input id="email" className="validate" type="email" name="email" value={this.state.email} onChange={this.handleInputChange}  />
+                                        <input id="email" className="validate" type="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
                                         <label htmlFor="email">Email</label>
                                     </div>
                                 </Row>
 
                                 <Row>
                                     <div className="input-field col s12">
-                                        <input id="password"  className="validate" type="password" name="password" value={this.state.password} onChange={this.handleInputChange}  />
+                                        <input id="password" className="validate" type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                                         <label htmlFor="password">Password</label>
                                     </div>
                                 </Row>
                                 <Row>
                                     <div className="input-field col s12">
-                                        <input id="passwordConfirm" className="validate" type="password"  name="passwordConfirm" value={this.state.passwordConfirm} onChange={this.handleInputChange}   />
+                                        <input id="passwordConfirm" className="validate" type="password" name="passwordConfirm" value={this.state.passwordConfirm} onChange={this.handleInputChange} />
                                         <label htmlFor="passwordConfirm"> Confirm Password</label>
                                     </div>
                                 </Row>

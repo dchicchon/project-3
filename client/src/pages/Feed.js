@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import NavBar from "../components/NavBar"
+// import NavBar from "../components/NavBar"
 
 import CardPanel from "../components/CardPanel"
 import Post from "../components/Post"
@@ -16,7 +16,9 @@ class Feed extends Component {
     render() {
         return (
             <div>
-                <NavBar logout = {this.props.logout} />
+                {/* <h1>{this.props.email}</h1> */}
+                {/* <NavBar/> */}
+                {/* <NavBar logout = {this.props.logout} /> */}
                 <CardPanel>
                     <Post />
                 </CardPanel>
@@ -28,12 +30,5 @@ class Feed extends Component {
     }
 }
 
-// function Feed(props) {
-//     return (
-//         <div>
-
-//         </div>
-//     )
-// }
 
 export default Feed;

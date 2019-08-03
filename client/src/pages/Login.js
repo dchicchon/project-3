@@ -69,20 +69,20 @@ class Login extends Component {
                 <form className="col s12">
                   <Row>
                     <div className="input-field col s12">
-                      <input id="email" value={this.state.email} onChange={this.handleInputChange} name='email' type="email" className="validate" />
+                      <input id="email" className="validate" name='email' type="email" value={this.state.email} onChange={this.handleInputChange}  />
                       <label htmlFor="email">Email</label>
                     </div>
                   </Row>
                   <Row>
                     <div className="input-field col s12">
-                      <input id="password" value={this.state.email} onChange={this.handleInputChange} name='password' type="password" className="validate" />
+                      <input id="password" className="validate" name='password' type="password" value={this.state.email} onChange={this.handleInputChange}  />
                       <label htmlFor="password">Password</label>
                     </div>
                   </Row>
                   <Row>
                     <Col size="s6">
                       {/* <Link to="/profile"> */}
-                        <Button onClick={this.handleFormSubmit}>Login</Button>
+                      <Button onClick={this.handleFormSubmit}>Login</Button>
                       {/* </Link> */}
                     </Col>
                     <Col size="s6">
