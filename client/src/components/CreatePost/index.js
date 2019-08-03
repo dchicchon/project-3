@@ -35,7 +35,7 @@ export default function CreatePost(props) {
                             </div>
                         </div>
                             </Row>
-                    <Button className="left-align">Submit</Button>
+                    <Button className="right">Submit</Button>
                     </form>
                     </Container>
                 </CardPanel>

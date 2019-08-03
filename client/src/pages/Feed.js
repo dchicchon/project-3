@@ -22,11 +22,12 @@ class Feed extends React.Component {
 
                 <CreatePost/>
                 <CardPanel>
-                    <Post />
-                </CardPanel>
-
-                <CardPanel>
-                    <Post />
+                    {/* <Container> */}
+                    <Row>
+                        <Post />
+                        <Post />
+                    </Row>
+                    {/* </Container> */}
                 </CardPanel>
             </Container>
         </div>

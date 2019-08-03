@@ -4,20 +4,40 @@ import { Col, Row, Container } from "../Grid"
 
 function Post(props) {
   return (
+
     <Col size="s6">
-      <div class="card horizontal">
-        <div class="card-image">
-          <img src="https://lorempixel.com/100/190/nature/6" />
-        </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.</p>
-          </div>
-          <div class="card-action">
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1564694230688-f6afe64db816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" width="300" height="400" />
+        <span class="card-title">Card Title</span>
       </div>
-      </Col>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information.
+    I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+</Col>
+
+    // <Col size="s6">
+    //   <div class="card horizontal">
+    //     <div class="card-image">
+    //       <img src="https://lorempixel.com/100/190/nature/6" />
+    //     </div>
+    //     <div class="card-stacked">
+    //       <div class="card-content">
+    //         <p>I am a very simple card. I am good at containing small bits of information.</p>
+    //       </div>
+    //       <div class="card-action">
+    //       </div>
+    //     </div>
+    //   </div>
+    //   </Col>
+
+
+
   );
 }
 
