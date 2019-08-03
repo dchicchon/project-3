@@ -37,8 +37,8 @@ class Login extends Component {
       credentials: "include",
       mode: "cors",
       body: JSON.stringify({
-        email: this.state.email,
         password: this.state.password,
+        email: this.state.email
       }),
       headers: new Headers({
         "Content-Type": "application/json"
@@ -75,7 +75,7 @@ class Login extends Component {
                   </Row>
                   <Row>
                     <div className="input-field col s12">
-                      <input id="password" className="validate" name='password' type="password" value={this.state.email} onChange={this.handleInputChange}  />
+                      <input id="password" className="validate" name='password' type="password" value={this.state.password} onChange={this.handleInputChange}  />
                       <label htmlFor="password">Password</label>
                     </div>
                   </Row>
