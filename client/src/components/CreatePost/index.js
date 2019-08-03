@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CardPanel from '../CardPanel';
 import { Col, Row, Container } from "../Grid";
 import TextInput from './../TextInput/index';
@@ -9,7 +9,56 @@ import AutocompleteLocation from "../AutocompleteLocation";
 // import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
 
+//add from danny
+import API from "../../Utils/API";
+import Cookies from 'js-cookie'
 
+
+
+
+
+
+class CreatePost extends Component {
+    state = {
+        info: "",
+        image: '',
+        tag: '',
+        user_id: Cookies.get('id')
+    }
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    addPost = async event => {
+        event.preventDefault();
+        console.log("Add post begins")
+        var postData = {
+            info: this.state.info,
+            image: this.state.image,
+            tag: this.state.tag,
+            user_id: this.state.user_id
+        }
+        console.log("POST DATA:", postData)
+        API.newPost(postData)
+            .then(response => {
+                console.log(response)
+            })
+    }
+
+
+
+    render() {
+
+
+
+    }
+
+
+    
 export default function CreatePost(props) {
     return (
         <div>
