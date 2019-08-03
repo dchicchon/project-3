@@ -70,12 +70,12 @@ class App extends Component {
     } else {
       return (
         <Router>
-          <NavBar/>
+          <NavBar logout={this.logout}/>
           <Switch>
             <Route exact path="/"
               component={
                 () => <Feed
-                  logout={this.logout}
+                  // logout={this.logout}
                   email={this.state.email}
                 />
 

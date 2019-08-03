@@ -5,8 +5,8 @@ import React, { Component } from "react";
 
 import CardPanel from "../components/CardPanel"
 import Post from "../components/Post"
-import API from '../Utils/API'
-import { Col, Row, Container } from "../components/Grid";
+// import API from '../Utils/API'
+// import { Col, Row, Container } from "../components/Grid";
 
 class Feed extends Component {
     state = {
