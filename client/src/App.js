@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 //Pages
-// import Discover from './pages/Discover'
+import Discover from './pages/Discover'
+import Profile from './pages/Profile'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
 import NoMatch from './pages/NoMatch'
-// import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 
 // Components
@@ -58,9 +58,7 @@ class App extends Component {
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            {/* <Route exact path="/discover" component={Discover} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/feed" component={Feed} /> */}
+
           </Switch>
           {/* <BackgroundSlideshow images={[image1, image2, image3]} /> */}
         </Router>
@@ -70,15 +68,16 @@ class App extends Component {
         <Router>
           <NavBar logout={this.logout} />
           <Switch>
-            <Route exact path="/"
-              component={
-                () => <Feed
-                  email={this.state.email}
-                />
+            <Route exact path="/" component={Feed} />
+            <Route exact path="/discover" component={Discover} />
+            <Route exact path="/profile" component={Profile} />
 
-              }
+            {/* // () => <Feed */}
+            {/* // email={this.state.email}
+                // />
+              // }
 
-            />
+            /> */}
           </Switch>
         </Router>
       )

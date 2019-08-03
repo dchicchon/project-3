@@ -8,7 +8,11 @@ function NavBar(props) {
     <div>
       <nav>
         <div className="nav-wrapper blue">
-          <a href="/feed" className="brand-logo">TripIt</a>
+          {/* <li> */}
+            <Link className="brand-logo" to='/'>
+              TripIt
+          </Link>
+          {/* </li> */}
           <ul className="right hide-on-med-and-down">
             <li>
               <Link to="/profile">
