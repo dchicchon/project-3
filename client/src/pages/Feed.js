@@ -6,7 +6,7 @@ import Post from "../components/Post"
 import API from '../Utils/API'
 import { Col, Row, Container } from "../components/Grid";
 import CreatePost from './../components/CreatePost';
-
+import 'materialize-css/dist/css/materialize.min.css';
 
 function Feed(props) {
     return (

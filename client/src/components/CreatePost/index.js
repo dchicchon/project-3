@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../Grid";
 import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
+import Modal from "../Modal";
 
 export default function CreatePost(){
     return(
@@ -14,6 +15,7 @@ export default function CreatePost(){
                 <TextInput>Title</TextInput>
                 <TextInput>Record Your Journey</TextInput>
 
+<Button><Modal/></Button>
                 <Button>Submit</Button>
                 </CardPanel>
             </Container>
