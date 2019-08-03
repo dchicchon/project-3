@@ -29,7 +29,7 @@ module.exports = () => {
         passReqToCallback: true
     },
         (req, email, password, done) => {
-            console.log("SOMETHING IN PASSPORT.JS IS HAPPENING")
+            console.log("LOCAL-SIGNUP STRATEGY HIT")
             var passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(8))
             db.User.findOne({
                 where: {
@@ -76,16 +76,12 @@ module.exports = () => {
         passReqToCallback: true
     },
         (req, email, password, done) => {
-            db.User.find({
+            console.log("LOCAL-LOGIN STRATEGY HIT")
+            db.User.findOne({
                 where: {
                     email: email
                 }
-            }, (err, user) => {
-                if (err) {
-                    console.log(`Error: ${err}`)
-                    return done(err)
-                }
-
+            }).then(user => {
                 if (!user) {
                     console.log(`No user found. ${user}`)
                     return done(null, false, {

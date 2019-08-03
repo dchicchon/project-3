@@ -84,7 +84,10 @@ router.post("/signup", (req, res, next) => {
 // =================================
 
 router.post('/login', (req, res, next) => {
-    passport.authenticate("local-login", (err, user) => {
+    console.log("\nIN THE LOGIN ROUTE")
+    passport.authenticate("local-login", (err, user, info) => {
+        console.log("\nmessage:", info)
+        console.log("\nuser:", user)
         if (err) {
             console.log(`Error: ${err}`)
             return next(err);
