@@ -2,7 +2,7 @@ import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
 
-function SearchChip(props, { children }) {
+function SearchChip(props) {
     return (
         <div>
             {/* <button className="btn waves-effect waves-light" type="submit" name="action" {...props}>

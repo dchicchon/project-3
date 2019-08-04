@@ -14,7 +14,7 @@ class Date extends Component {
     render() {
         return(
         <div>
-           <input type="text" class="datepicker" placeholder="Pick a date"></input> </div>
+           <input type="text" className="datepicker" placeholder="Pick a date"></input> </div>
 
 // { <div>
 // <div class="input-field col s6">

@@ -1,9 +1,7 @@
 import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
-import Button from "../Button"
-
-function SearchFor(props, { children }) {
+function SearchFor(props) {
     return (
         <div>
             
@@ -16,7 +14,7 @@ function SearchFor(props, { children }) {
                                 <div className="input-field col s12 bgSearchBar blue-text" >
                                     <i className="material-icons prefix">search</i>
                                     <input type="text" id="autocomplete-input" className="autocomplete" />
-                                    <label for="autocomplete-input">Discover</label>
+                                    <label htmlfor="autocomplete-input">Discover</label>
                                 </div>
                                 {/* <Button size="col s4"></Button> */}
                             </div>
