@@ -13,13 +13,12 @@ function SearchFor(props, { children }) {
                     <div className="row">
                         <div className="col s12">
                             <div className="row">
-                                <div className="input-field col s8 bgSearchBar blue-text" >
-                                    {/* <i className="material-icons prefix">textsms</i> */}
+                                <div className="input-field col s12 bgSearchBar blue-text" >
                                     <i className="material-icons prefix">search</i>
                                     <input type="text" id="autocomplete-input" className="autocomplete" />
                                     <label for="autocomplete-input">Discover</label>
                                 </div>
-                                <Button size="col s4"></Button>
+                                {/* <Button size="col s4"></Button> */}
                             </div>
                         </div>
                     </div>

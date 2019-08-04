@@ -7,6 +7,13 @@
 
 .bgSearchBar{
     background-color: #eee;
-    opacity: 0.4;
+    opacity: 0.8;
     border-radius:20px;
+}
+
+#autocomplete-input{
+    font-weight: bold;
+}
+.row:last-child {
+    margin-bottom: 0;
 }
