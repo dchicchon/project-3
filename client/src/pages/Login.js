@@ -65,7 +65,7 @@ class Login extends Component {
             <Container>
               <br></br><br></br><br></br>
               <CardPanel>
-                <h4>Login</h4>
+                <h4 className="loginFont">Login</h4>
                 <form className="col s12">
                   <Row>
                     <div className="input-field col s12">

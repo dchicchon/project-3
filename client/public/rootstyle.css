@@ -14,9 +14,19 @@
 #autocomplete-input{
     font-weight: bold;
 }
+
 .row:last-child {
     margin-bottom: 0;
 }
+
 .card-panel{
     opacity: 0.8;
+}
+
+#root{
+    /* font-family: 'Hanuman', serif; */
+}
+
+.loginFont, h1, h2, h3, h4, h5, h6{
+    font-family: 'Faster One', cursive;
 }
