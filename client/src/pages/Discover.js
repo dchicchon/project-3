@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../components/NavBar"
+// import NavBar from "../components/NavBar"
 import Post from "../components/Post"
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from "../components/CardPanel"
@@ -11,7 +11,7 @@ function Discover(props) {
   return (
     <div>
 
-      <NavBar />
+      {/* <NavBar /> */}
       <Container>
         <HeadTitle />
         <SearchFor />
