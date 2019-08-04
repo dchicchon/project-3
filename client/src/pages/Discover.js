@@ -55,7 +55,6 @@ class Discover extends Component {
         return (
             <div>
 
-                <NavBar />
                 <Container>
                     <HeadTitle />
                     <SearchFor />
