@@ -17,3 +17,6 @@
 .row:last-child {
     margin-bottom: 0;
 }
+.card-panel{
+    opacity: 0.8;
+}
