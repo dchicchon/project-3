@@ -6,7 +6,7 @@ const db = require("../../models");
 router.get('/user', (req, res) => {
     if (req.isAuthenticated()) {
         const currentUser = req.session.passport.user;
-        console.log(`Current User: ${currentUser}`);
+        console.log(`Current User:`, currentUser);
         db.User.findOne({
             where: {
 
@@ -37,6 +37,7 @@ router.get('/user', (req, res) => {
 
 router.post("/signup", (req, res, next) => {
     console.log("\nIN THE SIGNUP ROUTE")
+    console.log(req.body)
     passport.authenticate("local-signup", (err, user, info) => {
         console.log("\nmessage", info);
         console.log(`\nuser`, user)
@@ -74,6 +75,7 @@ router.post("/signup", (req, res, next) => {
             res.cookie("lastName", req.user.lastName)
             res.cookie("email", req.user.email)
             res.cookie("id", req.user.id)
+            res.cookie("profileImg", req.user.profileImg)
             return res.redirect('/')
         });
     })(req, res, next);
@@ -83,7 +85,11 @@ router.post("/signup", (req, res, next) => {
 // =================================
 
 router.post('/login', (req, res, next) => {
-    passport.authenticate("local-login", (err, user) => {
+    console.log("\nIN THE LOGIN ROUTE")
+    console.log(req.body)
+    passport.authenticate("local-login", (err, user, info) => {
+        console.log("\nmessage:", info)
+        console.log("\nuser:", user)
         if (err) {
             console.log(`Error: ${err}`)
             return next(err);
@@ -120,6 +126,9 @@ router.get('/logout', function (req, res) {
         res.clearCookie('firstName')
         res.clearCookie('lastName')
         res.clearCookie('id');
+        res.clearCookie("connect.sid")
+        res.clearCookie("user_sid")
+        res.clearCookie("profileImg")
         res.redirect("/")
     } else {
         res.status(200).json({
@@ -127,15 +136,6 @@ router.get('/logout', function (req, res) {
             'message': 'failed logout'
         });
     }
-    // req.session.destroy(function (err) {
-    //     if (err) {
-    //         console.log(`Error: ${err}`)
-    //     }
-
-    //     // Here we clear the cookies from the browser
-    //     console.log("LOGOUT")
-
-    // });
 });
 
 module.exports = router;

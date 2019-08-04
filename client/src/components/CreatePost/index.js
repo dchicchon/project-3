@@ -9,14 +9,14 @@ import AutocompleteLocation from "../AutocompleteLocation";
 // import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
 
-//add from danny
-import API from "../../Utils/API";
+
 import Cookies from 'js-cookie'
 
+// Components
+import Button from '../Button'
 
-
-
-
+// Utils
+import API from '../../Utils/API'
 
 class CreatePost extends Component {
     state = {
@@ -94,3 +94,34 @@ export default function CreatePost(props) {
     )
 }
 
+        // CHANGE THIS LATER TO USE OUR ROW COMPONENT
+        return (
+            <div>
+                <div className="row">
+                    <form className="col s12">
+                        <div className="row">
+                            <h2 value={this.state.user_id}></h2>
+                            <div className="input-field col s6">
+                                <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                                <label htmlFor="description">Description</label>
+                            </div>
+                            <div className="input-field col s6">
+                                <input id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+                                <label htmlFor="tag">Tag</label>
+                            </div>
+                        </div>
+                        {/* <div className="row">
+                        <div className="input-field col s6">
+                            <input placeholder="Placeholder" id="image" type="text" className="validate" />
+                            <label htmlFor="image">Image</label>
+                        </div>
+                    </div> */}
+                    </form>
+                </div>
+                <Button onClick={this.addPost}>Create Post</Button>
+            </div>
+        )
+    }
+}
+
+export default CreatePost;
