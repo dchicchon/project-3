@@ -9,6 +9,8 @@ import Login from './pages/Login'
 import NoMatch from './pages/NoMatch'
 import Signup from './pages/Signup'
 
+// materialize
+import 'materialize-css/dist/css/materialize.min.css';
 // Components
 import NavBar from "./components/NavBar"
 
