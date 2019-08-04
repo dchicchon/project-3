@@ -1,6 +1,16 @@
-import React from "react";
+import React, {Component} from "react";
 
-export default function Modal() {
+import M from "materialize-css";
+
+  class Modal extends Component {
+    componentDidMount() {
+      // Auto initialize all the things!
+      M.AutoInit();
+  }
+
+// export default function Modal() {
+
+render() {
     return (
         <div>
             {/* <!-- Modal Trigger --> */}
@@ -19,3 +29,6 @@ export default function Modal() {
         </div>
     )
 }
+  }
+
+  export default Modal; 
