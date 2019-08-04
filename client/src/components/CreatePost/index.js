@@ -16,6 +16,7 @@ import Cookies from 'js-cookie'
 // Utils
 import API from '../../Utils/API'
 
+
 class CreatePost extends Component {
     state = {
         info: "",
@@ -55,66 +56,72 @@ class CreatePost extends Component {
     
 // export default function CreatePost(props) {
     return (
-        // <div>
-        //     <Container>
-        //         <CardPanel>
-        //             <Container>
-        //             <form>
-        //             <Date className="col s6" />
-        //             <TextInput>Where are you?</TextInput>
-        //             <TextInput className="col s6">Title</TextInput>
-        //             <TextInput>Record Your Journey</TextInput>
-        //             <Row>
-        //                 <div class="file-field input-field">
-        //                     <div class="btn">
-        //                         <span>Upload Photo</span>
-        //                         <input type="file" multiple  
-        //                         // onChange={handleChange('image')} 
-        //                         {...props} 
-        //                         />
-        //                     </div>
-        //                     <div class="file-path-wrapper">
-        //                         <input class="file-path validate" type="text" />
-        //                     </div>
-        //                 </div>
-        //                     </Row>
-        //             <Button className="right">Submit</Button>
-        //             </form>
-        //             </Container>
-        //         </CardPanel>
-        //     </Container>
+        <div>
+            <Container>
+                <CardPanel>
+                    <Container>
+                    <form>
+                    <Date className="col s6" />
+                    <TextInput>Where are you?</TextInput>
+                    <TextInput className="col s6">Title</TextInput>
+                    <TextInput>Record Your Journey</TextInput>
+                    <Row>
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Upload Photo</span>
+                                <input type="file" multiple  
+                                // onChange={handleChange('image')} 
+                                // {...props} 
+                                />
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" />
+                            </div>
+                        </div>
+                            </Row>
+                    <Button className="right" onClick={this.addPost} >Submit</Button>
+                    </form>
+                    </Container>
+                </CardPanel>
+            </Container>
 
-        // </div>
+        </div>
 
 
 
 
 //----------DANNY------------------------------------------------------------
         // CHANGE THIS LATER TO USE OUR ROW COMPONENT
-            <div>
-                <div className="row">
-                    <form className="col s12">
-                        <div className="row">
-                            <h2 value={this.state.user_id}></h2>
-                            <div className="input-field col s6">
-                                <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
-                                <label htmlFor="description">Description</label>
-                            </div>
-                            <div className="input-field col s6">
-                                <input id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
-                                <label htmlFor="tag">Tag</label>
-                            </div>
-                        </div>
-                        {/* <div className="row">
-                        <div className="input-field col s6">
-                            <input placeholder="Placeholder" id="image" type="text" className="validate" />
-                            <label htmlFor="image">Image</label>
-                        </div>
-                    </div> */}
-                    </form>
-                </div>
-                <Button onClick={this.addPost}>Create Post</Button>
-            </div>
+            // <div>
+                // <div className="row">
+                //     <form className="col s12">
+                //         <div className="row">
+
+
+                // ====not edited========
+                //             <h2 value={this.state.user_id}></h2>
+                //             <div className="input-field col s6">
+                //                 <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                //                 <label htmlFor="description">Description</label>
+                //             </div>
+                //             <div className="input-field col s6">
+                //                 <input id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+                //                 <label htmlFor="tag">Tag</label>
+                //             </div>
+                //         </div>
+                //         {/* <div className="row">
+                //         <div className="input-field col s6">
+                //             <input placeholder="Placeholder" id="image" type="text" className="validate" />
+                //             <label htmlFor="image">Image</label>
+                //         </div>
+                //     </div> */}
+                //     </form>
+                // </div>
+
+
+
+            //     {/* <Button onClick={this.addPost}>Create Post</Button> */}
+            // {/* </div> */}
     )
                 }
 }
