@@ -4,9 +4,7 @@ import { Col, Row, Container } from "../Grid"
 function SearchFor(props, { children }) {
     return (
         <div>
-            {/* <button className="btn waves-effect waves-light" type="submit" name="action" {...props}>
-        {children}<i className="material-icons right">send</i>
-      </button> */}
+            
             <Container>
                 <Row>
                     <Col size="s4"> </Col>
@@ -31,3 +29,16 @@ function SearchFor(props, { children }) {
 }
 
 export default SearchFor;
+
+
+{/* <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav> */}

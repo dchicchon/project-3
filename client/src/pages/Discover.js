@@ -5,6 +5,7 @@ import { Col, Row, Container } from "../components/Grid";
 import CardPanel from "../components/CardPanel"
 import SearchFor from "../components/Searchbar"
 import HeadTitle from "../components/PageTitle"
+import SearchChip from "../components/SearchChips"
 
 function Discover(props) {
   return (
@@ -14,6 +15,7 @@ function Discover(props) {
       <Container>
         <HeadTitle />
         <SearchFor />
+        <SearchChip />
         <CardPanel>
           <Row>
             <Post />

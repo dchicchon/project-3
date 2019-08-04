@@ -2,7 +2,7 @@ import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
 
-function HeadTitle(props, { children }) {
+function SearchChip(props, { children }) {
     return (
         <div>
             {/* <button className="btn waves-effect waves-light" type="submit" name="action" {...props}>
@@ -13,13 +13,9 @@ function HeadTitle(props, { children }) {
                     <Col size="s4"> </Col>
 
                     <div class="row">
-                        <div class="input-field col s4">
-                            {/* <i class="material-icons prefix">textsms</i> */}
-                            {/* <input type="text" id="autocomplete-input" class="autocomplete" /> */}
-                            {/* <label for="autocomplete-input">Discover</label> */}
-                            <h3 class="grey-text text-darken-3">DISCOVER</h3>
-                        </div>
-
+                        <div class="chip col s2 disable"> Tag<i class="close material-icons">close</i> </div>
+                        <div class="chip col s2"> Tag<i class="close material-icons">close</i> </div>
+                        <div class="chip col s2"> Tag<i class="close material-icons">close</i> </div>
                     </div>
 
                     <Col size="s4"> </Col>
@@ -30,4 +26,4 @@ function HeadTitle(props, { children }) {
 
 }
 
-export default HeadTitle;
+export default SearchChip;
