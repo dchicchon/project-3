@@ -12,8 +12,6 @@ import Modal from "../Modal";
 
 import Cookies from 'js-cookie'
 
-// Components
-import Button from '../Button'
 
 // Utils
 import API from '../../Utils/API'
@@ -54,48 +52,45 @@ class CreatePost extends Component {
     render() {
 
 
-
-    }
-
-
     
-export default function CreatePost(props) {
+// export default function CreatePost(props) {
     return (
-        <div>
-            <Container>
-                <CardPanel>
-                    <Container>
-                    <form>
-                    <Date className="col s6" />
-                    <TextInput>Where are you?</TextInput>
-                    <TextInput className="col s6">Title</TextInput>
-                    <TextInput>Record Your Journey</TextInput>
-                    <Row>
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Upload Photo</span>
-                                <input type="file" multiple  
-                                // onChange={handleChange('image')} 
-                                {...props} 
-                                />
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" />
-                            </div>
-                        </div>
-                            </Row>
-                    <Button className="right">Submit</Button>
-                    </form>
-                    </Container>
-                </CardPanel>
-            </Container>
+        // <div>
+        //     <Container>
+        //         <CardPanel>
+        //             <Container>
+        //             <form>
+        //             <Date className="col s6" />
+        //             <TextInput>Where are you?</TextInput>
+        //             <TextInput className="col s6">Title</TextInput>
+        //             <TextInput>Record Your Journey</TextInput>
+        //             <Row>
+        //                 <div class="file-field input-field">
+        //                     <div class="btn">
+        //                         <span>Upload Photo</span>
+        //                         <input type="file" multiple  
+        //                         // onChange={handleChange('image')} 
+        //                         {...props} 
+        //                         />
+        //                     </div>
+        //                     <div class="file-path-wrapper">
+        //                         <input class="file-path validate" type="text" />
+        //                     </div>
+        //                 </div>
+        //                     </Row>
+        //             <Button className="right">Submit</Button>
+        //             </form>
+        //             </Container>
+        //         </CardPanel>
+        //     </Container>
 
-        </div>
-    )
-}
+        // </div>
 
+
+
+
+//----------DANNY------------------------------------------------------------
         // CHANGE THIS LATER TO USE OUR ROW COMPONENT
-        return (
             <div>
                 <div className="row">
                     <form className="col s12">
@@ -120,8 +115,12 @@ export default function CreatePost(props) {
                 </div>
                 <Button onClick={this.addPost}>Create Post</Button>
             </div>
-        )
-    }
+    )
+                }
 }
+
+
+
+        
 
 export default CreatePost;
