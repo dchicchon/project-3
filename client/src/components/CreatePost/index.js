@@ -19,9 +19,13 @@ import API from '../../Utils/API'
 
 class CreatePost extends Component {
     state = {
+        // added LOCATION AND TITLE DATE
         info: "",
+        title:"",
+        location:"",
         image: '',
         tag: '',
+        date: "",
         user_id: Cookies.get('id')
     }
 
@@ -39,7 +43,11 @@ class CreatePost extends Component {
             info: this.state.info,
             image: this.state.image,
             tag: this.state.tag,
-            user_id: this.state.user_id
+            user_id: this.state.user_id,
+            // added LOCATION AND TITLE DATE
+            title: this.state.title, 
+            location: this.state.location,
+            date: this.state.date
         }
         console.log("POST DATA:", postData)
         API.newPost(postData)
@@ -57,14 +65,30 @@ class CreatePost extends Component {
 // export default function CreatePost(props) {
     return (
         <div>
+
+{/* USER ID */}
+            <h2 value={this.state.user_id}></h2>
             <Container>
                 <CardPanel>
                     <Container>
                     <form>
                     <Date className="col s6" />
-                    <TextInput>Where are you?</TextInput>
-                    <TextInput className="col s6">Title</TextInput>
-                    <TextInput>Record Your Journey</TextInput>
+                    {/* <TextInput>Where are you?</TextInput> */}
+                    <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
+                {/* <label htmlFor="location">Where are you?</label> */}
+
+
+                    {/* <TextInput className="col s6">Title</TextInput> */}
+                    <input placeholder="Title" id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
+                {/* <label htmlFor="title">Title</label> */}
+
+
+                    {/* <TextInput>Record Your Journey</TextInput> */}
+                    <input placeholder="Record your journey" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+{/* COMMENTED OUT FOR NOW */}
+                        {/* <label htmlFor="description">Record?</label> */}
+
+{/* UPLOAD IMAGE */}
                     <Row>
                         <div class="file-field input-field">
                             <div class="btn">
@@ -75,10 +99,21 @@ class CreatePost extends Component {
                                 />
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" />
+                                <input class="file-path validate" type="text" id="image" />
+                                <label htmlFor="image">Image</label>
                             </div>
                         </div>
-                            </Row>
+                    </Row>
+
+{/* DANNY IMAGE */}
+                    {/* <div className="row">
+                        <div className="input-field col s6">
+                            <input placeholder="Placeholder" id="image" type="text" className="validate" />
+                            <label htmlFor="image">Image</label>
+                        </div>
+                    </div>  */}
+
+
                     <Button className="right" onClick={this.addPost} >Submit</Button>
                     </form>
                     </Container>
@@ -99,22 +134,22 @@ class CreatePost extends Component {
 
 
                 // ====not edited========
-                //             <h2 value={this.state.user_id}></h2>
-                //             <div className="input-field col s6">
-                //                 <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
-                //                 <label htmlFor="description">Description</label>
-                //             </div>
-                //             <div className="input-field col s6">
+                            // <h2 value={this.state.user_id}></h2>
+                    //         <div className="input-field col s6">
+                    //             <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                    //             <label htmlFor="description">Description</label>
+                    //         </div>
+                    //         <div className="input-field col s6">
                 //                 <input id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
                 //                 <label htmlFor="tag">Tag</label>
                 //             </div>
-                //         </div>
-                //         {/* <div className="row">
+                        // </div>
+                //          <div className="row">
                 //         <div className="input-field col s6">
                 //             <input placeholder="Placeholder" id="image" type="text" className="validate" />
                 //             <label htmlFor="image">Image</label>
                 //         </div>
-                //     </div> */}
+                //     </div> 
                 //     </form>
                 // </div>
 
