@@ -3,9 +3,8 @@ import CardPanel from "../components/CardPanel"
 import Post from "../components/Post"
 import { Col, Row, Container } from "../components/Grid";
 import CreatePost from './../components/CreatePost';
-
 import API from '../Utils/API'
-
+import Modal from "../components/Modal";
 
 // Import Materialize
 import M from "materialize-css";
@@ -23,6 +22,7 @@ class Feed extends Component {
     return (
         <div>
             {/* <NavBar /> */}
+            <Modal/>
             <Container>
                 <CreatePost/>
                 <CardPanel>
