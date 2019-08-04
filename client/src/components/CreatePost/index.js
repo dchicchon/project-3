@@ -72,32 +72,41 @@ class CreatePost extends Component {
                     <form>
                     {/* <Date className="col s6" /> */}
                     {/* <TextInput>Where are you?</TextInput> */}
-                    <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
+                    <div className="input-field">
+                    <input id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
+                        <label for="location">Where are you?</label>   
+                    </div>
                 {/* <label htmlFor="location">Where are you?</label> */}
 
 
                     {/* <TextInput className="col s6">Title</TextInput> */}
-                    <input placeholder="Title" id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
+                    <div className="input-field">
+                    <input id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
+                    <label for="title">Title</label>
+                    </div>
                 {/* <label htmlFor="title">Title</label> */}
 
 
                     {/* <TextInput>Record Your Journey</TextInput> */}
-                    <input placeholder="Record your journey" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                    <div className="input-field">
+                    <input id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                    <label for="description">Record your Journey</label>
+                    </div>
 {/* COMMENTED OUT FOR NOW */}
                         {/* <label htmlFor="description">Record?</label> */}
 
 {/* UPLOAD IMAGE */}
                     <Row>
-                        <div class="file-field input-field">
-                            <div class="btn">
+                        <div className="file-field input-field">
+                            <div className="btn">
                                 <span>Upload Photo</span>
                                 <input type="file" multiple  
                                 // onChange={handleChange('image')} 
                                 // {...props} 
                                 />
                             </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" id="image" />
+                            <div className="file-path-wrapper">
+                                <input className="file-path validate" type="text" id="image" />
                                 <label htmlFor="image">Image</label>
                             </div>
                         </div>
