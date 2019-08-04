@@ -53,7 +53,7 @@ export default function Login(props) {
   }
 
   return (
-    <div>
+    <div id="loginpage">
       <Container>
         <Container>
           <Container>
@@ -63,13 +63,13 @@ export default function Login(props) {
               <form className="col s12">
                 <Row>
                   <div className="input-field col s12">
-                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
+                    <input id="email" type="email" className="validate"  onChange={handleChange('email')} {...props} value={values.email}/>
                     <label for="email">Email</label>
                   </div>
                 </Row>
                 <Row>
                   <div className="input-field col s12">
-                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
+                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} value={values.password}/>
                     <label for="password">Password</label>
                   </div>
                 </Row>

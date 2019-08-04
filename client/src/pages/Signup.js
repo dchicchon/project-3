@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
 import { Link } from 'react-router-dom'
+import CardPanel from '../components/CardPanel'
 
 
 
@@ -46,7 +47,9 @@ export default function Signup(props) {
 
                 setValues({
                     email: '',
-                    password: ''
+                    password: '',
+                    firstName: '',
+                    lastName: ''
                 });
 
             } else {
@@ -61,7 +64,8 @@ export default function Signup(props) {
     return (
         <div>
             <Container>
-                <div className="card-panel center">
+                <Container>
+                <CardPanel>
                     <h1>Sign - Up</h1>
                     <div className="row">
                         <form className="col s12">
@@ -77,14 +81,14 @@ export default function Signup(props) {
                             </Row>
                             <Row>
                                 <div className="input-field col s12">
-                                    <input id="email" type="email" className="validate" onChange={handleChange('email')} {...props} />
+                                    <input id="email" type="email" className="validate" onChange={handleChange('email')} value={values.email} {...props} />
                                     <label for="email">Email</label>
                                 </div>
                             </Row>
 
                             <Row>
                                 <div className="input-field col s12">
-                                    <input id="password" type="password" className="validate" onChange={handleChange('password')} {...props} />
+                                    <input id="password" type="password" className="validate" onChange={handleChange('password')} value={values.password} {...props} />
                                     <label for="password">Password</label>
                                 </div>
                             </Row>
@@ -109,11 +113,12 @@ export default function Signup(props) {
 
                         </form>
                     </div>
-                    <Link to="/discover">
-                        <Button>Signup</Button>
-                    </Link>
 
-                </div>
+                        <Button onClick={formSubmit} >Signup</Button>
+  
+
+                    </CardPanel>
+                </Container>
             </Container>
         </div >
     )
