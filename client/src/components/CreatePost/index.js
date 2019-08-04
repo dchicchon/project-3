@@ -19,13 +19,12 @@ import API from '../../Utils/API'
 
 class CreatePost extends Component {
     state = {
-        // added LOCATION AND TITLE DATE
+        // added LOCATION AND TITLE 
         info: "",
         title:"",
         location:"",
         image: '',
         tag: '',
-        date: "",
         user_id: Cookies.get('id')
     }
 
@@ -44,10 +43,9 @@ class CreatePost extends Component {
             image: this.state.image,
             tag: this.state.tag,
             user_id: this.state.user_id,
-            // added LOCATION AND TITLE DATE
+            // added LOCATION AND TITLE 
             title: this.state.title, 
-            location: this.state.location,
-            date: this.state.date
+            location: this.state.location
         }
         console.log("POST DATA:", postData)
         API.newPost(postData)
@@ -72,7 +70,7 @@ class CreatePost extends Component {
                 <CardPanel>
                     <Container>
                     <form>
-                    <Date className="col s6" />
+                    {/* <Date className="col s6" /> */}
                     {/* <TextInput>Where are you?</TextInput> */}
                     <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
                 {/* <label htmlFor="location">Where are you?</label> */}
