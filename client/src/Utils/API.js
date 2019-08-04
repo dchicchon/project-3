@@ -3,6 +3,10 @@ import axios from "axios";
 export default {
 
    // Post Create Methods
+   getPosts: () => {
+      return axios.get(`/api/post`)
+   },
+
    newPost: function (postData) {
       return axios.post(`/api/post`, postData)
    },

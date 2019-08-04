@@ -53,7 +53,7 @@ module.exports = {
 					profileImg: location,
 				},
 				{
-					where: { userId: req.body.id }
+					where: { id: req.body.id }
 				})
 				.then(dbUser => res.json({ imageUrl: location }));
 		});
@@ -61,12 +61,11 @@ module.exports = {
 
 
 	addPost: (req, res) => {
-
-		console.log(req.body);
+		console.log("MADE IT TO POST CONTROLLER")
 
 		db.Post.create({
 			info: req.body.info,
-			image: req.body.image,
+			// image: req.body.image,
 			tag: req.body.tag
 		}
 		).then(dbPost => res.json(dbPost));
@@ -83,7 +82,7 @@ module.exports = {
 	getPostsByUser: (req, res) => {
 		db.Post.findAll(
 			{
-				where: { userId: req.params.id }
+				where: { id: req.params.id }
 			},
 			{
 				order: [['time', 'desc']],

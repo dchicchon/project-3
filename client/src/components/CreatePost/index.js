@@ -36,9 +36,9 @@ class CreatePost extends Component {
         console.log("Add post begins")
         var postData = {
             info: this.state.info,
-            image: this.state.image,
+            // image: this.state.image,
             tag: this.state.tag,
-            user_id: this.state.user_id
+            // user_id: this.state.user_id
         }
         console.log("POST DATA:", postData)
         API.newPost(postData)
@@ -97,8 +97,8 @@ class CreatePost extends Component {
                         <div className="row">
                             <h2 value={this.state.user_id}></h2>
                             <div className="input-field col s6">
-                                <input placeholder="" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
-                                <label htmlFor="description">Description</label>
+                                <input placeholder="" id="info" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                                <label htmlFor="info">Description</label>
                             </div>
                             <div className="input-field col s6">
                                 <input id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
