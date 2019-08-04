@@ -10,6 +10,7 @@ import SearchChip from "../components/SearchChips"
 // Utils
 
 import API from "../Utils/API"
+import { setServers } from "dns";
 
 // function Discover(props) {
 //   return (
@@ -35,9 +36,7 @@ import API from "../Utils/API"
 class Discover extends Component {
     state = {
         search: '',
-        posts: {
-
-        }
+        posts: {}
     }
 
     handleInputChange = event => {
@@ -47,8 +46,25 @@ class Discover extends Component {
         })
     }
 
+    // handleRenderPosts() {
+
+    //     // (this.state.posts.length) ?
+    //     //     this.state.posts.map(post => (posts, i) = <Post />)
+
+    //     {(this.state.posts.length)? 
+
+    //     }
+
+    // }
+
     async componentDidMount() {
-        await API.getPosts()
+        console.log("DISCOVER PAGE")
+        API.getPosts().then(res => {
+            console.log(res.data)
+            this.setState({
+                posts: res.data
+            })
+        })
     }
 
     render() {
@@ -61,8 +77,17 @@ class Discover extends Component {
                     <SearchChip />
                     <CardPanel>
                         <Row>
-                            <Post />
-                            <Post />
+                            {(this.state.posts.length) ? this.state.posts.map((post, i) => (
+                                <Post
+                                    key = {i}
+                                    title={post.title}
+                                    info = {post.info}
+                                    location = {post.location}
+                                    tag = {post.tag}
+                                    id = {post.user_id}
+                                />
+                            )) : "No Posts"}
+                            
                         </Row>
                     </CardPanel>
                 </Container>

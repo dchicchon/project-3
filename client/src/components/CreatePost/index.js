@@ -25,7 +25,7 @@ class CreatePost extends Component {
         location: "",
         image: '',
         tag: '',
-        user_id: Cookies.get('id')
+        user_id: ''
     }
 
     handleInputChange = event => {
@@ -42,7 +42,7 @@ class CreatePost extends Component {
             info: this.state.info,
             // image: this.state.image,
             tag: this.state.tag,
-            user_id: this.state.user_id,
+            user_id: Cookies.get('id'),
             // added LOCATION AND TITLE 
             title: this.state.title,
             location: this.state.location
@@ -85,6 +85,9 @@ class CreatePost extends Component {
                                 <input placeholder="Record your journey" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
                                 {/* COMMENTED OUT FOR NOW */}
                                 {/* <label htmlFor="description">Record?</label> */}
+
+                                <input placeholder="Tag" id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+
 
                                 {/* UPLOAD IMAGE */}
                                 <Row>

@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../Grid";
 
 function Post(props) {
   return (
+    // const {title, image, info, tag, location} = props.post;
 
     //======================VERSION ONE==========================
     //     <Col size="s6">

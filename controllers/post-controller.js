@@ -62,10 +62,12 @@ module.exports = {
 
 	addPost: (req, res) => {
 		console.log("MADE IT TO POST CONTROLLER")
-
+		console.log(`REQ.BODY:`,req.body)
 		db.Post.create({
 			info: req.body.info,
-			// image: req.body.image,
+			title: req.body.title,
+			location: req.body.location,
+			image: req.body.image,
 			tag: req.body.tag
 		}
 		).then(dbPost => res.json(dbPost));
