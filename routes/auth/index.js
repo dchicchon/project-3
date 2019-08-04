@@ -72,11 +72,11 @@ router.post("/signup", (req, res, next) => {
 
             // res.cookie("firstName", req.user.DataValues.firstName);
             res.cookie("firstName", req.user.firstName);
-            res.cookie("lastName", req.user.lastName)
-            res.cookie("email", req.user.email)
-            res.cookie("id", req.user.id)
-            res.cookie("profileImg", req.user.profileImg)
-            return res.redirect('/')
+            res.cookie("lastName", req.user.lastName);
+            res.cookie("email", req.user.email);
+            res.cookie("id", req.user.id);
+            res.cookie("profileImg", req.user.profileImg);
+            return res.redirect('/');
         });
     })(req, res, next);
 });
@@ -107,9 +107,21 @@ router.post('/login', (req, res, next) => {
             }
 
             // Might have to change this to match our model
-            res.cookie('username', user.username);
+
+            // res.cookie('username', user.username);
+            res.cookie("firstName", req.user.firstName);
+            res.cookie("lastName", req.user.lastName);
+            res.cookie("email", req.user.email);
+            res.cookie("id", req.user.id);
+            res.cookie("profileImg", req.user.profileImg);
             // res.cookie('user_id', user._id);
-            var userI = { username: user.username }
+            var userI = {
+                // username: user.username, 
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                profileImg: user.profileImg
+            }
             return res.json(userI);
         });
     })(req, res, next);

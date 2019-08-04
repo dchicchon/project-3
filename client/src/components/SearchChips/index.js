@@ -2,7 +2,7 @@ import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
 
-function SearchChip(props, { children }) {
+function SearchChip(props) {
     return (
         <div>
             {/* <button className="btn waves-effect waves-light" type="submit" name="action" {...props}>
@@ -12,10 +12,10 @@ function SearchChip(props, { children }) {
                 <Row>
                     <Col size="s4"> </Col>
 
-                    <div class="row">
-                        <div class="chip col s2 disable"> Tag<i class="close material-icons">close</i> </div>
-                        <div class="chip col s2"> Tag<i class="close material-icons">close</i> </div>
-                        <div class="chip col s2"> Tag<i class="close material-icons">close</i> </div>
+                    <div className="row">
+                        <div className="chip col s2 disable"> Tag<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2"> Tag<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2"> Tag<i className="close material-icons">close</i> </div>
                     </div>
 
                     <Col size="s4"> </Col>
