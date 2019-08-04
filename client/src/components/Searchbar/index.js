@@ -1,20 +1,20 @@
 import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
-function SearchFor(props, { children }) {
+function SearchFor(props) {
     return (
         <div>
             
             <Container>
                 <Row>
                     <Col size="s4"> </Col>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">textsms</i>
-                                    <input type="text" id="autocomplete-input" class="autocomplete" />
-                                    <label for="autocomplete-input">Discover</label>
+                    <div className="row">
+                        <div className="col s12">
+                            <div className="row">
+                                <div className="input-field col s12">
+                                    <i className="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" className="autocomplete" />
+                                    <label htmlFor="autocomplete-input">Discover</label>
                                 </div>
                             </div>
                         </div>

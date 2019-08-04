@@ -73,7 +73,7 @@ module.exports = {
 
 	getPosts: (req, res) => {
 		db.Post.findAll({
-			order: [['time', 'desc']],
+			// order: [['time', 'desc']],
 			limit: 10
 		}
 		).then(dbPost => res.json(dbPost));

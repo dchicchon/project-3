@@ -20,7 +20,7 @@ function NavBar(props) {
               </Link>
             </li>
             <li>
-              <Link to="/feed">
+              <Link to="/">
                 Feed
               </Link>
             </li>

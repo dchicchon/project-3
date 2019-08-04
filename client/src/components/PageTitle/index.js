@@ -2,7 +2,7 @@ import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
 
-function HeadTitle(props, { children }) {
+function HeadTitle(props) {
     return (
         <div>
             {/* <button className="btn waves-effect waves-light" type="submit" name="action" {...props}>
@@ -12,12 +12,12 @@ function HeadTitle(props, { children }) {
                 <Row>
                     <Col size="s4"> </Col>
 
-                    <div class="row">
-                        <div class="input-field col s4">
-                            {/* <i class="material-icons prefix">textsms</i> */}
-                            {/* <input type="text" id="autocomplete-input" class="autocomplete" /> */}
+                    <div className="row">
+                        <div className="input-field col s4">
+                            {/* <i className="material-icons prefix">textsms</i> */}
+                            {/* <input type="text" id="autocomplete-input" className="autocomplete" /> */}
                             {/* <label for="autocomplete-input">Discover</label> */}
-                            <h3 class="grey-text text-darken-3">DISCOVER</h3>
+                            <h3 className="grey-text text-darken-3">{props.children}</h3>
                         </div>
 
                     </div>
