@@ -24,7 +24,6 @@ class Feed extends Component {
             {/* <NavBar /> */}
             <Modal/>
             <Container>
-                <CreatePost/>
                 <CardPanel>
                     {/* <Container> */}
                     <Row>
