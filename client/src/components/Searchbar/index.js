@@ -1,6 +1,8 @@
 import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
+import Button from "../Button"
+
 function SearchFor(props, { children }) {
     return (
         <div>
@@ -8,15 +10,16 @@ function SearchFor(props, { children }) {
             <Container>
                 <Row>
                     <Col size="s4"> </Col>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    {/* <i class="material-icons prefix">textsms</i> */}
-                                    <i class="material-icons prefix">search</i>
-                                    <input type="text" id="autocomplete-input" class="autocomplete" />
+                    <div className="row">
+                        <div className="col s12">
+                            <div className="row">
+                                <div className="input-field col s8 bgSearchBar blue-text" >
+                                    {/* <i className="material-icons prefix">textsms</i> */}
+                                    <i className="material-icons prefix">search</i>
+                                    <input type="text" id="autocomplete-input" className="autocomplete" />
                                     <label for="autocomplete-input">Discover</label>
                                 </div>
+                                <Button size="col s4"></Button>
                             </div>
                         </div>
                     </div>
@@ -33,12 +36,12 @@ export default SearchFor;
 
 
 {/* <nav>
-    <div class="nav-wrapper">
+    <div className="nav-wrapper">
       <form>
-        <div class="input-field">
+        <div className="input-field">
           <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+          <label className="label-icon" for="search"><i className="material-icons">search</i></label>
+          <i className="material-icons">close</i>
         </div>
       </form>
     </div>

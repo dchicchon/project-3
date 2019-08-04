@@ -12,10 +12,10 @@ function SearchChip(props, { children }) {
                 <Row>
                     <Col size="s4"> </Col>
 
-                    <div class="row">
-                        <div class="chip col s2 disable"> Hike<i class="close material-icons">close</i> </div>
-                        <div class="chip col s2"> Food<i class="close material-icons">close</i> </div>
-                        <div class="chip col s2"> Travel<i class="close material-icons">close</i> </div>
+                    <div className="row">
+                        <div className="chip col s2 disable"> Hike<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2"> Food<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2"> Travel<i className="close material-icons">close</i> </div>
                     </div>
 
                     <Col size="s4"> </Col>

@@ -4,3 +4,9 @@
     background-color: #999999;
     margin-left: 33%;
 }
+
+.bgSearchBar{
+    background-color: #eee;
+    opacity: 0.4;
+    border-radius:20px;
+}
