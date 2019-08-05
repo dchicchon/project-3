@@ -35,11 +35,6 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: "https://imgur.com/xjhcWp3",
         },
 
-        mapKey: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-
         bio: {
             type: DataTypes.STRING,
             allowNull: true,

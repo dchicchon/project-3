@@ -1,7 +1,5 @@
 import React, { Component } from "react"
 
-import NavBar from "../components/NavBar"
-
 import CardPanel from "../components/CardPanel"
 import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
