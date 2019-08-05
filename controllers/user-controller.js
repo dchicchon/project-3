@@ -89,7 +89,7 @@ module.exports = {
 	// },
 
 	editUser: (req, res) => {
-		console.log("\nFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n")
+		// console.log("\nFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n")
 		db.User.update({ bio: req.body.bio }, { where: { id: req.body.user_id } })
 			.then(dbUser => res.json(dbUser))
 			.catch(err => res.status(422).json(err));

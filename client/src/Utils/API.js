@@ -11,11 +11,16 @@ export default {
       return axios.get("/api/user/" + userId)
    },
 
-   // Post Create Methods
+   // Used on Discover Page to get all posts
    getPosts: () => {
       return axios.get(`/api/post`)
    },
+   // Make function for Discover page to get posts based by tags!
+   searchTag: (tags) => {
+      return axios.post("")
+   },
 
+   // Post Create Methods
 
    newPost: function (postData) {
       return axios.post(`/api/post`, postData)

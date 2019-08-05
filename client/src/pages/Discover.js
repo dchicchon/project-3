@@ -12,27 +12,6 @@ import SearchChip from "../components/SearchChips"
 import API from "../Utils/API"
 import { setServers } from "dns";
 
-// function Discover(props) {
-//   return (
-//     <div>
-
-//       <NavBar />
-//       <Container>
-//         <HeadTitle />
-//         <SearchFor />
-//         <SearchChip />
-//         <CardPanel>
-//           <Row>
-//             <Post />
-//             <Post />
-//           </Row>
-//         </CardPanel>
-//       </Container>
-
-//     </div>
-//   );
-// }
-
 class Discover extends Component {
     state = {
         search: '',
@@ -57,6 +36,7 @@ class Discover extends Component {
 
     // }
 
+    // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
         console.log("DISCOVER PAGE")
         API.getPosts().then(res => {
