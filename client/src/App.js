@@ -61,6 +61,8 @@ class App extends Component {
       return (
         <Router>
           <Switch>
+{/*======================================== ADDED FOR NOW============== */}
+            <Route exact path="/" component={Feed} />
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
