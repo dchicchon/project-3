@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A social media platform for people who love traveling",
   "main": "server.js",
+  "engines": {
+    "node": "12.7.0"
+  },
   "dependencies": {
     "aws-sdk": "^2.503.0",
     "bcryptjs": "^2.4.3",
