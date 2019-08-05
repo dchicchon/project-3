@@ -30,16 +30,21 @@ import './App.css';
 class App extends Component {
   state = {
     isLoggedin: false,
-    id: ''
+    user_id: '',
+    firstName: ''
+
   }
 
   async componentDidMount() {
     await API.getUser()
       .then(user => {
         console.log(user);
+        console.log("hit app.js com")
         this.setState({
           isLoggedin: user.data.isLoggedin,
-          id: user.data.id
+          user_id: user.data.id,
+          firstName: user.data.firstName
+
         })
       })
   }
@@ -74,11 +79,11 @@ class App extends Component {
     } else {
       return (
         <Router>
-          <NavBar logout={this.logout} />
+          <NavBar firstName={this.state.firstName} logout={this.logout} />
           <Switch>
-            <Route exact path="/" component={Feed} />
-            <Route exact path="/discover" component={Discover} />
-            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/" component={() => <Feed firstName={this.state.firstName} user_id={this.state.user_id} />} />
+            <Route exact path="/discover" component={() => <Discover firstName={this.state.firstName} user_id={this.state.user_id} />} />
+            <Route exact path="/profile" component={() => <Profile firstName={this.state.firstName} user_id={this.state.user_id}/>} />
 
             {/* // () => <Feed */}
             {/* // email={this.state.email}

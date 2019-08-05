@@ -64,6 +64,7 @@ module.exports = {
 		console.log("MADE IT TO POST CONTROLLER")
 		console.log(`REQ.BODY:`,req.body)
 		db.Post.create({
+			user_id: req.body.user_id,
 			info: req.body.info,
 			title: req.body.title,
 			location: req.body.location,

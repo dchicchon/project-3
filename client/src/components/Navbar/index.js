@@ -9,15 +9,13 @@ function NavBar(props) {
       <div className = "navbar-fixed">
       <nav>
         <div className="nav-wrapper blue">
-          {/* <li> */}
             <Link className="brand-logo" to='/'>
               TripIt
           </Link>
-          {/* </li> */}
           <ul className="right hide-on-med-and-down">
             <li>
               <Link to="/profile">
-                Profile
+                {props.firstName}'s Profile
               </Link>
             </li>
             <li>

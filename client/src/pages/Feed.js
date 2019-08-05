@@ -16,11 +16,13 @@ import ReactDependentScript from 'react-dependent-script';
 // Import Materialize
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
+import HeadTitle from "../components/PageTitle";
 
 class Feed extends Component {
     state = {
+        user_id: this.props.user_id,
         email: '',
-        firstName: '',
+        firstName: this.props.firstName,
         lastName: '',
         image: '',
 
@@ -48,6 +50,7 @@ class Feed extends Component {
 
     return (
         <div>
+<<<<<<< HEAD
 
             <ReactDependentScript
             scripts={['https://maps.googleapis.com/maps/api/js?key=AIzaSyBMaADkXGTjthhbPHVctBZQ22FQQgInOwc&libraries=places']}
@@ -57,6 +60,8 @@ class Feed extends Component {
 
 
             {/* <NavBar /> */}
+=======
+>>>>>>> d0e1a550d0d4ed5ce9c6b23813d20e9f8711ce05
             <Modal/>
 
             {/* AUTOCOMPLETE TESTING */}
