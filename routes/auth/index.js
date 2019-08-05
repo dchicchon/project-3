@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+const Cookies = require("js-cookie")
 const db = require("../../models");
 
 router.get('/user', (req, res) => {
@@ -18,7 +19,10 @@ router.get('/user', (req, res) => {
             // If they are authenticated, we will return an object of user which will contain the values of TRUE for loggedIn and their username
             const user = {
                 loggedIn: true,
-                id: dbUser.id
+                id: dbUser.id,
+                firstName: dbUser.firstName,
+                lastName: dbUser.lastName,
+                profileImg: dbUser.profileImg
             }
             res.json(user);
         })
@@ -71,11 +75,12 @@ router.post("/signup", (req, res, next) => {
 
 
             // res.cookie("firstName", req.user.DataValues.firstName);
-            res.cookie("firstName", req.user.firstName);
-            res.cookie("lastName", req.user.lastName);
-            res.cookie("email", req.user.email);
-            res.cookie("id", req.user.id);
-            res.cookie("profileImg", req.user.profileImg);
+            Cookies.set('id', req.user.id)
+            // res.cookie("firstName", req.user.firstName);
+            // res.cookie("lastName", req.user.lastName);
+            // res.cookie("email", req.user.email);
+            // res.cookie("id", req.user.id);
+            // res.cookie("profileImg", req.user.profileImg);
             return res.redirect('/');
         });
     })(req, res, next);
@@ -88,7 +93,7 @@ router.post('/login', (req, res, next) => {
     console.log("\nIN THE LOGIN ROUTE")
     console.log(req.body)
     passport.authenticate("local-login", (err, user, info) => {
-        console.log("\nmessage:", info)
+        // console.log("\nmessage:", info)
         console.log("\nuser:", user)
         if (err) {
             console.log(`Error: ${err}`)
@@ -107,7 +112,7 @@ router.post('/login', (req, res, next) => {
             }
 
             // Might have to change this to match our model
-
+            console.log(user)
             // res.cookie('username', user.username);
             res.cookie("firstName", req.user.firstName);
             res.cookie("lastName", req.user.lastName);
@@ -134,13 +139,16 @@ router.get('/logout', function (req, res) {
     req.logout()
     console.log(`Current User` + req.user)
     if (!req.user) {
-        res.clearCookie('email')
-        res.clearCookie('firstName')
-        res.clearCookie('lastName')
-        res.clearCookie('id');
-        res.clearCookie("connect.sid")
-        res.clearCookie("user_sid")
-        res.clearCookie("profileImg")
+        Cookies.remove('user_sid')
+        Cookies.remove('id')
+        Cookies.remove('username')
+        // res.clearCookie('email')
+        // res.clearCookie('firstName')
+        // res.clearCookie('lastName')
+        // res.clearCookie('id');
+        // res.clearCookie("connect.sid")
+        // res.clearCookie("user_sid")
+        // res.clearCookie("profileImg")
         res.redirect("/")
     } else {
         res.status(200).json({

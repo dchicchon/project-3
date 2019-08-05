@@ -42,8 +42,7 @@ class CreatePost extends Component {
             info: this.state.info,
             // image: this.state.image,
             tag: this.state.tag,
-            user_id: Cookies.get('id'),
-            // added LOCATION AND TITLE 
+            user_id: this.props.id,
             title: this.state.title,
             location: this.state.location
         }

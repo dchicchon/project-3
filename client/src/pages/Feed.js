@@ -9,11 +9,13 @@ import Modal from "../components/Modal";
 // Import Materialize
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
+import HeadTitle from "../components/PageTitle";
 
 class Feed extends Component {
     state = {
+        user_id: this.props.user_id,
         email: '',
-        firstName: '',
+        firstName: this.props.firstName,
         lastName: '',
         image: ''
     }
@@ -21,7 +23,6 @@ class Feed extends Component {
     render(){
     return (
         <div>
-            {/* <NavBar /> */}
             <Modal/>
             <Container>
                 <CardPanel>
