@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "proxy": "http://localhost:4815/",
   "private": true,
+  "engines": {
+    "node": "12.7.0"
+  },
   "dependencies": {
     "@material-ui/core": "^4.3.0",
     "@material-ui/icons": "^4.2.1",
@@ -38,5 +41,10 @@
       "last 1 safari version"
     ]
   },
-  "main": "index.js"
+  "main": "index.js",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
