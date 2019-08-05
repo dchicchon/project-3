@@ -16,8 +16,8 @@ export class Profile extends Component {
     state = {
         user_id: this.props.user_id,
         editBio: '',
-        bio: ''
-        // profileImg: this.state.profileImg,
+        bio: '',
+        profileImg: '',
         // map: this.state.map
     }
 
@@ -32,10 +32,10 @@ export class Profile extends Component {
         console.log(id)
         API.getProfile(id).then(res => {
             console.log("\nGET PROFILE\n")
-            console.log(res)
             console.log(res.data)
             this.setState({
-                bio: res.data.bio
+                bio: res.data.bio,
+                profileImg: res.data.profileImg
             })
         })
     }
@@ -66,9 +66,10 @@ export class Profile extends Component {
                     <Row>
                         <Col size="s4">
                             <CardPanel>
-                                <CardPanel>
-                                    <img src={this.state.profileImg} />
-                                </CardPanel>
+                                <div>
+                                    <p>{this.state.profileImg}</p>
+                                    <img src={this.state.profileImg} alt="Profile picture" />
+                                </div>
                             </CardPanel>
                         </Col>
 
