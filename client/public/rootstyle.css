@@ -4,3 +4,29 @@
     background-color: #999999;
     margin-left: 33%;
 }
+
+.bgSearchBar{
+    background-color: #eee;
+    opacity: 0.8;
+    border-radius:20px;
+}
+
+#autocomplete-input{
+    font-weight: bold;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.card-panel{
+    opacity: 0.9;
+}
+
+#root{
+    /* font-family: 'Hanuman', serif; */
+}
+
+.loginFont, h1, h2, h3, h4, h5, h6{
+    font-family: 'Faster One', cursive;
+}

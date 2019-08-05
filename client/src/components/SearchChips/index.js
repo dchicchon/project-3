@@ -13,9 +13,9 @@ function SearchChip(props) {
                     <Col size="s4"> </Col>
 
                     <div className="row">
-                        <div className="chip col s2 disable"> Tag<i className="close material-icons">close</i> </div>
-                        <div className="chip col s2"> Tag<i className="close material-icons">close</i> </div>
-                        <div className="chip col s2"> Tag<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2 disable"> Hike<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2"> Food<i className="close material-icons">close</i> </div>
+                        <div className="chip col s2"> Travel<i className="close material-icons">close</i> </div>
                     </div>
 
                     <Col size="s4"> </Col>
