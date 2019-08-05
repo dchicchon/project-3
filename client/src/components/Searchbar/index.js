@@ -11,11 +11,12 @@ function SearchFor(props) {
                     <div className="row">
                         <div className="col s12">
                             <div className="row">
-                                <div className="input-field col s12">
-                                    <i className="material-icons prefix">textsms</i>
+                                <div className="input-field col s12 bgSearchBar blue-text" >
+                                    <i className="material-icons prefix">search</i>
                                     <input type="text" id="autocomplete-input" className="autocomplete" />
-                                    <label htmlFor="autocomplete-input">Discover</label>
+                                    <label htmlfor="autocomplete-input">Discover</label>
                                 </div>
+                                {/* <Button size="col s4"></Button> */}
                             </div>
                         </div>
                     </div>
@@ -32,12 +33,12 @@ export default SearchFor;
 
 
 {/* <nav>
-    <div class="nav-wrapper">
+    <div className="nav-wrapper">
       <form>
-        <div class="input-field">
+        <div className="input-field">
           <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+          <label className="label-icon" for="search"><i className="material-icons">search</i></label>
+          <i className="material-icons">close</i>
         </div>
       </form>
     </div>

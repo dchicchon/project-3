@@ -71,7 +71,8 @@ class Login extends Component {
               <br /><br /><br />
               <CardPanel>
 
-                <h1>Login</h1>
+                <h4 className="loginFont">Login</h4>
+
                 <form className="col s12">
                   <Row>
                     <div className="input-field col s12">
@@ -87,14 +88,18 @@ class Login extends Component {
                   </Row>
                   <Row>
                     <Col size="s6">
+                    <br></br>
                       {/* <Link to="/profile"> */}
                       <Button onClick={this.handleFormSubmit}>Login</Button>
                       {/* </Link> */}
+                      <br></br>
                     </Col>
                     <Col size="s6">
+                    <br></br>
                       <Link to="/signup">
                         <Button>Signup</Button>
                       </Link>
+                      <br></br>
                     </Col>
                   </Row>
                 </form>

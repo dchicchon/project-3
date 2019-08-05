@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 function NavBar(props) {
   return (
     <div>
+      <div className = "navbar-fixed">
       <nav>
         <div className="nav-wrapper blue">
             <Link className="brand-logo" to='/'>
@@ -34,6 +35,7 @@ function NavBar(props) {
           </ul>
         </div>
       </nav>
+      </div>
     </div >
   )
 }

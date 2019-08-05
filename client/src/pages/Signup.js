@@ -64,7 +64,7 @@ class Signup extends Component {
             <div>
                 <Container>
                     <div className="card-panel center">
-                        <h1>Sign Up</h1>
+                        <h4>Sign Up</h4>
                         <div className="row">
                             <form className="col s12">
                                 <Row>
