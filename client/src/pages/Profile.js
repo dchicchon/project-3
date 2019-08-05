@@ -66,10 +66,10 @@ export class Profile extends Component {
                     <Row>
                         <Col size="s4">
                             <CardPanel>
-                                <div>
+                                <CardPanel>
                                     <p>{this.state.profileImg}</p>
                                     <img src={this.state.profileImg} alt="Profile picture" />
-                                </div>
+                                </CardPanel>
                             </CardPanel>
                         </Col>
 

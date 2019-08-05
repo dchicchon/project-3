@@ -60,11 +60,17 @@ class Login extends Component {
   render() {
     return (
       <div>
+        {/* <BackgroundSlideshow images={[image1, image2, image3]} /> */}
+
         <Container>
+
           <Container>
+
             <Container>
-              <br></br><br></br><br></br>
+
+              <br /><br /><br />
               <CardPanel>
+
                 <h1>Login</h1>
                 <form className="col s12">
                   <Row>
@@ -96,7 +102,6 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
-        {/* <BackgroundSlideshow images={[ image1, image2, image3 ]} /> */}
       </div >
 
     )
