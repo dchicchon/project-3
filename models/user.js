@@ -34,11 +34,17 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,
             defaultValue: "https://imgur.com/xjhcWp3",
         },
+
+        mapKey: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+
         bio: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                len: [10-50]
+                len: [10 - 50]
             }
         },
         createdAt: Sequelize.DATE,
