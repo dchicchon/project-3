@@ -20,7 +20,7 @@ render() {
             {/* <!-- Modal Structure --> */}
             <div id="modal1" className="modal">
                 <div className="modal-content">
-                    <h4>Modal Header</h4>
+                    <h4>Create Post</h4>
                     <CreatePost/>
                 </div>
             </div>
