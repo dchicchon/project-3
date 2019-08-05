@@ -50,18 +50,15 @@ class Feed extends Component {
 
     return (
         <div>
-<<<<<<< HEAD
 
-            <ReactDependentScript
+            {/* <ReactDependentScript
             scripts={['https://maps.googleapis.com/maps/api/js?key=AIzaSyBMaADkXGTjthhbPHVctBZQ22FQQgInOwc&libraries=places']}
             >
             <div>jQuery is loaded!</div>
-            </ReactDependentScript>
+            </ReactDependentScript> */}
 
 
             {/* <NavBar /> */}
-=======
->>>>>>> d0e1a550d0d4ed5ce9c6b23813d20e9f8711ce05
             <Modal/>
 
             {/* AUTOCOMPLETE TESTING */}
