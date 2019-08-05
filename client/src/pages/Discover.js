@@ -72,7 +72,7 @@ class Discover extends Component {
             <div>
 
                 <Container>
-                    <HeadTitle />
+                    <HeadTitle>Discover</HeadTitle>
                     <SearchFor />
                     <SearchChip />
                     <CardPanel>

@@ -5,9 +5,9 @@ export default function TextInput(props){
         // <div class="row">
         <form>
           {/* <div class="row"> */}
-            <div class="input-field">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">{props.children}</label>
+            <div className="input-field">
+              <textarea id="textarea1" className="materialize-textarea" {...props}></textarea>
+              <label htmlFor="textarea1">{props.children}</label>
             </div>
           {/* </div> */}
         </form>
