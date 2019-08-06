@@ -27,13 +27,39 @@ class Feed extends Component {
         firstName: this.props.firstName,
         lastName: '',
         image: '',
-
-        // TESTING AUTOCOMPLETE
+        // followIds: {},
+        followPosts: {},
         place: {}
     }
 
     showPlaceDetails(place) {
         this.setState({ place });
+    }
+
+    async componentDidMount() {
+        console.log("BRING IN FOLLOWERS")
+        API.getFollowPosts(this.state.user_id).then(res => {
+            console.log("\nFOLLOWING POST ARRAY")
+            console.log(res)
+            this.setState({
+                followPosts: res.data
+            })
+            // var followingArr = []
+            // for (var i = 0; i < res.data.length; i++) {
+            //     followingArr.push(res.data[i].follower_id)
+            // }
+            // console.log(followingArr)
+            // this.setState({
+            //     followIds: followingArr
+            // })
+        })
+
+        // API.getFollowPosts().then(res => {
+        //     console.log(res.data)
+        //     this.setState({
+        //         posts: res.data
+        //     })
+        // })
     }
 
     render() {
@@ -57,17 +83,27 @@ class Feed extends Component {
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
-                  <CreatePost user_id = {this.state.user_id} />
+                <CreatePost user_id={this.state.user_id} />
 
                 <Container>
                 
                     <CardPanel>
                         {/* <Container> */}
                         <Row>
-                            <Post />
-                            <Post />
+                            {(this.state.followPosts.length) ?
+                                this.state.followPosts.map((post, i) => (
+                                    <Post
+                                        key={i}
+                                        title={post.title}
+                                        info={post.info}
+                                        location={post.location}
+                                        tag={post.tag}
+                                        user_id={post.user_id}
+                                    />
+
+                                )) : "No Posts"
+                            }
                         </Row>
-                        {/* </Container> */}
                     </CardPanel>
                 </Container>
             </div>
@@ -75,45 +111,5 @@ class Feed extends Component {
 
     }
 }
-
-
-// import CreatePost from "../components/CreatePost";
-// import API from '../Utils/API'
-// import { Col, Row, Container } from "../components/Grid";
-// import Autocomplete from './../components/AutocompleteLocation/index';
-// import CreatePost from './../components/CreatePost/index';
-
-
-// =================================================DANNY====================================================================
-// class Feed extends Component {
-//     state = {
-//         email: '',
-//         firstName: '',
-//         lastName: '',
-//         image: ''
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 {/* <h1>{this.props.email}</h1> */}
-//                 {/* <NavBar/> */}
-//                 {/* <NavBar logout = {this.props.logout} /> */}
-//                 <Container>
-//                     <CreatePost />
-//                     <CardPanel>
-//                         <Post />
-//                     </CardPanel>
-//                     <CardPanel>
-//                         <Post />
-//                     </CardPanel>
-
-//                 </Container>
-
-//             </div>
-//         )
-//     }
-// }
-
 
 export default Feed;

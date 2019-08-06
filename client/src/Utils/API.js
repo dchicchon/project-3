@@ -6,7 +6,7 @@ export default {
    followUser: (idPackage) => {
       return axios.post(`/api/follow`, idPackage)
    },
-   
+
    // ================================
 
    // Profile Page =========================
@@ -26,6 +26,14 @@ export default {
    // Get Posts
    getPosts: () => {
       return axios.get(`/api/post`)
+   },
+
+   // getFollowPosts: () => {
+   //    return axios.get(`api/post`)
+   // },
+
+   getFollowPosts: (id) => {
+      return axios.get(`api/follow/` + id)
    },
    // Make function for Discover page to get posts based by tags!
    searchTag: (tags) => {
