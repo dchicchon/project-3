@@ -26,7 +26,7 @@ class Discover extends Component {
         })
     }
 
-    followUser = (id)  => {
+    followUser = (id) => {
         console.log("WE FOLLOWED THE USER")
         // console.log(event.target.data("user_id"))
         const idPackage = {

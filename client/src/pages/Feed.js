@@ -26,8 +26,8 @@ class Feed extends Component {
         firstName: this.props.firstName,
         lastName: '',
         image: '',
-        followIds: {},
-        posts: {},
+        // followIds: {},
+        followPosts: {},
         place: {}
     }
 
@@ -40,6 +40,9 @@ class Feed extends Component {
         API.getFollowPosts(this.state.user_id).then(res => {
             console.log("\nFOLLOWING POST ARRAY")
             console.log(res)
+            this.setState({
+                followPosts: res.data
+            })
             // var followingArr = []
             // for (var i = 0; i < res.data.length; i++) {
             //     followingArr.push(res.data[i].follower_id)
@@ -82,8 +85,19 @@ class Feed extends Component {
                     <CardPanel>
                         {/* <Container> */}
                         <Row>
-                            {(this.state.posts.length)}
-                            <Post />
+                            {(this.state.followPosts.length) ?
+                                this.state.followPosts.map((post, i) => (
+                                    <Post
+                                        key={i}
+                                        title={post.title}
+                                        info={post.info}
+                                        location={post.location}
+                                        tag={post.tag}
+                                        user_id={post.user_id}
+                                    />
+
+                                )) : "No Posts"
+                            }
                         </Row>
                     </CardPanel>
                 </Container>
