@@ -56,7 +56,7 @@ function Post(props) {
 
         {/* // // user photo posted */}
         <div className="card-image">
-          <img src= {props.image} width="300" height="350" className="activator" />
+          <img src={props.image} width="300" height="350" className="activator" />
 
           <span className="card-title activator white-text" >{props.title}</span>
 
@@ -65,14 +65,14 @@ function Post(props) {
 
         {/* // card description section */}
         <div className="card-content">
-        
+
 
           <p className="activator">{props.location}</p>
         </div>
-          <div className="card-reveal">
-            <p className="card-title">{props.info}</p>
-          </div>
-          {/* // end of card description */}
+        <div className="card-reveal">
+          <p className="card-title">{props.info}</p>
+        </div>
+        {/* // end of card description */}
         <div className="card-action">
           <a href="#"><i className="material-icons">favorite_border</i></a>
         </div>
