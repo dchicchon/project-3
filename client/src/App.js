@@ -78,10 +78,7 @@ class App extends Component {
       return (
         <Router>
           <Switch>
-{/* =============================ADDED BAT====================================== */}
-            <Route exact path="/" component={Feed} />
-{/* ==============================COMMENT BACK LOGIN=================================== */}
-            {/* <Route exact path="/" component={Login} /> */}
+            <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
 

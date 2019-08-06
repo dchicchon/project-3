@@ -7,6 +7,7 @@ import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
 import SidePost from "../components/SidePost";
+import PageTitle from "../components/PageTitle";
 
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
@@ -35,10 +36,8 @@ class Feed extends Component {
         this.setState({ place });
     }
 
-
-
-
     render() {
+
         const AddressDetails = props => {
             return (
                 <div>
@@ -47,19 +46,21 @@ class Feed extends Component {
             )
         };
 
-
         return (
             <div>
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
+
+                <SidePost/>
+
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
-                <SidePost/>
-                <CreatePost user_id = {this.state.user_id} />
+                  <CreatePost user_id = {this.state.user_id} />
 
                 <Container>
+                
                     <CardPanel>
                         {/* <Container> */}
                         <Row>

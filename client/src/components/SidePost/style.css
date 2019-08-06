@@ -1,9 +1,34 @@
-header, main, footer {
-    padding-left: 50px;
-  }
+body {
+  background-color: grey;
+  /* transition: margin-left 0.5s; */
+  /* padding: 20px; */
+}
+
+
+.sidenav {
+  background-color: green !important;
+  /* z-index: 1 !important; */
+  overflow-x: hidden !important;
+  transition: 0.5s !important;
+  padding-top: 60px !important;
+
+
+}
+
+/* .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+} */
+/* 
+header, footer {
+    padding-left: 500px;
+  } */
 
   @media only screen and (max-width : 992px) {
-    header, main, footer {
+    header, footer {
       padding-left: 0;
     }
   }
