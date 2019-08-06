@@ -14,7 +14,7 @@ module.exports = () => {
                 id: id
             }
         }).then(user => {
-            console.log("DESERIALIZE USER:", user)
+            console.log("\nDESERIALIZE USER:", user.dataValues)
             cb(null, user)
         });
     });

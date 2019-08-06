@@ -31,7 +31,7 @@ export class Profile extends Component {
         editBio: '',
         bio: '',
         profileImg: '',
-        posts: [],
+        posts: []
         // lat: 37,
         // lng: -122
         // map: this.state.map
@@ -53,14 +53,10 @@ export class Profile extends Component {
             console.log("GET USER POSTS")
             console.log(res.data)
             var postsArr = res.data
-            // this.state.posts.push(res.data)
             this.setState({
-                posts: []
+                posts: postsArr
             })
             // console.log(this.state.posts)
-            // this.setState({
-            //     posts: res.data
-            // })
         })
 
         API.getProfile(id).then(res => {
@@ -102,8 +98,8 @@ export class Profile extends Component {
                         <Col size="s4">
                             <CardPanel>
                                 <CardPanel>
-                                    <p>{this.state.props}</p>
-                                    {/* <p>{this.state.user_id}</p> */}
+                                    {/* <p>{this.state.posts.firstName}</p> */}
+                                    {/* <p value = {this.state.posts.id}></p> */}
                                     <p>{this.state.profileImg}</p>
                                     <img src={this.state.profileImg} alt="Profile picture" />
                                 </CardPanel>

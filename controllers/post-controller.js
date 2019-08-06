@@ -85,7 +85,7 @@ module.exports = {
 	},
 
 	getPostsByUser: (req, res) => {
-		console.log("MADE IT TO POST CONTROLLER:", req.params.id)
+		console.log("\nGET USER POSTS FOR PROFILE PAGE:", req.params.id)
 		db.Post.findAll(
 			{
 				where: { id: req.params.id }
@@ -94,6 +94,10 @@ module.exports = {
 				// order: [['time', 'desc']],
 				limit: 50
 			}
-		).then(dbPost => res.json(dbPost));
+		).then(dbPost => {
+			console.log("DB POST FOR USER:", dbPost.dataValues)
+
+			res.json(dbPost)
+		});
 	}
 }

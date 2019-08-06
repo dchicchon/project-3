@@ -25,6 +25,10 @@ class Discover extends Component {
         })
     }
 
+    handleFollow = event => {
+        
+    }
+
     // handleRenderPosts() {
 
     //     // (this.state.posts.length) ?
