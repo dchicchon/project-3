@@ -94,10 +94,7 @@ module.exports = {
 				// order: [['time', 'desc']],
 				limit: 50
 			}
-		).then(dbPost => {
-			console.log("DB POST FOR USER:", dbPost.dataValues)
-
-			res.json(dbPost)
-		});
+		).then(dbPost => res.json(dbPost)
+);
 	}
 }

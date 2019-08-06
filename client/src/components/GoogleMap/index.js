@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-import Marker from "../Marker"
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -23,6 +22,17 @@ class SimpleMap extends Component {
         },
         zoom: 1
     };
+
+    // displayMarkers = () => {
+    //     return this.state.state.posts.map((post, i) => {
+    //         return <AnyReactComponent 
+    //         key= {i}
+    //         id = {post.user_id}
+    //         lat={post.lat}
+    //         lng={post.lng}
+    //         text="Marker1"
+    //     />} )
+    // }
 
 
     render() {
