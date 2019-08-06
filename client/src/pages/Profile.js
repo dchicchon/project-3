@@ -8,13 +8,13 @@ import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
 
 // Google Map
-// import GoogleMapReact from 'google-map-react'
+import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
 
 // Utils
 import API from "../Utils/API";
 
-import Marker from '../components/Marker'
+const Marks = ({ text }) => <div>{text}</div>;
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -31,11 +31,22 @@ export class Profile extends Component {
         editBio: '',
         bio: '',
         profileImg: '',
-        posts: []
-        // lat: 37,
-        // lng: -122
-        // map: this.state.map
+        posts: {},
+        lat: this.props.lat,
+        lng: this.props.lng,
+        title: this.props.title
     }
+
+    static defaultProps = {
+        center: {
+            lat: 37.77,
+            lng: -122.43
+        },
+        zoom: 1
+    };
+
+
+
 
     componentDidMount() {
         console.log("IS THIS WORKING")
@@ -52,11 +63,15 @@ export class Profile extends Component {
         API.getUserPosts(id).then(res => {
             console.log("GET USER POSTS")
             console.log(res.data)
-            var postsArr = res.data
+
+            // this.state.posts.push(res.data)
             this.setState({
-                posts: postsArr
+                posts: res.data
             })
             // console.log(this.state.posts)
+            // this.setState({
+            //     posts: res.data
+            // })
         })
 
         API.getProfile(id).then(res => {
@@ -88,6 +103,17 @@ export class Profile extends Component {
         })
     }
 
+    // displayMarkers = () => {
+    //     return this.state.posts.map((post, i) => {
+    //         return <Marks 
+    //         key= {i}
+    //         id = {post.user_id}
+    //         lat={post.lat}
+    //         lng={post.lng}
+    //         text={post.title}
+    //     />})
+    // }
+
     render() {
         return (
             <div>
@@ -98,8 +124,8 @@ export class Profile extends Component {
                         <Col size="s4">
                             <CardPanel>
                                 <CardPanel>
-                                    {/* <p>{this.state.posts.firstName}</p> */}
-                                    {/* <p value = {this.state.posts.id}></p> */}
+                                    <p>{this.state.props}</p>
+                                    {/* <p>{this.state.user_id}</p> */}
                                     <p>{this.state.profileImg}</p>
                                     <img src={this.state.profileImg} alt="Profile picture" />
                                 </CardPanel>
@@ -113,16 +139,31 @@ export class Profile extends Component {
                         </Col>
                     </Row>
                     <CardPanel>
-                        {/* <GoogleMap lat={this.state.lat} lng={this.state.lng} posts={this.state.posts} /> */}
-                        <GoogleMap posts={this.state.posts} />
-                        {/* {(this.state.posts.length) ? this.state.posts.map((post, i) =>
-                                <Marker
-                                    lat={post.lat}
-                                    lng={post.lng}
-                                    text="Marker1"
-                                />
-                            ) : console.log("No Markers")}
-                        </GoogleMap> */}
+                        <div style={{ height: '100vh', width: '100%' }}>
+                            <GoogleMapReact
+                                // apiKey = (ENTER HERE)
+                                defaultCenter={this.props.center}
+                                defaultZoom={this.props.zoom}
+                                yesIWantToUseGoogleMapApiInternals
+                            // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+                            >
+                                {console.log(this.state.posts)}
+                                {/* {this.state.posts.map} */}
+
+                                {(this.state.posts.length) ? this.state.posts.map((post, i) =>
+                                    <Marks
+                                        key={i}
+                                        id={post.user_id}
+                                        lat={post.lat}
+                                        lng={post.lng}
+                                        text={post.title}
+                                    />
+                                ) : console.log("No Markers")}
+
+                                {/* {this.displayMarkers()} */}
+
+                            </GoogleMapReact>
+                        </div>
                     </CardPanel>
                 </Container>
             </div>
