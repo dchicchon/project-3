@@ -69,7 +69,9 @@ module.exports = {
 			title: req.body.title,
 			location: req.body.location,
 			image: req.body.image,
-			tag: req.body.tag
+			tag: req.body.tag,
+			lat: req.body.lat,
+			lng: req.body.lng
 		}
 		).then(dbPost => res.json(dbPost));
 	},

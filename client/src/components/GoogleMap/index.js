@@ -28,12 +28,13 @@ class SimpleMap extends Component {
                     yesIWantToUseGoogleMapApiInternals
                 // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                 >
-
+                   {(this.state.posts.length) ? this.state.posts.map((post, i) => 
                     <AnyReactComponent
-                        lat={37.7897}
-                        lng={122.3973}
+                        lat={post.lat}
+                        lng={post.lng}
                         text="Marker1"
                     />
+                   ) : console.log("No Markers")}
 
                     <AnyReactComponent
                     lat = {37.78}
