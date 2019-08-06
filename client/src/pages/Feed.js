@@ -7,7 +7,7 @@ import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
 import SidePost from "../components/SidePost";
-import PageTitle from "../components/PageTitle";
+
 
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";

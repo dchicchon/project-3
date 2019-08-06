@@ -3,7 +3,6 @@ import CreatePost from "../CreatePost";
 import './style.css'
 import PageTitle from "../PageTitle";
 
-
 // Import Materialize
 import M from "materialize-css";
 
