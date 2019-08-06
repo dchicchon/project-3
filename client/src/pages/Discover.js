@@ -27,10 +27,13 @@ class Discover extends Component {
 
     followUser = (event) => {
         console.log("WE FOLLOWED THE USER")
-        // console.log(event.target.user_id)
+        console.log(event.target)
+        // console.log(event.target.data("user_id"))
         const idPackage = {
-            user_id: event.target.user_id
+            user_id: this.props.user_id ,
+            follow_id: event.target.user_id
         }
+        console.log(idPackage)
 
         API.followUser(idPackage).then(res => console.log(res))
 
