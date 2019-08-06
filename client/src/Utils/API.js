@@ -2,14 +2,26 @@ import axios from "axios";
 
 export default {
 
-   // Profile Page
+   // Discovery Page ==============================
+   followUser: (idPackage) => {
+      return axios.post(`/api/follow`, idPackage)
+   },
+   
+   // ================================
+
+   // Profile Page =========================
+
+   // Edit User Data
    editUser: (editData) => {
       return axios.put(`/api/user`, editData)
    },
 
+   // Get Profile Info
    getProfile: (userId) => {
       return axios.get("/api/user/" + userId)
    },
+
+   // ============================================
 
    // Get Posts
    getPosts: () => {
