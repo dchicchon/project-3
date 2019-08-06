@@ -1,7 +1,7 @@
 /* global google */
 
 import React from "react";
-import ReactDependentScript from 'react-dependent-script'
+
 
 
 class Autocomplete extends React.Component {

@@ -7,10 +7,11 @@ import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
 
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
-import ReactDependentScript from 'react-dependent-script';
+
 
 
 // Import Materialize
@@ -32,51 +33,42 @@ class Feed extends Component {
 
     showPlaceDetails(place) {
         this.setState({ place });
-      }
+    }
 
 
 
-    render(){
-
-        
+    render() {
         const AddressDetails = props => {
             return (
                 <div>
-                  <pre>{JSON.stringify(props.place, null, 2)}</pre>
+                    <pre>{JSON.stringify(props.place, null, 2)}</pre>
                 </div>
             )
-          };
+        };
 
 
-    return (
-        <div>
+        return (
+            <div>
+                {/* <NavBar /> */}
+                <Modal />
 
-            {/* <ReactDependentScript
-            scripts={['https://maps.googleapis.com/maps/api/js?key=AIzaSyBMaADkXGTjthhbPHVctBZQ22FQQgInOwc&libraries=places']}
-            >
-            <div>jQuery is loaded!</div>
-            </ReactDependentScript> */}
+                {/* AUTOCOMPLETE TESTING */}
+                <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                <AddressDetails place={this.state.place} value={this.state.location}/>
+                <CreatePost />
 
-
-            {/* <NavBar /> */}
-            <Modal/>
-
-            {/* AUTOCOMPLETE TESTING */}
-            
-             <Autocomplete onPlaceChanged={this.showPlaceDetails.bind(this)} />
-             <AddressDetails place={this.state.place} />
-            <Container>
-                <CardPanel>
-                    {/* <Container> */}
-                    <Row>
-                        <Post />
-                        <Post />
-                    </Row>
-                    {/* </Container> */}
-                </CardPanel>
-            </Container>
-        </div>
-    )
+                <Container>
+                    <CardPanel>
+                        {/* <Container> */}
+                        <Row>
+                            <Post />
+                            <Post />
+                        </Row>
+                        {/* </Container> */}
+                    </CardPanel>
+                </Container>
+            </div>
+        )
     }
 }
 
@@ -85,6 +77,7 @@ class Feed extends Component {
 // import API from '../Utils/API'
 // import { Col, Row, Container } from "../components/Grid";
 // import Autocomplete from './../components/AutocompleteLocation/index';
+// import CreatePost from './../components/CreatePost/index';
 
 // =================================================DANNY====================================================================
 // class Feed extends Component {
