@@ -25,8 +25,15 @@ class Discover extends Component {
         })
     }
 
-    handleFollow = event => {
-        
+    followUser = (event) => {
+        console.log("WE FOLLOWED THE USER")
+        // console.log(event.target.user_id)
+        const idPackage = {
+            user_id: event.target.user_id
+        }
+
+        API.followUser(idPackage).then(res => console.log(res))
+
     }
 
     // handleRenderPosts() {
@@ -63,15 +70,16 @@ class Discover extends Component {
                         <Row>
                             {(this.state.posts.length) ? this.state.posts.map((post, i) => (
                                 <Post
-                                    key = {i}
+                                    followUser={this.followUser}
+                                    key={i}
                                     title={post.title}
-                                    info = {post.info}
-                                    location = {post.location}
-                                    tag = {post.tag}
-                                    id = {post.user_id}
+                                    info={post.info}
+                                    location={post.location}
+                                    tag={post.tag}
+                                    user_id={post.user_id}
                                 />
                             )) : "No Posts"}
-                            
+
                         </Row>
                     </CardPanel>
                 </Container>
