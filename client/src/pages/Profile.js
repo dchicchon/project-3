@@ -1,12 +1,17 @@
 import React, { Component } from "react"
 
+// Components
 import CardPanel from "../components/CardPanel"
 import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
-
 import { Col, Row, Container } from "../components/Grid";
-
 import TextInput from "../components/TextInput"
+
+// Google Map
+// import GoogleMapReact from 'google-map-react'
+import GoogleMap from "../components/GoogleMap"
+
+// Utils
 import API from "../Utils/API";
 
 
@@ -16,6 +21,7 @@ export class Profile extends Component {
         editBio: '',
         bio: '',
         profileImg: '',
+        postCoords: []
         // map: this.state.map
     }
 
@@ -78,7 +84,8 @@ export class Profile extends Component {
                         </Col>
                     </Row>
                     <CardPanel>
-                        <img src={this.state.map} />
+                        <GoogleMap/>
+                        {/* <img src={this.state.map} /> */}
                     </CardPanel>
                 </Container>
             </div>
