@@ -30,7 +30,7 @@ export class Profile extends Component {
         user_id: this.props.user_id,
         editBio: '',
         bio: '',
-        profileImg: '',
+        image: '',
         posts: [],
         lat: this.props.lat,
         lng: this.props.lng,
@@ -80,7 +80,7 @@ export class Profile extends Component {
             var profileData = res.data
             this.setState({
                 bio: profileData.bio,
-                profileImg: profileData.profileImg
+                image: profileData.image
                 // profileImg: res.data.profileImg
             })
         })

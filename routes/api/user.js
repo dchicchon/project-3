@@ -10,5 +10,7 @@ router.route("/user")
 
 router.route("/user/:id")
     .get(userController.getUser)
+    .get(userController.updatePhoto)
+    
 
 module.exports = router

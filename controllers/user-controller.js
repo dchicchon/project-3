@@ -2,58 +2,72 @@ const db = require("../models")
 
 // require aws-sdk which includes AWS JS library
 const AWS = require("aws-sdk");
+const uuid = require("uuid/v4");
 
 const s3 = new AWS.S3({
 	accessKeyId: process.env.AWS_ACCESS_KEY_ID,
 	secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 })
 
-uploadImg = (req) => {
-	let imageFile = req.files.file.data;
-	s3.createBucket(() => {
-		let params = {
+function uploadImage(req, image, cb) {
+	//use req from the post method, and the image data can be get using the code below
+
+	var imageFile = req.files.file.data;
+	s3.createBucket(function () {
+		var params = {
 			Bucket: process.env.S3_BUCKET_NAME,
 			ACL: 'public-read',
-			Key: `${req.body.photo}.jpg`,
+			Key: `${image}.jpg`,
 			Body: imageFile
-		};
-		s3.upload(params, (err, data) => {
+		}
+		s3.upload(params, function (err, data) {
 			if (err) {
 				console.log("error with upload");
 				console.log(err);
 			} else {
 				console.log("Upload Success");
 				console.log("image", data);
+				cb(data.Location);
 			}
 		})
 	});
-}
+
+};
+
 
 
 module.exports = {
-	updatePhoto: (req, res) => {
+	updatePhoto: function (req, res) {
+	
+		console.log(process.env.AWS_ACCESS_KEY_ID)
+		console.log(process.env.AWS_SECRET_ACCESS_KEY)
+		console.log(process.env.S3_BUCKET_NAME)
 
 		var name = req.body.name.toLowerCase();
 		name = name.replace(/\s/g, '');
 		name = name + uuid();
 
 
-		var profileImg = {
+		var profilePhoto = {
 			name: req.body.name,
 			image: name
 		};
 
-		uploadImg(req, profileImg.image, (location) => {
+		uploadImage(req, profilePhoto.image, function (location) {
+			console.log(location);
 			console.log(req);
+
 
 			db.User.update(
 				{
-					profileImg: location,
+					profilePhoto: location,
 				},
 				{
-					where: { userId: req.body.id }
+					where: { id: req.body.UserId }
 				})
-				.then(dbUser => res.json({ imageUrl: location }));
+				.then(function (dbUser) {
+					res.json({ imageUrl: location });
+				});
 		});
 	},
 

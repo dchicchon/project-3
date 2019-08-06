@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             len: [1 - 40]
         },
-        profileImg: {
+        image: {
             type: DataTypes.STRING,
             allowNull: true,
             defaultValue: "https://imgur.com/xjhcWp3",
