@@ -6,7 +6,6 @@ import PageTitle from "../PageTitle";
 //TEST SIDEBAR
 
 
-
 // Import Materialize
 import M from "materialize-css";
 
