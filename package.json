@@ -23,8 +23,10 @@
     "passport-local": "^1.0.0",
     "react-background-slider": "^1.2.0",
     "react-background-slideshow": "^1.0.4",
+    "request": "^2.88.0",
     "sequelize": "^5.12.1",
-    "sequelize-cli": "^5.5.0"
+    "sequelize-cli": "^5.5.0",
+    "unsplash-js": "^5.0.0"
   },
   "devDependencies": {},
   "scripts": {
