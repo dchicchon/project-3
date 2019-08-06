@@ -14,10 +14,17 @@ import 'materialize-css/dist/css/materialize.min.css';
 // Components
 import NavBar from "./components/NavBar"
 
+//background slideshow
 // import BackgroundSlideshow from 'react-background-slideshow';
 // import image1 from './assets/bg1.jpg';
 // import image2 from './assets/bg2.jpg';
 // import image3 from './assets/bg3.jpg';
+
+//background inner pages
+import BackgroundSlider from 'react-background-slider'
+import image1 from './assets/bg1.jpg';
+import image2 from './assets/bg2.jpg';
+import image3 from './assets/bg3.jpg';
 
 // Utils
 import API from "./Utils/API"
@@ -90,6 +97,7 @@ class App extends Component {
 
             /> */}
           </Switch>
+          <BackgroundSlider images={[image1, image2, image3]} duration={8} transition={2}/>
         </Router>
       )
     }
