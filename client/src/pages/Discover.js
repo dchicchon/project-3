@@ -14,6 +14,7 @@ import { setServers } from "dns";
 
 class Discover extends Component {
     state = {
+        user_id: this.props.user_id,
         search: '',
         posts: {}
     }
@@ -25,30 +26,18 @@ class Discover extends Component {
         })
     }
 
-    followUser = (event) => {
+    followUser = (id) => {
         console.log("WE FOLLOWED THE USER")
-        console.log(event.target)
         // console.log(event.target.data("user_id"))
         const idPackage = {
-            user_id: this.props.user_id ,
-            follow_id: event.target.user_id
+            user_id: this.state.user_id,
+            follow_id: parseInt(id)
         }
         console.log(idPackage)
 
         API.followUser(idPackage).then(res => console.log(res))
 
     }
-
-    // handleRenderPosts() {
-
-    //     // (this.state.posts.length) ?
-    //     //     this.state.posts.map(post => (posts, i) = <Post />)
-
-    //     {(this.state.posts.length)? 
-
-    //     }
-
-    // }
 
     // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
