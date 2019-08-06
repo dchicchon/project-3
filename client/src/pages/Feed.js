@@ -6,7 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
-
+import SidePost from "../components/SidePost";
 
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
@@ -55,6 +55,7 @@ class Feed extends Component {
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
+                <SidePost/>
                 <CreatePost />
 
                 <Container>
@@ -78,6 +79,7 @@ class Feed extends Component {
 // import { Col, Row, Container } from "../components/Grid";
 // import Autocomplete from './../components/AutocompleteLocation/index';
 // import CreatePost from './../components/CreatePost/index';
+
 
 // =================================================DANNY====================================================================
 // class Feed extends Component {
