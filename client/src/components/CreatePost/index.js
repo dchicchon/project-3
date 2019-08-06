@@ -156,7 +156,7 @@ class CreatePost extends Component {
                     </div>  */}
 
 
-                                <Button  onClick={this.addPost} >Hello</Button>
+                                <Button  onClick={this.addPost} >Submit</Button>
                             </form>
                         </Container>
                     </CardPanel>

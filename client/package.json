@@ -13,6 +13,7 @@
     "react": "^16.8.6",
     "react-background-slider": "^1.2.0",
     "react-background-slideshow": "^1.0.4",
+    "react-burger-menu": "^2.6.11",
     "react-dependent-script": "^1.1.2",
     "react-dom": "^16.8.6",
     "react-places-autocomplete": "^7.2.1",

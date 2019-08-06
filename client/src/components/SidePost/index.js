@@ -3,6 +3,10 @@ import CreatePost from "../CreatePost";
 import './style.css'
 import PageTitle from "../PageTitle";
 
+//TEST SIDEBAR
+import { slide as Menu } from 'react-burger-menu'
+
+
 // Import Materialize
 import M from "materialize-css";
 
@@ -15,12 +19,16 @@ class SidePost extends Component {
     render() {
         return (
 
-            <div>
+            <div >
                 <ul id="slide-out" className="sidenav"
-                // style={{"width":600}}
+                style={{"width":800}}
                 >
                     <PageTitle style={{fontSize: 10}} >Create A Post</PageTitle>
                     <CreatePost/>
+
+                    <Menu>
+                        <CreatePost/>
+                    </Menu>
                     {/* <li><div className="user-view">
                     <div className="background">
                         <img src="images/office.jpg"/>

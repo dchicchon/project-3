@@ -7,7 +7,7 @@ import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
 import SidePost from "../components/SidePost";
-
+import { push as Menu } from 'react-burger-menu'
 
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
@@ -30,7 +30,9 @@ class Feed extends Component {
         // followIds: {},
         followPosts: {},
         place: {}
+        
     }
+    
 
     showPlaceDetails(place) {
         this.setState({ place });
@@ -77,16 +79,18 @@ class Feed extends Component {
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
-
-                <SidePost/>
+                {/* <SidePost/> */}
+                <Menu>
+                        <CreatePost/>
+                    </Menu>
 
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
                 <CreatePost user_id={this.state.user_id} />
 
-                <Container>
-                
+                <Container id="main">
+
                     <CardPanel>
                         {/* <Container> */}
                         <Row>
