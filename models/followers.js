@@ -3,11 +3,11 @@ const Sequelize = require("sequelize");
 module.exports = function (sequelize, DataTypes) {
     var Followers = sequelize.define("Followers", {
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: true,
         },
         follower_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: true
         }
     });
