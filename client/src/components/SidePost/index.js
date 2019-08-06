@@ -4,7 +4,7 @@ import './style.css'
 import PageTitle from "../PageTitle";
 
 //TEST SIDEBAR
-import { slide as Menu } from 'react-burger-menu'
+
 
 
 // Import Materialize
@@ -26,9 +26,7 @@ class SidePost extends Component {
                     <PageTitle style={{fontSize: 10}} >Create A Post</PageTitle>
                     <CreatePost/>
 
-                    <Menu>
-                        <CreatePost/>
-                    </Menu>
+
                     {/* <li><div className="user-view">
                     <div className="background">
                         <img src="images/office.jpg"/>
