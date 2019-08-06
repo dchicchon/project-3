@@ -37,6 +37,7 @@ class Feed extends Component {
 
 
 
+
     render() {
         const AddressDetails = props => {
             return (
@@ -55,7 +56,7 @@ class Feed extends Component {
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
-                <CreatePost />
+                <CreatePost user_id = {this.state.user_id} />
 
                 <Container>
                     <CardPanel>
@@ -69,6 +70,7 @@ class Feed extends Component {
                 </Container>
             </div>
         )
+
     }
 }
 

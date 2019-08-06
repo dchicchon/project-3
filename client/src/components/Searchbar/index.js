@@ -14,7 +14,7 @@ function SearchFor(props) {
                                 <div className="input-field col s12 bgSearchBar blue-text" >
                                     <i className="material-icons prefix">search</i>
                                     <input type="text" id="autocomplete-input" className="autocomplete" />
-                                    <label htmlfor="autocomplete-input">Discover</label>
+                                    <label htmlFor="autocomplete-input">Discover</label>
                                 </div>
                                 {/* <Button size="col s4"></Button> */}
                             </div>

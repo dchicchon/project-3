@@ -64,7 +64,7 @@ module.exports = {
 		db.User.findOne({ where: { id: req.params.id } })
 			.then(dbUser => {
 				console.log("\nMADE IT TO PROFILE ROUTE\n")
-				console.log("USER PROFILE:", dbUser)
+				console.log("USER PROFILE:", dbUser.dataValues)
 				res.json(dbUser)
 			})
 			.catch(err => res.status(422).json(err));
@@ -89,7 +89,7 @@ module.exports = {
 	// },
 
 	editUser: (req, res) => {
-		console.log("\nFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n")
+		// console.log("\nFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n")
 		db.User.update({ bio: req.body.bio }, { where: { id: req.body.user_id } })
 			.then(dbUser => res.json(dbUser))
 			.catch(err => res.status(422).json(err));

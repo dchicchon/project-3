@@ -93,7 +93,6 @@ router.post('/login', (req, res, next) => {
     console.log("\nIN THE LOGIN ROUTE")
     console.log(req.body)
     passport.authenticate("local-login", (err, user, info) => {
-        // console.log("\nmessage:", info)
         console.log("\nuser:", user)
         if (err) {
             console.log(`Error: ${err}`)
@@ -113,7 +112,6 @@ router.post('/login', (req, res, next) => {
 
             // Might have to change this to match our model
             console.log(user)
-            // res.cookie('username', user.username);
             res.cookie("firstName", req.user.firstName);
             res.cookie("lastName", req.user.lastName);
             res.cookie("email", req.user.email);
@@ -121,7 +119,6 @@ router.post('/login', (req, res, next) => {
             res.cookie("profileImg", req.user.profileImg);
             // res.cookie('user_id', user._id);
             var userI = {
-                // username: user.username, 
                 firstName: user.firstName,
                 lastName: user.lastName,
                 email: user.email,
