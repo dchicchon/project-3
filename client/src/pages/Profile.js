@@ -61,7 +61,7 @@ export class Profile extends Component {
         // console.log(this.state.lng)
 
         API.getUserPosts(id).then(res => {
-            console.log("\nGET USER POSTS\n")
+            console.log("GET USER POSTS")
             console.log(res.data)
 
             // this.state.posts.push(res.data)

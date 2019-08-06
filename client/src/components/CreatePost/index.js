@@ -35,10 +35,10 @@ class CreatePost extends Component {
 
     }
 
-// AUTOCOMPLETE
+    // AUTOCOMPLETE
     showPlaceDetails(place) {
         this.setState({ place });
-      }
+    }
 
 
     handleInputChange = event => {
@@ -65,6 +65,7 @@ class CreatePost extends Component {
         API.newPost(postData)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
     }
 
@@ -75,21 +76,21 @@ class CreatePost extends Component {
         const AddressDetails = props => {
             return (
                 <div>
-                  {/* <pre>{JSON.stringify(props.place, null, 2)}</pre> */}
-                  {/* <pre>{JSON.stringify(props.place, null, 4)}</pre> */}
-                  {/* {console.log(props.place.address_components)} */}
-                
-                {    
-                    typeof props.place.geometry !== 'undefined' ? console.log
-                    //LATITUDE
-                    // (props.place.geometry.location.lat() : console.log("Hey not now")
-                    //LONGITUDE
-                    (props.place.geometry.location.lng()) : console.log("Hey not now")
-                }
-                
+                    {/* <pre>{JSON.stringify(props.place, null, 2)}</pre> */}
+                    {/* <pre>{JSON.stringify(props.place, null, 4)}</pre> */}
+                    {/* {console.log(props.place.address_components)} */}
+
+                    {
+                        typeof props.place.geometry !== 'undefined' ? console.log
+                            //LATITUDE
+                            // (props.place.geometry.location.lat() : console.log("Hey not now")
+                            //LONGITUDE
+                            (props.place.geometry.location.lng()) : console.log("Hey not now")
+                    }
+
                 </div>
-            ) 
-        } ;
+            )
+        };
 
 
 
@@ -105,11 +106,11 @@ class CreatePost extends Component {
                             <form>
                                 {/* <Date className="col s6" /> */}
                                 {/* <TextInput>Where are you?</TextInput> */}
-         {/* AUTOCOMPLETE TESTING */}
-                             <Autocomplete onPlaceChanged={this.showPlaceDetails.bind(this)} />
-                            <AddressDetails place={this.state.place} />
+                                {/* AUTOCOMPLETE TESTING */}
+                                <Autocomplete onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                                <AddressDetails place={this.state.place} />
 
-                                
+
                                 <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
 
                                 {/* <label htmlFor="location">Where are you?</label> */}
