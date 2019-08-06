@@ -44,7 +44,7 @@ class App extends Component {
     isLoggedin: false,
     user_id: '',
     firstName: ''
-    
+
   }
 
   async componentDidMount() {
@@ -93,7 +93,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={() => <Feed firstName={this.state.firstName} user_id={this.state.user_id} />} />
             <Route exact path="/discover" component={() => <Discover firstName={this.state.firstName} user_id={this.state.user_id} />} />
-            <Route exact path="/profile" component={() => <Profile firstName={this.state.firstName} user_id={this.state.user_id}/>} />
+            <Route exact path="/profile" component={() => <Profile firstName={this.state.firstName} user_id={this.state.user_id} />} />
 
             {/* // () => <Feed */}
             {/* // email={this.state.email}
@@ -102,7 +102,7 @@ class App extends Component {
 
             /> */}
           </Switch>
-          <BackgroundSlider images={[image4, image5, image6, image7, image8, image9, image10, image11]} duration={5} transition={2}/>
+          <BackgroundSlider images={[image4, image5, image6, image7, image8, image9, image10, image11]} duration={5} transition={2} />
         </Router>
       )
     }
