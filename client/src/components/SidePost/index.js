@@ -1,9 +1,9 @@
 import React, {Component} from "react";
+import CreatePost from "../CreatePost";
+import './style.css'
 
 // Import Materialize
 import M from "materialize-css";
-
-
 
 class SidePost extends Component {
     componentDidMount() {
@@ -13,8 +13,8 @@ class SidePost extends Component {
     render(){
     return (
         <div>
-
-            <ul id="slide-out" class="sidenav">
+            <ul id="slide-out" class="sidenav" style={{"width":600}}>
+                <CreatePost/>
                 <li><div class="user-view">
                     <div class="background">
                         <img src="images/office.jpg"/>
