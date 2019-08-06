@@ -44,7 +44,7 @@ class App extends Component {
     isLoggedin: false,
     user_id: '',
     firstName: ''
-
+    
   }
 
   async componentDidMount() {
