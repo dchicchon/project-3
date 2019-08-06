@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-import Marker from "../Marker"
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -21,7 +20,7 @@ class SimpleMap extends Component {
             lat: 37.77,
             lng: -122.43
         },
-        zoom: 11
+        zoom: 1
     };
 
 

@@ -21,15 +21,15 @@ import NavBar from "./components/NavBar"
 // import image3 from './assets/bg3.jpg';
 
 //background inner pages
-import BackgroundSlider from 'react-background-slider'
-import image4 from './assets/bg4.jpg';
-import image5 from './assets/bg5.jpg';
-import image6 from './assets/bg6.jpg';
-import image7 from './assets/bg7.jpg';
-import image8 from './assets/bg8.jpg';
-import image9 from './assets/bg9.jpg';
-import image10 from './assets/bg10.jpg';
-import image11 from './assets/bg11.jpg';
+// import BackgroundSlider from 'react-background-slider'
+// import image4 from './assets/bg4.jpg';
+// import image5 from './assets/bg5.jpg';
+// import image6 from './assets/bg6.jpg';
+// import image7 from './assets/bg7.jpg';
+// import image8 from './assets/bg8.jpg';
+// import image9 from './assets/bg9.jpg';
+// import image10 from './assets/bg10.jpg';
+// import image11 from './assets/bg11.jpg';
 
 // Utils
 import API from "./Utils/API"
@@ -102,7 +102,7 @@ class App extends Component {
 
             /> */}
           </Switch>
-          <BackgroundSlider images={[image4, image5, image6, image7, image8, image9, image10, image11]} duration={5} transition={2}/>
+          {/* <BackgroundSlider images={[image4, image5, image6, image7, image8, image9, image10, image11]} duration={5} transition={2}/> */}
         </Router>
       )
     }
