@@ -37,6 +37,7 @@ class Feed extends Component {
 
 
 
+
     render() {
         const AddressDetails = props => {
             return (
@@ -69,6 +70,7 @@ class Feed extends Component {
                 </Container>
             </div>
         )
+
     }
 }
 

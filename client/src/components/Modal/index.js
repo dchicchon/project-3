@@ -4,6 +4,9 @@ import M from "materialize-css";
 import CreatePost from "../CreatePost";
 
   class Modal extends Component {
+      state = {
+          user_id: this.props.user_id
+      }
     componentDidMount() {
       // Auto initialize all the things!
       M.AutoInit();
@@ -21,7 +24,7 @@ render() {
             <div id="modal1" className="modal">
                 <div className="modal-content">
                     <h4>Create Post</h4>
-                    <CreatePost/>
+                    <CreatePost user_id = {this.state.user_id}/>
                 </div>
             </div>
         </div>

@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "express-flash-messages": "^0.1.1",
     "express-session": "^1.16.2",
+    "google-map-react": "^1.1.4",
     "if-env": "^1.0.4",
     "js-cookie": "^2.2.0",
     "mysql2": "^1.6.5",
