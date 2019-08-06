@@ -31,7 +31,7 @@ export class Profile extends Component {
         editBio: '',
         bio: '',
         profileImg: '',
-        posts: {},
+        posts: [],
         lat: this.props.lat,
         lng: this.props.lng,
         title: this.props.title
@@ -147,6 +147,7 @@ export class Profile extends Component {
                                 yesIWantToUseGoogleMapApiInternals
                             // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                             >
+                                {console.log("\nWE MADE IT\n")}
                                 {console.log(this.state.posts)}
                                 {/* {this.state.posts.map} */}
 
