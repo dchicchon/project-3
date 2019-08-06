@@ -50,11 +50,11 @@ class Feed extends Component {
         return (
             <div>
                 {/* <NavBar /> */}
-                <Modal />
+                {/* <Modal /> */}
 
                 {/* AUTOCOMPLETE TESTING */}
-                <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
-                <AddressDetails place={this.state.place} value={this.state.location}/>
+                {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                <AddressDetails place={this.state.place} value={this.state.location}/> */}
                 <CreatePost />
 
                 <Container>

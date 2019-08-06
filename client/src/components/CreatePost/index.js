@@ -27,6 +27,7 @@ class CreatePost extends Component {
         image: '',
         tag: '',
         user_id: '',
+        
 
         // TESTING AUTOCOMPLETE
         place: {}
@@ -72,7 +73,7 @@ class CreatePost extends Component {
             return (
                 <div>
                   {/* <pre>{JSON.stringify(props.place, null, 2)}</pre> */}
-                  <pre>{JSON.stringify(props.place, null, 4)}</pre>
+                  {/* <pre>{JSON.stringify(props.place, null, 4)}</pre> */}
                   {/* {console.log(props.place.address_components)} */}
                 
                 {    
