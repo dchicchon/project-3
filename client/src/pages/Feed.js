@@ -74,43 +74,4 @@ class Feed extends Component {
     }
 }
 
-
-// import CreatePost from "../components/CreatePost";
-// import API from '../Utils/API'
-// import { Col, Row, Container } from "../components/Grid";
-// import Autocomplete from './../components/AutocompleteLocation/index';
-// import CreatePost from './../components/CreatePost/index';
-
-// =================================================DANNY====================================================================
-// class Feed extends Component {
-//     state = {
-//         email: '',
-//         firstName: '',
-//         lastName: '',
-//         image: ''
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 {/* <h1>{this.props.email}</h1> */}
-//                 {/* <NavBar/> */}
-//                 {/* <NavBar logout = {this.props.logout} /> */}
-//                 <Container>
-//                     <CreatePost />
-//                     <CardPanel>
-//                         <Post />
-//                     </CardPanel>
-//                     <CardPanel>
-//                         <Post />
-//                     </CardPanel>
-
-//                 </Container>
-
-//             </div>
-//         )
-//     }
-// }
-
-
 export default Feed;
