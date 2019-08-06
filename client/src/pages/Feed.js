@@ -26,8 +26,7 @@ class Feed extends Component {
         firstName: this.props.firstName,
         lastName: '',
         image: '',
-
-        // TESTING AUTOCOMPLETE
+        posts: {},
         place: {}
     }
 
@@ -35,8 +34,15 @@ class Feed extends Component {
         this.setState({ place });
     }
 
-
-
+    async componentDidMount() {
+        console.log("BRING IN FOLLOWING POSTS")
+        API.getFollowPosts().then(res => {
+            console.log(res.data)
+            this.setState({
+                posts: res.data
+            })
+        })
+    }
 
     render() {
         const AddressDetails = props => {
@@ -56,16 +62,15 @@ class Feed extends Component {
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
-                <CreatePost user_id = {this.state.user_id} />
+                <CreatePost user_id={this.state.user_id} />
 
                 <Container>
                     <CardPanel>
                         {/* <Container> */}
                         <Row>
-                            <Post />
+                            {(this.state.posts.length)}
                             <Post />
                         </Row>
-                        {/* </Container> */}
                     </CardPanel>
                 </Container>
             </div>

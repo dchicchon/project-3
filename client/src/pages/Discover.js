@@ -39,17 +39,6 @@ class Discover extends Component {
 
     }
 
-    // handleRenderPosts() {
-
-    //     // (this.state.posts.length) ?
-    //     //     this.state.posts.map(post => (posts, i) = <Post />)
-
-    //     {(this.state.posts.length)? 
-
-    //     }
-
-    // }
-
     // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
         console.log("DISCOVER PAGE")
