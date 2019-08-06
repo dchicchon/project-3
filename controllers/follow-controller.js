@@ -22,7 +22,7 @@ module.exports = {
             }
         ).then(dbFollowers => {
             console.log(`\nDB FOLLOWERS ID`)
-            console.log(dbFollowers[0].dataValues.follower_id)
+            // console.log(dbFollowers[0].dataValues.follower_id)
             var followIdArr = []
             console.log(`FOLLOWER LENGTH`,dbFollowers.length)
             for (var i = 0; i < dbFollowers.length; i++) {

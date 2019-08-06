@@ -30,7 +30,7 @@ export class Profile extends Component {
         user_id: this.props.user_id,
         editBio: '',
         bio: '',
-        profileImg: '',
+        image: '',
         posts: [],
         lat: this.props.lat,
         lng: this.props.lng,
@@ -80,7 +80,7 @@ export class Profile extends Component {
             var profileData = res.data
             this.setState({
                 bio: profileData.bio,
-                profileImg: profileData.profileImg
+                image: profileData.image
                 // profileImg: res.data.profileImg
             })
         })
@@ -91,7 +91,8 @@ export class Profile extends Component {
         console.log("WE MADE IT TO THE FORM SUBMIT");
         let editData = {
             user_id: this.state.user_id,
-            bio: this.state.editBio
+            bio: this.state.editBio,
+            image: this.state.image
         }
         console.log(editData)
         API.editUser(editData).then(response => console.log(response))
@@ -126,8 +127,8 @@ export class Profile extends Component {
                                 <CardPanel>
                                     <p>{this.state.props}</p>
                                     {/* <p>{this.state.user_id}</p> */}
-                                    <p>{this.state.profileImg}</p>
-                                    <img src={this.state.profileImg} alt="Profile picture" />
+                                    <p>{this.state.image}</p>
+                                    <img src={this.state.image} alt="Profile picture" />
                                 </CardPanel>
                             </CardPanel>
                         </Col>

@@ -40,17 +40,17 @@ module.exports = {
 		name = name + uuid();
 
 
-		var profileImg = {
+		var image = {
 			name: req.body.name,
 			image: name
 		};
 
-		uploadImg(req, profileImg.image, (location) => {
+		uploadImg(req, image.image, (location) => {
 			console.log(req);
 
 			db.User.update(
 				{
-					profileImg: location,
+					image: location,
 				},
 				{
 					where: { id: req.body.id }
