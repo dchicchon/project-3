@@ -24,6 +24,8 @@ class SimpleMap extends Component {
     };
 
 
+
+
     render() {
         return (
             // Important! Always set the container height explicitly

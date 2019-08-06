@@ -14,7 +14,7 @@ import GoogleMap from "../components/GoogleMap"
 // Utils
 import API from "../Utils/API";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Marks = ({ text }) => <div>{text}</div>;
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -33,7 +33,8 @@ export class Profile extends Component {
         profileImg: '',
         posts: {},
         lat: this.props.lat,
-        lng: this.props.lng
+        lng: this.props.lng,
+        title: this.props.title
     }
 
     static defaultProps = {
@@ -60,7 +61,7 @@ export class Profile extends Component {
         // console.log(this.state.lng)
 
         API.getUserPosts(id).then(res => {
-            console.log("GET USER POSTS")
+            console.log("\nGET USER POSTS\n")
             console.log(res.data)
 
             // this.state.posts.push(res.data)
@@ -102,6 +103,17 @@ export class Profile extends Component {
         })
     }
 
+    // displayMarkers = () => {
+    //     return this.state.posts.map((post, i) => {
+    //         return <Marks 
+    //         key= {i}
+    //         id = {post.user_id}
+    //         lat={post.lat}
+    //         lng={post.lng}
+    //         text={post.title}
+    //     />})
+    // }
+
     render() {
         return (
             <div>
@@ -139,14 +151,16 @@ export class Profile extends Component {
                                 {/* {this.state.posts.map} */}
 
                                 {(this.state.posts.length) ? this.state.posts.map((post, i) =>
-                                    <AnyReactComponent
+                                    <Marks
                                         key={i}
                                         id={post.user_id}
                                         lat={post.lat}
                                         lng={post.lng}
-                                        text="Marker1"
+                                        text={post.title}
                                     />
                                 ) : console.log("No Markers")}
+
+                                {/* {this.displayMarkers()} */}
 
                             </GoogleMapReact>
                         </div>
