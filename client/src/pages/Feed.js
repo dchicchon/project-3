@@ -23,10 +23,10 @@ class Feed extends Component {
     render(){
     return (
         <div>
-            <Modal/>
+            <Modal user_id={this.state.user_id}/>
             <Container>
                 <CardPanel>
-                    {/* <Container> */}
+                    
                     <Row>
                         <Post />
                         <Post />

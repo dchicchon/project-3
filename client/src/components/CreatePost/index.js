@@ -44,7 +44,7 @@ class CreatePost extends Component {
             info: this.state.info,
             // image: this.state.image,
             tag: this.state.tag,
-            user_id: this.props.id,
+            user_id: this.props.user_id,
             title: this.state.title,
             location: this.state.location,
             lat: this.state.lat,
@@ -57,11 +57,7 @@ class CreatePost extends Component {
             })
     }
 
-
-
     render() {
-
-
 
         // export default function CreatePost(props) {
         return (

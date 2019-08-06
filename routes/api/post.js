@@ -21,5 +21,7 @@ router.route("/post")
     // .put(postController)
     // .delete(postController)
 
+router.route("/post/:id")
+    .get(postController.getPostsByUser)
 
 module.exports = router;

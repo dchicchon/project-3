@@ -11,11 +11,18 @@ export default {
       return axios.get("/api/user/" + userId)
    },
 
-   // Post Create Methods
+   // Get Posts
    getPosts: () => {
       return axios.get(`/api/post`)
    },
 
+   // Get Posts By User
+
+   getUserPosts: (userId) => {
+      return axios.get(`/api/post/` + userId)
+   },
+
+   // Post Create Methods
 
    newPost: function (postData) {
       return axios.post(`/api/post`, postData)

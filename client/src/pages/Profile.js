@@ -14,6 +14,16 @@ import GoogleMap from "../components/GoogleMap"
 // Utils
 import API from "../Utils/API";
 
+import Marker from '../components/Marker'
+
+// AnyReactComponent = (props) => {
+//     return (
+//         <div>
+//             {props.text}
+//         </div>
+//     )
+// }
+
 
 export class Profile extends Component {
     state = {
@@ -21,7 +31,9 @@ export class Profile extends Component {
         editBio: '',
         bio: '',
         profileImg: '',
-        postCoords: []
+        posts: [],
+        // lat: 37,
+        // lng: -122
         // map: this.state.map
     }
 
@@ -32,14 +44,33 @@ export class Profile extends Component {
         //     id: this.state.user_id
         // }
         // console.log(idPackage)
-        let id = this.state.user_id
-        console.log(id)
+        var id = this.state.user_id
+        // console.log(id)
+        // console.log(this.state.lat)
+        // console.log(this.state.lng)
+
+        API.getUserPosts(id).then(res => {
+            console.log("GET USER POSTS")
+            console.log(res.data)
+            var postsArr = res.data
+            // this.state.posts.push(res.data)
+            this.setState({
+                posts: []
+            })
+            // console.log(this.state.posts)
+            // this.setState({
+            //     posts: res.data
+            // })
+        })
+
         API.getProfile(id).then(res => {
             console.log("\nGET PROFILE\n")
             console.log(res.data)
+            var profileData = res.data
             this.setState({
-                bio: res.data.bio,
-                profileImg: res.data.profileImg
+                bio: profileData.bio,
+                profileImg: profileData.profileImg
+                // profileImg: res.data.profileImg
             })
         })
     }
@@ -71,6 +102,8 @@ export class Profile extends Component {
                         <Col size="s4">
                             <CardPanel>
                                 <CardPanel>
+                                    <p>{this.state.props}</p>
+                                    {/* <p>{this.state.user_id}</p> */}
                                     <p>{this.state.profileImg}</p>
                                     <img src={this.state.profileImg} alt="Profile picture" />
                                 </CardPanel>
@@ -84,8 +117,16 @@ export class Profile extends Component {
                         </Col>
                     </Row>
                     <CardPanel>
-                        <GoogleMap/>
-                        {/* <img src={this.state.map} /> */}
+                        {/* <GoogleMap lat={this.state.lat} lng={this.state.lng} posts={this.state.posts} /> */}
+                        <GoogleMap posts={this.state.posts} />
+                        {/* {(this.state.posts.length) ? this.state.posts.map((post, i) =>
+                                <Marker
+                                    lat={post.lat}
+                                    lng={post.lng}
+                                    text="Marker1"
+                                />
+                            ) : console.log("No Markers")}
+                        </GoogleMap> */}
                     </CardPanel>
                 </Container>
             </div>

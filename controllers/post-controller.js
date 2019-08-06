@@ -62,7 +62,7 @@ module.exports = {
 
 	addPost: (req, res) => {
 		console.log("MADE IT TO POST CONTROLLER")
-		console.log(`REQ.BODY:`,req.body)
+		console.log(`REQ.BODY:`, req.body)
 		db.Post.create({
 			user_id: req.body.user_id,
 			info: req.body.info,
@@ -85,12 +85,13 @@ module.exports = {
 	},
 
 	getPostsByUser: (req, res) => {
+		console.log("MADE IT TO POST CONTROLLER:", req.params.id)
 		db.Post.findAll(
 			{
 				where: { id: req.params.id }
 			},
 			{
-				order: [['time', 'desc']],
+				// order: [['time', 'desc']],
 				limit: 50
 			}
 		).then(dbPost => res.json(dbPost));
