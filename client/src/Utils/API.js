@@ -28,11 +28,11 @@ export default {
       return axios.get(`/api/post`)
    },
 
-   getFollowPosts: () => {
-      return axios.get(`api/post`)
-   },
+   // getFollowPosts: () => {
+   //    return axios.get(`api/post`)
+   // },
 
-   getFollowIds: (id) => {
+   getFollowPosts: (id) => {
       return axios.get(`api/follow/` + id)
    },
    // Make function for Discover page to get posts based by tags!

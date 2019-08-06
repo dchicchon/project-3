@@ -37,12 +37,17 @@ class Feed extends Component {
 
     async componentDidMount() {
         console.log("BRING IN FOLLOWERS")
-        API.getFollowIds(this.state.user_id).then(res => {
-            console.log("\nFOLLOW ARRAY")
-            console.log(res.data)
-            this.setState({
-                followIds: res.data
-            })
+        API.getFollowPosts(this.state.user_id).then(res => {
+            console.log("\nFOLLOWING POST ARRAY")
+            console.log(res)
+            // var followingArr = []
+            // for (var i = 0; i < res.data.length; i++) {
+            //     followingArr.push(res.data[i].follower_id)
+            // }
+            // console.log(followingArr)
+            // this.setState({
+            //     followIds: followingArr
+            // })
         })
 
         // API.getFollowPosts().then(res => {

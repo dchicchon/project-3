@@ -13,16 +13,43 @@ module.exports = {
         })
     },
     // This gets the people that the user is following
-    getFollowing: (req,res) => {
+    getFollowing: (req, res) => {
         console.log(`\nIN GET FOLLOW METHOD`)
         console.log(`\nREQ PARAMS:`, req.params.id)
         db.Followers.findAll(
             {
-                where: {user_id: req.params.id}
+                where: { user_id: req.params.id }
             }
         ).then(dbFollowers => {
-            console.log(dbFollowers)
-            return res.json(dbFollowers)
+            console.log(`\nDB FOLLOWERS ID`)
+            console.log(dbFollowers[0].dataValues.follower_id)
+            var followIdArr = []
+            console.log(`FOLLOWER LENGTH`,dbFollowers.length)
+            for (var i = 0; i < dbFollowers.length; i++) {
+                var followId = dbFollowers[i].dataValues.follower_id
+                followIdArr.push(followId)
+                // console.log(`Following ID:`, followId)
+                // followIdArr.push(dbFollowers[i].dataValues.follower_id)
+            }
+            console.log(`FOLLOW ARR`)
+            console.log(followIdArr)
+            db.Post.findAll(
+                {
+                    where: {
+                        user_id: followIdArr
+                    }
+                }
+            ).then((dbPosts) => {
+                console.log("GET RESPONSE TO FIND FOLLOWING POSTS")
+                var followingPosts = []
+                for (var j = 0; j < dbPosts.length; j++) {
+                    followingPosts.push(dbPosts[j].dataValues) 
+                }
+                console.log("\nFOLLOWING POSTS")
+                console.log(followingPosts)
+                return res.json(followingPosts)
+            })
+            // return res.json(dbFollowers)
         })
     }
 }
