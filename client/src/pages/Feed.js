@@ -26,6 +26,7 @@ class Feed extends Component {
         firstName: this.props.firstName,
         lastName: '',
         image: '',
+        followIds: {},
         posts: {},
         place: {}
     }
@@ -35,13 +36,21 @@ class Feed extends Component {
     }
 
     async componentDidMount() {
-        console.log("BRING IN FOLLOWING POSTS")
-        API.getFollowPosts().then(res => {
+        console.log("BRING IN FOLLOWERS")
+        API.getFollowIds(this.state.user_id).then(res => {
+            console.log("\nFOLLOW ARRAY")
             console.log(res.data)
             this.setState({
-                posts: res.data
+                followIds: res.data
             })
         })
+
+        // API.getFollowPosts().then(res => {
+        //     console.log(res.data)
+        //     this.setState({
+        //         posts: res.data
+        //     })
+        // })
     }
 
     render() {

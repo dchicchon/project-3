@@ -5,4 +5,6 @@ const followController = require("../../controllers/follow-controller")
 router.route("/follow")
     .post(followController.addFollow)
 
+router.route("/follow/:id")
+    .get(followController.getFollowing)
 module.exports = router
