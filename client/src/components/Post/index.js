@@ -49,8 +49,7 @@ function Post(props) {
         <div className="card-action">
           <img src="http://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908" width="50" height="50" alt="" position="absolute" verticle-align="center" />
 
-
-          <span><a href="#" align="left" verticle-align="center" >{props.id}</a><Button user_id = {props.user_id} onClick={props.followUser}>Follow</Button></span>
+          <span><a href="#" align="left" verticle-align="center" >{props.user_id}</a><Button onClick={() => props.followUser(props.user_id)}>Follow</Button></span>
         </div>
 
 
