@@ -107,14 +107,10 @@ class CreatePost extends Component {
                                 {/* <Date className="col s6" /> */}
                                 {/* <TextInput>Where are you?</TextInput> */}
                                 {/* AUTOCOMPLETE TESTING */}
-                                <Autocomplete onPlaceChanged={this.showPlaceDetails.bind(this)} />
-                                <AddressDetails place={this.state.place} />
-
-
-                                <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
+                                <Autocomplete name='location' onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                                <AddressDetails name = "location" place={this.state.place} />
 
                                 {/* <label htmlFor="location">Where are you?</label> */}
-
 
                                 {/* <TextInput className="col s6">Title</TextInput> */}
                                 <input placeholder="Title" id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
