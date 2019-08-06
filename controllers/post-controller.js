@@ -88,13 +88,16 @@ module.exports = {
 		console.log("\nGET USER POSTS FOR PROFILE PAGE:", req.params.id)
 		db.Post.findAll(
 			{
-				where: { id: req.params.id }
+				where: { user_id: req.params.id }
 			},
 			{
 				// order: [['time', 'desc']],
 				limit: 50
 			}
-		).then(dbPost => res.json(dbPost)
-);
+		).then(dbPost => {
+			console.log(dbPost);
+			
+
+			return res.json(dbPost)});
 	}
 }
