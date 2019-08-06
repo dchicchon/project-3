@@ -9,7 +9,8 @@ class Signup extends Component {
         password: '',
         passwordConfirm: '',
         firstName: '',
-        lastName: ''
+        lastName: '',
+        image: ''
     }
 
     handleInputChange = event => {
@@ -32,7 +33,8 @@ class Signup extends Component {
                         password: this.state.password,
                         email: this.state.email,
                         firstName: this.state.firstName,
-                        lastName: this.state.lastName
+                        lastName: this.state.lastName,
+                        image: this.state.image
                     }),
                     headers: new Headers({
                         "Content-Type": "application/json"
@@ -48,7 +50,8 @@ class Signup extends Component {
                     password: '',
                     passwordConfirm: '',
                     firstName: '',
-                    lastName: ''
+                    lastName: '',
+                    image: ''
                 });
 
             } else {
@@ -101,10 +104,10 @@ class Signup extends Component {
                                     <div className="file-field input-field">
                                         <div className="btn">
                                             <span>Upload Photo</span>
-                                            <input type="file" />
+                                            <input type="file"  name="image" value={this.state.image} onChange={this.handleInputChange}/>
                                         </div>
                                         <div className="file-path-wrapper">
-                                            <input className="file-path validate" type="text" />
+                                            <input className="file-path validate" />
                                         </div>
                                     </div>
                                 </Row>

@@ -30,7 +30,7 @@ module.exports = function (sequelize, DataTypes) {
     image: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "https://imgur.com/xjhcWp3",
+      // defaultValue: "https://imgur.com/xjhcWp3",
     },
     tag: {
       type: DataTypes.STRING,
