@@ -104,10 +104,10 @@ class Signup extends Component {
                                     <div className="file-field input-field">
                                         <div className="btn">
                                             <span>Upload Photo</span>
-                                            <input type="file" />
+                                            <input type="file"  name="image" value={this.state.image} onChange={this.handleInputChange}/>
                                         </div>
                                         <div className="file-path-wrapper">
-                                            <input className="file-path validate" type="text" name="image" value={this.state.image} onChange={this.handleInputChange}/>
+                                            <input className="file-path validate" />
                                         </div>
                                     </div>
                                 </Row>

@@ -9,7 +9,7 @@ const s3 = new AWS.S3({
 	secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 })
 
-function uploadImage(req, image, cb) {
+function uploadImage(req, images, cb) {
 	//use req from the post method, and the image data can be get using the code below
 
 	var imageFile = req.files.file.data;
@@ -17,7 +17,7 @@ function uploadImage(req, image, cb) {
 		var params = {
 			Bucket: process.env.S3_BUCKET_NAME,
 			ACL: 'public-read',
-			Key: `${image}.jpg`,
+			Key: `${images}.jpg`,
 			Body: imageFile
 		}
 		s3.upload(params, function (err, data) {
@@ -43,27 +43,27 @@ module.exports = {
 		console.log(process.env.AWS_SECRET_ACCESS_KEY)
 		console.log(process.env.S3_BUCKET_NAME)
 
-		var name = req.body.name.toLowerCase();
-		name = name.replace(/\s/g, '');
-		name = name + uuid();
+		var user_id = req.body.name.toLowerCase();
+		user_id = user_id.replace(/\s/g, '');
+		user_id = user_id + uuid();
 
 
-		var profilePhoto = {
-			name: req.body.name,
-			image: name
+		var image = {
+			user_id: req.body.user_id,
+			image: user_id
 		};
 
-		uploadImage(req, profilePhoto.image, function (location) {
+		uploadImage(req, image.image, function (location) {
 			console.log(location);
 			console.log(req);
 
 
 			db.User.update(
 				{
-					profilePhoto: location,
+					image: location,
 				},
 				{
-					where: { id: req.body.UserId }
+					where: { id: req.body.id }
 				})
 				.then(function (dbUser) {
 					res.json({ imageUrl: location });

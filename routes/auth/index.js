@@ -10,7 +10,6 @@ router.get('/user', (req, res) => {
         console.log(`Current User:`, currentUser);
         db.User.findOne({
             where: {
-
                 // we may have to change this later because this might cause an error
                 id: currentUser
             }

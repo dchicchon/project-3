@@ -7,6 +7,7 @@ router.route("/user")
     // .get(userController.getUser)
     // .post(userController.addUser)
     .put(userController.editUser)
+    .post(userController.updatePhoto)
 
 router.route("/user/:id")
     .get(userController.getUser)
