@@ -4,14 +4,15 @@ import { Col, Row, Container } from "../Grid";
 import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
-import AutocompleteLocation from "../AutocompleteLocation";
+
 
 // import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
-
-
 import Cookies from 'js-cookie'
 
+// TESTING FOR AUTOCOMPLETE
+import Autocomplete from "../AutocompleteLocation";
+/* global google */
 
 // Utils
 import API from '../../Utils/API'
@@ -25,8 +26,18 @@ class CreatePost extends Component {
         location: "",
         image: '',
         tag: '',
-        user_id: ''
+        user_id: '',
+        
+
+        // TESTING AUTOCOMPLETE
+        place: {}
     }
+
+// AUTOCOMPLETE
+    showPlaceDetails(place) {
+        this.setState({ place });
+      }
+
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -57,6 +68,25 @@ class CreatePost extends Component {
 
     render() {
 
+        // AUTOCOMPLETE
+        const AddressDetails = props => {
+            return (
+                <div>
+                  {/* <pre>{JSON.stringify(props.place, null, 2)}</pre> */}
+                  {/* <pre>{JSON.stringify(props.place, null, 4)}</pre> */}
+                  {/* {console.log(props.place.address_components)} */}
+                
+                {    
+                    typeof props.place.geometry !== 'undefined' ? console.log
+                    //LATITUDE
+                    // (props.place.geometry.location.lat() : console.log("Hey not now")
+                    //LONGITUDE
+                    (props.place.geometry.location.lng()) : console.log("Hey not now")
+                }
+                
+                </div>
+            ) 
+        } ;
 
 
         // export default function CreatePost(props) {
@@ -71,7 +101,13 @@ class CreatePost extends Component {
                             <form>
                                 {/* <Date className="col s6" /> */}
                                 {/* <TextInput>Where are you?</TextInput> */}
+         {/* AUTOCOMPLETE TESTING */}
+                             <Autocomplete onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                            <AddressDetails place={this.state.place} />
+
+                                
                                 <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
+
                                 {/* <label htmlFor="location">Where are you?</label> */}
 
 
