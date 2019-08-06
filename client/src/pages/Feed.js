@@ -1,3 +1,4 @@
+/* global google */
 import React, { Component } from "react";
 import CardPanel from "../components/CardPanel"
 import Post from "../components/Post"
@@ -5,6 +6,13 @@ import { Col, Row, Container } from "../components/Grid";
 import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
+
+
+// TESTING FOR AUTOCOMPLETE
+import Autocomplete from "../components/AutocompleteLocation";
+/* global google */
+
+
 
 // Import Materialize
 import M from "materialize-css";
@@ -17,25 +25,52 @@ class Feed extends Component {
         email: '',
         firstName: this.props.firstName,
         lastName: '',
-        image: ''
+        image: '',
+
+        // TESTING AUTOCOMPLETE
+        place: {}
     }
 
-    render(){
-    return (
-        <div>
-            <Modal user_id={this.state.user_id}/>
-            <Container>
-                <CardPanel>
-                    
-                    <Row>
-                        <Post />
-                        <Post />
-                    </Row>
-                    {/* </Container> */}
-                </CardPanel>
-            </Container>
-        </div>
-    )
+    showPlaceDetails(place) {
+        this.setState({ place });
+    }
+
+
+
+
+    render() {
+        const AddressDetails = props => {
+            return (
+                <div>
+                    <pre>{JSON.stringify(props.place, null, 2)}</pre>
+                </div>
+            )
+        };
+
+
+        return (
+            <div>
+                {/* <NavBar /> */}
+                {/* <Modal /> */}
+
+                {/* AUTOCOMPLETE TESTING */}
+                {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                <AddressDetails place={this.state.place} value={this.state.location}/> */}
+                <CreatePost />
+
+                <Container>
+                    <CardPanel>
+                        {/* <Container> */}
+                        <Row>
+                            <Post />
+                            <Post />
+                        </Row>
+                        {/* </Container> */}
+                    </CardPanel>
+                </Container>
+            </div>
+        )
+
     }
 }
 
@@ -43,6 +78,8 @@ class Feed extends Component {
 // import CreatePost from "../components/CreatePost";
 // import API from '../Utils/API'
 // import { Col, Row, Container } from "../components/Grid";
+// import Autocomplete from './../components/AutocompleteLocation/index';
+// import CreatePost from './../components/CreatePost/index';
 
 // =================================================DANNY====================================================================
 // class Feed extends Component {
