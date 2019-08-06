@@ -28,7 +28,7 @@ class CreatePost extends Component {
         tag: '',
         user_id: '',
         lat: '',
-        lng: ''
+        lng: '',
 
         // TESTING AUTOCOMPLETE
         place: {}
