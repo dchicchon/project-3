@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../Grid";
-
+import Button from "../Button"
 
 function Post(props) {
   return (
@@ -50,13 +50,13 @@ function Post(props) {
           <img src="http://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908" width="50" height="50" alt="" position="absolute" verticle-align="center" />
 
 
-          <span><a href="#" align="left" verticle-align="center" >{props.id}</a></span>
+          <span><a href="#" align="left" verticle-align="center" >{props.id}</a><Button user_id = {props.user_id} onClick={props.followUser}>Follow</Button></span>
         </div>
 
 
         {/* // // user photo posted */}
         <div className="card-image">
-          <img src= {props.image} width="300" height="350" className="activator" />
+          <img src={props.image} width="300" height="350" className="activator" />
 
           <span className="card-title activator white-text" >{props.title}</span>
 
@@ -65,14 +65,14 @@ function Post(props) {
 
         {/* // card description section */}
         <div className="card-content">
-        
+
 
           <p className="activator">{props.location}</p>
         </div>
-          <div className="card-reveal">
-            <p className="card-title">{props.info}</p>
-          </div>
-          {/* // end of card description */}
+        <div className="card-reveal">
+          <p className="card-title">{props.info}</p>
+        </div>
+        {/* // end of card description */}
         <div className="card-action">
           <a href="#"><i className="material-icons">favorite_border</i></a>
         </div>

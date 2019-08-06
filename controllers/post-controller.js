@@ -62,14 +62,16 @@ module.exports = {
 
 	addPost: (req, res) => {
 		console.log("MADE IT TO POST CONTROLLER")
-		console.log(`REQ.BODY:`,req.body)
+		console.log(`REQ.BODY:`, req.body)
 		db.Post.create({
 			user_id: req.body.user_id,
 			info: req.body.info,
 			title: req.body.title,
 			location: req.body.location,
 			image: req.body.image,
-			tag: req.body.tag
+			tag: req.body.tag,
+			lat: req.body.lat,
+			lng: req.body.lng
 		}
 		).then(dbPost => res.json(dbPost));
 	},
@@ -83,14 +85,19 @@ module.exports = {
 	},
 
 	getPostsByUser: (req, res) => {
+		console.log("\nGET USER POSTS FOR PROFILE PAGE:", req.params.id)
 		db.Post.findAll(
 			{
-				where: { id: req.params.id }
+				where: { user_id: req.params.id }
 			},
 			{
-				order: [['time', 'desc']],
+				// order: [['time', 'desc']],
 				limit: 50
 			}
-		).then(dbPost => res.json(dbPost));
+		).then(dbPost => {
+			console.log(dbPost);
+			
+
+			return res.json(dbPost)});
 	}
 }

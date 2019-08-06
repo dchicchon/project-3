@@ -12,27 +12,6 @@ import SearchChip from "../components/SearchChips"
 import API from "../Utils/API"
 import { setServers } from "dns";
 
-// function Discover(props) {
-//   return (
-//     <div>
-
-//       <NavBar />
-//       <Container>
-//         <HeadTitle />
-//         <SearchFor />
-//         <SearchChip />
-//         <CardPanel>
-//           <Row>
-//             <Post />
-//             <Post />
-//           </Row>
-//         </CardPanel>
-//       </Container>
-
-//     </div>
-//   );
-// }
-
 class Discover extends Component {
     state = {
         search: '',
@@ -46,6 +25,20 @@ class Discover extends Component {
         })
     }
 
+    followUser = (event) => {
+        console.log("WE FOLLOWED THE USER")
+        console.log(event.target)
+        // console.log(event.target.data("user_id"))
+        const idPackage = {
+            user_id: this.props.user_id ,
+            follow_id: event.target.user_id
+        }
+        console.log(idPackage)
+
+        API.followUser(idPackage).then(res => console.log(res))
+
+    }
+
     // handleRenderPosts() {
 
     //     // (this.state.posts.length) ?
@@ -57,6 +50,7 @@ class Discover extends Component {
 
     // }
 
+    // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
         console.log("DISCOVER PAGE")
         API.getPosts().then(res => {
@@ -79,15 +73,16 @@ class Discover extends Component {
                         <Row>
                             {(this.state.posts.length) ? this.state.posts.map((post, i) => (
                                 <Post
-                                    key = {i}
+                                    followUser={this.followUser}
+                                    key={i}
                                     title={post.title}
-                                    info = {post.info}
-                                    location = {post.location}
-                                    tag = {post.tag}
-                                    id = {post.user_id}
+                                    info={post.info}
+                                    location={post.location}
+                                    tag={post.tag}
+                                    user_id={post.user_id}
                                 />
                             )) : "No Posts"}
-                            
+
                         </Row>
                     </CardPanel>
                 </Container>

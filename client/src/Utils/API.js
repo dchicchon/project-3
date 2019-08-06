@@ -2,20 +2,43 @@ import axios from "axios";
 
 export default {
 
-   // Profile Page
+   // Discovery Page ==============================
+   followUser: (idPackage) => {
+      return axios.post(`/api/follow`, idPackage)
+   },
+   
+   // ================================
+
+   // Profile Page =========================
+
+   // Edit User Data
    editUser: (editData) => {
       return axios.put(`/api/user`, editData)
    },
 
+   // Get Profile Info
    getProfile: (userId) => {
       return axios.get("/api/user/" + userId)
    },
 
-   // Post Create Methods
+   // ============================================
+
+   // Get Posts
    getPosts: () => {
       return axios.get(`/api/post`)
    },
+   // Make function for Discover page to get posts based by tags!
+   searchTag: (tags) => {
+      return axios.post("")
+   },
 
+   // Get Posts By User
+
+   getUserPosts: (userId) => {
+      return axios.get(`/api/post/` + userId)
+   },
+
+   // Post Create Methods
 
    newPost: function (postData) {
       return axios.post(`/api/post`, postData)

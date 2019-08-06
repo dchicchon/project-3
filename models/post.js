@@ -39,6 +39,14 @@ module.exports = function (sequelize, DataTypes) {
         len: [3 - 10],
       }
     },
+    lat: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    lng: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
   },

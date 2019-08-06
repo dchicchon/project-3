@@ -65,8 +65,8 @@ app.use(routes)
 
 // Add sequelize connection
 // Sync sequelize with our database models. We set force to true to reset database each time for development. 
-// REMOVE FORCE TRUE DURING PRODUCTION!
-db.sequelize.sync({ force: true }).then(() => {
+//! REMOVE FORCE TRUE DURING PRODUCTION!
+db.sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`API server now listening on PORT ${PORT} `)
     })

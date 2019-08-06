@@ -27,16 +27,18 @@ class CreatePost extends Component {
         image: '',
         tag: '',
         user_id: '',
-        
+        lat: '',
+        lng: '',
 
         // TESTING AUTOCOMPLETE
         place: {}
+
     }
 
-// AUTOCOMPLETE
+    // AUTOCOMPLETE
     showPlaceDetails(place) {
         this.setState({ place });
-      }
+    }
 
 
     handleInputChange = event => {
@@ -53,40 +55,43 @@ class CreatePost extends Component {
             info: this.state.info,
             // image: this.state.image,
             tag: this.state.tag,
-            user_id: this.props.id,
+            user_id: this.props.user_id,
             title: this.state.title,
-            location: this.state.location
+            location: this.state.location,
+            lat: this.state.lat,
+            lng: this.state.lng
         }
         console.log("POST DATA:", postData)
         API.newPost(postData)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
     }
 
-
-
     render() {
+
 
         // AUTOCOMPLETE
         const AddressDetails = props => {
             return (
                 <div>
-                  {/* <pre>{JSON.stringify(props.place, null, 2)}</pre> */}
-                  {/* <pre>{JSON.stringify(props.place, null, 4)}</pre> */}
-                  {/* {console.log(props.place.address_components)} */}
-                
-                {    
-                    typeof props.place.geometry !== 'undefined' ? console.log
-                    //LATITUDE
-                    // (props.place.geometry.location.lat() : console.log("Hey not now")
-                    //LONGITUDE
-                    (props.place.geometry.location.lng()) : console.log("Hey not now")
-                }
-                
+                    {/* <pre>{JSON.stringify(props.place, null, 2)}</pre> */}
+                    {/* <pre>{JSON.stringify(props.place, null, 4)}</pre> */}
+                    {/* {console.log(props.place.address_components)} */}
+
+                    {
+                        typeof props.place.geometry !== 'undefined' ? console.log
+                            //LATITUDE
+                            // (props.place.geometry.location.lat() : console.log("Hey not now")
+                            //LONGITUDE
+                            (props.place.geometry.location.lng()) : console.log("Hey not now")
+                    }
+
                 </div>
-            ) 
-        } ;
+            )
+        };
+
 
 
         // export default function CreatePost(props) {
@@ -101,15 +106,11 @@ class CreatePost extends Component {
                             <form>
                                 {/* <Date className="col s6" /> */}
                                 {/* <TextInput>Where are you?</TextInput> */}
-         {/* AUTOCOMPLETE TESTING */}
-                             <Autocomplete onPlaceChanged={this.showPlaceDetails.bind(this)} />
-                            <AddressDetails place={this.state.place} />
-
-                                
-                                <input placeholder="Where are you?" id="location" name="location" type="text" className="validate" value={this.state.location} onChange={this.handleInputChange} />
+                                {/* AUTOCOMPLETE TESTING */}
+                                <Autocomplete name='location' onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                                <AddressDetails name = "location" place={this.state.place} />
 
                                 {/* <label htmlFor="location">Where are you?</label> */}
-
 
                                 {/* <TextInput className="col s6">Title</TextInput> */}
                                 <input placeholder="Title" id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
@@ -122,6 +123,11 @@ class CreatePost extends Component {
                                 {/* <label htmlFor="description">Record?</label> */}
 
                                 <input placeholder="Tag" id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+
+                                <input placeholder="lat" id="lat" name="lat" type="text" className="validate" value={this.state.lat} onChange={this.handleInputChange} />
+                                <input placeholder="lng" id="lng" name="lng" type="text" className="validate" value={this.state.lng} onChange={this.handleInputChange} />
+
+
 
 
                                 {/* UPLOAD IMAGE */}
