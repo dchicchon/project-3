@@ -142,7 +142,7 @@ export class Profile extends Component {
             <div>
                 <Container>
                     <Row>
-                        <Col size="s4">
+                        <Col size="s6">
                             <CardPanel>
                                 <CardPanel>
                                     <p>{this.state.props}</p>
@@ -153,7 +153,7 @@ export class Profile extends Component {
                             </CardPanel>
                         </Col>
 
-                        <Col size="s8">
+                        <Col size="s6">
                             <CardPanel>
                                 <ProfileCard bio={this.state.bio} />
                                 <TextInput name="editBio" placeholder="Edit Bio"value={this.state.editBio} onChange={this.handleInputChange} />

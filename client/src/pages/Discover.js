@@ -8,12 +8,20 @@ import HeadTitle from "../components/PageTitle"
 import SearchChip from "../components/SearchChips"
 
 
-
+import BackgroundSlider from 'react-background-slider'
+import image4 from '../assets/bg4.jpg';
+import image5 from '../assets/bg5.jpg';
+import image6 from '../assets/bg6.jpg';
 
 // Utils
 
 import API from "../Utils/API"
 import { setServers } from "dns";
+
+const divStyle = {
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'center',
+};
 
 
 class Discover extends Component {
@@ -80,7 +88,7 @@ class Discover extends Component {
                     </CardPanel>
 
                 </Container>
-
+                    <div style={divStyle} ><BackgroundSlider  images={[image4, image5, image6]} duration={5} transition={2} /></div>
             </div>
         );
     }

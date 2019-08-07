@@ -9,6 +9,7 @@ import Modal from "../components/Modal";
 
 
 
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
@@ -74,15 +75,18 @@ class Feed extends Component {
 
         return (
             <div>
+
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
-                <CreatePost user_id={this.state.user_id} />
+
 
                 <Container>
+                <HeadTitle>Follower Feed</HeadTitle>
+                <CreatePost user_id={this.state.user_id} />
                     <CardPanel>
                         {/* <Container> */}
                         <Row>
