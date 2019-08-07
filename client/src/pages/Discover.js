@@ -7,6 +7,7 @@ import SearchFor from "../components/Searchbar"
 import HeadTitle from "../components/PageTitle"
 import SearchChip from "../components/SearchChips"
 
+import Background from "../assets/bg9.jpg"
 
 
 
@@ -14,6 +15,15 @@ import SearchChip from "../components/SearchChips"
 
 import API from "../Utils/API"
 import { setServers } from "dns";
+
+const divStyle = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '100%',
+    backgroundAttachment: 'fixed'
+};
+
 
 
 class Discover extends Component {
@@ -56,7 +66,7 @@ class Discover extends Component {
 
     render() {
         return (
-            <div>
+            <div style={divStyle}>
 
                 <Container>
                     <HeadTitle>Discover</HeadTitle>
@@ -79,8 +89,8 @@ class Discover extends Component {
                         </Row>
                     </CardPanel>
 
-                </Container>
-
+                </Container>   
+                    {/* <BackgroundSlider images={[image4, image5, image6]} duration={5} transition={2} /> */}
             </div>
         );
     }
