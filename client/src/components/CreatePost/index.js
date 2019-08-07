@@ -148,7 +148,7 @@ class CreatePost extends Component {
                                         </div>
                                     </div>
                                 </Row>
-                                <Button onClick={this.addPost} >Submit</Button>
+                                <Button onClick={this.addPost} >Submit <i className="material-icons right">send</i></Button>
                             </form>
                         {/* </Container> */}
                     </CardPanel>

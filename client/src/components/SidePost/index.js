@@ -60,11 +60,20 @@ class SidePost extends Component {
                     <li><a className="subheader">Subheader</a></li>
                     <li><a className="waves-effect" href="#!">Third Link With Waves</a></li> */}
                 </ul>
+{/* text+bounce icon on hover */}
                 <a href="#" data-target="slide-out" className="sidenav-trigger"> 
-                <Button id="sidePost" className="btn-large"> <i className="large material-icons right">create</i>
+                <Button id="sidePost" className="btn-large #90caf9 blue lighten-3"> <i className="large material-icons right bounce" id="create-icon">create</i>
                     Create a Post
                 </Button>
                 </a>
+
+
+
+                 
+                 
+                    
+        
+
             </div>
         )
     }

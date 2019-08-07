@@ -115,7 +115,7 @@ class Signup extends Component {
 
                             </form>
                         </div>
-                        <Button onClick={this.handleFormSubmit}>Signup</Button>
+                        <Button onClick={this.handleFormSubmit}>Signup <i className="material-icons right">send</i></Button>
 
                     </div>
                 </Container>
