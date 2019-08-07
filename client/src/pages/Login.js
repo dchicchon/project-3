@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
-import './style/login.css'
+
 
 import BackgroundSlideshow from 'react-background-slideshow';
-
 
 import image1 from '../assets/bg1.jpg';
 import image2 from '../assets/bg2.jpg';

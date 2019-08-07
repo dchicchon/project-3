@@ -8,11 +8,12 @@ import API from '../Utils/API'
 import Modal from "../components/Modal";
 
 
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
 
-
+import MarkerInfo from "../components/MarkerInfo"
 
 // Import Materialize
 import M from "materialize-css";
