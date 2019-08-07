@@ -33,7 +33,7 @@
 /*     
   } */
 
-  /* .bounce:hover {
+  .bounce:hover {
     display: inline-block;
     position: relative;
     -moz-animation: bounce 0.5s infinite linear;
@@ -41,8 +41,8 @@
     -webkit-animation: bounce 0.5s infinite linear;
     animation: bounce 0.5s infinite linear;
     colr:000;
-  } */
-/* 
+  }
+
   @-webkit-keyframes bounce {
     0% { top: 0; }
     50% { top: -0.2em; }
@@ -72,13 +72,13 @@
     50% { top: -0.2em; }
     70% { top: -0.3em; }
     100% { top: 0; }
-} */
+}
 
-/* #sidePost:hover {
+#sidePost:hover {
   cursor: pointer;
   animation-name: bounce;
   -moz-animation-name: bounce;
-} */
+}
 /* 
 #create-icon{
   color: red;

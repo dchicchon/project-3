@@ -46,7 +46,7 @@ class SidePost extends Component {
                     style={{ "width": 600, backgroundColor: 'rgba(192,192,192,0.3)'}}
                 >
                     {/* <PageTitle style={{ fontSize: 2 }} >Create A Post</PageTitle> */}
-                    <CreatePost style={{color: "black"}} />
+                    <CreatePost />
 
 
                     {/* <li><div className="user-view">
