@@ -42,8 +42,8 @@ router.post("/signup", (req, res, next) => {
     console.log("\nIN THE SIGNUP ROUTE")
     console.log(req.body)
     passport.authenticate("local-signup", (err, user, info) => {
-        console.log("\nmessage", info);
-        console.log(`\nuser`, user)
+        // console.log("\nmessage", info);
+        console.log(`\nuser`, user.dataValues)
         if (err) {
             console.log(`Error: ${err}`);
             return next(err)
@@ -92,7 +92,7 @@ router.post('/login', (req, res, next) => {
     console.log("\nIN THE LOGIN ROUTE")
     console.log(req.body)
     passport.authenticate("local-login", (err, user, info) => {
-        console.log("\nuser:", user)
+        console.log("\nuser:", user.dataValues)
         if (err) {
             console.log(`Error: ${err}`)
             return next(err);

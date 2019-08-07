@@ -96,8 +96,9 @@ module.exports = {
 			}
 		).then(dbPost => {
 			console.log(dbPost);
-			
 
-			return res.json(dbPost)});
+
+			return res.json(dbPost)
+		});
 	}
 }
