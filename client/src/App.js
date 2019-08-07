@@ -27,7 +27,7 @@ import NavBar from "./components/NavBar"
 // import image6 from './assets/bg6.jpg';
 
 //npm package
-import UnsplashApiSlider from "../src/components/UnsplashSlider"
+// import UnsplashApiSlider from "../src/components/UnsplashSlider"
 
 // Utils
 import API from "./Utils/API"

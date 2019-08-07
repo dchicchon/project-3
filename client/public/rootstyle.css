@@ -19,13 +19,13 @@
     margin-bottom: 0;
 }
 
-.card-panel{
-    /* opacity: 0.9; */
-}
+/* .card-panel{
+    opacity: 0.9;
+} */
 
-#root{
-    /* font-family: 'Hanuman', serif; */
-}
+/* #root{
+    font-family: 'Hanuman', serif;
+} */
 
 .loginFont, h1, h2, h3, h4, h5, h6{
     font-family: 'Faster One';
@@ -33,6 +33,8 @@
 .card-bg{
     position:absolute;
     z-index:100;
+    /* width:50%; */
+    margin:0 auto;
     /* background-color:black;
     opacity: 0.5; */
 }

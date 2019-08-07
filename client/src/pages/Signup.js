@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
 // import { Link } from 'react-router-dom'
+import UnsplashApiLogin from "../components/UnsplashSlideshow"
 
 class Signup extends Component {
     state = {
@@ -65,8 +66,9 @@ class Signup extends Component {
     render() {
         return (
             <div>
+                <UnsplashApiLogin />
                 <Container>
-                    <div className="card-panel center">
+                    <div className="card-panel center card-bg">
                         <h4>Sign Up</h4>
                         <div className="row">
                             <form className="col s12">
