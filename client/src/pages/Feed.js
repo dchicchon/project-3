@@ -7,6 +7,8 @@ import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
 
+import Background from "../assets/bg10.jpg"
+
 
 
 
@@ -20,6 +22,16 @@ import MarkerInfo from "../components/MarkerInfo"
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 import HeadTitle from "../components/PageTitle";
+
+const divStyle = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '100%',
+    backgroundAttachment: 'fixed'
+};
+
+
 
 class Feed extends Component {
     state = {
@@ -74,7 +86,7 @@ class Feed extends Component {
 
 
         return (
-            <div>
+            <div style={divStyle}>
 
                 {/* <NavBar /> */}
                 {/* <Modal /> */}

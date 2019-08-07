@@ -12,6 +12,8 @@ import TextInput from "../components/TextInput"
 import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
 
+import Background from "../assets/bg4.jpg"
+
 
 import styled from 'styled-components';
 
@@ -36,6 +38,14 @@ const Wrapper = styled.div`
   `;
 
 const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
+
+const divStyle = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '100%',
+    backgroundAttachment: 'fixed'
+};
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -139,7 +149,7 @@ export class Profile extends Component {
 
     render() {
         return (
-            <div>
+            <div style={divStyle}>
                 <Container>
                     <Row>
                         <Col size="s6">
