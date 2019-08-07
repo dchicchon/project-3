@@ -5,6 +5,7 @@ import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
 import './style.css'
+import HeadTitle from "../PageTitle";
 
 // import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
@@ -101,7 +102,8 @@ class CreatePost extends Component {
                 {/* USER ID */}
                 <h2 value={this.state.user_id}></h2>
                 {/* <Container> */}
-                    <CardPanel>
+                    <CardPanel style={{opacity: 1}}>
+                        <HeadTitle style={{h6}}>Create a Post</HeadTitle>
                         {/* <Container> */}
                             <form>
                                 {/* <Date className="col s6" /> */}

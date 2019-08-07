@@ -40,10 +40,10 @@ class SidePost extends Component {
 
             <div >
                 <ul id="slide-out" className="sidenav"
-                    style={{ "width": 600, "opacity": .7  }}
+                    style={{ "width": 600, backgroundColor: 'rgba(0,0,0,0.5)'  }}
                 >
                     {/* <PageTitle style={{ fontSize: 2 }} >Create A Post</PageTitle> */}
-                    <CreatePost style={{"opacity": 7}} />
+                    <CreatePost style={{color: "black"}} />
 
 
                     {/* <li><div className="user-view">
