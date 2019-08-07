@@ -1,9 +1,9 @@
-.makeStyles-root-5{
+/* .makeStyles-root-5{
     z-index: 1000;
     position: absolute;
     background-color: #999999;
     margin-left: 33%;
-}
+} */
 
 .bgSearchBar{
     background-color: #eee;
@@ -28,5 +28,11 @@
 }
 
 .loginFont, h1, h2, h3, h4, h5, h6{
-    font-family: 'Faster One', cursive;
+    font-family: 'Faster One';
+}
+.card-bg{
+    position:absolute;
+    z-index:100;
+    /* background-color:black;
+    opacity: 0.5; */
 }

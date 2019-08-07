@@ -15,10 +15,10 @@ import 'materialize-css/dist/css/materialize.min.css';
 import NavBar from "./components/NavBar"
 
 //background slideshow
-import BackgroundSlideshow from 'react-background-slideshow';
-import image1 from './assets/bg1.jpg';
-import image2 from './assets/bg2.jpg';
-import image3 from './assets/bg3.jpg';
+// import BackgroundSlideshow from 'react-background-slideshow';
+// import image1 from './assets/bg1.jpg';
+// import image2 from './assets/bg2.jpg';
+// import image3 from './assets/bg3.jpg';
 
 //background inner pages
 // import BackgroundSlider from 'react-background-slider'
@@ -26,8 +26,8 @@ import image3 from './assets/bg3.jpg';
 // import image5 from './assets/bg5.jpg';
 // import image6 from './assets/bg6.jpg';
 
-
-// import UnsplashApi from "../src/components/Unsplash"
+//npm package
+import UnsplashApiSlider from "../src/components/UnsplashSlider"
 
 // Utils
 import API from "./Utils/API"
@@ -77,7 +77,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
-            {/* <Route exact path="/" component={UnsplashApi} /> */}
+            {/* <Route exact path="/" component={UnsplashApiSlider} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
 
