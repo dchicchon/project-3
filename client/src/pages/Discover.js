@@ -7,10 +7,13 @@ import SearchFor from "../components/Searchbar"
 import HeadTitle from "../components/PageTitle"
 import SearchChip from "../components/SearchChips"
 
+
+
 // Utils
 
 import API from "../Utils/API"
 import { setServers } from "dns";
+
 
 class Discover extends Component {
     state = {
@@ -74,6 +77,7 @@ class Discover extends Component {
 
                         </Row>
                     </CardPanel>
+
                 </Container>
 
             </div>

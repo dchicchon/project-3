@@ -12,7 +12,7 @@ import Modal from "../components/Modal";
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
 
-
+import MarkerInfo from "../components/MarkerInfo"
 
 // Import Materialize
 import M from "materialize-css";
@@ -99,6 +99,11 @@ class Feed extends Component {
                                 )) : "No Posts"
                             }
                         </Row>
+                    </CardPanel>
+                    <CardPanel>
+                        <MarkerInfo>
+
+                        </MarkerInfo>
                     </CardPanel>
                 </Container>
             </div>

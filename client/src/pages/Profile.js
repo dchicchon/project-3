@@ -11,10 +11,32 @@ import TextInput from "../components/TextInput"
 import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
 
+
+import styled from 'styled-components';
+
 // Utils
 import API from "../Utils/API";
 
-const Marks = ({ text }) => <div>{text}</div>;
+const Wrapper = styled.div`
+  position: absolute;
+
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid red;
+  border-radius: 50%;
+  margin-right: 50%;
+
+
+
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
+  &:hover {
+    z-index: 1;
+  }
+  `;
+
+const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -167,6 +189,7 @@ export class Profile extends Component {
                             </GoogleMapReact>
                         </div>
                     </CardPanel>
+
                 </Container>
             </div>
         )
