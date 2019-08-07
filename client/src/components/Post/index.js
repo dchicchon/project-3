@@ -2,6 +2,10 @@ import React from "react";
 import { Col, Row, Container } from "../Grid";
 import Button from "../Button"
 
+
+
+
+
 function Post(props) {
   return (
     // const {title, image, info, tag, location} = props.post;
@@ -45,12 +49,19 @@ function Post(props) {
     <Col size="s6">
       <div className="card" id="posts">
 
-
+      
         <div className="card-action">
-          <img src="http://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908" width="50" height="50" alt="" position="absolute" verticle-align="center" />
+        <Row>
+          <Col size="s11">
+          <img src={props.image} width="80px" height="80px" alt="" position="absolute" verticle-align="center" />
+          </Col>
 
-          <span><a href="#" align="left" verticle-align="center" >{props.user_id}</a><Button onClick={() => props.followUser(props.user_id)}>Follow</Button></span>
+          <Col size="s1">
+          <span><a href="#" align="center" verticle-align="center" ></a><Button className="btn-small right blue" onClick={() => props.followUser(props.user_id)}>Follow</Button></span>
+          </Col>
+          </Row>
         </div>
+        
 
 
         {/* // // user photo posted */}
@@ -69,12 +80,10 @@ function Post(props) {
           <p className="activator">{props.location}</p>
         </div>
         <div className="card-reveal">
+        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
           <p className="card-title">{props.info}</p>
         </div>
         {/* // end of card description */}
-        <div className="card-action">
-          <a href="#"><i className="material-icons">favorite_border</i></a>
-        </div>
       </div>
     </Col>
 

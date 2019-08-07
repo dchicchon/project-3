@@ -6,7 +6,7 @@ function HeadTitle(props) {
     return (
         <div>
 
-                        <div className="input-field col" style={{textAlign: "center"}}>
+                        <div className="input-field col s4" style={{textAlign: "center"}}>
                             {/* <i className="material-icons prefix">textsms</i> */}
                             {/* <input type="text" id="autocomplete-input" className="autocomplete" /> */}
                             {/* <label for="autocomplete-input">Discover</label> */}

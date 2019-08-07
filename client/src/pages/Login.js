@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 
+import BackgroundSlider from 'react-background-slider'
 
-import BackgroundSlideshow from 'react-background-slideshow';
 
 import image1 from '../assets/bg1.jpg';
 import image2 from '../assets/bg2.jpg';
@@ -106,6 +106,7 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
+          <BackgroundSlider images={[image1, image2]} duration={5} transition={1} />
       </div >
 
     )

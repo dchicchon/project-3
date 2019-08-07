@@ -3,6 +3,11 @@ import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
 // import './style/login.css'
 // import { Link } from 'react-router-dom'
+import BackgroundSlider from 'react-background-slider'
+
+import image7 from '../assets/bg7.jpg';
+import image5 from '../assets/bg5.jpg';
+import image6 from '../assets/bg6.jpg';
 
 class Signup extends Component {
     state = {
@@ -119,6 +124,8 @@ class Signup extends Component {
 
                     </div>
                 </Container>
+                <BackgroundSlider images={[image7, image5]} duration={5} transition={1} />
+
             </div >
 
         )
