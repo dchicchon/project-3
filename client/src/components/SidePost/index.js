@@ -37,7 +37,7 @@ class SidePost extends Component {
     }
     render() {
         return (
-
+// SIDE POST SLIDE
             <div >
                 <ul id="slide-out" className="sidenav"
                     style={{ "width": 600, backgroundColor: 'rgba(0,0,0,0.5)'  }}

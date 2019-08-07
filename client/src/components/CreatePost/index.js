@@ -101,6 +101,7 @@ class CreatePost extends Component {
         };
 
 return(
+    // IF MODAL DOESN'T WORK WITH AUTOCOMPLETE
             <div id="content">
 
                 {/* USER ID */}
@@ -137,6 +138,111 @@ return(
                             </CardPanel>
                                 
                             </div>
+// IF MODAL DOENS'T WORK WITH AUTOCOMPLETE
+
+
+
+
+
+// IF MODAL WORKS WITH AUTOCOMPLETE
+// <div>
+//              <Row>
+//               <Container>
+//                <Container>
+//                             <CardPanel>
+//                                 <Row>
+//                                 {/* <h6>Post About a Trip!</h6> */}
+                //                 <a className=" waves-light btn-large modal-trigger blue" href="#modal1">Create Post</a>
+                //                 </Row>
+                //             </CardPanel>
+                //         </Container>
+                //     </Container>
+                // </Row>
+                // <div id="modal1" className="modal">
+
+            //         {/* USER ID */}
+               //      {/* <h2 value={this.state.user_id}></h2>
+                  //   <Container>
+                       //  <CardPanel>
+                     //        <Container>
+                    //         <form> */}
+ //                                    {/* <Date className="col s6" /> */}
+    //                                 {/* <TextInput>Where are you?</TextInput> */}
+       //                              {/* AUTOCOMPLETE TESTING */}
+          //                           {/* <Row>
+             //                            <Col size="s6">
+                //                             <Autocomplete name='location' onPlaceChanged={this.showPlaceDetails.bind(this)} />
+                   //                          <AddressDetails name="location" place={this.state.place} />
+                      //                   </Col> */}
+
+//                                         {/* <label htmlFor="location">Where are you?</label> */}
+
+   //                                      {/* <TextInput className="col s6">Title</TextInput> */}
+      //                                   {/* <Col size="s6">
+         //                                    <input placeholder="Title" id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
+            //                             </Col> */}
+               //                          {/* <label htmlFor="title">Title</label> */}
+                  //                   {/* </Row>
+
+                     //                <Row> */}
+                        //                 {/* <TextInput>Record Your Journey</TextInput> */}
+                           //              {/* <Col size="s6">
+                              //               <input placeholder="Record your journey" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+                                 //        </Col> */}
+                                    //     {/* COMMENTED OUT FOR NOW */}
+                                       //  {/* <label htmlFor="description">Record?</label> */}
+//                                         {/* <Col size="s6">
+   //                                          <input placeholder="Tag" id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+      //                                   </Col>
+         //                            </Row>
+
+            //                         <Row>
+               //                          <Col size="s6">
+                  //                           <input placeholder="lat" id="lat" name="lat" type="text" className="validate" value={this.state.lat} onChange={this.handleInputChange} />
+                     //                    </Col>
+                        //                 <Col size="s6">
+                           //                  <input placeholder="lng" id="lng" name="lng" type="text" className="validate" value={this.state.lng} onChange={this.handleInputChange} />
+                              //           </Col>
+                                 //    </Row> */}
+
+
+
+
+            //                         {/* UPLOAD IMAGE */}
+               //                      {/* <Row>
+                  //                       <div className="file-field input-field">
+                        //                     <div className="btn blue">
+                     //                            <span>Upload Photo</span>
+                           //                      <input type="file" multiple
+                                                // onChange={handleChange('image')} 
+                                                // {...props} 
+                           //                      />
+                              //               </div>
+                                 //            <div className="file-path-wrapper">
+                                    //             <input className="file-path validate" type="text" id="image" />
+                                       //          <label htmlFor="image">Image</label>
+                                          //   </div>
+//                                         </div>
+   //                                  </Row> */}
+
+      //                               {/* DANNY IMAGE */}
+         //                            {/* <div className="row">
+            //             <div className="input-field col s6">
+               //              <input placeholder="Placeholder" id="image" type="text" className="validate" />
+                  //           <label htmlFor="image">Image</label>
+                     //    </div>
+                    // </div>  */}
+
+
+                       //              {/* <Button onClick={this.addPost} >Submit</Button>
+                          //       </form>
+//                             </Container>
+   //                      </CardPanel>
+      //               </Container>
+
+         //        </div>
+            // </div> */}
+
             )
         }
         

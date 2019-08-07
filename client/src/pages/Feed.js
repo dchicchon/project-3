@@ -95,18 +95,26 @@ class Feed extends Component {
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
-                <SidePost />
+                {/* <SidePost /> */}
                 {/* <Toggle/> */}
 
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
                 {/* <CreatePost user_id={this.state.user_id} /> */}
+                
+                <HeadTitle>Follow Feed</HeadTitle>
+
+<Container>
+    <CardPanel>
+        <Modal><SidePost/></Modal>
+    </CardPanel>
+</Container>
+
 
                 <Container>
-  
-                    <HeadTitle>Follow Feed</HeadTitle>
-                <CreatePost user_id={this.state.user_id} />
+
+                {/* <CreatePost user_id={this.state.user_id} /> */}
                     <CardPanel>
                         <Row>
                             {(this.state.followPosts.length) ?

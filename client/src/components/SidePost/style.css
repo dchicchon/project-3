@@ -30,7 +30,7 @@ navbar-fixed {
     position: -webkit-sticky;
     position: sticky;
     position: fixed;
-    top: 65px;
+    top: 100px;
     /* background-color: black !important;  */
     
   }
