@@ -84,6 +84,19 @@ module.exports = {
 		).then(dbPost => res.json(dbPost));
 	},
 
+	getPostSearch: (req, res) => {
+		db.Post.findAll({
+			where: {query: req.params.tag}
+		},
+			{
+				limit: 50
+			}
+		).then(dbPost => {
+			console.log(dbPost);
+			return res.json(dbPost)
+		})
+	},
+
 	getPostsByUser: (req, res) => {
 		console.log("\nGET USER POSTS FOR PROFILE PAGE:", req.params.id)
 		db.Post.findAll(
@@ -96,8 +109,9 @@ module.exports = {
 			}
 		).then(dbPost => {
 			console.log(dbPost);
-			
 
-			return res.json(dbPost)});
+
+			return res.json(dbPost)
+		});
 	}
 }
