@@ -106,7 +106,7 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
-          <BackgroundSlider images={[image1, image2]} duration={5} transition={2} />
+          <BackgroundSlider images={[image1, image2]} duration={5} transition={1} />
       </div >
 
     )

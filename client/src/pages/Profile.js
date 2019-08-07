@@ -6,6 +6,7 @@ import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
+import HeadTitle from "../components/PageTitle"
 
 
 // Google Map
@@ -151,6 +152,7 @@ export class Profile extends Component {
         return (
             <div style={divStyle}>
                 <Container>
+                <HeadTitle>Profile</HeadTitle>
                     <Row>
                         <Col size="s6">
                             <CardPanel>
