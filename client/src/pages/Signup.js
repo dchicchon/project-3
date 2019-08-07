@@ -43,11 +43,11 @@ class Signup extends Component {
                     })
                 })
                     .then(response => {
-                        window.location.href = "/"
+                        window.location.reload()
                     })
                     .catch(err => console.log(err))
 
-                this.setstate({
+                this.setState({
                     email: '',
                     password: '',
                     passwordConfirm: '',
