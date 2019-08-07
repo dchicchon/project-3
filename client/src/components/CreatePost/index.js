@@ -242,8 +242,8 @@ class CreatePost extends Component {
                         </CardPanel>
                     </Container>
 
-                {/* </div> */}
-            {/* // </div> */}
+                </div>
+
 
         )
     }
@@ -251,6 +251,3 @@ class CreatePost extends Component {
 
 
 
-
-
-// {/* export default CreatePost; */}
