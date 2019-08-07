@@ -24,7 +24,6 @@ router.route("/post")
 router.route("/post/:id")
     .get(postController.getPostsByUser)
 
-router.route("/post/:tag")
-    .get(postController.getPostSearch)
+
 
 module.exports = router;

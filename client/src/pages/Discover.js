@@ -30,7 +30,8 @@ class Discover extends Component {
     state = {
         user_id: this.props.user_id,
         tag: '',
-        posts: {}
+        searched: false,
+        posts: []
     }
 
     handleInputChange = event => {
@@ -55,15 +56,17 @@ class Discover extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
+        this.setState({searched: true})
         var postQuery = this.state.tag
+        console.log(postQuery)
 
         API.getPostSearch(postQuery).then(res => {
             console.log("Searched Posts xD")
             console.log(res)
             this.setState({
-                posts: res.data
+                posts: res.data,
             })
-            window.location.reload()
+            // window.location.reload()
         })
     }
 
@@ -71,13 +74,15 @@ class Discover extends Component {
 
     // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
-        console.log("DISCOVER PAGE")
-        API.getPosts().then(res => {
-            console.log(res.data)
-            this.setState({
-                posts: res.data
+        if (this.state.searched === false) {
+            console.log("DISCOVER PAGE")
+            API.getPosts().then(res => {
+                console.log(res.data)
+                this.setState({
+                    posts: res.data
+                })
             })
-        })
+        }
     }
 
     render() {
@@ -92,11 +97,11 @@ class Discover extends Component {
                             <div className="input-field col s12 bgSearchBar blue-text" >
                                 <Col size="s10">
                                     <i className="material-icons prefix">search</i>
-                                    <input type="text" id="discoversearch" name="tag" value={this.state.tag} onChance={this.handleInputChange}/>
+                                    <input type="text" id="discoversearch" name="tag" value={this.state.tag} onChange={this.handleInputChange} />
                                     <label htmlFor="autocomplete-input">Discover</label>
                                 </Col>
                                 <Col size="s2">
-                                    <Button style={{marginTop: "20px"}} onClick={this.handleFormSubmit}></Button>
+                                    <Button style={{ marginTop: "20px" }} onClick={this.handleFormSubmit}></Button>
                                 </Col>
                             </div>
                         </Row>

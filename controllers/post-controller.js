@@ -85,8 +85,9 @@ module.exports = {
 	},
 
 	getPostSearch: (req, res) => {
+		console.log("\nDISCOVERSEARCH\n")
 		db.Post.findAll({
-			where: {query: req.params.tag}
+			where: {tag: req.params.tag}
 		},
 			{
 				limit: 50

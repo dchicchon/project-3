@@ -41,7 +41,7 @@ export default {
    },
    // Make function for Discover page to get posts based by tags!
    getPostSearch: (tag) => {
-      return axios.get(`/api/post/` + tag)
+      return axios.get(`/api/discover/` + tag)
    },
 
    // Get Posts By User
