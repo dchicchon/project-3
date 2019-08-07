@@ -40,13 +40,13 @@ const Wrapper = styled.div`
 
 const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
 
-const divStyle = {
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat  : 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: '100%',
-    backgroundAttachment: 'fixed'
-};
+// const divStyle = {
+//     backgroundImage: `url(${Background})`,
+//     backgroundRepeat  : 'no-repeat',
+//     backgroundPosition: 'center',
+//     backgroundSize: '100%',
+//     backgroundAttachment: 'fixed'
+// };
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -150,7 +150,8 @@ export class Profile extends Component {
 
     render() {
         return (
-            <div style={divStyle}>
+            // <div style={divStyle}>
+            <div>
                 <Container>
                 <HeadTitle>Profile</HeadTitle>
                     <Row>

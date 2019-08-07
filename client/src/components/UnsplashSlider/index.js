@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import BackgroundSlider from 'react-background-slider'
 
+
 class UnsplashApiSlider extends Component {
     
     constructor(props) {
@@ -44,7 +45,7 @@ class UnsplashApiSlider extends Component {
             );
         } else {
             return (
-                <BackgroundSlider images={this.state.items.map(image => image.urls.regular)} duration={5} transition={3}/>
+                <BackgroundSlider images={this.state.items.map(image => image.urls.regular)} duration={5} transition={2}/>
             );
         }
     }

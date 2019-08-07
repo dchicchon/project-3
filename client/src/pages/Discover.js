@@ -16,13 +16,13 @@ import Background from "../assets/bg9.jpg"
 import API from "../Utils/API"
 import { setServers } from "dns";
 
-const divStyle = {
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat  : 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: '100%',
-    backgroundAttachment: 'fixed'
-};
+// const divStyle = {
+//     backgroundImage: `url(${Background})`,
+//     backgroundRepeat  : 'no-repeat',
+//     backgroundPosition: 'center',
+//     backgroundSize: '100%',
+//     backgroundAttachment: 'fixed'
+// };
 
 
 
@@ -66,8 +66,8 @@ class Discover extends Component {
 
     render() {
         return (
-            <div style={divStyle}>
-
+            // <div style={divStyle}>
+            <div>
                 <Container>
                     <HeadTitle>Discover</HeadTitle>
                     <SearchFor />

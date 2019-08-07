@@ -27,7 +27,7 @@ import NavBar from "./components/NavBar"
 // import image6 from './assets/bg6.jpg';
 
 //npm package
-// import UnsplashApiSlider from "../src/components/UnsplashSlider"
+import UnsplashApiSlider from "../src/components/UnsplashSlider"
 
 // Utils
 import API from "./Utils/API"
@@ -101,6 +101,7 @@ class App extends Component {
 
             /> */}
           </Switch>
+          <UnsplashApiSlider/>
           {/* <BackgroundSlider images={[image4, image5, image6]} duration={5} transition={2}/> */}
         </Router>
       )

@@ -23,13 +23,13 @@ import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 import HeadTitle from "../components/PageTitle";
 
-const divStyle = {
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat  : 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: '100%',
-    backgroundAttachment: 'fixed'
-};
+// const divStyle = {
+//     backgroundImage: `url(${Background})`,
+//     backgroundRepeat  : 'no-repeat',
+//     backgroundPosition: 'center',
+//     backgroundSize: '100%',
+//     backgroundAttachment: 'fixed'
+// };
 
 
 
@@ -86,8 +86,8 @@ class Feed extends Component {
 
 
         return (
-            <div style={divStyle}>
-
+            // <div style={divStyle}>
+             <div>
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
