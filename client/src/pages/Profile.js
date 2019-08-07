@@ -6,11 +6,14 @@ import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
+import HeadTitle from "../components/PageTitle"
 
 
 // Google Map
 import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
+
+import Background from "../assets/bg4.jpg"
 
 
 import styled from 'styled-components';
@@ -36,6 +39,14 @@ const Wrapper = styled.div`
   `;
 
 const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
+
+const divStyle = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '100%',
+    backgroundAttachment: 'fixed'
+};
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -139,10 +150,11 @@ export class Profile extends Component {
 
     render() {
         return (
-            <div>
+            <div style={divStyle}>
                 <Container>
+                <HeadTitle>Profile</HeadTitle>
                     <Row>
-                        <Col size="s4">
+                        <Col size="s6">
                             <CardPanel>
                                 <CardPanel>
                                     <p>{this.state.props}</p>
@@ -153,7 +165,7 @@ export class Profile extends Component {
                             </CardPanel>
                         </Col>
 
-                        <Col size="s8">
+                        <Col size="s6">
                             <CardPanel>
                                 <ProfileCard bio={this.state.bio} />
                                 <TextInput name="editBio" placeholder="Edit Bio"value={this.state.editBio} onChange={this.handleInputChange} />

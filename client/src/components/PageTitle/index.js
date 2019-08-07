@@ -10,7 +10,7 @@ function HeadTitle(props) {
                 <Row>
                     <Col size="s4"> </Col>
 
-                    <div className="row">
+                    <div className="row center">
                         <div className="input-field col s4">
                             {/* <i className="material-icons prefix">textsms</i> */}
                             {/* <input type="text" id="autocomplete-input" className="autocomplete" /> */}
