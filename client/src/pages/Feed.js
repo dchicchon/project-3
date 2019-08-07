@@ -8,6 +8,7 @@ import API from '../Utils/API'
 import Modal from "../components/Modal";
 
 
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
@@ -99,11 +100,6 @@ class Feed extends Component {
                                 )) : "No Posts"
                             }
                         </Row>
-                    </CardPanel>
-                    <CardPanel>
-                        <MarkerInfo>
-
-                        </MarkerInfo>
                     </CardPanel>
                 </Container>
             </div>

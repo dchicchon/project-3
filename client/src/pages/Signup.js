@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
+// import './style/login.css'
 // import { Link } from 'react-router-dom'
 
 class Signup extends Component {
@@ -102,7 +103,7 @@ class Signup extends Component {
 
                                 <Row>
                                     <div className="file-field input-field">
-                                        <div className="btn">
+                                        <div className="btn blue">
                                             <span>Upload Photo</span>
                                             <input type="file"  name="image" value={this.state.image} onChange={this.handleInputChange}/>
                                         </div>

@@ -7,6 +7,7 @@ import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
 
+
 // Google Map
 import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
@@ -24,11 +25,9 @@ const Wrapper = styled.div`
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 10px solid red;
+  border-top: 15px solid red;
   border-radius: 50%;
-  margin-right: 50%;
-
-
+  text-align: center;
 
   cursor: ${props => (props.onClick ? 'pointer' : 'default')};
   &:hover {
@@ -118,6 +117,7 @@ export class Profile extends Component {
         }
         console.log(editData)
         API.editUser(editData).then(response => console.log(response))
+        window.location.reload()
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -141,8 +141,6 @@ export class Profile extends Component {
         return (
             <div>
                 <Container>
-                    <TextInput name="editBio" value={this.state.editBio} onChange={this.handleInputChange} />
-                    <Button onClick={this.handleFormSubmit}>Submit</Button>
                     <Row>
                         <Col size="s4">
                             <CardPanel>
@@ -158,6 +156,8 @@ export class Profile extends Component {
                         <Col size="s8">
                             <CardPanel>
                                 <ProfileCard bio={this.state.bio} />
+                                <TextInput name="editBio" placeholder="Edit Bio"value={this.state.editBio} onChange={this.handleInputChange} />
+                                <Button onClick={this.handleFormSubmit}>Submit</Button>
                             </CardPanel>
                         </Col>
                     </Row>

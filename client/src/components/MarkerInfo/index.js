@@ -131,7 +131,6 @@ class MarkerInfo extends Component {
                                 key={place.id}
                                 lat={place.geometry.location.lat}
                                 lng={place.geometry.location.lng}
-                                show={place.show}
                                 place={place}
                             />))}
                     </GoogleMap>
