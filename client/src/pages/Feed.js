@@ -9,11 +9,12 @@ import Modal from "../components/Modal";
 import SidePost from "../components/SidePost";
 import Toggle from "../components/Toggle";
 
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
 
-
+import MarkerInfo from "../components/MarkerInfo"
 
 // Import Materialize
 import M from "materialize-css";

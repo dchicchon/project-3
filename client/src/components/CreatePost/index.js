@@ -135,7 +135,7 @@ class CreatePost extends Component {
                                 {/* UPLOAD IMAGE */}
                                 <Row>
                                     <div className="file-field input-field">
-                                        <div className="btn">
+                                        <div className="btn blue">
                                             <span>Upload Photo</span>
                                             <input type="file" multiple
                                             // onChange={handleChange('image')} 
@@ -158,7 +158,11 @@ class CreatePost extends Component {
                     </div>  */}
 
 
+<<<<<<< HEAD
                                 <Button  onClick={this.addPost} >Submit</Button>
+=======
+                                <Button onClick={this.addPost} >Submit</Button>
+>>>>>>> be4bf9e9fdfd3948f00eb8ebeb8b0f48844fa5dc
                             </form>
                         {/* </Container> */}
                     </CardPanel>
