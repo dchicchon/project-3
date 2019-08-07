@@ -56,7 +56,7 @@ class Discover extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
-        this.setState({searched: true})
+        this.setState({ searched: true })
         var postQuery = this.state.tag
         console.log(postQuery)
 
@@ -106,7 +106,17 @@ class Discover extends Component {
                             </div>
                         </Row>
                     </Container>
-                    <SearchChip />
+                    <Row>
+
+                        {(this.state.posts.length) ? this.state.posts.map((post, i) => (
+                            <SearchChip
+                                key={i}
+                                tag={post.tag}
+                                user_id={post.user_id}
+                            />
+                        )) : "No Posts"}
+
+                    </Row>
                     <CardPanel>
                         <Row>
                             {(this.state.posts.length) ? this.state.posts.map((post, i) => (
