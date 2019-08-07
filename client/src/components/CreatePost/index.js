@@ -135,7 +135,7 @@ class CreatePost extends Component {
 
 
 
-
+return(
             //                     {/* UPLOAD IMAGE */}
             <div>
                 <Row>
@@ -243,7 +243,7 @@ class CreatePost extends Component {
                     </Container>
 
                 </div>
-
+</div>
 
         )
     }
@@ -251,3 +251,4 @@ class CreatePost extends Component {
 
 
 
+export default CreatePost;
