@@ -28,12 +28,16 @@
     font-family: 'Hanuman', serif;
 } */
 .card-bg{
+    /* position:absolute;
+    z-index:100;
+    margin:0 auto; */
+    /* width:50%; 
+    background-color:black;
+    opacity: 0.5; */ 
+}
+#cardStyleLogin, #cardStyleSignup{
     position:absolute;
     z-index:100;
-    /* width:50%; */
-    margin:0 auto;
-    /* background-color:black;
-    opacity: 0.5; */ 
 }
 
 .loginFont, h1, h2, h3, h4, h5, h6{

@@ -69,7 +69,7 @@ class Signup extends Component {
             <div>
                 <UnsplashApiLogin />
                 <Container>
-                    <div className="card-panel center card-bg">
+                    <div className="card-panel center" id="cardStyleSignup">>
                         <h4>Sign Up</h4>
                         <div className="row">
                             <form className="col s12">
