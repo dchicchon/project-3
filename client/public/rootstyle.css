@@ -4,7 +4,7 @@
     position: absolute;
     background-color: #999999;
     margin-left: 33%;
-}
+} 
 
 .bgSearchBar{
     background-color: #eee;
@@ -24,8 +24,16 @@
     opacity: 0.95;
 }
 
-#root{
-    /* font-family: 'Hanuman', serif; */
+/* #root{
+    font-family: 'Hanuman', serif;
+} */
+.card-bg{
+    position:absolute;
+    z-index:100;
+    /* width:50%; */
+    margin:0 auto;
+    /* background-color:black;
+    opacity: 0.5; */ 
 }
 
 .loginFont, h1, h2, h3, h4, h5, h6{

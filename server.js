@@ -9,7 +9,7 @@ const session = require("express-session");
 const passport = require("passport")
 
 const app = express();
-const PORT = process.env.PORT || 4815
+const PORT = process.env.PORT || 5000
 
 // Here we bring in our models 
 const db = require("./models")
@@ -66,7 +66,7 @@ app.use(routes)
 // Add sequelize connection
 // Sync sequelize with our database models. We set force to true to reset database each time for development. 
 //! REMOVE FORCE TRUE DURING PRODUCTION!
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => {
         console.log(`API server now listening on PORT ${PORT} `)
     })

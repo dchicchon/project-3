@@ -12,6 +12,7 @@ import Button from '../components/Button'
 
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from '../components/CardPanel'
+import UnsplashApiLogin from "../components/UnsplashSlideshow"
 
 class Login extends Component {
   state = {
@@ -59,7 +60,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        {/* <BackgroundSlideshow images={[image1, image2, image3]} /> */}
+        <UnsplashApiLogin />
 
         <Container>
 
