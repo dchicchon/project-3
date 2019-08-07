@@ -61,7 +61,7 @@ class SidePost extends Component {
                     <li><a className="waves-effect" href="#!">Third Link With Waves</a></li> */}
                 </ul>
                 <a href="#" data-target="slide-out" className="sidenav-trigger"> 
-                <Button >
+                <Button id="sidePost">
                     Create a Post
                 </Button>
                 </a>

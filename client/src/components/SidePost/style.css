@@ -23,3 +23,13 @@ header, main, footer {
   padding: 0px;
   opacity: 1 !important;
 }
+navbar-fixed {
+
+}
+#sidePost{
+    position: -webkit-sticky;
+    position: sticky;
+    position: fixed;
+    top: 65px;
+    background-color: black !important; 
+}
