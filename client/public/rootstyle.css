@@ -1,3 +1,4 @@
+
 .makeStyles-root-5{
     z-index: 1000;
     position: absolute;
@@ -20,7 +21,7 @@
 }
 
 .card-panel{
-    /* opacity: 0.9; */
+    opacity: 0.95;
 }
 
 #root{
@@ -29,4 +30,33 @@
 
 .loginFont, h1, h2, h3, h4, h5, h6{
     font-family: 'Faster One', cursive;
+}
+
+.input-field input:focus + label {
+    color: rgb(79, 79, 241) !important;
+}
+.input-field input:focus {
+    border-bottom: 1px solid rgb(79, 79, 241) !important;
+    box-shadow: 0 1px 0 0 rgb(79, 79, 241) !important
+}
+.input-field input[type=text].valid {
+    border-bottom: 1px solid rgb(79, 79, 241);
+    box-shadow: 0 1px 0 0 rgb(79, 79, 241);
+}
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+.btn{
+    background-color: rgb(87, 87, 248);
+}
+.btn:visited{
+    background-color: rgb(23, 23, 100);
+}
+.btn:hover {
+    background-color: rgb(23, 23, 100);
+}
+.btn:focus{
+    background-color: rgb(23, 23, 100);
 }

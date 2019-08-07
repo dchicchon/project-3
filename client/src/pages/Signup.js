@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
+// import './style/login.css'
 // import { Link } from 'react-router-dom'
+import BackgroundSlider from 'react-background-slider'
+
+import image7 from '../assets/bg7.jpg';
+import image5 from '../assets/bg5.jpg';
+import image6 from '../assets/bg6.jpg';
 
 class Signup extends Component {
     state = {
@@ -102,7 +108,7 @@ class Signup extends Component {
 
                                 <Row>
                                     <div className="file-field input-field">
-                                        <div className="btn">
+                                        <div className="btn blue">
                                             <span>Upload Photo</span>
                                             <input type="file"  name="image" value={this.state.image} onChange={this.handleInputChange}/>
                                         </div>
@@ -118,6 +124,8 @@ class Signup extends Component {
 
                     </div>
                 </Container>
+                <BackgroundSlider images={[image7, image5]} duration={5} transition={1} />
+
             </div >
 
         )
