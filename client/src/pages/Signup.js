@@ -36,12 +36,12 @@ class Signup extends Component {
 
     handleFormSubmit = async event => {
         event.preventDefault();
-        var file = this.state.file
-        console.log(`FILE:`, file)
-        const formData = new FormData();
-        formData.append('file', file)
-        console.log("\FORM DATA")
-        console.log(formData)
+        let file = this.state.file
+        // console.log(`FILE:`, file)
+        // const formData = new FormData();
+        // formData.append('file', file)
+        // console.log("\FORM DATA")
+        // console.log(formData)
         // log("\nUPLOAD INPUT")
         // log(this.uploadInput)
         // let file = this.uploadInput.files[0];
@@ -56,49 +56,52 @@ class Signup extends Component {
         // console.log(fileParts)
         // console.log(fileName)
         // console.log(fileType)
-        try {
-            fetch("/api/user", {
-                method: "POST",
-                credentials: "include",
-                // mode: 'cors',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: formData,
-                success: function (response) {
-                    if (response === null) {
-                        console.log("ERROR")
-                    } else {
-                        console.log("SUCCESS I GUESS?")
-                    }
-                }
+        // try {
+        //     fetch("/api/user", {
+        //         method: "POST",
+        //         credentials: "include",
+        //         // mode: 'cors',
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: formData,
+        //         success: function (response) {
+        //             if (response === null) {
+        //                 console.log("ERROR")
+        //             } else {
+        //                 console.log("SUCCESS I GUESS?")
+        //             }
+        //         }
 
-            })
-            // const res = await axios.post("/api/user", formData, {
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     }
-            // });
+        //     })
+        // } catch(err) {
+        //     console.log(err)
+        // }
+        // const res = await axios.post("/api/user", formData, {
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // });
 
-            // console.log("\nGIMME A RES PLEASE")
-            // console.log(res)
+        // console.log("\nGIMME A RES PLEASE")
+        // console.log(res)
 
-            // const { fileName, filePath } = res.data;
-            // console.log("\nTHIS IS THE FILE NAME AND PATH")
-            // console.log(fileName)
-            // console.log(filePath)
-            // this.setState({
-            //     uploadedFile: fileName
-            // })
-            // setUploadedFile({ fileName, filePath });
+        // const { fileName, filePath } = res.data;
+        // console.log("\nTHIS IS THE FILE NAME AND PATH")
+        // console.log(fileName)
+        // console.log(filePath)
+        // this.setState({
+        //     uploadedFile: fileName
+        // })
+        // setUploadedFile({ fileName, filePath });
 
-        } catch (err) {
-            if (err.response.status === 500) {
-                console.log("There was a problem with the server")
-            } else {
-                console.log(err.response.data.msg)
-            }
-        }
+        // } catch (err) {
+        //     if (err.response.status === 500) {
+        //         console.log("There was a problem with the server")
+        //     } else {
+        //         console.log(err.response.data.msg)
+        //     }
+        // }
         // axios.post("/api/user", formData, {
         //     headers: {
         //         'Content-Type': 'multipart/form-data'
@@ -130,6 +133,24 @@ class Signup extends Component {
         console.log("WE MADE IT TO THE FORM SUBMIT");
         if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.passwordConfirm) {
             if (this.state.password === this.state.passwordConfirm) {
+                console.log(file)
+                await fetch("/api/user", {
+                    method: "POST",
+                    credentials: "include",
+                    mode: "cors",
+                    // body: {
+                    //     image: file
+                    // },
+                    body: JSON.stringify({
+                        image: file
+                    }),
+                    // headers: new Headers({
+                    //     "Content-Type": "application/json"
+                    // })
+                }).then(res => {
+                    console.log("\nHELLO PHOTO\n")
+                    console.log(res)
+                })
                 await fetch("/auth/signup", {
                     method: "POST",
                     credentials: "include",
@@ -139,7 +160,7 @@ class Signup extends Component {
                         email: this.state.email,
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
-                        image: this.state.file
+                        // image: this.state.file
                     }),
                     headers: new Headers({
                         "Content-Type": "application/json"

@@ -1,5 +1,6 @@
 // const db = require("../models")
 var AWS = require("aws-sdk");
+var fs = require("fs")
 require("dotenv").config();
 
 // aws.config.update({
@@ -53,34 +54,52 @@ module.exports = {
 	updatePhoto: (req, res) => {
 		console.log('\nINSIDE UPDATE PHOTO')
 		const s3 = new AWS.S3({
-			accessKeyId: 'AKIAICKXFPSR4VYJUMUA',
-			secretAccessKey: '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'
-
+			accessKeyId: 'AKIAJTEPC4AZARCU7AVA',
+			secretAccessKey: '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'
 		});
 		// const fileName = req.body.fileName;
 		// const fileType = req.body.fileType;
-		console.log("ANYBODY HOME?")
-		// console.log(req)
-		s3.createBucket(function () {
-			var params = {
-				Bucket: "travelerdb",
-				ACL: 'public-read',
-				// Key: `${fileName}.${fileType}`,
-				// Body: fileName
-			}
-			console.log("\nPARAMS")
-			console.log(params)
 
-			s3.upload(params, function (err, data) {
-				if (err) {
-					console.log(`Err`, err)
-				} else {
-					console.log("Success!")
-					console.log(data)
-				}
+		console.log("\nANYBODY HOME?")
+		console.log(req.body.image)
+		const uploadImg = img => {
+			fs.readFileSync(img, (err, data) => {
+				if (err) throw err
+				const params = {
+					Bucket: 'travelerdb',
+					Key: img,
+					Body: JSON.stringify(data, null, 2),
+					ACL: "public-read"
+				};
 
+				s3.upload(params, function (s3Err, data) {
+					if (s3Err) throw s3Err
+					console.log(`File uploaded successfully at: `, data)
+				})
 			})
-		})
+		}
+		uploadImg(req.body.image)
+		// console.log(req)
+		// s3.createBucket(function () {
+		// 	var params = {
+		// 		Bucket: "travelerdb",
+		// 		ACL: 'public-read',
+		// 		// Key: `${fileName}.${fileType}`,
+		// 		// Body: fileName
+		// 	}
+		// 	console.log("\nPARAMS")
+		// 	console.log(params)
+
+		// 	s3.upload(params, function (err, data) {
+		// 		if (err) {
+		// 			console.log(`Err`, err)
+		// 		} else {
+		// 			console.log("Success!")
+		// 			console.log(data)
+		// 		}
+
+		// 	})
+		// })
 
 
 
