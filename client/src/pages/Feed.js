@@ -25,11 +25,23 @@ import HeadTitle from "../components/HeadTItle";
 
 const divStyle = {
     backgroundImage: `url(${Background})`,
-    backgroundRepeat  : 'no-repeat',
+    // backgroundRepeat  : 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: '100%',
+    backgroundSize: 'cover',
     backgroundAttachment: 'fixed'
 };
+
+const styles = {
+    // position: 'fixed',
+    left: '0',
+    bottom: '0',
+    marginTop: '15%',
+    width: '100%',
+    backgroundColor: '#2196f3',
+    color: 'white',
+    textAlign: 'center',
+    opacity: '1'
+  }
 
 
 
@@ -118,6 +130,7 @@ class Feed extends Component {
                         </Row>
                     </CardPanel>
                 </Container>
+                <CardPanel style={styles}></CardPanel>
             </div>
         )
 

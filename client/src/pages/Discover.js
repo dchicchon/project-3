@@ -6,6 +6,7 @@ import CardPanel from "../components/CardPanel"
 import HeadTitle from "../components/HeadTItle"
 import SearchChip from "../components/SearchChips"
 import Button from "../components/Button"
+import Footer from "../components/Footer"
 
 import Background from "../assets/bg9.jpg"
 
@@ -20,10 +21,23 @@ const divStyle = {
     backgroundImage: `url(${Background})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: '100%',
-    backgroundAttachment: 'fixed'
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
+
 };
 
+
+const styles = {
+    // position: 'fixed',
+    left: '0',
+    bottom: '0',
+    marginTop: '15%',
+    width: '100%',
+    backgroundColor: '#2196f3',
+    color: 'white',
+    textAlign: 'center',
+    opacity: '1'
+  }
 
 
 class Discover extends Component {
@@ -136,6 +150,7 @@ class Discover extends Component {
 
                 </Container>
                 {/* <BackgroundSlider images={[image4, image5, image6]} duration={5} transition={2} /> */}
+                        <CardPanel style={styles}></CardPanel>
             </div>
         );
     }
