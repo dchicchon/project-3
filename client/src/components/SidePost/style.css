@@ -3,7 +3,8 @@ header, main, footer {
 }
 
 .sidenav {
-  background-color: red !important;
+  /* background-color: red !important; */
+  /* opacity: .5; */
 }
 
 #main {
@@ -15,4 +16,10 @@ header, main, footer {
   header, main, footer {
     padding-left: 0;
   }
+}
+
+#content {
+  background-color: white !important;
+  padding: 0px;
+  opacity: 1 !important;
 }

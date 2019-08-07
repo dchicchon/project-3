@@ -40,20 +40,20 @@ class SidePost extends Component {
 
             <div >
                 <ul id="slide-out" className="sidenav"
-                style={{"width":800}}
+                    style={{ "width": 600, "opacity": .7  }}
                 >
-                    <PageTitle style={{fontSize: 10}} >Create A Post</PageTitle>
-                    <CreatePost/>
+                    {/* <PageTitle style={{ fontSize: 2 }} >Create A Post</PageTitle> */}
+                    <CreatePost style={{"opacity": 7}} />
 
 
                     {/* <li><div className="user-view">
                     <div className="background">
                         <img src="images/office.jpg"/>
-      </div>
+                    </div>
                         <a href="#user"><img className="circle" src="images/yuna.jpg"/></a>
                             <a href="#name"><span className="white-text name">John Doe</span></a>
                             <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
+                    </div></li>
                     <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
                     <li><a href="#!">Second Link</a></li>
                     <li><div className="divider"></div></li>

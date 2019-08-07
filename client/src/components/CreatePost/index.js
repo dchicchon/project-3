@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../Grid";
 import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
-
+import './style.css'
 
 // import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
@@ -96,13 +96,13 @@ class CreatePost extends Component {
 
         // export default function CreatePost(props) {
         return (
-            <div>
+            <div id="content">
 
                 {/* USER ID */}
                 <h2 value={this.state.user_id}></h2>
-                <Container>
+                {/* <Container> */}
                     <CardPanel>
-                        <Container>
+                        {/* <Container> */}
                             <form>
                                 {/* <Date className="col s6" /> */}
                                 {/* <TextInput>Where are you?</TextInput> */}
@@ -158,9 +158,9 @@ class CreatePost extends Component {
 
                                 <Button  onClick={this.addPost} >Submit</Button>
                             </form>
-                        </Container>
+                        {/* </Container> */}
                     </CardPanel>
-                </Container>
+                {/* </Container> */}
 
             </div>
 

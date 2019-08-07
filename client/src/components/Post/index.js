@@ -43,7 +43,7 @@ function Post(props) {
 
     // ===============VERSION TWO=======================WORKING WITH THIS FOR NOW========
     <Col size="s6">
-      <div className="card">
+      <div className="card" id="posts">
 
 
         <div className="card-action">

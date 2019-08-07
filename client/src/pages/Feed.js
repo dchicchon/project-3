@@ -80,7 +80,7 @@ class Feed extends Component {
                 {/* <Modal /> */}
 
                 <SidePost />
-                <Toggle/>
+                {/* <Toggle/> */}
 
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
@@ -88,7 +88,12 @@ class Feed extends Component {
                 {/* <CreatePost user_id={this.state.user_id} /> */}
 
                 <Container>
-
+                    <HeadTitle>Follow Feed</HeadTitle>
+                {/* <div className="row"> */}
+                {/* <Col size="s6"> */}
+                    {/* <Toggle/>
+                </Col> */}
+                {/* <Col size="s6"> */}
                     <CardPanel>
                         {/* <Container> */}
                         <Row>
@@ -107,6 +112,8 @@ class Feed extends Component {
                             }
                         </Row>
                     </CardPanel>
+                    {/* </Col> */}
+                    {/* </div> */}
                 </Container>
             </div>
         )
