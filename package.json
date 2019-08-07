@@ -21,6 +21,7 @@
     "google-map-react": "^1.1.4",
     "if-env": "^1.0.4",
     "js-cookie": "^2.2.0",
+    "lodash.isempty": "^4.4.0",
     "multiparty": "^4.2.1",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
@@ -32,6 +33,7 @@
     "sequelize-cli": "^5.5.0",
     "unsplash-js": "^5.0.0",
     "react-s3-uploader": "^4.8.0",
+    "styled-components": "^4.3.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {},

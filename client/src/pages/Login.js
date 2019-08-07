@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
-import './style/login.css'
 
+<<<<<<< HEAD
 // import BackgroundSlideshow from 'react-background-slideshow';
 // import image1 from '../assets/bg1.jpg';
 // import image2 from '../assets/bg2.jpg';
 // import image3 from '../assets/bg3.jpg';
+=======
+import BackgroundSlider from 'react-background-slider'
+
+
+import image1 from '../assets/bg1.jpg';
+import image2 from '../assets/bg2.jpg';
+import image3 from '../assets/bg3.jpg';
+>>>>>>> 7a4e9e7ac41e02c8e6a9257e7b76f496b4169fe5
 
 import Button from '../components/Button'
 
@@ -106,6 +114,7 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
+          <BackgroundSlider images={[image1, image2]} duration={5} transition={1} />
       </div >
 
     )
