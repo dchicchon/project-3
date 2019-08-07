@@ -10,7 +10,6 @@ router.get('/user', (req, res) => {
         console.log(`Current User:`, currentUser);
         db.User.findOne({
             where: {
-
                 // we may have to change this later because this might cause an error
                 id: currentUser
             }
@@ -22,7 +21,7 @@ router.get('/user', (req, res) => {
                 id: dbUser.id,
                 firstName: dbUser.firstName,
                 lastName: dbUser.lastName,
-                profileImg: dbUser.profileImg
+                image: dbUser.image
             }
             res.json(user);
         })
@@ -116,13 +115,13 @@ router.post('/login', (req, res, next) => {
             res.cookie("lastName", req.user.lastName);
             res.cookie("email", req.user.email);
             res.cookie("id", req.user.id);
-            res.cookie("profileImg", req.user.profileImg);
+            res.cookie("image", req.user.image);
             // res.cookie('user_id', user._id);
             var userI = {
                 firstName: user.firstName,
                 lastName: user.lastName,
                 email: user.email,
-                profileImg: user.profileImg
+                image: user.image
             }
             return res.json(userI);
         });
