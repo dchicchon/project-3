@@ -121,7 +121,7 @@ class Signup extends Component {
 
                     </div>
                 </Container>
-                <BackgroundSlider images={[image7, image5]} duration={5} transition={1} />
+                {/* <BackgroundSlider images={[image7, image5]} duration={5} transition={1} /> */}
 
             </div >
 
