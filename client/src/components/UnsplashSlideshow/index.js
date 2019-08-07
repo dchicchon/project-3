@@ -45,7 +45,7 @@ class UnsplashApiLogin extends Component {
             );
         } else {
             return (
-                
+                <BackgroundSlideshow images={this.state.items.map(image => image.urls.regular)} duration={5} transition={2}/>
             );
         }
     }
