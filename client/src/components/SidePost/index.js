@@ -3,7 +3,7 @@ import CreatePost from "../CreatePost";
 import './style.css'
 import PageTitle from "../PageTitle";
 import HideText from "../Toggle";
-
+import Button from "../Button";
 
 // Import Materialize
 import M from "materialize-css";
@@ -60,7 +60,11 @@ class SidePost extends Component {
                     <li><a className="subheader">Subheader</a></li>
                     <li><a className="waves-effect" href="#!">Third Link With Waves</a></li> */}
                 </ul>
-                <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                <a href="#" data-target="slide-out" className="sidenav-trigger"> 
+                <Button >
+                    Create a Post
+                </Button>
+                </a>
             </div>
         )
     }

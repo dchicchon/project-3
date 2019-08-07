@@ -89,14 +89,8 @@ class Feed extends Component {
 
                 <Container>
   
-                    <HeadTitle style={{textAlign: "center"}}>Follow Feed</HeadTitle>
-                {/* <div className="row"> */}
-                {/* <Col size="s6"> */}
-                    {/* <Toggle/>
-                </Col> */}
-                {/* <Col size="s6"> */}
+                    <HeadTitle>Follow Feed</HeadTitle>
                     <CardPanel>
-                        {/* <Container> */}
                         <Row>
                             {(this.state.followPosts.length) ?
                                 this.state.followPosts.map((post, i) => (
@@ -113,8 +107,6 @@ class Feed extends Component {
                             }
                         </Row>
                     </CardPanel>
-                    {/* </Col> */}
-                    {/* </div> */}
                 </Container>
             </div>
         )
