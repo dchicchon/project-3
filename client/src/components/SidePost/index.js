@@ -2,15 +2,35 @@ import React, { Component } from "react";
 import CreatePost from "../CreatePost";
 import './style.css'
 import PageTitle from "../PageTitle";
-
-//TEST SIDEBAR
+import HideText from "../Toggle";
 
 
 // Import Materialize
 import M from "materialize-css";
 
 
+//TEST SIDEBAR
+// var sidenavbar = React.createClass({
+//     render: function() {
+//       return (
+//         <div>
+//           function openNav() {'{'}
+//           document.getElementById("sidenav").style.width = "500px";
+//           document.getElementById("body").style.marginLeft = "500px";
+//           {'}'}
+//           function closeNav() {'{'}
+//           document.getElementById("sidenav").style.width = "0";
+//           document.getElementById("body").style.marginLeft= "0";
+//           {'}'}
+//         </div>
+//       );
+//     }
+//   });
+
+
 class SidePost extends Component {
+
+
     componentDidMount() {
         // Auto initialize all the things!
         M.AutoInit();

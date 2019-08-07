@@ -3,13 +3,14 @@ header, main, footer {
 }
 
 .sidenav {
-  background-color: yellow !important;
+  background-color: red !important;
 }
 
-.sidenav:hover{
-  background-color:blue;
+#main {
+  background-color: green !important;
+  transition: margin-left 0.5s;
+  padding: 16px; 
 }
-
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
