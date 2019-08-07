@@ -148,21 +148,7 @@ class CreatePost extends Component {
                                         </div>
                                     </div>
                                 </Row>
-
-                                {/* DANNY IMAGE */}
-                                {/* <div className="row">
-                        <div className="input-field col s6">
-                            <input placeholder="Placeholder" id="image" type="text" className="validate" />
-                            <label htmlFor="image">Image</label>
-                        </div>
-                    </div>  */}
-
-
-<<<<<<< HEAD
-                                <Button  onClick={this.addPost} >Submit</Button>
-=======
                                 <Button onClick={this.addPost} >Submit</Button>
->>>>>>> be4bf9e9fdfd3948f00eb8ebeb8b0f48844fa5dc
                             </form>
                         {/* </Container> */}
                     </CardPanel>
