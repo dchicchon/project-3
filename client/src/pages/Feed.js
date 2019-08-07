@@ -88,7 +88,8 @@ class Feed extends Component {
                 {/* <CreatePost user_id={this.state.user_id} /> */}
 
                 <Container>
-                    <HeadTitle>Follow Feed</HeadTitle>
+  
+                    <HeadTitle style={{textAlign: "center"}}>Follow Feed</HeadTitle>
                 {/* <div className="row"> */}
                 {/* <Col size="s6"> */}
                     {/* <Toggle/>

@@ -103,7 +103,7 @@ class CreatePost extends Component {
                 <h2 value={this.state.user_id}></h2>
                 {/* <Container> */}
                     <CardPanel style={{opacity: 1}}>
-                        <HeadTitle style={{h6}}>Create a Post</HeadTitle>
+                        <HeadTitle style={{fontSize: "1.333rem"}}>Create a Post</HeadTitle>
                         {/* <Container> */}
                             <form>
                                 {/* <Date className="col s6" /> */}
