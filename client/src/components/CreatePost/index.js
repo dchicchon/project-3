@@ -107,7 +107,8 @@ return(
                 {/* USER ID */}
                 <h2 value={this.state.user_id}></h2>
                 {/* <Container> */}
-                    <CardPanel style={{opacity: 1}}>
+                    {/* <CardPanel style={{opacity: 1}}> */}
+                    <CardPanel>
                         <HeadTitle style={{fontSize: "1.333rem"}}>Create a Post</HeadTitle>
                         {/* <Container> */}
                             <form>
@@ -133,8 +134,9 @@ return(
 
                                 <input placeholder="lat" id="lat" name="lat" type="text" className="validate" value={this.state.lat} onChange={this.handleInputChange} />
                                 <input placeholder="lng" id="lng" name="lng" type="text" className="validate" value={this.state.lng} onChange={this.handleInputChange} />
-                                
+                                <Button onClick={this.addPost} >Submit</Button>
                                 </form>
+
                             </CardPanel>
                                 
                             </div>

@@ -5,7 +5,7 @@ import { Col, Row, Container } from "../Grid"
 function HeadTitle(props) {
     return (
         <wrapper>
-                        <div className="input-field col s4" style={{textAlign: "center", margin:0}}>
+                        <div className="input-field col s4" style={{textAlign: "center"}}>
                             {/* <i className="material-icons prefix">textsms</i> */}
                             {/* <input type="text" id="autocomplete-input" className="autocomplete" /> */}
                             {/* <label for="autocomplete-input">Discover</label> */}

@@ -105,11 +105,10 @@ class Feed extends Component {
                 
                 <HeadTitle>Follow Feed</HeadTitle>
 
-<Container>
-    <CardPanel>
-        <Modal><SidePost/></Modal>
-    </CardPanel>
-</Container>
+
+        <SidePost style={{contentAlign: "center"}}/>
+
+
 
 
                 <Container>
