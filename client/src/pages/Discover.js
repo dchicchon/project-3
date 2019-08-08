@@ -35,7 +35,7 @@ const styles = {
     // position: 'fixed',
     left: '0',
     bottom: '0',
-    marginTop: '15%',
+    // marginTop: '15%',
     width: '100%',
     backgroundColor: '#2196f3',
     color: 'white',
