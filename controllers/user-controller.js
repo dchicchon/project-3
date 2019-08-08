@@ -1,50 +1,16 @@
-// const db = require("../models")
-var AWS = require("aws-sdk");
-var fs = require("fs")
 
-require("dotenv").config();
-
-uploadImg = (req, image) => {
-	// var imageFile = req.files.file.data
-	var imageFile = req
-	s3.createBucket(function () {
-		var params = {
-			Bucket: process.env.S3_BUCKET_NAME,
-			ACL: "public-read",
-			Key: `${image}.jpg`,
-			Body: imageFile
-		}
-
-		s3.upload(params, function (err, data) {
-			if (err) {
-				console.log("error with upload");
-				console.log(err)
-			} else {
-				console.log("UPLOAD SUCCESS")
-				console.log("IMage", data)
-				cb(data.Location)
-			}
-		})
-	})
-}
+const db = require("../models")
 
 module.exports = {
 
-	updatePhoto: (req, res) => {
-		console.log('\nINSIDE UPDATE PHOTO')
+	// updatePhoto: (upload.single("imageData"), (req, res, next) => {
+	// 	console.log('something')
+	// 	console.log(req.file)
+	// 	// console.log(req.file.location)
+	// 	// var fileURL = req.file.location
+	// 	// res.send(fileURL)
 
-
-		var profilePhoto = {
-			name: "IMage work",
-			image: 'the name'
-		}
-
-		uploadImg("kalen-emsley-Bkci_8qcdvQ-unsplash", profilePhoto.image, function (location) {
-			console.log(location)
-			console.log("!!!!!!!!!!!!!!")
-		})
-
-	},
+	// }),
 
 	// This returns user profile information
 	getUser: (req, res) => {
