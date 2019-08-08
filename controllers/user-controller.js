@@ -1,44 +1,14 @@
-// const db = require("../models")
-const multer = require('multer');
-const multerS3 = require("multer-s3")
-var AWS = require("aws-sdk");
-
-// require("dotenv").config();
-
-
-var s3 = new AWS.S3({
-	accessKeyId: 'AKIAIWGFPLNZDI62JZSQ',
-	secretAccessKey: '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'
-})
-
-const upload = multer({
-	storage: multerS3({
-		s3: s3,
-		bucket: 'travelerdb',
-		acl: 'public-read',
-		contentType: multerS3.AUTO_CONTENT_TYPE,
-		metadata: function (req, file, cb) {
-			cb(null, { fieldName: file.fieldname })
-		},
-		key: function (req, file, cb) {
-			cb(null, Date.now().toString())
-		}
-	}),
-	limits: {
-		fileSize: 1024 * 1024 * 5
-	},
-	// fileFilter: fileFilter
-});
 
 module.exports = {
 
-	updatePhoto : (upload.single("imageData"), (req, res, next) => {
-		console.log('something')
-		console.log(req.file.location)
-		var fileURL = req.file.location
-		res.send(fileURL)
+	// updatePhoto: (upload.single("imageData"), (req, res, next) => {
+	// 	console.log('something')
+	// 	console.log(req.file)
+	// 	// console.log(req.file.location)
+	// 	// var fileURL = req.file.location
+	// 	// res.send(fileURL)
 
-	}),
+	// }),
 
 	// This returns user profile information
 	getUser: (req, res) => {

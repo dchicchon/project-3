@@ -36,10 +36,28 @@ class Signup extends Component {
     }
 
     handlePicture(e) {
-        this.setState({
-            file: e.target.files[0],
-            fileName: e.target.files[0].name
-        })
+        // e.preventDefault();
+        console.log(e.target.files[0])
+
+        let formData = new FormData();
+        // formData.append("imageName", fileName + Date.now())
+        formData.append('imageData', e.target.files[0])
+        formData.append("imageName", e.target.files[0].name)
+
+        // this.setState({
+        //     url: URL.createObjectURL(file)
+        // })
+
+        axios.post("/api/user", formData)
+            .then((res) => {
+                console.log(res)
+                console.log(res.data)
+            })
+
+        // this.setState({
+        //     file: e.target.files[0],
+        //     fileName: e.target.files[0].name
+        // })
     }
 
     handleFormSubmit = async event => {
@@ -49,22 +67,10 @@ class Signup extends Component {
         if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.passwordConfirm) {
             if (this.state.password === this.state.passwordConfirm) {
 
-                let file = this.state.file
-                let fileName = this.state.fileName
+                // let file = this.state.file
+                // let fileName = this.state.fileName
 
-                let formData = new FormData();
-                formData.append("imageName", fileName + Date.now())
-                formData.append('imageData', file)
 
-                this.setState({
-                    url: URL.createObjectURL(file)
-                })
-
-                axios.post("/api/user", formData)
-                    .then((res) => {
-                        console.log(res)
-                        console.log(res.data)
-                    })
 
                 await fetch("/auth/signup", {
                     method: "POST",
@@ -147,6 +153,7 @@ class Signup extends Component {
                                         <div className="btn blue">
                                             <span>Upload Photo</span>
                                             <input
+                                                name='file'
                                                 type='file'
                                                 onChange={this.handlePicture}
                                             />
