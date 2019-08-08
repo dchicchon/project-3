@@ -79,7 +79,8 @@ export class Profile extends Component {
         posts: [],
         lat: this.props.lat,
         lng: this.props.lng,
-        title: this.props.title
+        title: this.props.title,
+        firstName: this.props.firstName
     }
 
     static defaultProps = {
@@ -174,7 +175,9 @@ export class Profile extends Component {
                                     {/* <p>{this.state.user_id}</p> */}
                                     <p>{this.state.image}</p>
                                     <img src={this.state.image} alt="Profile picture" />
+                                    
                                 </CardPanel>
+                                <h2>{this.state.firstName}</h2>
                             </CardPanel>
                         </Col>
 
