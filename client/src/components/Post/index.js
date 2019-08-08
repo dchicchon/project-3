@@ -58,6 +58,7 @@ function Post(props) {
 
           <Col size="s1">
           <span><a href="#" align="center" verticle-align="center" ></a><Button className="btn-small right blue" onClick={() => props.followUser(props.user_id)}>Follow</Button></span>
+          {/* <p>{props.firstName}</p> */}
           </Col>
           </Row>
         </div>
