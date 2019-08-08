@@ -32,7 +32,7 @@ class UnsplashApiLogin extends Component {
                 //     console.log(e.urls.regular);
                 // });
 
-                
+                console.log("NEW ARRAY", search.results.map(image => image.urls.regular))
             }
         });
 
