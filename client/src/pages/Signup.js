@@ -20,10 +20,11 @@ class Signup extends Component {
         passwordConfirm: '',
         firstName: '',
         lastName: '',
-        // url: '',
         file: '',
         fileName: '',
-        uploadedFile: ''
+        url: '',
+        image: ''
+        // uploadedFile: ''
         // success: false
     }
 
@@ -34,60 +35,43 @@ class Signup extends Component {
         })
     }
 
-    handlePicture = e => {
-        // const file = files[0]
-        // this.props.actions.uploadRequest({
-        //     file,
-        //     name: "AWESOME"
+    handlePicture = (e) => {
+        // e.preventDefault();
+        console.log(e.target.files[0])
+
+       
+
+        let formData = new FormData();
+        // formData.append("imageName", fileName + Date.now())
+        formData.append('imageData', e.target.files[0])
+        formData.append("imageName", e.target.files[0].name)
+
+        
+
+        axios.post("/api/user", formData)
+            .then((res) => {
+                console.log(res)
+                this.setState({
+                    url : res.data.imageURL
+                })
+            })
+        //     fileName: e.target.files[0].name
         // })
-        this.setState({
-            file: e.target.files[0],
-            fileName: e.target.files[0].name
-        })
     }
+
 
     handleFormSubmit = async event => {
         event.preventDefault();
-        let file = this.state.file
-        // let fileName = this.state.fileName
 
-        let formData = new FormData();
-        formData.append('file', file)
-        for (var value of formData.values()) {
-            console.log(value)
-        }
-        // console.log(file)
-        // console.log(fileName)
-        // console.log(formData)
-        // var data = {
-        //     file: file.name
-        // }
-        console.log("WE MADE IT TO THE FORM SUBMIT");
+
         if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.passwordConfirm) {
             if (this.state.password === this.state.passwordConfirm) {
-                // console.log(file)
-                axios.post("/api/user", formData).then(res => console.log("I HATE YOU"))
-                // await fetch("/api/user", {
-                //     method: "POST",
-                //     credentials: "include",
-                //     mode: "cors",
-                //     // body: {
-                //     //     image: file
-                //     // },
-                //     body: formData,
-                //     // body: {
-                //     //     image: formData
-                //     // },
-                //     // body: JSON.stringify({
-                //     //     image: formData
-                //     // }),
-                //     // headers: new Headers({
-                //     //     "Content-Type": "application/json"
-                //     // })
-                // }).then(res => {
-                //     console.log("\nHELLO PHOTO\n")
-                //     console.log(res)
-                // })
+
+                // let file = this.state.file
+                // let fileName = this.state.fileName
+
+
+
                 await fetch("/auth/signup", {
                     method: "POST",
                     credentials: "include",
@@ -97,14 +81,14 @@ class Signup extends Component {
                         email: this.state.email,
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
-                        // image: this.state.file
+                        image: this.state.url
                     }),
                     headers: new Headers({
                         "Content-Type": "application/json"
                     })
                 })
                     .then(response => {
-                        // window.location.href = "/"
+                        window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 
