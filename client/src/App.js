@@ -9,6 +9,8 @@ import Login from './pages/Login'
 import NoMatch from './pages/NoMatch'
 import Signup from './pages/Signup'
 
+// import Footer from './components/Footer'
+
 // materialize
 import 'materialize-css/dist/css/materialize.min.css';
 // Components
@@ -36,6 +38,9 @@ import API from "./Utils/API"
 
 // Stylesheet
 import './App.css';
+
+
+
 
 //--------ADDED CODED---------------------
 
@@ -102,8 +107,10 @@ class App extends Component {
 
             /> */}
           </Switch>
+            {/* <Footer/> */}
           {/* <BackgroundSlider images={[image4, image5, image6, image7, image8, image9, image10, image11]} duration={5} transition={2}/> */}
         </Router>
+        
       )
     }
 
