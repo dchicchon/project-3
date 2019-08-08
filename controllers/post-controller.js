@@ -1,8 +1,5 @@
 const db = require("../models")
 
-// require aws-sdk which includes AWS JS library
-
-
 
 
 

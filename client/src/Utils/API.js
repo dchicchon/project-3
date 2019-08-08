@@ -25,9 +25,9 @@ export default {
       return axios.get("/api/user/" + userId)
    },
 
-   getPostPhoto: (userId) => {
-      return axios.get("/api/post/" + userId)
-   },
+   // getPostPhoto: (userId) => {
+   //    return axios.get("/api/feed/" + userId)
+   // },
 
    // ============================================
 

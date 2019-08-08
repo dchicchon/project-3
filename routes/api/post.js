@@ -59,15 +59,15 @@ const db = require("../../models")
 router.route("/post")
     .get(postController.getPosts)
     .post(postController.addPost)
-    .post(upload.single("imageData"), (req, res, next) => {
-        console.log("IMAGE ROUTE POST")
-        // var location = (`https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/`)
-        console.log(req.file.location)
-        res.json({
-            imageURL: req.file.location
-        })
-        // res.send(req.file.location)
-    })
+    // .post(upload.single("imageData"), (req, res, next) => {
+    //     console.log("IMAGE ROUTE POST")
+    //     // var location = (`https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/`)
+    //     console.log(req.file.location)
+    //     res.json({
+    //         imageURL: req.file.location
+    //     })
+    //     // res.send(req.file.location)
+    // })
     // .put(postController)
     // .delete(postController)
 

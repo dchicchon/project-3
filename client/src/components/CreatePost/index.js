@@ -69,10 +69,11 @@ class CreatePost extends Component {
         // formData.append("imageName", fileName + Date.now())
         formData.append('imageData', e.target.files[0])
         formData.append("imageName", e.target.files[0].name)
+        console.log(e.target.files[0])
 
         
 
-        axios.post("/api/post", formData)
+        axios.post("/api/feed", formData)
             .then((res) => {
                 console.log(res)
                 this.setState({
@@ -241,18 +242,18 @@ return(
                                     {/* UPLOAD IMAGE */}
                                     <Row>
                                         <div className="file-field input-field">
-                                            <div className="btn blue">
-                                                <span>Upload Photo</span>
-                                                <input type="file" multiple
-                                                // onChange={handleChange('image')} 
-                                                // {...props} 
-                                                />
-                                            </div>
-                                            <div className="file-path-wrapper">
-                                                <input className="file-path validate" type="text" id="image" onChange={this.handlePicture}/>
-                                                <label htmlFor="image">Image</label>
-                                            </div>
+                                        <div className="btn blue">
+                                            <span>Upload Photo</span>
+                                            <input
+                                                type='file'
+                                                onChange={this.handlePicture}
+                                            />
+                                            {/* <input type='file' onChange={this.handlePicture} ref={(ref) => { this.uploadInput = ref }} /> */}
                                         </div>
+                                        <div className="file-path-wrapper">
+                                            <input className="file-path validate" />
+                                        </div>
+                                    </div>
                                     </Row>
 
                                     {/* DANNY IMAGE */}

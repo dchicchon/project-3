@@ -30,6 +30,7 @@ const upload = multer({
             console.log("\nKEY")
             console.log(req.headers)
             console.log(req.body)
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!")
             console.log(file)
             cb(null, Date.now().toString())
         }
@@ -41,7 +42,7 @@ const upload = multer({
 });
 
 
-router.route("/feed/:image")
+router.route("/feed")
     .post(upload.single("imageData"), (req, res, next) => {
         console.log("IMAGE ROUTE POST")
         // var location = (`https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/`)
@@ -51,8 +52,6 @@ router.route("/feed/:image")
         })
         // res.send(req.file.location)
     })
-    .put(postController)
-    .delete(postController)
 
 module.exports = router
 

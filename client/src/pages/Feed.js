@@ -142,6 +142,7 @@ class Feed extends Component {
                                         location={post.location}
                                         tag={post.tag}
                                         user_id={post.user_id}
+                                        image={post.image}
 
                                     />
                                 )) : "No Posts"
