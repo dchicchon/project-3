@@ -56,7 +56,19 @@ const divStyle = {
 //         </div>
 //     )
 // }
-
+const styles = {
+    // position: 'fixed',
+    left: '0',
+    bottom: '0',
+    // marginTop: '15%',
+    width: '100%',
+    backgroundColor: '#2196f3',
+    color: 'white',
+    textAlign: 'center',
+    opacity: '1',
+    position:'fixed',
+    marginBottom: '0',
+  }
 
 export class Profile extends Component {
     state = {
@@ -224,6 +236,7 @@ export class Profile extends Component {
                     </CardPanel>
 
                 </Container>
+                <CardPanel style={styles}></CardPanel>
             </div>
         )
     }
