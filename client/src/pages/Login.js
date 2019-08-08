@@ -90,15 +90,15 @@ class Login extends Component {
                     <Col size="s6">
                       <br></br>
                       {/* <Link to="/profile"> */}
-                      <Button onClick={this.handleFormSubmit}>Login <i className="material-icons right">send</i></Button>
+                      <Button onClick={this.handleFormSubmit}>Login <i className="material-icons">send</i></Button>
                       {/* </Link> */}
                       <br></br>
                     </Col>
                     <Col size="s6">
                       <br></br>
                       <Link to="/signup">
-                        <Button>Signup <i className="material-icons right">send</i></Button>
-                      </Link>
+                        <Button>Signup <i className="material-icons">search</i></Button>
+                      </Link> 
                       <br></br>
                     </Col>
                   </Row>
