@@ -4,6 +4,8 @@ import { Col, Row, Container } from "../Grid";
 import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
+import './style.css'
+import HeadTitle from "../HeadTitle";
 
 import M from 'materialize-css'
 
@@ -98,11 +100,54 @@ class CreatePost extends Component {
             )
         };
 
+return(
+    // IF MODAL DOESN'T WORK WITH AUTOCOMPLETE
+            // <div id="content">
+
+            //     {/* USER ID */}
+            //     <h2 value={this.state.user_id}></h2>
+            //     {/* <Container> */}
+            //         {/* <CardPanel style={{opacity: 1}}> */}
+            //         <CardPanel>
+            //             <HeadTitle style={{fontSize: "1.333rem"}}>Create a Post</HeadTitle>
+            //             {/* <Container> */}
+            //                 <form>
+            //                     {/* <Date className="col s6" /> */}
+            //                     {/* <TextInput>Where are you?</TextInput> */}
+            //                     {/* AUTOCOMPLETE TESTING */}
+            //                     <Autocomplete name='location' onPlaceChanged={this.showPlaceDetails.bind(this)} />
+            //                     <AddressDetails name = "location" place={this.state.place} />
+
+            //                     {/* <label htmlFor="location">Where are you?</label> */}
+
+            //                     {/* <TextInput className="col s6">Title</TextInput> */}
+            //                     <input placeholder="Title" id="title" name="title" type="text" className="validate" value={this.state.title} onChange={this.handleInputChange} />
+            //                     {/* <label htmlFor="title">Title</label> */}
 
 
-        // export default function CreatePost(props) {
-        return (
-            <div>
+            //                     {/* <TextInput>Record Your Journey</TextInput> */}
+            //                     <input placeholder="Record your journey" id="description" name="info" type="text" className="validate" value={this.state.info} onChange={this.handleInputChange} />
+            //                     {/* COMMENTED OUT FOR NOW */}
+            //                     {/* <label htmlFor="description">Record?</label> */}
+
+            //                     <input placeholder="Tag" id="tag" name="tag" type="text" className="validate" value={this.state.tag} onChange={this.handleInputChange} />
+
+            //                     <input placeholder="lat" id="lat" name="lat" type="text" className="validate" value={this.state.lat} onChange={this.handleInputChange} />
+            //                     <input placeholder="lng" id="lng" name="lng" type="text" className="validate" value={this.state.lng} onChange={this.handleInputChange} />
+            //                     <Button onClick={this.addPost} >Submit</Button>
+            //                     </form>
+
+            //                 </CardPanel>
+                                
+            //                 </div>
+// IF MODAL DOENS'T WORK WITH AUTOCOMPLETE
+
+
+
+
+
+// IF MODAL WORKS WITH AUTOCOMPLETE
+<div>
                 <Row>
                     <Container>
                         <Container>
@@ -200,10 +245,11 @@ class CreatePost extends Component {
                 </div>
             </div>
 
-        )
+            
+            )
+        }
+        
     }
-}
-
 
 
 

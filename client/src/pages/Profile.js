@@ -6,7 +6,7 @@ import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
-import HeadTitle from "../components/HeadTItle"
+import HeadTitle from "../components/HeadTitle"
 
 
 // Google Map
@@ -20,6 +20,7 @@ import styled from 'styled-components';
 
 // Utils
 import API from "../Utils/API";
+import Post from "../components/Post";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -203,12 +204,32 @@ export class Profile extends Component {
                     </CardPanel>
 
                 </Container>
+{/* SHOW POST ATTEMPT */}
+                <Container>
+                    <CardPanel>
+                        <Row>
+                            {(this.state.posts.length) ?
+                                this.state.posts.map((post,i) => (
+                                    <Post
+                                    key={i} 
+                                    title={post.title}
+                                    info={post.info}
+                                    location={post.location}
+                                    tag={post.tag}
+                                    user_id={post.user_id}
+                                    />
+                                )).reverse() : "No Posts"
+                                }
+                        </Row>
+                    </CardPanel>
+
+                </Container>
             </div>
         )
     }
 }
 
-export default Profile
+export default Profile;
 
 
 

@@ -1,0 +1,25 @@
+/* 
+#slide.on {
+    position: absolute;
+    top: 600px;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    transition: left .3s ease-in-out;
+    margin-right: 50%;
+    background-color: red;
+
+    transform: translate3d(0vw, 0, 0);
+    overflow: hidden;
+  }
+
+  #content {
+    background-color: aqua !important;
+    left: 0px; 
+    width: 50%;
+    top: 0px; 
+  }
+
+  #id {
+    z-index: 1;
+  } */
