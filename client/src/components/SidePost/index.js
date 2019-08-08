@@ -30,7 +30,6 @@ import M from "materialize-css";
 
 class SidePost extends Component {
 
-
     componentDidMount() {
         // Auto initialize all the things!
         M.AutoInit();
@@ -46,7 +45,7 @@ class SidePost extends Component {
                     style={{ "width": 600, backgroundColor: 'rgba(192,192,192,0.3)'}}
                 >
                     {/* <PageTitle style={{ fontSize: 2 }} >Create A Post</PageTitle> */}
-                    <CreatePost />
+                    <CreatePost/>
 
 
                     {/* <li><div className="user-view">

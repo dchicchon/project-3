@@ -105,17 +105,17 @@ class Feed extends Component {
                 
                 <HeadTitle>Follow Feed</HeadTitle>
 
-<Container>
+{/* <Container>
     <CardPanel>
-        <SidePost/>
+        <SidePost user_id={this.state.user_id}/>
     </CardPanel>
-</Container>
+</Container> */}
 
-
+{/* <SidePost/> */}
 
                 <Container>
 
-                {/* <CreatePost user_id={this.state.user_id} /> */}
+                <CreatePost user_id={this.state.user_id} />
                     <CardPanel>
                         <Row>
                             {(this.state.followPosts.length) ?
