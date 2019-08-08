@@ -27,7 +27,7 @@ import NavBar from "./components/NavBar"
 // import image6 from './assets/bg6.jpg';
 
 //npm package
-import UnsplashApiSlider from "../src/components/UnsplashSlider"
+// import UnsplashApiSlider from "../src/components/UnsplashSlider"
 
 
 // Utils
@@ -78,6 +78,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
+            {/* <Route exact path="/" component={UnsplashApiSlider} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
 

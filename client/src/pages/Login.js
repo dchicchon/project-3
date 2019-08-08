@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import BackgroundSlider from 'react-background-slider'
 
-
 import image1 from '../assets/bg1.jpg';
 import image2 from '../assets/bg2.jpg';
 import image3 from '../assets/bg3.jpg';
@@ -71,7 +70,7 @@ class Login extends Component {
             <Container>
 
               <br /><br /><br />
-              <CardPanel>
+              <CardPanel id="cardStyleLogin">
 
                 <h4 className="loginFont">Login</h4>
 
@@ -109,7 +108,7 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
-        {/* <BackgroundSlider images={[image1, image2]} duration={5} transition={1} /> */}
+        {/* <BackgroundSlider images={[image1, image2, image3]} duration={5} transition={1} /> */}
         <UnsplashApiLogin />
       </div >
 

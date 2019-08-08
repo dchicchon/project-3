@@ -29,7 +29,12 @@
 }
 
 .loginFont, h1, h2, h3, h4, h5, h6{
-    font-family: 'Faster One', cursive;
+    font-family: 'Faster One';
+}
+
+#cardStyleLogin, #cardStyleSignup{
+    position:absolute;
+    z-index:100;
 }
 
 .input-field input:focus + label {
