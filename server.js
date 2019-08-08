@@ -14,14 +14,23 @@ const PORT = process.env.PORT || 4815
 // Here we bring in our models 
 const db = require("./models")
 
+app.use((req, res, next) => {
+    console.log("MIDDLEWARE")
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', '*');  // enables all the methods to take place
+    return next();
+})
+
 // Here we bring in our routes at the index
 const routes = require("./routes")
 
 // Middleware
 // We pass the passport library as a parameter to the function in config/passport.js to start the local strategy
 require("./config/passport")(passport)
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json({}));
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json({}));
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
@@ -66,7 +75,7 @@ app.use(routes)
 // Add sequelize connection
 // Sync sequelize with our database models. We set force to true to reset database each time for development. 
 //! REMOVE FORCE TRUE DURING PRODUCTION!
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`API server now listening on PORT ${PORT} `)
     })

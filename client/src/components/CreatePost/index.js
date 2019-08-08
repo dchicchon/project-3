@@ -9,6 +9,8 @@ import HeadTitle from "../HeadTitle";
 
 import M from 'materialize-css'
 
+import axios from 'axios'
+
 
 // import 'materialize-css/dist/css/materialize.min.css';
 import Modal from "../Modal";
@@ -28,11 +30,12 @@ class CreatePost extends Component {
         info: "",
         title: "",
         location: "",
-        image: '',
+        url: '',
         tag: '',
         user_id: '',
         lat: '',
         lng: '',
+        image: '',
 
         // TESTING AUTOCOMPLETE
         place: {}
@@ -56,6 +59,30 @@ class CreatePost extends Component {
         })
     }
 
+    handlePicture = (e) => {
+        // e.preventDefault();
+        console.log(e.target.files[0])
+
+       
+
+        let formData = new FormData();
+        // formData.append("imageName", fileName + Date.now())
+        formData.append('imageData', e.target.files[0])
+        formData.append("imageName", e.target.files[0].name)
+
+        
+
+        axios.post("/api/post", formData)
+            .then((res) => {
+                console.log(res)
+                this.setState({
+                    url : res.data.imageURL
+                })
+            })
+        //     fileName: e.target.files[0].name
+        // })
+    }
+
     addPost = async event => {
         event.preventDefault();
         console.log("Add post begins")
@@ -66,8 +93,9 @@ class CreatePost extends Component {
             user_id: this.props.user_id,
             title: this.state.title,
             location: this.state.location,
+            image: this.state.url,
             lat: this.state.lat,
-            lng: this.state.lng
+            lng: this.state.lng,
         }
         console.log("POST DATA:", postData)
         API.newPost(postData)
@@ -221,7 +249,7 @@ return(
                                                 />
                                             </div>
                                             <div className="file-path-wrapper">
-                                                <input className="file-path validate" type="text" id="image" />
+                                                <input className="file-path validate" type="text" id="image" onChange={this.handlePicture}/>
                                                 <label htmlFor="image">Image</label>
                                             </div>
                                         </div>

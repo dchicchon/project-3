@@ -14,6 +14,8 @@ import Background from "../assets/bg10.jpg"
 
 
 
+
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
@@ -23,7 +25,6 @@ import MarkerInfo from "../components/MarkerInfo"
 // Import Materialize
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
-
 
 const divStyle = {
     backgroundImage: `url(${Background})`,
@@ -91,6 +92,8 @@ class Feed extends Component {
         // })
     }
 
+
+
     render() {
 
         const AddressDetails = props => {
@@ -139,8 +142,8 @@ class Feed extends Component {
                                         location={post.location}
                                         tag={post.tag}
                                         user_id={post.user_id}
-                                    />
 
+                                    />
                                 )) : "No Posts"
                             }
                         </Row>
