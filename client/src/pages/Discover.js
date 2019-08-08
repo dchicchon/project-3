@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar"
 import Post from "../components/Post"
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from "../components/CardPanel"
-import HeadTitle from "../components/HeadTItle"
+import HeadTitle from "../components/HeadTitle"
 import SearchChip from "../components/SearchChips"
 import Button from "../components/Button"
 // import Footer from "../components/Footer"

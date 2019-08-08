@@ -21,7 +21,7 @@ import MarkerInfo from "../components/MarkerInfo"
 // Import Materialize
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
-import HeadTitle from "../components/HeadTItle";
+import HeadTitle from "../components/HeadTitle";
 
 const divStyle = {
     backgroundImage: `url(${Background})`,

@@ -6,7 +6,7 @@ import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput";
-import HeadTitle from "../components/HeadTItle";
+import HeadTitle from "../components/HeadTitle";
 
 
 // Google Map
