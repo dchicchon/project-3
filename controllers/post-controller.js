@@ -4,60 +4,60 @@ const db = require("../models")
 const AWS = require("aws-sdk");
 var uuid = require("uuid/v4");
 
-const s3 = new AWS.S3({
-	accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-	secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-})
+// const s3 = new AWS.S3({
+// 	accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+// 	secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+// })
 
-uploadImg = (req) => {
-	let imageFile = req.files.file.data;
-	s3.createBucket(() => {
-		let params = {
-			Bucket: process.env.S3_BUCKET_NAME,
-			ACL: 'public-read',
-			Key: `${image}.jpg`,
-			Body: imageFile
-		};
-		s3.upload(params, (err, data) => {
-			if (err) {
-				console.log("error with upload");
-				console.log(err);
-			} else {
-				console.log("Upload Success");
-				console.log("image", data);
-			}
-		})
-	});
-}
+// uploadImg = (req) => {
+// 	let imageFile = req.files.file.data;
+// 	s3.createBucket(() => {
+// 		let params = {
+// 			Bucket: process.env.S3_BUCKET_NAME,
+// 			ACL: 'public-read',
+// 			Key: `${image}.jpg`,
+// 			Body: imageFile
+// 		};
+// 		s3.upload(params, (err, data) => {
+// 			if (err) {
+// 				console.log("error with upload");
+// 				console.log(err);
+// 			} else {
+// 				console.log("Upload Success");
+// 				console.log("image", data);
+// 			}
+// 		})
+// 	});
+// }
 
 
 
 module.exports = {
-	updatePhoto: (req, res) => {
+	// updatePhoto: (req, res) => {
 
-		var name = req.body.name.toLowerCase();
-		name = name.replace(/\s/g, '');
-		name = name + uuid();
+	// 	var name = req.body.name.toLowerCase();
+	// 	name = name.replace(/\s/g, '');
+	// 	name = name + uuid();
 
 
-		var image = {
-			name: req.body.name,
-			image: name
-		};
+	// 	var image = {
+	// 		name: req.body.name,
+	// 		image: name
+	// 	};
 
-		uploadImg(req, image.image, (location) => {
-			console.log(req);
+	// 	uploadImg(req, image.image, (location) => {
+	// 		console.log(req);
 
-			db.User.update(
-				{
-					image: location,
-				},
-				{
-					where: { id: req.body.id }
-				})
-				.then(dbUser => res.json({ imageUrl: location }));
-		});
-	},
+	// 		db.User.update(
+	// 			{
+	// 				image: location,
+	// 			},
+	// 			{
+	// 				where: { id: req.body.id }
+	// 			})
+	// 			.then(dbUser => res.json({ imageUrl: location }));
+	// 	});
+	// },
 
 
 	addPost: (req, res) => {
@@ -96,8 +96,9 @@ module.exports = {
 			}
 		).then(dbPost => {
 			console.log(dbPost);
-			
 
-			return res.json(dbPost)});
+
+			return res.json(dbPost)
+		});
 	}
 }
