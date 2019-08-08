@@ -47,7 +47,7 @@ function Post(props) {
 
     // ===============VERSION TWO=======================WORKING WITH THIS FOR NOW========
     <Col size="s6">
-      <div className="card">
+      <div className="card" id="posts">
 
       
         <div className="card-action">
@@ -68,7 +68,7 @@ function Post(props) {
         <div className="card-image">
           <img src={props.image} width="300" height="350" className="activator" />
 
-          <span className="card-title activator white-text" >{props.title}</span>
+          <span className="card-title activator black-text" >{props.title}</span>
 
           {/* // end of photo posted */}
         </div>
@@ -91,19 +91,3 @@ function Post(props) {
 }
 
 export default Post;
-
-// DANNY=================================================================================
-      // <Col size="s6">
-      //  <div class="card horizontal">
-      //    <div class="card-image">
-      //      <img src="https://lorempixel.com/100/190/nature/6" />
-      //    </div>
-      //    <div class="card-stacked">
-      //      <div class="card-content">
-      //        <p>I am a very simple card. I am good at containing small bits of information.</p>
-      //      </div>
-      //      <div class="card-action">
-      //      </div>
-      //    </div>
-      //  </div>
-      //  </Col> 

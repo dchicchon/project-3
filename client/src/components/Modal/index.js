@@ -23,7 +23,7 @@ render() {
             {/* <!-- Modal Structure --> */}
             <div id="modal1" className="modal">
                 <div className="modal-content">
-                    <h4>Create Post</h4>
+                    {/* <h4>Create Post</h4> */}
                     <CreatePost user_id = {this.state.user_id}/>
                 </div>
             </div>

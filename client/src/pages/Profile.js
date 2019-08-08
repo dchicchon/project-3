@@ -5,8 +5,8 @@ import CardPanel from "../components/CardPanel"
 import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
-import TextInput from "../components/TextInput";
-import HeadTitle from "../components/HeadTitle";
+import TextInput from "../components/TextInput"
+import HeadTitle from "../components/HeadTitle"
 
 
 // Google Map
@@ -218,7 +218,7 @@ export class Profile extends Component {
                                     tag={post.tag}
                                     user_id={post.user_id}
                                     />
-                                )) : "No Posts"
+                                )).reverse() : "No Posts"
                                 }
                         </Row>
                     </CardPanel>
@@ -229,7 +229,7 @@ export class Profile extends Component {
     }
 }
 
-export default Profile
+export default Profile;
 
 
 
