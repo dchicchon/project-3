@@ -24,7 +24,6 @@ import MarkerInfo from "../components/MarkerInfo"
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 
-
 const divStyle = {
     backgroundImage: `url(${Background})`,
     // backgroundRepeat  : 'no-repeat',
@@ -139,8 +138,8 @@ class Feed extends Component {
                                         location={post.location}
                                         tag={post.tag}
                                         user_id={post.user_id}
-                                    />
 
+                                    />
                                 )) : "No Posts"
                             }
                         </Row>
