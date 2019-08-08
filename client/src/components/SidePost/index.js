@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreatePost from "../CreatePost";
 import './style.css'
-import PageTitle from "../PageTitle";
+import HeadTitle from "../HeadTitle";
 import HideText from "../Toggle";
 import Button from "../Button";
 

@@ -9,7 +9,7 @@ import Login from './pages/Login'
 import NoMatch from './pages/NoMatch'
 import Signup from './pages/Signup'
 
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 
 // materialize
 import 'materialize-css/dist/css/materialize.min.css';

@@ -5,7 +5,7 @@ import TextInput from './../TextInput/index';
 import Button from "../Button";
 import Date from "../Date";
 import './style.css'
-import HeadTitle from "../PageTitle";
+import HeadTitle from "../HeadTitle";
 
 import M from 'materialize-css'
 

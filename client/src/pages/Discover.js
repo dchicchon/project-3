@@ -6,7 +6,7 @@ import CardPanel from "../components/CardPanel"
 import HeadTitle from "../components/HeadTItle"
 import SearchChip from "../components/SearchChips"
 import Button from "../components/Button"
-import Footer from "../components/Footer"
+// import Footer from "../components/Footer"
 
 import Background from "../assets/bg9.jpg"
 
