@@ -13,6 +13,9 @@ import Button from '../components/Button'
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from '../components/CardPanel'
 
+import UnsplashApiLogin from "../components/UnsplashSlideshow"
+
+
 class Login extends Component {
   state = {
     email: '',
@@ -87,14 +90,14 @@ class Login extends Component {
                   </Row>
                   <Row>
                     <Col size="s6">
-                    <br></br>
+                      <br></br>
                       {/* <Link to="/profile"> */}
                       <Button onClick={this.handleFormSubmit}>Login</Button>
                       {/* </Link> */}
                       <br></br>
                     </Col>
                     <Col size="s6">
-                    <br></br>
+                      <br></br>
                       <Link to="/signup">
                         <Button>Signup</Button>
                       </Link>
@@ -106,7 +109,8 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
-          <BackgroundSlider images={[image1, image2]} duration={5} transition={1} />
+        {/* <BackgroundSlider images={[image1, image2]} duration={5} transition={1} /> */}
+        <UnsplashApiLogin />
       </div >
 
     )

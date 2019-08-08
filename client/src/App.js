@@ -25,11 +25,10 @@ import NavBar from "./components/NavBar"
 // import image4 from './assets/bg4.jpg';
 // import image5 from './assets/bg5.jpg';
 // import image6 from './assets/bg6.jpg';
-// import image7 from './assets/bg7.jpg';
-// import image8 from './assets/bg8.jpg';
-// import image9 from './assets/bg9.jpg';
-// import image10 from './assets/bg10.jpg';
-// import image11 from './assets/bg11.jpg';
+
+//npm package
+import UnsplashApiSlider from "../src/components/UnsplashSlider"
+
 
 // Utils
 import API from "./Utils/API"
