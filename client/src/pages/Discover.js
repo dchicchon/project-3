@@ -7,8 +7,11 @@ import HeadTitle from "../components/HeadTitle"
 import SearchChip from "../components/SearchChips"
 import Button from "../components/Button"
 // import Footer from "../components/Footer"
-
+// import SearchFor from "../components/SearchFor";
 import Background from "../assets/bg9.jpg"
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Feed from "../pages/Feed";
+
 
 import M from "materialize-css";
 
@@ -27,7 +30,6 @@ const divStyle = {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
-
 };
 
 
@@ -74,6 +76,17 @@ class Discover extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
+
+                // added==================================
+                if (!this.state.tag) {
+                    alert("don't refresh me");
+                    return false;
+                } else {
+                    alert("yass");
+                }
+        
+                // end add==================================
+
         this.setState({ searched: true })
         var postQuery = this.state.tag
         console.log(postQuery)
@@ -89,8 +102,10 @@ class Discover extends Component {
     }
 
     handleChipClick = event => {
-        event.preventDefault()
+        event.preventDefault();
+
         this.setState({ searched: true })
+        console.log("CLICKED SEARCH")
     }
 
 
@@ -117,17 +132,20 @@ class Discover extends Component {
                     <HeadTitle>Discover</HeadTitle>
                     <Container>
                         <Row>
+ 
+                             <div className="input-field col s12 bgSearchBar blue-text" >
+                                 <Col size="s10">
+                                 <i className=" material-icons prefix" style={{marginTop: "10px"}}>search</i>
+                                     <input type="text" id="discoversearch" name="tag" value={this.state.tag} onChange={this.handleInputChange} />
+                                     {/* <label htmlFor="autocomplete-input">Discover</label> */}
+                                 </Col>
+                                 <Col size="s2">
+                                     <Button style={{ marginTop: "10px" }} onClick={this.handleFormSubmit}>
+                                     <i className="material-icons">search</i>
+                                     </Button>
+                                 </Col>
+                             </div>
 
-                            <div className="input-field col s12 bgSearchBar blue-text" >
-                                <Col size="s10">
-                                    <i className="material-icons prefix">search</i>
-                                    <input type="text" id="discoversearch" name="tag" value={this.state.tag} onChange={this.handleInputChange} />
-                                    <label htmlFor="autocomplete-input">Discover</label>
-                                </Col>
-                                <Col size="s2">
-                                    <Button style={{ marginTop: "20px" }} onClick={this.handleFormSubmit}></Button>
-                                </Col>
-                            </div>
                         </Row>
                     </Container>
                     <Row>
