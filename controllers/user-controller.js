@@ -1,50 +1,44 @@
 // const db = require("../models")
+const multer = require('multer');
+const multerS3 = require("multer-s3")
 var AWS = require("aws-sdk");
-var fs = require("fs")
 
-require("dotenv").config();
+// require("dotenv").config();
 
-uploadImg = (req, image) => {
-	// var imageFile = req.files.file.data
-	var imageFile = req
-	s3.createBucket(function () {
-		var params = {
-			Bucket: process.env.S3_BUCKET_NAME,
-			ACL: "public-read",
-			Key: `${image}.jpg`,
-			Body: imageFile
+
+var s3 = new AWS.S3({
+	accessKeyId: 'AKIAIWGFPLNZDI62JZSQ',
+	secretAccessKey: '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'
+})
+
+const upload = multer({
+	storage: multerS3({
+		s3: s3,
+		bucket: 'travelerdb',
+		acl: 'public-read',
+		contentType: multerS3.AUTO_CONTENT_TYPE,
+		metadata: function (req, file, cb) {
+			cb(null, { fieldName: file.fieldname })
+		},
+		key: function (req, file, cb) {
+			cb(null, Date.now().toString())
 		}
-
-		s3.upload(params, function (err, data) {
-			if (err) {
-				console.log("error with upload");
-				console.log(err)
-			} else {
-				console.log("UPLOAD SUCCESS")
-				console.log("IMage", data)
-				cb(data.Location)
-			}
-		})
-	})
-}
+	}),
+	limits: {
+		fileSize: 1024 * 1024 * 5
+	},
+	// fileFilter: fileFilter
+});
 
 module.exports = {
 
-	updatePhoto: (req, res) => {
-		console.log('\nINSIDE UPDATE PHOTO')
+	updatePhoto : (upload.single("imageData"), (req, res, next) => {
+		console.log('something')
+		console.log(req.file.location)
+		var fileURL = req.file.location
+		res.send(fileURL)
 
-
-		var profilePhoto = {
-			name: "IMage work",
-			image: 'the name'
-		}
-
-		uploadImg("kalen-emsley-Bkci_8qcdvQ-unsplash", profilePhoto.image, function (location) {
-			console.log(location)
-			console.log("!!!!!!!!!!!!!!")
-		})
-
-	},
+	}),
 
 	// This returns user profile information
 	getUser: (req, res) => {
