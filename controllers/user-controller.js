@@ -1,4 +1,4 @@
-// const db = require("../models")
+const db = require("../models")
 var AWS = require("aws-sdk");
 var fs = require("fs")
 

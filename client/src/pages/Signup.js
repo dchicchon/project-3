@@ -104,7 +104,7 @@ class Signup extends Component {
                     })
                 })
                     .then(response => {
-                        // window.location.href = "/"
+                        window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 
