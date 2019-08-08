@@ -40,7 +40,9 @@ const styles = {
     backgroundColor: '#2196f3',
     color: 'white',
     textAlign: 'center',
-    opacity: '1'
+    opacity: '1',
+    position:'fixed',
+    marginBottom: '0',
   }
 
 
