@@ -9,10 +9,7 @@ import Modal from "../components/Modal";
 import SidePost from "../components/SidePost";
 import Toggle from "../components/Toggle";
 import HeadTitle from "../components/HeadTitle";
-import Background from "../assets/bg10.jpg"
-
-
-
+// import Background from "../assets/bg10.jpg"
 
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
@@ -24,13 +21,13 @@ import MarkerInfo from "../components/MarkerInfo"
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 
-const divStyle = {
-    backgroundImage: `url(${Background})`,
-    // backgroundRepeat  : 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundAttachment: 'fixed'
-};
+// const divStyle = {
+//     backgroundImage: `url(${Background})`,
+//     // backgroundRepeat  : 'no-repeat',
+//     backgroundPosition: 'center',
+//     backgroundSize: 'cover',
+//     backgroundAttachment: 'fixed'
+// };
 
 const styles = {
     // position: 'fixed',
@@ -103,8 +100,8 @@ class Feed extends Component {
         };
 
         return (
-            <div style={divStyle}>
-
+            // <div style={divStyle}>
+            <div>
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
@@ -148,6 +145,7 @@ class Feed extends Component {
                     </CardPanel>
                 </Container>
                 <CardPanel style={styles}></CardPanel>
+
             </div>
         )
 

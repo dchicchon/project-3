@@ -13,7 +13,7 @@ import HeadTitle from "../components/HeadTitle"
 import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
 
-import Background from "../assets/bg4.jpg"
+// import Background from "../assets/bg4.jpg"
 
 
 import styled from 'styled-components';
@@ -41,13 +41,13 @@ const Wrapper = styled.div`
 
 const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
 
-const divStyle = {
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat  : 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: '100%',
-    backgroundAttachment: 'fixed'
-};
+// const divStyle = {
+//     backgroundImage: `url(${Background})`,
+//     backgroundRepeat  : 'no-repeat',
+//     backgroundPosition: 'center',
+//     backgroundSize: '100%',
+//     backgroundAttachment: 'fixed'
+// };
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -68,6 +68,7 @@ const styles = {
     opacity: '1',
     position:'fixed',
     marginBottom: '0',
+    marginTop:"40px",
   }
 
 export class Profile extends Component {
@@ -164,7 +165,8 @@ export class Profile extends Component {
 
     render() {
         return (
-            <div style={divStyle}>
+            // <div style={divStyle}>
+            <div>
                 <Container>
                 <HeadTitle>Profile</HeadTitle>
                     <Row>

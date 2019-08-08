@@ -32,7 +32,13 @@
 .loginFont, h1, h2, h3, h4, h5, h6{
     font-family: 'Faster One';
 }
-
+#ReactBackgroundSlider > figure{
+    min-height: 100%;
+   position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
 #cardStyleLogin{
     position:absolute;
     z-index:100;
