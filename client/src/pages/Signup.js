@@ -20,10 +20,10 @@ class Signup extends Component {
         passwordConfirm: '',
         firstName: '',
         lastName: '',
-        // url: '',
         file: '',
         fileName: '',
-        url: ''
+        url: '',
+        image: ''
         // uploadedFile: ''
         // success: false
     }
@@ -35,30 +35,43 @@ class Signup extends Component {
         })
     }
 
-    handlePicture(e) {
+    handlePicture = (e) => {
         // e.preventDefault();
         console.log(e.target.files[0])
+
+       
 
         let formData = new FormData();
         // formData.append("imageName", fileName + Date.now())
         formData.append('imageData', e.target.files[0])
         formData.append("imageName", e.target.files[0].name)
 
-        // this.setState({
-        //     url: URL.createObjectURL(file)
-        // })
+        
 
         axios.post("/api/user", formData)
             .then((res) => {
                 console.log(res)
-                console.log(res.data)
+                this.setState({
+                    url : res.data.imageURL
+                })
+                // let location = res.data.imageURL
+                // console.log(location)
+
+
+                // this.setState({
+                //     url: URL.createObjectURL(location)
+                // })
             })
+            // .catch(err => { console.log(err) })
+
+       
 
         // this.setState({
         //     file: e.target.files[0],
         //     fileName: e.target.files[0].name
         // })
     }
+
 
     handleFormSubmit = async event => {
         event.preventDefault();
@@ -81,14 +94,14 @@ class Signup extends Component {
                         email: this.state.email,
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
-                        // image: this.state.file
+                        image: this.state.url
                     }),
                     headers: new Headers({
                         "Content-Type": "application/json"
                     })
                 })
                     .then(response => {
-                        // window.location.href = "/"
+                        window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 
@@ -153,7 +166,6 @@ class Signup extends Component {
                                         <div className="btn blue">
                                             <span>Upload Photo</span>
                                             <input
-                                                name='file'
                                                 type='file'
                                                 onChange={this.handlePicture}
                                             />
