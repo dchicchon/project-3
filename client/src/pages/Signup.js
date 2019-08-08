@@ -28,6 +28,11 @@ class Signup extends Component {
     }
 
     handlePicture = e => {
+        // const file = files[0]
+        // this.props.actions.uploadRequest({
+        //     file,
+        //     name: "AWESOME"
+        // })
         this.setState({
             file: e.target.files[0],
             fileName: e.target.files[0].name
@@ -37,120 +42,45 @@ class Signup extends Component {
     handleFormSubmit = async event => {
         event.preventDefault();
         let file = this.state.file
-        // console.log(`FILE:`, file)
-        // const formData = new FormData();
-        // formData.append('file', file)
-        // console.log("\FORM DATA")
-        // console.log(formData)
-        // log("\nUPLOAD INPUT")
-        // log(this.uploadInput)
-        // let file = this.uploadInput.files[0];
-        // log("\nFILE")
-        // log(file)
-        // let fileParts = this.uploadInput.files[0].name.split('.');
-        // log("\nFILE PARTS ")
-        // let fileName = fileParts[0]
-        // let fileType = fileParts[1]
-        // console.log("Preparing to upload")
+        // let fileName = this.state.fileName
+
+        let formData = new FormData();
+        formData.append('file', file)
+        for (var value of formData.values()) {
+            console.log(value)
+        }
         // console.log(file)
-        // console.log(fileParts)
         // console.log(fileName)
-        // console.log(fileType)
-        // try {
-        //     fetch("/api/user", {
-        //         method: "POST",
-        //         credentials: "include",
-        //         // mode: 'cors',
-        //         headers: {
-        //             "Content-Type": "application/json"
-        //         },
-        //         body: formData,
-        //         success: function (response) {
-        //             if (response === null) {
-        //                 console.log("ERROR")
-        //             } else {
-        //                 console.log("SUCCESS I GUESS?")
-        //             }
-        //         }
-
-        //     })
-        // } catch(err) {
-        //     console.log(err)
+        // console.log(formData)
+        // var data = {
+        //     file: file.name
         // }
-        // const res = await axios.post("/api/user", formData, {
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // });
-
-        // console.log("\nGIMME A RES PLEASE")
-        // console.log(res)
-
-        // const { fileName, filePath } = res.data;
-        // console.log("\nTHIS IS THE FILE NAME AND PATH")
-        // console.log(fileName)
-        // console.log(filePath)
-        // this.setState({
-        //     uploadedFile: fileName
-        // })
-        // setUploadedFile({ fileName, filePath });
-
-        // } catch (err) {
-        //     if (err.response.status === 500) {
-        //         console.log("There was a problem with the server")
-        //     } else {
-        //         console.log(err.response.data.msg)
-        //     }
-        // }
-        // axios.post("/api/user", formData, {
-        //     headers: {
-        //         'Content-Type': 'multipart/form-data'
-        //     }
-        //     // user_id: this.state.user_id,
-        //     // fileName: fileName,
-        //     // fileType: fileType
-        // }).then(res => {
-        //     console.log(res)
-        //     var returnData = res.data.data.returnData;
-        //     var signedRequest = returnData.signedRequest;
-        //     var url = returnData.url;
-        // this.setState({
-        //     url: url
-        // })
-        // var options = {
-        //     headers: {
-        //         "Content-Type": fileType
-        //     }
-        // }
-        // axios.put(signedRequest, file, options)
-        //     .then(res => {
-        //         console.log("Response from s3")
-        //         this.setState({ success: true })
-        //     })
-        // console.log("Received a signed request " + signedRequest)
-        // })
-
         console.log("WE MADE IT TO THE FORM SUBMIT");
         if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.passwordConfirm) {
             if (this.state.password === this.state.passwordConfirm) {
-                console.log(file)
-                await fetch("/api/user", {
-                    method: "POST",
-                    credentials: "include",
-                    mode: "cors",
-                    // body: {
-                    //     image: file
-                    // },
-                    body: JSON.stringify({
-                        image: file
-                    }),
-                    // headers: new Headers({
-                    //     "Content-Type": "application/json"
-                    // })
-                }).then(res => {
-                    console.log("\nHELLO PHOTO\n")
-                    console.log(res)
-                })
+                // console.log(file)
+                axios.post("/api/user", formData).then(res => console.log("I HATE YOU"))
+                // await fetch("/api/user", {
+                //     method: "POST",
+                //     credentials: "include",
+                //     mode: "cors",
+                //     // body: {
+                //     //     image: file
+                //     // },
+                //     body: formData,
+                //     // body: {
+                //     //     image: formData
+                //     // },
+                //     // body: JSON.stringify({
+                //     //     image: formData
+                //     // }),
+                //     // headers: new Headers({
+                //     //     "Content-Type": "application/json"
+                //     // })
+                // }).then(res => {
+                //     console.log("\nHELLO PHOTO\n")
+                //     console.log(res)
+                // })
                 await fetch("/auth/signup", {
                     method: "POST",
                     credentials: "include",
