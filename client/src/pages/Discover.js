@@ -3,11 +3,16 @@ import NavBar from "../components/NavBar"
 import Post from "../components/Post"
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from "../components/CardPanel"
-import SearchFor from "../components/Searchbar"
-import HeadTitle from "../components/PageTitle"
+import HeadTitle from "../components/HeadTItle"
 import SearchChip from "../components/SearchChips"
+import Button from "../components/Button"
+import Footer from "../components/Footer"
 
 import Background from "../assets/bg9.jpg"
+
+import M from "materialize-css";
+
+
 
 
 
@@ -25,12 +30,25 @@ import { setServers } from "dns";
 // };
 
 
+const styles = {
+    // position: 'fixed',
+    left: '0',
+    bottom: '0',
+    marginTop: '15%',
+    width: '100%',
+    backgroundColor: '#2196f3',
+    color: 'white',
+    textAlign: 'center',
+    opacity: '1'
+  }
+
 
 class Discover extends Component {
     state = {
         user_id: this.props.user_id,
-        search: '',
-        posts: {}
+        tag: '',
+        searched: false,
+        posts: []
     }
 
     handleInputChange = event => {
@@ -53,15 +71,41 @@ class Discover extends Component {
 
     }
 
+    handleFormSubmit = event => {
+        event.preventDefault()
+        this.setState({ searched: true })
+        var postQuery = this.state.tag
+        console.log(postQuery)
+
+        API.getPostSearch(postQuery).then(res => {
+            console.log("Searched Posts xD")
+            console.log(res)
+            this.setState({
+                posts: res.data,
+            })
+            // window.location.reload()
+        })
+    }
+
+    handleChipClick = event => {
+        event.preventDefault()
+        this.setState({ searched: true })
+    }
+
+
+
     // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
-        console.log("DISCOVER PAGE")
-        API.getPosts().then(res => {
-            console.log(res.data)
-            this.setState({
-                posts: res.data
+        M.Chips.init()
+        if (this.state.searched === false) {
+            console.log("DISCOVER PAGE")
+            API.getPosts().then(res => {
+                console.log(res.data)
+                this.setState({
+                    posts: res.data
+                })
             })
-        })
+        }
     }
 
     render() {
@@ -70,8 +114,35 @@ class Discover extends Component {
             <div>
                 <Container>
                     <HeadTitle>Discover</HeadTitle>
-                    <SearchFor />
-                    <SearchChip />
+                    <Container>
+                        <Row>
+
+                            <div className="input-field col s12 bgSearchBar blue-text" >
+                                <Col size="s10">
+                                    <i className="material-icons prefix">search</i>
+                                    <input type="text" id="discoversearch" name="tag" value={this.state.tag} onChange={this.handleInputChange} />
+                                    <label htmlFor="autocomplete-input">Discover</label>
+                                </Col>
+                                <Col size="s2">
+                                    <Button style={{ marginTop: "20px" }} onClick={this.handleFormSubmit}></Button>
+                                </Col>
+                            </div>
+                        </Row>
+                    </Container>
+                    <Row>
+
+                        {(this.state.posts.length) ? this.state.posts.map((post, i) => (
+                            <SearchChip
+                                key={i}
+                                name="tag"
+                                value={this.state.tag}
+                                tag={post.tag}
+                                user_id={post.user_id}
+                                onClick={this.handleInputChange}
+                            />
+                        )) : "No Posts"}
+
+                    </Row>
                     <CardPanel>
                         <Row>
                             {(this.state.posts.length) ? this.state.posts.map((post, i) => (
@@ -89,8 +160,9 @@ class Discover extends Component {
                         </Row>
                     </CardPanel>
 
-                </Container>   
-                    {/* <BackgroundSlider images={[image4, image5, image6]} duration={5} transition={2} /> */}
+                </Container>
+                {/* <BackgroundSlider images={[image4, image5, image6]} duration={5} transition={2} /> */}
+                        <CardPanel style={styles}></CardPanel>
             </div>
         );
     }

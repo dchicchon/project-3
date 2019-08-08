@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
-// import './style/login.css'
+import axios from 'axios'
 // import { Link } from 'react-router-dom'
 import UnsplashApiLogin from "../components/UnsplashSlideshow"
+
+const log = console.log()
 
 class Signup extends Component {
     state = {
@@ -12,7 +14,11 @@ class Signup extends Component {
         passwordConfirm: '',
         firstName: '',
         lastName: '',
-        image: ''
+        // url: '',
+        file: '',
+        fileName: '',
+        uploadedFile: ''
+        // success: false
     }
 
     handleInputChange = event => {
@@ -22,11 +28,60 @@ class Signup extends Component {
         })
     }
 
+    handlePicture = e => {
+        // const file = files[0]
+        // this.props.actions.uploadRequest({
+        //     file,
+        //     name: "AWESOME"
+        // })
+        this.setState({
+            file: e.target.files[0],
+            fileName: e.target.files[0].name
+        })
+    }
+
     handleFormSubmit = async event => {
         event.preventDefault();
+        let file = this.state.file
+        // let fileName = this.state.fileName
+
+        let formData = new FormData();
+        formData.append('file', file)
+        for (var value of formData.values()) {
+            console.log(value)
+        }
+        // console.log(file)
+        // console.log(fileName)
+        // console.log(formData)
+        // var data = {
+        //     file: file.name
+        // }
         console.log("WE MADE IT TO THE FORM SUBMIT");
         if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.passwordConfirm) {
             if (this.state.password === this.state.passwordConfirm) {
+                // console.log(file)
+                axios.post("/api/user", formData).then(res => console.log("I HATE YOU"))
+                // await fetch("/api/user", {
+                //     method: "POST",
+                //     credentials: "include",
+                //     mode: "cors",
+                //     // body: {
+                //     //     image: file
+                //     // },
+                //     body: formData,
+                //     // body: {
+                //     //     image: formData
+                //     // },
+                //     // body: JSON.stringify({
+                //     //     image: formData
+                //     // }),
+                //     // headers: new Headers({
+                //     //     "Content-Type": "application/json"
+                //     // })
+                // }).then(res => {
+                //     console.log("\nHELLO PHOTO\n")
+                //     console.log(res)
+                // })
                 await fetch("/auth/signup", {
                     method: "POST",
                     credentials: "include",
@@ -36,14 +91,14 @@ class Signup extends Component {
                         email: this.state.email,
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
-                        image: this.state.image
+                        // image: this.state.file
                     }),
                     headers: new Headers({
                         "Content-Type": "application/json"
                     })
                 })
                     .then(response => {
-                        window.location.reload()
+                        // window.location.href = "/"
                     })
                     .catch(err => console.log(err))
 
@@ -107,7 +162,11 @@ class Signup extends Component {
                                     <div className="file-field input-field">
                                         <div className="btn blue">
                                             <span>Upload Photo</span>
-                                            <input type="file"  name="image" value={this.state.image} onChange={this.handleInputChange}/>
+                                            <input
+                                                type='file'
+                                                onChange={this.handlePicture}
+                                            />
+                                            {/* <input type='file' onChange={this.handlePicture} ref={(ref) => { this.uploadInput = ref }} /> */}
                                         </div>
                                         <div className="file-path-wrapper">
                                             <input className="file-path validate" />

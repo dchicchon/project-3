@@ -43,21 +43,24 @@ module.exports = () => {
                     })
                 } else {
                     console.log("\nUser does not exist")
+                    console.log("\nCREATING NEW USER IN PASSPORT.JS")
+                    console.log(req.body)
                     var data = {
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
                         email: req.body.email,
-                        password: passwordHash
+                        password: passwordHash,
+                        image: req.body.image
                     }
-                    console.log(`WE HAVE DATA: ${data}`)
+                    console.log(`WE HAVE DATA:`, data)
                     db.User.create(data).then(newUser => {
-                        console.log(`Inside db.User.create`, newUser)
+                        console.log(`Inside db.User.create`, newUser.dataValues)
                         if (!newUser) {
                             console.log(`A new User was not created`)
                             return done(null, false)
                         }
                         if (newUser) {
-                            console.log(`New User create!`, newUser)
+                            console.log(`New User create!`, newUser.dataValues)
                             return done(null, newUser)
                         }
                     });
@@ -89,7 +92,7 @@ module.exports = () => {
                 }
             }).then(user => {
                 if (!user) {
-                    console.log(`No user found. ${user}`)
+                    console.log(`No user found. `, user.dataValues)
                     return done(null, false, {
                         message: "No user found"
                     });

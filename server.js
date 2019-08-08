@@ -21,7 +21,7 @@ const routes = require("./routes")
 // We pass the passport library as a parameter to the function in config/passport.js to start the local strategy
 require("./config/passport")(passport)
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json({}));
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
