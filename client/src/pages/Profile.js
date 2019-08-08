@@ -163,7 +163,6 @@ export class Profile extends Component {
 
                                     <img style={{height: "300px", width:"300px"}} src={this.state.image} alt="Profile picture" />
                                 </CardPanel>
-                                <h2>{this.state.firstName}</h2>
                             </CardPanel>
                         </Col>
 
