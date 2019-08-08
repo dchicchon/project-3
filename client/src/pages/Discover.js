@@ -10,6 +10,10 @@ import Footer from "../components/Footer"
 
 import Background from "../assets/bg9.jpg"
 
+import M from "materialize-css";
+
+
+
 
 
 // Utils
@@ -84,10 +88,16 @@ class Discover extends Component {
         })
     }
 
+    handleChipClick = event => {
+        event.preventDefault()
+        this.setState({ searched: true })
+    }
+
 
 
     // For now until we figure out how to get posts based on tags!
     async componentDidMount() {
+        M.Chips.init()
         if (this.state.searched === false) {
             console.log("DISCOVER PAGE")
             API.getPosts().then(res => {
@@ -125,8 +135,11 @@ class Discover extends Component {
                         {(this.state.posts.length) ? this.state.posts.map((post, i) => (
                             <SearchChip
                                 key={i}
+                                name="tag"
+                                value={this.state.tag}
                                 tag={post.tag}
                                 user_id={post.user_id}
+                                onClick={this.handleInputChange}
                             />
                         )) : "No Posts"}
 

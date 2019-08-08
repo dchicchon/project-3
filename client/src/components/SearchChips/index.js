@@ -7,7 +7,7 @@ function SearchChip(props) {
         <div>
             <Container>
 
-                    <Col size="s2">
+                    <Col size="s3">
                         <div className="chip disable" {...props}>{props.tag}<i className="close material-icons">close</i> </div>
                     </Col>
             </Container>
