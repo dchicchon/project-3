@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import BackgroundSlider from 'react-background-slider'
 
-
 class UnsplashApiSlider extends Component {
     
     constructor(props) {
