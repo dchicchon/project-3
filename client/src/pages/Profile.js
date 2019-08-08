@@ -158,10 +158,9 @@ export class Profile extends Component {
                         <Col size="s6">
                             <CardPanel>
                                 <CardPanel>
-                                    <p>{this.state.props}</p>
                                     {/* <p>{this.state.user_id}</p> */}
-                                    <p>{this.state.image}</p>
-                                    <img src={this.state.image} alt="Profile picture" />
+
+                                    <img style={{height: "300px", width:"300px"}} src={this.state.image} alt="Profile picture" />
                                 </CardPanel>
                             </CardPanel>
                         </Col>
@@ -217,6 +216,7 @@ export class Profile extends Component {
                                         location={post.location}
                                         tag={post.tag}
                                         user_id={post.user_id}
+                                        image={post.image}
                                     />
                                 )).reverse() : "No Posts"
                             }

@@ -54,20 +54,7 @@ class Signup extends Component {
                 this.setState({
                     url : res.data.imageURL
                 })
-                // let location = res.data.imageURL
-                // console.log(location)
-
-
-                // this.setState({
-                //     url: URL.createObjectURL(location)
-                // })
             })
-            // .catch(err => { console.log(err) })
-
-       
-
-        // this.setState({
-        //     file: e.target.files[0],
         //     fileName: e.target.files[0].name
         // })
     }

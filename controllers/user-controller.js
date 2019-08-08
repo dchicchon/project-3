@@ -1,4 +1,6 @@
 
+const db = require("../models")
+
 module.exports = {
 
 	// updatePhoto: (upload.single("imageData"), (req, res, next) => {
