@@ -26,6 +26,7 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "react": "^16.8.6",
     "react-background-slider": "^1.2.0",
     "react-background-slideshow": "^1.0.4",
     "react-s3-uploader": "^4.8.0",

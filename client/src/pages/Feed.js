@@ -8,7 +8,7 @@ import API from '../Utils/API'
 import Modal from "../components/Modal";
 import SidePost from "../components/SidePost";
 import Toggle from "../components/Toggle";
-
+import HeadTitle from "../components/HeadTitle";
 import Background from "../assets/bg10.jpg"
 
 
@@ -23,7 +23,7 @@ import MarkerInfo from "../components/MarkerInfo"
 // Import Materialize
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
-import HeadTitle from "../components/HeadTItle";
+
 
 const divStyle = {
     backgroundImage: `url(${Background})`,

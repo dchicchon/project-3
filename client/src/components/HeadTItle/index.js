@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 // import './style.css'
 import { Col, Row, Container } from "../Grid"
 
@@ -12,6 +12,7 @@ function HeadTitle(props) {
                             <h3 className="grey-text text-darken-3" >{props.children}</h3>
                         </div>
         </wrapper>
+
     );
 
 }
