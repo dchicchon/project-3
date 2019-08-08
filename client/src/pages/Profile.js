@@ -11,7 +11,7 @@ import HeadTitle from "../components/HeadTitle"
 
 // Google Map
 import GoogleMapReact from 'google-map-react'
-import GoogleMap from "../components/GoogleMap"
+// import GoogleMap from "../components/GoogleMap"
 
 // import Background from "../assets/bg4.jpg"
 
@@ -41,13 +41,13 @@ const Wrapper = styled.div`
 
 const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
 
-// const divStyle = {
-//     backgroundImage: `url(${Background})`,
-//     backgroundRepeat  : 'no-repeat',
-//     backgroundPosition: 'center',
-//     backgroundSize: '100%',
-//     backgroundAttachment: 'fixed'
-// };
+const divStyle = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '100%',
+    backgroundAttachment: 'fixed'
+};
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -165,19 +165,17 @@ export class Profile extends Component {
 
     render() {
         return (
-            // <div style={divStyle}>
-            <div>
+            <div style={divStyle}>
+            {/* <div> */}
                 <Container>
-                <HeadTitle>Profile</HeadTitle>
+                    <HeadTitle>Profile</HeadTitle>
                     <Row>
                         <Col size="s6">
                             <CardPanel>
                                 <CardPanel>
-                                    <p>{this.state.props}</p>
                                     {/* <p>{this.state.user_id}</p> */}
-                                    <p>{this.state.image}</p>
-                                    <img src={this.state.image} alt="Profile picture" />
-                                    
+
+                                    <img style={{height: "300px", width:"300px"}} src={this.state.image} alt="Profile picture" />
                                 </CardPanel>
                                 <h2>{this.state.firstName}</h2>
                             </CardPanel>
@@ -186,7 +184,7 @@ export class Profile extends Component {
                         <Col size="s6">
                             <CardPanel>
                                 <ProfileCard bio={this.state.bio} />
-                                <TextInput name="editBio" placeholder="Edit Bio"value={this.state.editBio} onChange={this.handleInputChange} />
+                                <TextInput name="editBio" placeholder="Edit Bio" value={this.state.editBio} onChange={this.handleInputChange} />
                                 <Button onClick={this.handleFormSubmit}>Submit</Button>
                             </CardPanel>
                         </Col>
@@ -221,22 +219,23 @@ export class Profile extends Component {
                     </CardPanel>
 
                 </Container>
-{/* SHOW POST ATTEMPT */}
+                {/* SHOW POST ATTEMPT */}
                 <Container>
                     <CardPanel>
                         <Row>
                             {(this.state.posts.length) ?
-                                this.state.posts.map((post,i) => (
+                                this.state.posts.map((post, i) => (
                                     <Post
-                                    key={i} 
-                                    title={post.title}
-                                    info={post.info}
-                                    location={post.location}
-                                    tag={post.tag}
-                                    user_id={post.user_id}
+                                        key={i}
+                                        title={post.title}
+                                        info={post.info}
+                                        location={post.location}
+                                        tag={post.tag}
+                                        user_id={post.user_id}
+                                        image={post.image}
                                     />
                                 )).reverse() : "No Posts"
-                                }
+                            }
                         </Row>
                     </CardPanel>
 
