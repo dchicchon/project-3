@@ -6,7 +6,9 @@ import { Col, Row, Container } from "../components/Grid";
 import CreatePost from './../components/CreatePost';
 import API from '../Utils/API'
 import Modal from "../components/Modal";
-
+import SidePost from "../components/SidePost";
+import Toggle from "../components/Toggle";
+import HeadTitle from "../components/HeadTitle";
 import Background from "../assets/bg10.jpg"
 
 
@@ -21,7 +23,6 @@ import MarkerInfo from "../components/MarkerInfo"
 // Import Materialize
 import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
-import HeadTitle from "../components/HeadTitle";
 
 const divStyle = {
     backgroundImage: `url(${Background})`,
@@ -55,7 +56,9 @@ class Feed extends Component {
         // followIds: {},
         followPosts: {},
         place: {}
+        
     }
+    
 
     showPlaceDetails(place) {
         this.setState({ place });
@@ -88,6 +91,7 @@ class Feed extends Component {
     }
 
     render() {
+
         const AddressDetails = props => {
             return (
                 <div>
@@ -96,23 +100,34 @@ class Feed extends Component {
             )
         };
 
-
         return (
             <div style={divStyle}>
 
                 {/* <NavBar /> */}
                 {/* <Modal /> */}
 
+                {/* <SidePost /> */}
+                {/* <Toggle/> */}
+
                 {/* AUTOCOMPLETE TESTING */}
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
+                {/* <CreatePost user_id={this.state.user_id} /> */}
+                
+                <HeadTitle>Follow Feed</HeadTitle>
 
+{/* <Container>
+    <CardPanel>
+        <SidePost user_id={this.state.user_id}/>
+    </CardPanel>
+</Container> */}
+
+{/* <SidePost/> */}
 
                 <Container>
-                <HeadTitle>Follower Feed</HeadTitle>
+
                 <CreatePost user_id={this.state.user_id} />
                     <CardPanel>
-                        {/* <Container> */}
                         <Row>
                             {(this.state.followPosts.length) ?
                                 this.state.followPosts.map((post, i) => (

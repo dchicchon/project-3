@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 
-import BackgroundSlider from 'react-background-slider'
-
-
-import image1 from '../assets/bg1.jpg';
-import image2 from '../assets/bg2.jpg';
-import image3 from '../assets/bg3.jpg';
+// import BackgroundSlider from 'react-background-slider'
+// import image1 from '../assets/bg1.jpg';
+// import image2 from '../assets/bg2.jpg';
+// import image3 from '../assets/bg3.jpg';
 
 import Button from '../components/Button'
 
 import { Col, Row, Container } from "../components/Grid";
 import CardPanel from '../components/CardPanel'
+
+import UnsplashApiLogin from "../components/UnsplashSlideshow"
+
 
 class Login extends Component {
   state = {
@@ -68,7 +69,7 @@ class Login extends Component {
             <Container>
 
               <br /><br /><br />
-              <CardPanel>
+              <CardPanel id="cardStyleLogin">
 
                 <h4 className="loginFont">Login</h4>
 
@@ -87,16 +88,16 @@ class Login extends Component {
                   </Row>
                   <Row>
                     <Col size="s6">
-                    <br></br>
+                      <br></br>
                       {/* <Link to="/profile"> */}
-                      <Button onClick={this.handleFormSubmit}>Login</Button>
+                      <Button onClick={this.handleFormSubmit}>Login <i className="material-icons right">send</i></Button>
                       {/* </Link> */}
                       <br></br>
                     </Col>
                     <Col size="s6">
-                    <br></br>
+                      <br></br>
                       <Link to="/signup">
-                        <Button>Signup</Button>
+                        <Button>Signup <i className="material-icons right">send</i></Button>
                       </Link>
                       <br></br>
                     </Col>
@@ -106,7 +107,8 @@ class Login extends Component {
             </Container>
           </Container>
         </Container>
-          <BackgroundSlider images={[image1, image2]} duration={5} transition={1} />
+        {/* <BackgroundSlider images={[image1, image2, image3]} duration={5} transition={1} /> */}
+        <UnsplashApiLogin />
       </div >
 
     )

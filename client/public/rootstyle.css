@@ -26,11 +26,29 @@
 }
 
 #root{
-    /* font-family: 'Hanuman', serif; */
+    font-family: 'Faster One'; 
 }
 
 .loginFont, h1, h2, h3, h4, h5, h6{
-    font-family: 'Faster One', cursive;
+    font-family: 'Faster One';
+}
+
+#cardStyleLogin{
+    position:absolute;
+    z-index:100;
+    width:70;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#cardStyleSignup{
+    position:absolute;
+    z-index:100;
+    width:70%;
+    /* margin:0 auto; */
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .input-field input:focus + label {
