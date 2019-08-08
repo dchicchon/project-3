@@ -6,15 +6,47 @@ import ProfileCard from '../components/ProfileCard'
 import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
+import HeadTitle from "../components/PageTitle"
+
 
 // Google Map
 import GoogleMapReact from 'google-map-react'
 import GoogleMap from "../components/GoogleMap"
 
+import Background from "../assets/bg4.jpg"
+
+
+import styled from 'styled-components';
+
 // Utils
 import API from "../Utils/API";
 
-const Marks = ({ text }) => <div>{text}</div>;
+const Wrapper = styled.div`
+  position: absolute;
+
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 15px solid red;
+  border-radius: 50%;
+  text-align: center;
+
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
+  &:hover {
+    z-index: 1;
+  }
+  `;
+
+const Marks = ({ text }) => <div><Wrapper>{text}</Wrapper></div>;
+
+const divStyle = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '100%',
+    backgroundAttachment: 'fixed'
+};
 
 // AnyReactComponent = (props) => {
 //     return (
@@ -96,6 +128,7 @@ export class Profile extends Component {
         }
         console.log(editData)
         API.editUser(editData).then(response => console.log(response))
+        window.location.reload()
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -117,12 +150,11 @@ export class Profile extends Component {
 
     render() {
         return (
-            <div>
+            <div style={divStyle}>
                 <Container>
-                    <TextInput name="editBio" value={this.state.editBio} onChange={this.handleInputChange} />
-                    <Button onClick={this.handleFormSubmit}>Submit</Button>
+                <HeadTitle>Profile</HeadTitle>
                     <Row>
-                        <Col size="s4">
+                        <Col size="s6">
                             <CardPanel>
                                 <CardPanel>
                                     <p>{this.state.props}</p>
@@ -133,9 +165,11 @@ export class Profile extends Component {
                             </CardPanel>
                         </Col>
 
-                        <Col size="s8">
+                        <Col size="s6">
                             <CardPanel>
                                 <ProfileCard bio={this.state.bio} />
+                                <TextInput name="editBio" placeholder="Edit Bio"value={this.state.editBio} onChange={this.handleInputChange} />
+                                <Button onClick={this.handleFormSubmit}>Submit</Button>
                             </CardPanel>
                         </Col>
                     </Row>
@@ -167,6 +201,7 @@ export class Profile extends Component {
                             </GoogleMapReact>
                         </div>
                     </CardPanel>
+
                 </Container>
             </div>
         )
