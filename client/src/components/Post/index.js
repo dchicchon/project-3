@@ -68,7 +68,7 @@ function Post(props) {
         <div className="card-image">
           <img src={props.image} width="300" height="350" className="activator" />
 
-          <span className="card-title activator white-text" >{props.title}</span>
+          <span className="card-title activator black-text" >{props.title}</span>
 
           {/* // end of photo posted */}
         </div>
