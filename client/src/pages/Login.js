@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 
 // import BackgroundSlider from 'react-background-slider'
-
 // import image1 from '../assets/bg1.jpg';
 // import image2 from '../assets/bg2.jpg';
 // import image3 from '../assets/bg3.jpg';
