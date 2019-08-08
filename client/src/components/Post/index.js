@@ -80,7 +80,7 @@ function Post(props) {
           <p className="activator">{props.location}</p>
         </div>
         <div className="card-reveal">
-        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+        <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
           <p className="card-title">{props.info}</p>
         </div>
         {/* // end of card description */}
