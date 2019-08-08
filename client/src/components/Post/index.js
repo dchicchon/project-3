@@ -79,9 +79,7 @@ function Post(props) {
 
           <p className="activator">{props.location}</p>
 {/* SPACE FOR CHIPS */}
-
-<p className="chips">{props.tag}</p>
-
+<p className="chip disable">{props.tag}</p>
 
 
         </div>
