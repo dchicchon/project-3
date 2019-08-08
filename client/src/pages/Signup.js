@@ -3,11 +3,13 @@ import { Col, Row, Container } from "../components/Grid";
 import Button from '../components/Button'
 import axios from 'axios'
 // import { Link } from 'react-router-dom'
-import BackgroundSlider from 'react-background-slider'
+// import BackgroundSlider from 'react-background-slider'
 
-import image7 from '../assets/bg7.jpg';
-import image5 from '../assets/bg5.jpg';
-import image6 from '../assets/bg6.jpg';
+// import image7 from '../assets/bg7.jpg';
+// import image5 from '../assets/bg5.jpg';
+// import image6 from '../assets/bg6.jpg';
+
+import UnsplashApiLogin from "../components/UnsplashSlideshow"
 
 const log = console.log()
 
@@ -126,8 +128,9 @@ class Signup extends Component {
     render() {
         return (
             <div>
+                <UnsplashApiLogin />
                 <Container>
-                    <div className="card-panel center">
+                    <div className="card-panel center" id="cardStyleSignup">
                         <h4>Sign Up</h4>
                         <div className="row">
                             <form className="col s12">
@@ -183,7 +186,7 @@ class Signup extends Component {
 
                     </div>
                 </Container>
-                <BackgroundSlider images={[image7, image5]} duration={5} transition={1} />
+                {/* <BackgroundSlider images={[image7, image5]} duration={5} transition={1} /> */}
 
             </div >
 
