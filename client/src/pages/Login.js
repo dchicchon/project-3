@@ -62,11 +62,11 @@ class Login extends Component {
       <div>
         {/* <BackgroundSlideshow images={[image1, image2, image3]} /> */}
 
-        <Container>
+        {/* <Container> */}
 
-          <Container>
+          {/* <Container> */}
 
-            <Container>
+            {/* <Container> */}
 
               <br /><br /><br />
               <CardPanel id="cardStyleLogin">
@@ -104,9 +104,9 @@ class Login extends Component {
                   </Row>
                 </form>
               </CardPanel>
-            </Container>
-          </Container>
-        </Container>
+            {/* </Container> */}
+          {/* </Container> */}
+        {/* </Container> */}
         {/* <BackgroundSlider images={[image1, image2, image3]} duration={5} transition={1} /> */}
         <UnsplashApiLogin />
       </div >

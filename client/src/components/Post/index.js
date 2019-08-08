@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../Grid";
 import Button from "../Button"
-
+import SearchChip from "../SearchChips"; 
 
 
 
@@ -78,6 +78,12 @@ function Post(props) {
 
 
           <p className="activator">{props.location}</p>
+{/* SPACE FOR CHIPS */}
+
+<p className="chips">{props.tag}</p>
+
+
+
         </div>
         <div className="card-reveal">
         <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
@@ -85,6 +91,9 @@ function Post(props) {
         </div>
         {/* // end of card description */}
       </div>
+
+
+
     </Col>
 
   );
