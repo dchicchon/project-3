@@ -80,7 +80,7 @@ class Discover extends Component {
                 // added==================================
                 if (!this.state.tag) {
                     alert("don't refresh me");
-
+                    return false;
                 } else {
                     alert("yass");
                 }
@@ -103,14 +103,7 @@ class Discover extends Component {
 
     handleChipClick = event => {
         event.preventDefault();
-        // added==================================
-        if (!this.state.tag) {
-            alert("write something");
-        } else {
-            console.log("yass");
-        }
 
-        // end add==================================
         this.setState({ searched: true })
         console.log("CLICKED SEARCH")
     }
