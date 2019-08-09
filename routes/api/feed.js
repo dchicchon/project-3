@@ -1,8 +1,5 @@
 const router = require("express").Router();
-const userController = require("../../controllers/user-controller");
 
-
-// const db = require("../models")
 const multer = require('multer');
 const multerS3 = require("multer-s3")
 var AWS = require("aws-sdk");
@@ -33,6 +30,7 @@ const upload = multer({
             console.log("\nKEY")
             console.log(req.headers)
             console.log(req.body)
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!")
             console.log(file)
             cb(null, Date.now().toString())
         }
@@ -43,12 +41,8 @@ const upload = multer({
     // fileFilter: fileFilter
 });
 
-// /api/user
 
-router.route("/user")
-    // .get(userController.getUser)
-    // .post(userController.addUser)
-    .put(userController.editUser)
+router.route("/feed")
     .post(upload.single("imageData"), (req, res, next) => {
         console.log("IMAGE ROUTE POST")
         // var location = (`https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/`)
@@ -59,9 +53,5 @@ router.route("/user")
         // res.send(req.file.location)
     })
 
-router.route("/user/:id")
-    .get(userController.getUser)
-// .get(userController.updatePhoto)
-
-
 module.exports = router
+
