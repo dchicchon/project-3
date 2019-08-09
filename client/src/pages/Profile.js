@@ -13,7 +13,7 @@ import HeadTitle from "../components/HeadTitle"
 import GoogleMapReact from 'google-map-react'
 // import GoogleMap from "../components/GoogleMap"
 
-// import Background from "../assets/bg4.jpg"
+import Background from "../assets/bg4.jpg"
 
 
 import styled from 'styled-components';

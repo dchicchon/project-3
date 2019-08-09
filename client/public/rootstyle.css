@@ -42,19 +42,27 @@
 #cardStyleLogin{
     position:absolute;
     z-index:100;
-    width:70;
-    top: 50%;
+    width:30%;
+    top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius:20px;
+  background-color: #0c0d0f;
+    opacity: 0.9;
+    color: #ffff;
 }
 #cardStyleSignup{
     position:absolute;
     z-index:100;
-    width:50%;
+    width:40%;
     /* margin:0 auto; */
     top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius:20px;
+  background-color: #0c0d0f;
+    opacity: 0.9;
+    color: #ffff;
 }
 
 .input-field input:focus + label {
