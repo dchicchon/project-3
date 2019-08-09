@@ -68,7 +68,8 @@ export class Profile extends Component {
         lat: this.props.lat,
         lng: this.props.lng,
         title: this.props.title,
-        firstName: this.props.firstName
+        firstName: this.props.firstName,
+        lastName: this.props.lastName
     }
 
     static defaultProps = {
@@ -83,16 +84,10 @@ export class Profile extends Component {
 
 
     componentDidMount() {
-        console.log("IS THIS WORKING")
+        
+        // We might have to change this later on to get a specific users profile page
         console.log("USER ID:", this.state.user_id)
-        // let idPackage = {
-        //     id: this.state.user_id
-        // }
-        // console.log(idPackage)
         var id = this.state.user_id
-        // console.log(id)
-        // console.log(this.state.lat)
-        // console.log(this.state.lng)
 
         API.getUserPosts(id).then(res => {
             console.log("GET USER POSTS")
@@ -113,9 +108,10 @@ export class Profile extends Component {
             console.log(res.data)
             var profileData = res.data
             this.setState({
+                firstName: profileData.firstName,
+                lastName: profileData.lastName,
                 bio: profileData.bio,
                 image: profileData.image
-                // profileImg: res.data.profileImg
             })
         })
     }
@@ -153,26 +149,22 @@ export class Profile extends Component {
     render() {
         return (
             <div style={divStyle}>
-                <Container>
-                    <HeadTitle>Profile</HeadTitle>
+                <Container >
+                    <HeadTitle>{this.state.firstName}{this.state.lastName}</HeadTitle>
                     <Row>
                         <Col size="s6">
-                            <CardPanel>
-                                <CardPanel>
                                     {/* <p>{this.state.user_id}</p> */}
-
-                                    <img style={{height: "300px", width:"300px"}} src={this.state.image} alt="Profile picture" />
-                                </CardPanel>
-                                <h2>{this.state.firstName}</h2>
-                            </CardPanel>
+                                    {/* <h2>{this.state.firstName}</h2> */}
+                                    <img style={{ height: "300px", width: "300px" }} src={this.state.image} alt="Profile picture" />
                         </Col>
-
+                    </Row>
+                    <Row>
                         <Col size="s6">
-                            <CardPanel>
+                            {/* <CardPanel> */}
                                 <ProfileCard bio={this.state.bio} />
-                                <TextInput name="editBio" placeholder="Edit Bio" value={this.state.editBio} onChange={this.handleInputChange} />
-                                <Button onClick={this.handleFormSubmit}>Submit</Button>
-                            </CardPanel>
+                                {/* <TextInput name="editBio" placeholder="Edit Bio" value={this.state.editBio} onChange={this.handleInputChange} /> */}
+                                {/* <Button onClick={this.handleFormSubmit}>Submit</Button> */}
+                            {/* </CardPanel> */}
                         </Col>
                     </Row>
                     <CardPanel>

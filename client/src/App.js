@@ -47,7 +47,8 @@ class App extends Component {
   state = {
     isLoggedin: false,
     user_id: '',
-    firstName: ''
+    firstName: '',
+    lastName: '',
     
   }
 
@@ -55,11 +56,11 @@ class App extends Component {
     await API.getUser()
       .then(user => {
         console.log(user);
-        console.log("hit app.js com")
         this.setState({
           isLoggedin: user.data.isLoggedin,
           user_id: user.data.id,
-          firstName: user.data.firstName
+          firstName: user.data.firstName,
+          lastName: user.data.lastName
 
         })
       })
@@ -96,9 +97,9 @@ class App extends Component {
         <Router>
           <NavBar firstName={this.state.firstName} logout={this.logout} />
           <Switch>
-            <Route exact path="/" component={() => <Feed firstName={this.state.firstName} user_id={this.state.user_id} />} />
-            <Route exact path="/discover" component={() => <Discover firstName={this.state.firstName} user_id={this.state.user_id} />} />
-            <Route exact path="/profile" component={() => <Profile firstName={this.state.firstName} user_id={this.state.user_id}/>} />
+            <Route exact path="/" component={() => <Feed lastName = {this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id} />} />
+            <Route exact path="/discover" component={() => <Discover lastName={this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id} />} />
+            <Route exact path="/profile" component={() => <Profile lastName = {this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id}/>} />
 
             {/* // () => <Feed */}
             {/* // email={this.state.email}

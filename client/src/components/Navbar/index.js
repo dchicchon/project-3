@@ -10,7 +10,7 @@ function NavBar(props) {
       <nav>
         <div className="nav-wrapper blue">
             <Link className="brand-logo" to='/'>
-              TripIt
+              Traveler
           </Link>
           <ul className="right hide-on-med-and-down">
             <li>
