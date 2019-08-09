@@ -6,35 +6,35 @@ import { Link } from 'react-router-dom'
 function NavBar(props) {
   return (
     <div>
-      <div className = "navbar-fixed">
-      <nav>
-        <div className="nav-wrapper blue">
+      <div className="navbar-fixed">
+        <nav>
+          <div className="nav-wrapper blue" style={{ paddingLeft: 10 }}>
             <Link className="brand-logo" to='/'>
               Traveler
           </Link>
-          <ul className="right hide-on-med-and-down">
-            <li>
-              <Link to="/profile">
-                {props.firstName}'s Profile
+            <ul className="right hide-on-med-and-down">
+              <li>
+                <Link to="/profile">
+                  {props.firstName}'s Profile
               </Link>
-            </li>
-            <li>
-              <Link to="/">
-                Feed
+              </li>
+              <li>
+                <Link to="/">
+                  Feed
               </Link>
-            </li>
-            <li>
-              <Link to='/discover'>
-                Discover
+              </li>
+              <li>
+                <Link to='/discover'>
+                  Discover
             </Link>
-            </li>
+              </li>
 
-            <li>
-              <a onClick={props.logout}>Logout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              <li>
+                <a onClick={props.logout}>Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </div >
   )

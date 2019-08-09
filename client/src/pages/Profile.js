@@ -199,23 +199,28 @@ export class Profile extends Component {
                 </Container>
                 {/* SHOW POST ATTEMPT */}
                 <Container>
-                    <CardPanel>
-                        <Row>
-                            {(this.state.posts.length) ?
-                                this.state.posts.map((post, i) => (
-                                    <Post
-                                        key={i}
-                                        title={post.title}
-                                        info={post.info}
-                                        location={post.location}
-                                        tag={post.tag}
-                                        user_id={post.user_id}
-                                        image={post.image}
-                                    />
-                                )).reverse() : "No Posts"
-                            }
-                        </Row>
-                    </CardPanel>
+                    {/* <CardPanel> */}
+                    {(this.state.posts.length) ?
+                        this.state.posts.map((post, i) => (
+                            <Row center>
+                                <Col size="s3" />
+
+                                <Post
+                                    key={i}
+                                    title={post.title}
+                                    info={post.info}
+                                    location={post.location}
+                                    tag={post.tag}
+                                    user_id={post.user_id}
+                                    image={post.image}
+                                />
+                                <Col size="s3" />
+
+                            </Row>
+
+                        )).reverse() : "No Posts"
+                    }
+                    {/* </CardPanel> */}
 
                 </Container>
             </div>

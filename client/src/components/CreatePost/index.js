@@ -180,12 +180,12 @@ return(
                 <Row>
                     <Container>
                         <Container>
-                            <CardPanel>
+                            {/* <CardPanel> */}
                                 <Row>
                                 {/* <h6>Post About a Trip!</h6> */}
                                 <a className=" waves-light btn-large modal-trigger blue" href="#modal1">Create Post</a>
                                 </Row>
-                            </CardPanel>
+                            {/* </CardPanel> */}
                         </Container>
                     </Container>
                 </Row>

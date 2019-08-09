@@ -44,7 +44,7 @@ const styles = {
     color: 'white',
     textAlign: 'center',
     opacity: '1'
-  }
+}
 
 
 
@@ -58,9 +58,9 @@ class Feed extends Component {
         // followIds: {},
         followPosts: {},
         place: {}
-        
+
     }
-    
+
 
     showPlaceDetails(place) {
         this.setState({ place });
@@ -117,24 +117,25 @@ class Feed extends Component {
                 {/* <Autocomplete id="location" name="location" value={this.state.location} onPlaceChanged={this.showPlaceDetails.bind(this)} />
                 <AddressDetails place={this.state.place} value={this.state.location}/> */}
                 {/* <CreatePost user_id={this.state.user_id} /> */}
-                
-                <HeadTitle>Follow Feed</HeadTitle>
 
-{/* <Container>
+                <HeadTitle>Feed</HeadTitle>
+
+                {/* <Container>
     <CardPanel>
         <SidePost user_id={this.state.user_id}/>
     </CardPanel>
 </Container> */}
 
-{/* <SidePost/> */}
+                {/* <SidePost/> */}
 
                 <Container>
 
-                <CreatePost user_id={this.state.user_id} />
-                    <CardPanel>
-                        <Row>
-                            {(this.state.followPosts.length) ?
-                                this.state.followPosts.map((post, i) => (
+                    <CreatePost user_id={this.state.user_id} />
+                    {/* <CardPanel> */}
+                        {(this.state.followPosts.length) ?
+                            this.state.followPosts.map((post, i) => (
+                                <Row center>
+
                                     <Post
                                         key={i}
                                         title={post.title}
@@ -145,10 +146,11 @@ class Feed extends Component {
                                         image={post.image}
 
                                     />
-                                )) : "No Posts"
-                            }
-                        </Row>
-                    </CardPanel>
+                                </Row>
+
+                            )) : "No Posts"
+                        }
+                    {/* </CardPanel> */}
                 </Container>
                 <CardPanel style={styles}></CardPanel>
             </div>
