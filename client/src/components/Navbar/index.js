@@ -15,7 +15,7 @@ function NavBar(props) {
             <ul className="right hide-on-med-and-down">
               <li>
                 <Link to="/profile">
-                  {props.firstName}'s Profile
+                  Profile
               </Link>
               </li>
               <li>

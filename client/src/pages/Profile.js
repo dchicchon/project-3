@@ -7,6 +7,7 @@ import Button from "../components/Button"
 import { Col, Row, Container } from "../components/Grid";
 import TextInput from "../components/TextInput"
 import HeadTitle from "../components/HeadTitle"
+import ExampleComponent from "react-rounded-image";
 
 
 // Google Map
@@ -151,12 +152,12 @@ export class Profile extends Component {
             <div style={divStyle}>
                 <Container >
                     <HeadTitle>{this.state.firstName} {this.state.lastName}</HeadTitle>
-                    <Row>
-                        <Col size="m6">
+                    <Row className="center">
+                            <Col size="m6">
+                                <ExampleComponent image= {this.state.image}/>
+                                {/* <img style={{ height: "300px", width: "350px", borderRadius: 99 }} src={this.state.image} alt="Profile picture" /> */}
 
-                            <img style={{ height: "200px", width: "300px" }} src={this.state.image} alt="Profile picture" />
-
-                        </Col>
+                            </Col>
                     </Row>
                     <Row>
                         <Col size="s12">
@@ -202,10 +203,9 @@ export class Profile extends Component {
                     {/* <CardPanel> */}
                     {(this.state.posts.length) ?
                         this.state.posts.map((post, i) => (
-                            <Row>
-                            {console.log("Sup")}
+                            <Row className="center">
+                                {console.log("Sup")}
 
-                                <Col size="s3" />
 
                                 <Post
                                     key={i}
@@ -216,7 +216,6 @@ export class Profile extends Component {
                                     user_id={post.user_id}
                                     image={post.image}
                                 />
-                                <Col size="s3" />
 
                             </Row>
 

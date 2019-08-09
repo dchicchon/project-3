@@ -6,7 +6,7 @@ import Discover from './pages/Discover'
 import Profile from './pages/Profile'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
-import NoMatch from './pages/NoMatch'
+// import NoMatch from './pages/NoMatch'
 import Signup from './pages/Signup'
 
 // import Footer from './components/Footer'
@@ -49,7 +49,7 @@ class App extends Component {
     user_id: '',
     firstName: '',
     lastName: '',
-    
+
   }
 
   async componentDidMount() {
@@ -85,7 +85,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Login} />
             {/* <Route exact path="/" component={UnsplashApiSlider} /> */}
-            <Route exact path="/login" component={Login} />
+            {/* <Route exact path="/login" component={Login} /> */}
             <Route exact path="/signup" component={Signup} />
 
           </Switch>
@@ -97,29 +97,20 @@ class App extends Component {
         <Router>
           <NavBar firstName={this.state.firstName} logout={this.logout} />
           <Switch>
-            <Route exact path="/" component={() => <Feed lastName = {this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id} />} />
-            <Route exact path="/discover" component={() => <Discover lastName={this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id} />} />
-            <Route exact path="/profile" component={() => <Profile lastName = {this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id}/>} />
-
-            {/* // () => <Feed */}
-            {/* // email={this.state.email}
-                // />
-              // }
-
-            /> */}
+            <Route exact path="/" component={() => <Feed />} />
+            <Route exact path="/discover" component={() => <Discover />} />
+            <Route exact path="/profile" component={() => <Profile />} />
+            {/* <Route exact path="/profile" component={() => <Profile lastName = {this.state.lastName}firstName={this.state.firstName} user_id={this.state.user_id}/>} /> */}
           </Switch>
-            {/* <Footer/> */}
           {/* <BackgroundSlider images={[image4, image5, image6, image7, image8, image9, image10, image11]} duration={5} transition={2}/> */}
         </Router>
-        
+
       )
     }
 
   }
 
 };
-
-
 
 //-----------END ADD---------------------
 

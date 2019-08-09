@@ -164,7 +164,7 @@ class Discover extends Component {
                     </Row>
                     <Container>
                         {(this.state.posts.length) ? this.state.posts.map((post, i) => (
-                            <Row>
+                            <Row className="center">
 
                                 <Post
                                     followUser={this.followUser}

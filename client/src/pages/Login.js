@@ -68,6 +68,8 @@ class Login extends Component {
 
             {/* <Container> */}
 
+            <h1>Traveler</h1>
+
               <br /><br /><br />
               <CardPanel id="cardStyleLogin">
 

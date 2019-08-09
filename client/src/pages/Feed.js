@@ -130,26 +130,27 @@ class Feed extends Component {
 
                 <Container>
 
-                    <CreatePost user_id={this.state.user_id} />
+                    <Row className="center">
+                        <CreatePost user_id={this.state.user_id} />
+                    </Row>
                     {/* <CardPanel> */}
-                        {(this.state.followPosts.length) ?
-                            this.state.followPosts.map((post, i) => (
-                                <Row center>
+                    {(this.state.followPosts.length) ?
+                        this.state.followPosts.map((post, i) => (
+                            <Row className="center">
+                                <Post
+                                    key={i}
+                                    title={post.title}
+                                    info={post.info}
+                                    location={post.location}
+                                    tag={post.tag}
+                                    user_id={post.user_id}
+                                    image={post.image}
 
-                                    <Post
-                                        key={i}
-                                        title={post.title}
-                                        info={post.info}
-                                        location={post.location}
-                                        tag={post.tag}
-                                        user_id={post.user_id}
-                                        image={post.image}
+                                />
+                            </Row>
 
-                                    />
-                                </Row>
-
-                            )) : "No Posts"
-                        }
+                        )) : "No Posts"
+                    }
                     {/* </CardPanel> */}
                 </Container>
                 <CardPanel style={styles}></CardPanel>
