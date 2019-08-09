@@ -35,7 +35,7 @@ class Signup extends Component {
         })
     }
 
-    handlePicture = (e) => {
+    handlePicture = async e => {
         // e.preventDefault();
         console.log(e.target.files[0])
 
@@ -48,7 +48,7 @@ class Signup extends Component {
 
         
 
-        axios.post("/api/user", formData)
+        await axios.post("/api/user", formData)
             .then((res) => {
                 console.log(res)
                 this.setState({

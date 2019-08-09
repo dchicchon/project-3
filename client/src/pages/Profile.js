@@ -159,11 +159,10 @@ export class Profile extends Component {
                         <Col size="s6">
                             <CardPanel>
                                 <CardPanel>
-                                    {/* <p>{this.state.user_id}</p> */}
 
-                                    <img style={{height: "300px", width:"300px"}} src={this.state.image} alt="Profile picture" />
-                                </CardPanel>
-                                <h2>{this.state.firstName}</h2>
+                                    <img style={{height: "200px", width:"300px"}} src={this.state.image} alt="Profile picture" />
+                                    </CardPanel>
+
                             </CardPanel>
                         </Col>
 
