@@ -68,8 +68,8 @@ export class Profile extends Component {
         lat: this.props.lat,
         lng: this.props.lng,
         title: this.props.title,
-        firstName: this.props.firstName,
-        lastName: this.props.lastName
+        firstName: '',
+        lastName: ''
     }
 
     static defaultProps = {
@@ -150,24 +150,20 @@ export class Profile extends Component {
         return (
             <div style={divStyle}>
                 <Container >
-                    <HeadTitle>{this.state.firstName}{this.state.lastName}</HeadTitle>
+                    <HeadTitle>{this.state.firstName} {this.state.lastName}</HeadTitle>
                     <Row>
-                        <Col size="s6">
-                            <CardPanel>
-                                <CardPanel>
+                        <Col size="m6">
 
-                                    <img style={{height: "200px", width:"300px"}} src={this.state.image} alt="Profile picture" />
-                                    </CardPanel>
+                            <img style={{ height: "200px", width: "300px" }} src={this.state.image} alt="Profile picture" />
 
-                            </CardPanel>
                         </Col>
                     </Row>
                     <Row>
-                        <Col size="s6">
+                        <Col size="s12">
                             {/* <CardPanel> */}
-                                <ProfileCard bio={this.state.bio} />
-                                {/* <TextInput name="editBio" placeholder="Edit Bio" value={this.state.editBio} onChange={this.handleInputChange} /> */}
-                                {/* <Button onClick={this.handleFormSubmit}>Submit</Button> */}
+                            <ProfileCard bio={this.state.bio} />
+                            {/* <TextInput name="editBio" placeholder="Edit Bio" value={this.state.editBio} onChange={this.handleInputChange} /> */}
+                            {/* <Button onClick={this.handleFormSubmit}>Submit</Button> */}
                             {/* </CardPanel> */}
                         </Col>
                     </Row>
