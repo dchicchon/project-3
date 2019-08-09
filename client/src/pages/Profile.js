@@ -202,7 +202,9 @@ export class Profile extends Component {
                     {/* <CardPanel> */}
                     {(this.state.posts.length) ?
                         this.state.posts.map((post, i) => (
-                            <Row center>
+                            <Row>
+                            {console.log("Sup")}
+
                                 <Col size="s3" />
 
                                 <Post
