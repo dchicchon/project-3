@@ -97,7 +97,7 @@ class Login extends Component {
                     <Col size="s6">
                       <br></br>
                       <Link to="/signup">
-                        <Button>Signup <i className="material-icons">search</i></Button>
+                        <Button>Signup</Button>
                       </Link> 
                       <br></br>
                     </Col>

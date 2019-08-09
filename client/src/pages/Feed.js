@@ -14,6 +14,8 @@ import Background from "../assets/bg10.jpg"
 
 
 
+
+
 // TESTING FOR AUTOCOMPLETE
 import Autocomplete from "../components/AutocompleteLocation";
 /* global google */
@@ -90,6 +92,8 @@ class Feed extends Component {
         // })
     }
 
+
+
     render() {
 
         const AddressDetails = props => {
@@ -138,6 +142,7 @@ class Feed extends Component {
                                         location={post.location}
                                         tag={post.tag}
                                         user_id={post.user_id}
+                                        image={post.image}
 
                                     />
                                 )) : "No Posts"

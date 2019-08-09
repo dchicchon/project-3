@@ -84,7 +84,7 @@ export class Profile extends Component {
 
 
     componentDidMount() {
-        
+
         // We might have to change this later on to get a specific users profile page
         console.log("USER ID:", this.state.user_id)
         var id = this.state.user_id
@@ -153,9 +153,13 @@ export class Profile extends Component {
                     <HeadTitle>{this.state.firstName}{this.state.lastName}</HeadTitle>
                     <Row>
                         <Col size="s6">
-                                    {/* <p>{this.state.user_id}</p> */}
-                                    {/* <h2>{this.state.firstName}</h2> */}
-                                    <img style={{ height: "300px", width: "300px" }} src={this.state.image} alt="Profile picture" />
+                            <CardPanel>
+                                <CardPanel>
+
+                                    <img style={{height: "200px", width:"300px"}} src={this.state.image} alt="Profile picture" />
+                                    </CardPanel>
+
+                            </CardPanel>
                         </Col>
                     </Row>
                     <Row>
