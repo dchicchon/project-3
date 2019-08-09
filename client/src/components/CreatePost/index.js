@@ -59,7 +59,7 @@ class CreatePost extends Component {
         })
     }
 
-    handlePicture = (e) => {
+    handlePicture = async e => {
         // e.preventDefault();
         console.log(e.target.files[0])
 
