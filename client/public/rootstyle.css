@@ -87,3 +87,20 @@
 .btn:focus{
     background-color: rgb(23, 23, 100);
 }
+
+#cardStyleSignup .row form div .input-field input{
+    color:#fff;
+    font-size:14px;
+}
+#cardStyleSignup .row form div .input-field label{
+    color:#fff;
+    font-size:14px;
+}
+#cardStyleLogin form div .input-field input{
+    color:#fff;
+    font-size:14px;
+}
+#cardStyleLogin form div .input-field label{
+    color:#fff;
+    font-size:14px;
+}
